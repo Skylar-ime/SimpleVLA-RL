@@ -152,11 +152,13 @@ def normalize_proprio(proprio, norm_stats):
 
 def get_robotwin2_task(task_name, config):
     """Get robotwin 2.0 task"""
-    robotwin2_path = os.path.join(os.path.dirname(__file__), '..', '..', 'utils', 'envs', 'robotwin2')
+    default_robotwin2_path = os.path.join(os.path.dirname(__file__), '..', '..', 'utils', 'envs', 'robotwin2')
+    robotwin2_path = os.environ.get("SIMPLEVLA_ROBOTWIN2_PATH", default_robotwin2_path)
+    robotwin2_path = os.path.abspath(robotwin2_path)
     if robotwin2_path not in sys.path:
         sys.path.append(robotwin2_path)
         
-    robotwin2_utils_path = os.path.join(os.path.dirname(__file__), '..', '..', 'utils', 'envs', 'robotwin2', "description", "utils")
+    robotwin2_utils_path = os.path.join(robotwin2_path, "description", "utils")
     if robotwin2_utils_path not in sys.path:
         sys.path.append(robotwin2_utils_path)
     
@@ -948,6 +950,17 @@ class RobHFRollout(BaseRollout):
                     unnorm_key=self.config.unnorm_key,
                     temperature=temperature,
                 )
+                if os.environ.get("SIMPLEVLA_USE_PREDICT_ACTION") == "1":
+                    actions, _ = self.module.predict_action(
+                        input_ids=idx,
+                        pixel_values=pixel_values,
+                        proprio=proprio,
+                        proprio_projector=self.module.proprio_projector,
+                        attention_mask=attention_mask,
+                        unnorm_key=self.config.unnorm_key,
+                    )
+                    if actions.ndim == 2:
+                        actions = actions[None, ...]
         
         assert self.processor.tokenizer.pad_token_id is not None
         

@@ -134,7 +134,7 @@ class Robotwin_Dataset(Dataset):
         
         self.num_trials_per_task = num_trials_per_task  
         if train_val == "valid":
-            self.num_trials_per_task=128
+            self.num_trials_per_task = int(os.environ.get("SIMPLEVLA_VAL_TRIALS", "128"))
         self.train_val = train_val
         if self.version == "2.0":
             self.load_twin2_success_seed()
@@ -176,10 +176,20 @@ class Robotwin_Dataset(Dataset):
                     seeds = [ s+self.train_start_seed_id for s in seeds ]
             else:
                 if self.version == "2.0":
+                    seed_offset = int(os.environ.get("SIMPLEVLA_VAL_SEED_OFFSET", "0"))
                     suc_seeds = self.twin2_success_seeds[self.task_name]
-                    seeds = [suc_seeds[k] for k in range(int(self.num_trials_per_task))]
+                    seeds = suc_seeds[seed_offset:seed_offset + int(self.num_trials_per_task)]
                     suc_seeds_eval = self.twin2_success_seeds_eval[self.task_name]
-                    seeds_eval = [suc_seeds_eval[k] for k in range(int(self.num_trials_per_task))]
+                    seeds_eval = suc_seeds_eval[seed_offset:seed_offset + int(self.num_trials_per_task)]
+                    train_seed_override = os.environ.get("SIMPLEVLA_VAL_TRAIN_SEEDS")
+                    eval_seed_override = os.environ.get("SIMPLEVLA_VAL_EVAL_SEEDS")
+                    if train_seed_override or eval_seed_override:
+                        if not train_seed_override or not eval_seed_override:
+                            raise ValueError("Set both SIMPLEVLA_VAL_TRAIN_SEEDS and SIMPLEVLA_VAL_EVAL_SEEDS")
+                        seeds = [int(seed) for seed in train_seed_override.split(",")]
+                        seeds_eval = [int(seed) for seed in eval_seed_override.split(",")]
+                        if len(seeds) != self.num_trials_per_task or len(seeds_eval) != self.num_trials_per_task:
+                            raise ValueError("Validation seed overrides must each match SIMPLEVLA_VAL_TRIALS")
                 else:
                     seeds = list(range(0, int(self.num_trials_per_task)))
                     seeds = [ s+self.train_start_seed_id for s in seeds ]

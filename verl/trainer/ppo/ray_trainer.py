@@ -344,7 +344,7 @@ class RayTrainer(object):
                 'eos_token_id': self.tokenizer.eos_token_id,
                 'pad_token_id': self.tokenizer.pad_token_id,
                 'recompute_log_prob': False,
-                'do_sample': False,
+                'do_sample': os.environ.get("SIMPLEVLA_VAL_DO_SAMPLE") == "1",
                 'validate': True,
                 "global_steps":global_steps
             }

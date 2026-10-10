@@ -18,13 +18,14 @@ fi
 
 # Get the absolute path of the script directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+REPO_ROOT="$SCRIPT_DIR"
 # Define the list of files to copy
 FILES=(
-    "${SCRIPT_DIR}/verl/utils/vla_utils/openvla_oft/configuration_prismatic.py"
-    "${SCRIPT_DIR}/verl/utils/vla_utils/openvla_oft/constants.py"
-    "${SCRIPT_DIR}/verl/utils/vla_utils/openvla_oft/modeling_prismatic.py"
-    "${SCRIPT_DIR}/verl/utils/vla_utils/openvla_oft/processing_prismatic.py"
-    "${SCRIPT_DIR}/verl/utils/vla_utils/openvla_oft/train_utils.py"
+    "${REPO_ROOT}/verl/utils/vla_utils/openvla_oft/configuration_prismatic.py"
+    "${REPO_ROOT}/verl/utils/vla_utils/openvla_oft/constants.py"
+    "${REPO_ROOT}/verl/utils/vla_utils/openvla_oft/modeling_prismatic.py"
+    "${REPO_ROOT}/verl/utils/vla_utils/openvla_oft/processing_prismatic.py"
+    "${REPO_ROOT}/verl/utils/vla_utils/openvla_oft/train_utils.py"
 )
 
 # Copy files

@@ -5,6 +5,9 @@
     "VLLM_ATTENTION_BACKEND": "XFORMERS",
     "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
     "TOKENIZERS_PARALLELISM": "true",
+    "NCCL_IB_DISABLE": "1",
+    "SIMPLEVLA_ROBOTWIN2_PATH": "/public/home/s2250018/wsy/VLA/RoboTwin-462f23d",
+    "PYTHONPATH": "/public/home/s2250018/wsy/VLA/RoboTwin-462f23d:/public/home/s2250018/wsy/VLA/SimpleVLA-RL-462f23d",
     "WANDB_API_KEY": "YOUR WANDB_API_KEY"
   },
   "excludes": [

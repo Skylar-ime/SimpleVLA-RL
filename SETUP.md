@@ -1,16 +1,16 @@
-# SimpleVLA-RL Installation Guide
+# 简易VLA-RL安装指南
 
-This guide provides step-by-step instructions for setting up the SimpleVLA-RL environment. Our project builds upon [veRL](https://github.com/volcengine/verl), and the installation process involves three main components: veRL, simulation benchmarks, and the VLA model (OpenVLA-OFT).
+这个指南提供了设置SimpleVLA-RL环境的步骤说明。我们的项目建立在[维拉尔](https://github.com/volcengine/verl)并且安装过程涉及三个主要组件：veRL、模拟基准和VLA模型。(开放虚拟实验室-光学场技术).
 
-## Installation Options
+## 安装选项
 
-### Option 1: Running RL on LIBERO Benchmark
+### 在LIBERO基准测试上运行RL
 
-#### Step 1: Install veRL
+#### 步骤1：安装veRL
 
-> **Note:** We recommend veRL version 0.2 or 0.3. Latest versions may have library conflicts.
+> **注意：**我们建议使用veRL版本0.2或0.3。最新版本可能会有库冲突。
 
-Follow the official [veRL installation guide](https://verl.readthedocs.io/en/v0.3.x/start/install.html):
+遵循官方[veRL安装指南](https://verl.readthedocs.io/en/v0.3.x/start/install.html):
 
 ```bash
 # Create and activate conda environment
@@ -27,9 +27,9 @@ pip3 install -e .
 cd ..
 ```
 
-#### Step 2: Install LIBERO and OpenVLA-OFT
+#### 步骤2：安装LIBERO和OpenVLA-OFT
 
-Follow the official [OpenVLA-OFT installation guide](https://github.com/moojink/openvla-oft):
+遵循官方[安装指南](https://github.com/moojink/openvla-oft):
 
 ```bash
 conda activate simplevla
@@ -55,15 +55,15 @@ cd openvla-oft
 pip install -r experiments/robot/libero/libero_requirements.txt
 ```
 
-### Option 2: Running RL on RoboTwin 2.0 Benchmark
+### 选项2：在RoboTwin 2.0基准上运行RL
 
-#### Step 1: Install veRL
+#### 步骤1：安装veRL
 
-Same as Option 1, Step 1.
+与选项1的步骤1相同。
 
-#### Step 2: Install RoboTwin 2.0
+#### 步骤2：安装RoboTwin 2.0
 
-Follow the official [RoboTwin 2.0 Installation Guide](https://robotwin-platform.github.io/doc/usage/robotwin-install.html#1-dependencies):
+遵循官方[RoboTwin 2.0 安装指南](https://robotwin-platform.github.io/doc/usage/robotwin-install.html#1-dependencies):
 
 ```bash
 # Install system dependencies
@@ -81,7 +81,7 @@ bash script/_download_assets.sh
 cd ..
 ```
 
-#### Step 3: Install OpenVLA-OFT
+#### 步骤3：安装OpenVLA-OFT
 
 ```bash
 conda activate simplevla
@@ -99,9 +99,9 @@ pip3 install flash-attn --no-build-isolation
 cd ..
 ```
 
-#### Step 4: Configure RoboTwin for SimpleVLA-RL
+#### 步骤4：配置RoboTwin以支持SimpleVLA-RL
 
-Apply necessary modifications to RoboTwin:
+对RoboTwin进行必要的修改。
 
 ```bash
 git clone https://github.com/PRIME-RL/SimpleVLA-RL.git
@@ -112,14 +112,14 @@ bash copy_overwrite_robotwin2.sh <your_robotwin_path> <your_simplevlarl_path>
 # Example: bash copy_overwrite_robotwin2.sh /mnt/petrelfs/SimpleVLA-RL /mnt/petrelfs/RoboTwin
 ```
 
-## Troubleshooting
+## 故障排除
 
-- If you encounter issues with RoboTwin 2.0 installation, refer to the [RoboTwin documentation](https://robotwin-platform.github.io/doc/) or check their GitHub issues
-- All repositories (veRL, OpenVLA-OFT, RoboTwin) are recommended to clone at the same directory level as SimpleVLA-RL
+- 如果你遇到RoboTwin 2.0安装的问题，请参考[罗布双胞胎文档](https://robotwin-platform.github.io/doc/)或者查看他们的GitHub问题
+- 所有仓库(维拉，开放虚拟实验室-光学场技术，机器人双胞胎)建议在与SimpleVLA-RL同级目录下克隆
 
-## Directory Structure
+## 目录结构
 
-After installation, your directory structure should look like:
+安装后，你的目录结构应该看起来像这样：
 ```
 your_workspace/
 ├── SimpleVLA-RL/
@@ -130,35 +130,35 @@ your_workspace/
 ```
 
 
-## Supporting Additional Tasks in RoboTwin 2.0 (Optional) 
+## 支持RoboTwin 2.0的附加任务(当然可以，请提供您希望翻译的Markdown文本。)
 
-### Step 1: Collect Feasible Seeds
+### 步骤1：收集可行的种子
 
-RoboTwin 2.0 tasks may have infeasible seeds (e.g., objects beyond arm reach). To optimize RL training, we pre-collect feasible seeds to avoid repeated validation during training epochs.
+RoboTwin 2.0的任务可能有不可行的种子(超出手臂范围的物体)为了优化RL训练，我们预先收集可行的种子以避免在训练周期中重复验证。
 
-**Collection Process:**
+**收集过程：**
 
-1. Update `DATASET_NAME` in `pre_collect_robotwin2_seed.sh` with your target task name
-2. Run the collection script:
+1. 更新`DATASET_NAME`在`pre_collect_robotwin2_seed.sh`以您的目标任务名称
+2. 运行集合脚本：
    ```bash
    sh pre_collect_robotwin2_seed.sh
    ```
-3. This generates `robotwin2_train_seeds.json` in the SimpleVLA-RL directory
-4. Add the JSON content to:
+3. 这生成了`robotwin2_train_seeds.json`在SimpleVLA-RL目录中
+4. 添加JSON内容到：
    ```
    SimpleVLA-RL/verl/utils/envs/robotwin2/seeds/robotwin2_train_seeds.json
    ```
 
-### Step 2: Register New Tasks
+### 步骤2：注册新任务
 
-1. Add task name in `SimpleVLA-RL/verl/utils/dataset/rob_dataset.py`
-2. Add task name and corresponding max steps in `SimpleVLA-RL/verl/workers/rollout/rob_rollout.py`
+1. 添加任务名称`SimpleVLA-RL/verl/utils/dataset/rob_dataset.py`
+2. 添加任务名称和对应的最大步骤`SimpleVLA-RL/verl/workers/rollout/rob_rollout.py`
 
-### Step 3: Implement Task-Specific Functions
+### 步骤3：实现任务特定函数
 
-Add a `get_info()` function in the corresponding task file under `SimpleVLA-RL/verl/utils/envs/robotwin2/envs/task_name.py`. 
+添加一个`get_info()`在对应任务文件中的函数`SimpleVLA-RL/verl/utils/envs/robotwin2/envs/task_name.py`.
 
-For implementation reference, see:
+为了实现参考，请参见：
 ```
 SimpleVLA-RL/modified_codes/robotwin2/envs/handover_block.py
 ```

@@ -1,8 +1,8 @@
-# Dataset Format
-## RLHF dataset
-We combine all the data sources into a single parquet files. We directly organize the prompt into the chat format so that multi-turn chats can be easily incorporated. In the prompt, we may add instruction following texts to guide the model output the answers in a particular format so that we can extract the answers.
+# 数据集格式
+## RLHF数据集
+我们将所有数据源合并到一个Parquet文件中。我们直接将提示组织成聊天格式，以便轻松纳入多轮对话。在提示中，我们可以添加指令跟随文本以指导模型按照特定格式输出答案，以便我们提取答案。
 
-Math problems
+数学问题
 ```json
 {
     "data_source": "openai/gsm8k",
