@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12_qwen3_multiseed_repro/seed_15/sdpo_advantage_shuffled",
+  "backbone": "qwen3",
+  "condition": "sdpo_advantage_shuffled",
+  "seed": 15,
+  "updates": 12,
+  "transitions": 1536,
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 9,
+    "success_rate": 0.140625,
+    "conservative_success_rate_all_scenes": 0.140625,
+    "mean_progress_m": 0.03464798611677801,
+    "safety_failures": 0,
+    "interactions": 709,
+    "seconds": 1440.4930904980283,
+    "action_counts": {
+      "C": 444,
+      "D": 230,
+      "A": 22,
+      "B": 13
+    }
+  },
+  "protocol_sha256": "889d384c740d4ced1e1c201b061d747da7d458467b328d20373ec01c128370dd",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

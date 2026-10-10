@@ -1,0 +1,12 @@
+Updated: 2026-09-25
+Previous error: CUDA 804 and NVML initialization failure
+Observed mismatch: loaded NVIDIA module 580.173.02; system libcuda/libnvidia-ml 580.178.04
+System privilege: sudo requires interactive authentication; no privileged commands executed
+Remediation: extracted official NVIDIA libnvidia-compute-580_580.173.02-1ubuntu1_amd64.deb into sdpo-vla-pilot/opt only
+Package SHA256: 31714f52224f32ed1b33cccab5b023163d3504bb588b33decd341aa5a4b6052f
+Activation prepends matched library path; deactivation restores original LD_LIBRARY_PATH
+A kernel-version guard skips old libraries if the loaded driver version changes
+Conda-scoped nvidia-smi wrapper installed; system /usr/bin and driver packages unchanged
+Result: torch.cuda.is_available=True, device_count=1; BF16 forward/backward verified
+Persistent system driver mismatch: unresolved outside the conda environment
+No reboot, driver unload, GPU reset, or display service restart performed

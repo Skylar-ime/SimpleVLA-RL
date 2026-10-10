@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12_qwen3_multiseed_repro/seed_14/sdpo_advantage_reversed",
+  "backbone": "qwen3",
+  "condition": "sdpo_advantage_reversed",
+  "seed": 14,
+  "updates": 12,
+  "transitions": 1536,
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 8,
+    "success_rate": 0.125,
+    "conservative_success_rate_all_scenes": 0.125,
+    "mean_progress_m": 0.039501710224488965,
+    "safety_failures": 0,
+    "interactions": 714,
+    "seconds": 1450.9291499399114,
+    "action_counts": {
+      "C": 370,
+      "D": 232,
+      "A": 96,
+      "B": 16
+    }
+  },
+  "protocol_sha256": "889d384c740d4ced1e1c201b061d747da7d458467b328d20373ec01c128370dd",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

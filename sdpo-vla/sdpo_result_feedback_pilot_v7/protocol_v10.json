@@ -1,0 +1,49 @@
+{
+  "version": "v10-directional-control-repeat",
+  "question": "Does measured target-relative direction improve feedback-conditioned SDPO, and does its effect disappear when direction signs are reversed?",
+  "scene_profile": "directional_long",
+  "conditions": [
+    "sdpo_result",
+    "sdpo_binary",
+    "sdpo_causal",
+    "sdpo_directional",
+    "sdpo_wrong_directional"
+  ],
+  "rollout": {
+    "candidates_per_state": 8,
+    "transitions_per_update": 128,
+    "updates": 12,
+    "seed": 12,
+    "one_step": true
+  },
+  "solution": {
+    "criterion": "actual task success",
+    "expected_count": 0,
+    "feedback_only_without_solution": true
+  },
+  "teacher": {
+    "regularization": "ema",
+    "update_rate": 0.05,
+    "stop_gradient": true
+  },
+  "loss": {
+    "name": "JSD",
+    "alpha": 0.5,
+    "optimizer_steps_per_rollout": 1,
+    "grpo_weight": 0,
+    "behavior_cloning_weight": 0
+  },
+  "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+  "teacher_input": ["student_input", "structured_environment_feedback"],
+  "directional_feedback": "measured target displacement vector and dominant axis/sign; no expert action label",
+  "wrong_directional_control": "same measured vector with both signs reversed; no expert action label",
+  "primary_diagnostic": "teacher distribution TV, action coverage, directional/oracle accuracy, and no-feedback deployment",
+  "limitations": [
+    "single repeat seed",
+    "local calibrated PandaPush pilot",
+    "five-action support instead of full language vocabulary",
+    "one-token action response",
+    "directional vector is simulator-provided feedback",
+    "wrong-direction control is a semantic sign-reversal control, not a natural environment condition"
+  ]
+}

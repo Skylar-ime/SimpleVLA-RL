@@ -1,0 +1,3906 @@
+{
+  "summary": {
+    "scenes": 16,
+    "rejected": 0,
+    "seconds": 66.26807543999166,
+    "executed_interactions": 112,
+    "attempt_interactions": 16,
+    "replay_interactions": 16,
+    "counterfactual_interactions": 80,
+    "attempt_contact_count": 1,
+    "counterfactual_contact_count": 8,
+    "informative_progress_scenes": 6,
+    "groups": {
+      "result": {
+        "expected_progress_difference_m": -0.0002604990728001567,
+        "bootstrap95_progress_difference_m": [
+          -0.0012144372080427443,
+          0.0006356980940971311
+        ],
+        "mean_total_variation": 0.12852449715137482,
+        "expected_contact_difference": 0.003731688018888235,
+        "matching": {
+          "matched": 16,
+          "changed": 0
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "result_interpreted": {
+        "expected_progress_difference_m": 0.0004113561207492844,
+        "bootstrap95_progress_difference_m": [
+          -0.000633393085101404,
+          0.0016527113015555287
+        ],
+        "mean_total_variation": 0.1288680136203766,
+        "expected_contact_difference": 0.014741011429578066,
+        "matching": {
+          "matched": 16,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": 1.0,
+        "teacher_oracle_accuracy": 0.25,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "causal": {
+        "expected_progress_difference_m": 0.0009193168863894439,
+        "bootstrap95_progress_difference_m": [
+          -0.0007302943833895224,
+          0.0033840305924552443
+        ],
+        "mean_total_variation": 0.21521149575710297,
+        "expected_contact_difference": 0.03001264249905944,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 1.0,
+        "teacher_oracle_accuracy": 0.25,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "causal_shuffled": {
+        "expected_progress_difference_m": -0.00214286147486111,
+        "bootstrap95_progress_difference_m": [
+          -0.003993215638662944,
+          -0.0006677412513581395
+        ],
+        "mean_total_variation": 0.20087981224060059,
+        "expected_contact_difference": -0.040729479398578405,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "binary": {
+        "expected_progress_difference_m": -0.0008078971228412486,
+        "bootstrap95_progress_difference_m": [
+          -0.0018779380089075544,
+          3.0503623768579035e-05
+        ],
+        "mean_total_variation": 0.10733222961425781,
+        "expected_contact_difference": -0.0028557959012687206,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.25,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "shuffled": {
+        "expected_progress_difference_m": -0.0005472774058606596,
+        "bootstrap95_progress_difference_m": [
+          -0.0017075425879858371,
+          0.0004973577146481886
+        ],
+        "mean_total_variation": 0.13403794169425964,
+        "expected_contact_difference": -0.0005466765724122524,
+        "matching": {
+          "matched": 15,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "hard_shuffled": {
+        "expected_progress_difference_m": -0.00044497323886671616,
+        "bootstrap95_progress_difference_m": [
+          -0.0017507417684146007,
+          0.000714101291945029
+        ],
+        "mean_total_variation": 0.130750373005867,
+        "expected_contact_difference": -0.000810523983091116,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "neutral": {
+        "expected_progress_difference_m": -0.0007838286789053654,
+        "bootstrap95_progress_difference_m": [
+          -0.0017395886922852198,
+          -4.25580454839749e-07
+        ],
+        "mean_total_variation": 0.09480738639831543,
+        "expected_contact_difference": -0.004099145065993071,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.3125,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "no_feedback": {
+        "expected_progress_difference_m": 0.0,
+        "bootstrap95_progress_difference_m": [
+          0.0,
+          0.0
+        ],
+        "mean_total_variation": 0.0,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.3125,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "directional": {
+        "expected_progress_difference_m": 0.0028296646876280925,
+        "bootstrap95_progress_difference_m": [
+          0.000683657749406109,
+          0.005175951102979193
+        ],
+        "mean_total_variation": 0.19741414487361908,
+        "expected_contact_difference": 0.07289345189929008,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.5625,
+        "teacher_argmax_counts": {
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "wrong_directional": {
+        "expected_progress_difference_m": -0.0003084457425052648,
+        "bootstrap95_progress_difference_m": [
+          -0.001155365760877135,
+          0.0004341953957449628
+        ],
+        "mean_total_variation": 0.18424701690673828,
+        "expected_contact_difference": 0.003183441236615181,
+        "matching": {
+          "matched": 16,
+          "changed": 16
+        },
+        "teacher_repeat_previous_accuracy": 0.0,
+        "teacher_oracle_accuracy": 0.3125,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 0
+        }
+      },
+      "directional_residual": {
+        "expected_progress_difference_m": 0.0031842379945919343,
+        "bootstrap95_progress_difference_m": [
+          0.0009046274840910309,
+          0.005941125588207331
+        ],
+        "mean_total_variation": 0.17833110690116882,
+        "expected_contact_difference": 0.0680027068592608,
+        "matching": {
+          "matched": 16,
+          "changed": 16,
+          "mean_abs_residual_logit": 0.6750483512878418,
+          "mean_abs_residual_logit_by_action": [
+            0.3998253047466278,
+            0.5296881794929504,
+            0.24280276894569397,
+            0.3326266407966614,
+            1.8702986240386963
+          ]
+        },
+        "teacher_repeat_previous_accuracy": 1.0,
+        "teacher_oracle_accuracy": 0.5,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "wrong_directional_residual": {
+        "expected_progress_difference_m": 0.00026905658745387644,
+        "bootstrap95_progress_difference_m": [
+          -0.0005896687455237025,
+          0.0011889935012316128
+        ],
+        "mean_total_variation": 0.19088587164878845,
+        "expected_contact_difference": 0.004276663064956665,
+        "matching": {
+          "matched": 16,
+          "changed": 16,
+          "mean_abs_residual_logit": 0.6835488080978394,
+          "mean_abs_residual_logit_by_action": [
+            0.413917601108551,
+            0.5505926609039307,
+            0.277241587638855,
+            0.2962350845336914,
+            1.8797571659088135
+          ]
+        },
+        "teacher_repeat_previous_accuracy": 1.0,
+        "teacher_oracle_accuracy": 0.4375,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0,
+          "E": 0
+        }
+      }
+    },
+    "note": "Initial-state local diagnosis only; no training or action supervision."
+  },
+  "records": [
+    {
+      "episode_id": "probe_dev_000000",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.01397457174250949,
+        -6.692935968057555e-05,
+        0.0010987103308106871
+      ],
+      "distance_before_m": 0.1516128474513746,
+      "distance_after_m": 0.1516128475803541,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000000",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.003175648178979132,
+          0.007246465892078286,
+          0.019989999999800685
+        ],
+        "object_after": [
+          -0.0031756480499997124,
+          0.007246466123860714,
+          0.01998999999886592
+        ],
+        "goal_xy": [
+          -0.15478849530056638,
+          0.007246465892757729
+        ],
+        "object_motion_xy_m": 2.6525230396041116e-10,
+        "progress_m": -1.2897949375201279e-10,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.04878327250480652,
+        0.007243755739182234,
+        0.02500312775373459
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -1.2897949375201279e-10,
+        "object_motion_m": 2.6525230396041116e-10,
+        "distance_before_m": 0.1516128474513746,
+        "distance_after_m": 0.1516128475803541,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000001",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "D",
+      "actual_ee_delta_m": [
+        -0.0006205872589015466,
+        -0.019679564785491876,
+        0.00016538773745190805
+      ],
+      "distance_before_m": 0.14322533499278145,
+      "distance_after_m": 0.14322533497049034,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000001",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.005745031843860173,
+          -0.03596410647029651,
+          0.019989999993937718
+        ],
+        "object_after": [
+          -0.005745031846994494,
+          -0.035964106448005455,
+          0.019989999994819402
+        ],
+        "goal_xy": [
+          -0.005745031857459032,
+          0.10726122817338427
+        ],
+        "object_motion_xy_m": 2.251033605843126e-11,
+        "progress_m": 2.2291113399575124e-11,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          -0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          -0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.0057294005528092384,
+        -0.0814068615436554,
+        0.024993542581796646
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": 2.2291113399575124e-11,
+        "object_motion_m": 2.251033605843126e-11,
+        "distance_before_m": 0.14322533499278145,
+        "distance_after_m": 0.14322533497049034,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000002",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.014272599731191264,
+        -0.00019577888464411553,
+        0.0010636051856171558
+      ],
+      "distance_before_m": 0.13424500684547092,
+      "distance_after_m": 0.13424500684577084,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000002",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.0054162259427913825,
+          0.022668112696395692,
+          0.019989999999800685
+        ],
+        "object_after": [
+          -0.005416225942491444,
+          0.022668112696384534,
+          0.01998999999993492
+        ],
+        "goal_xy": [
+          -0.13966123241580894,
+          0.022668112696123573
+        ],
+        "object_motion_xy_m": 3.001463556787403e-13,
+        "progress_m": -2.9992675010248604e-13,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.04068482667207718,
+        0.022664764896035194,
+        0.02500344254076481
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -2.9992675010248604e-13,
+        "object_motion_m": 3.001463556787403e-13,
+        "distance_before_m": 0.13424500684547092,
+        "distance_after_m": 0.13424500684577084,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000003",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.01622623787723547,
+        6.835739638498886e-05,
+        0.0008514099063211683
+      ],
+      "distance_before_m": 0.13686591025140107,
+      "distance_after_m": 0.13686591027739914,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000003",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.019454991660421552,
+          -0.011742902404003679,
+          0.019989999982575626
+        ],
+        "object_after": [
+          0.019454991634422963,
+          -0.011742902390016074,
+          0.019989999989722274
+        ],
+        "goal_xy": [
+          0.1563209015465003,
+          -0.011742902452338663
+        ],
+        "object_motion_xy_m": 2.952252857285191e-11,
+        "progress_m": -2.5998064812071675e-11,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.029678553342819214,
+        -0.01174410805106163,
+        0.024993931874632835
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -2.5998064812071675e-11,
+        "object_motion_m": 2.952252857285191e-11,
+        "distance_before_m": 0.13686591025140107,
+        "distance_after_m": 0.13686591027739914,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000004",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        0.00027372007255344055,
+        0.019918291172068454,
+        -5.796177523896551e-05
+      ],
+      "distance_before_m": 0.1419565984180723,
+      "distance_after_m": 0.14195659842300626,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000004",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.031466607776949755,
+          -0.03814704960735444,
+          0.019989999999268898
+        ],
+        "object_after": [
+          0.031466607781883746,
+          -0.03814704960223429,
+          0.01998999999929692
+        ],
+        "goal_xy": [
+          -0.11048999028890213,
+          -0.038147049620455294
+        ],
+        "object_motion_xy_m": 7.1105677263145386e-12,
+        "progress_m": -4.933969899312274e-12,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.07887834310531616,
+        -0.038146741688251495,
+        0.02500445768237114
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -4.933969899312274e-12,
+        "object_motion_m": 7.1105677263145386e-12,
+        "distance_before_m": 0.1419565984180723,
+        "distance_after_m": 0.14195659842300626,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000005",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -0.0006051039368465058,
+        0.019771587198660887,
+        0.00012983252293992387
+      ],
+      "distance_before_m": 0.13620983002342013,
+      "distance_after_m": 0.1362098300243605,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000005",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.026452987020365772,
+          0.016049116823618696,
+          0.019989999999363132
+        ],
+        "object_after": [
+          0.026452987021927377,
+          0.016049116824559062,
+          0.019989999999397674
+        ],
+        "goal_xy": [
+          0.026452987018437644,
+          -0.12016071283272067
+        ],
+        "object_motion_xy_m": 1.8228818194980145e-12,
+        "progress_m": -9.403589018575076e-13,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.02642817609012127,
+        0.06580204516649246,
+        0.02500247210264206
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -9.403589018575076e-13,
+        "object_motion_m": 1.8228818194980145e-12,
+        "distance_before_m": 0.13620983002342013,
+        "distance_after_m": 0.1362098300243605,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000006",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -3.5720288498145014e-05,
+        0.019496355462523617,
+        1.526094517359522e-05
+      ],
+      "distance_before_m": 0.1446919229008847,
+      "distance_after_m": 0.14469191619835278,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000006",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.015114162812550066,
+          -0.006195693474920232,
+          0.019989999447691646
+        ],
+        "object_after": [
+          -0.015114156110022484,
+          -0.006195686344919395,
+          0.01998999952104188
+        ],
+        "goal_xy": [
+          0.1295777597427343,
+          -0.0061957038802667105
+        ],
+        "object_motion_xy_m": 9.785744116782016e-09,
+        "progress_m": 6.702531918367782e-09,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.06440316140651703,
+        -0.006196251604706049,
+        0.024994341656565666
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": 6.702531918367782e-09,
+        "object_motion_m": 9.785744116782016e-09,
+        "distance_before_m": 0.1446919229008847,
+        "distance_after_m": 0.14469191619835278,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000007",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.016273620441032408,
+        -4.631024100805372e-05,
+        0.0008458172090855809
+      ],
+      "distance_before_m": 0.13976228152404885,
+      "distance_after_m": 0.13976228152813203,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000007",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.019946600238169895,
+          0.007643051623690071,
+          0.019989999995036128
+        ],
+        "object_after": [
+          0.019946600234086714,
+          0.007643051624696901,
+          0.019989999995116053
+        ],
+        "goal_xy": [
+          0.15970888140446807,
+          0.007643051619893877
+        ],
+        "object_motion_xy_m": 4.205482088120174e-12,
+        "progress_m": -4.083178239966401e-12,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.03199340030550957,
+        0.0076420060358941555,
+        0.024994026869535446
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -4.083178239966401e-12,
+        "object_motion_m": 4.205482088120174e-12,
+        "distance_before_m": 0.13976228152404885,
+        "distance_after_m": 0.13976228152813203,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000008",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.014750925898685395,
+        0.00024626827318858027,
+        0.0010083930039855443
+      ],
+      "distance_before_m": 0.14453649542320615,
+      "distance_after_m": 0.14453649320226009,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000008",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.021401470158095348,
+          -0.03123563586030262,
+          0.019989999999363132
+        ],
+        "object_after": [
+          -0.021401472379042906,
+          -0.031235634882412242,
+          0.019989999978193937
+        ],
+        "goal_xy": [
+          -0.16593796523536808,
+          -0.031235635861369612
+        ],
+        "object_motion_xy_m": 2.4267009792342662e-09,
+        "progress_m": 2.2209460659450286e-09,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.026584558188915253,
+        -0.03123589977622032,
+        0.025002537295222282
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": 2.2209460659450286e-09,
+        "object_motion_m": 2.4267009792342662e-09,
+        "distance_before_m": 0.14453649542320615,
+        "distance_after_m": 0.14453649320226009,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000009",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "B",
+      "actual_ee_delta_m": [
+        -0.0159691921091146,
+        0.000318043097760623,
+        -0.0009084317471999559
+      ],
+      "distance_before_m": 0.14103449286348485,
+      "distance_after_m": 0.14103450117187585,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000009",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.000977896923706707,
+          0.002738739180990931,
+          0.019989999893449913
+        ],
+        "object_after": [
+          0.000977904421696854,
+          0.0027387474893811473,
+          0.019989999886180294
+        ],
+        "goal_xy": [
+          0.0009778951710009212,
+          -0.13829575332796315
+        ],
+        "object_motion_xy_m": 1.1191479090341185e-08,
+        "progress_m": -8.308391002964655e-09,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          -0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          -0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.0009948838269338012,
+        0.04912666603922844,
+        0.024993231520056725
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -8.308391002964655e-09,
+        "object_motion_m": 1.1191479090341185e-08,
+        "distance_before_m": 0.14103449286348485,
+        "distance_after_m": 0.14103450117187585,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000010",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -1.0805271484753964e-05,
+        0.019897806610881537,
+        -4.379220302969111e-06
+      ],
+      "distance_before_m": 0.14284860495889493,
+      "distance_after_m": 0.14284860497703505,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000010",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.008063595016315811,
+          -0.010541046548383297,
+          0.019989999996138638
+        ],
+        "object_after": [
+          0.008063595034455936,
+          -0.010541046529654206,
+          0.019989999996339377
+        ],
+        "goal_xy": [
+          -0.13478500959255793,
+          -0.010541046617821424
+        ],
+        "object_motion_xy_m": 2.607379882990201e-11,
+        "progress_m": -1.8140128288379742e-11,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.05641421303153038,
+        -0.01054258644580841,
+        0.025003690272569656
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -1.8140128288379742e-11,
+        "object_motion_m": 2.607379882990201e-11,
+        "distance_before_m": 0.14284860495889493,
+        "distance_after_m": 0.14284860497703505,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000011",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        5.758044894844938e-05,
+        0.019700140600930498,
+        -1.58939719515222e-05
+      ],
+      "distance_before_m": 0.1397791553014781,
+      "distance_after_m": 0.13977915426409362,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000011",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.022972494551136508,
+          -0.022737182800199054,
+          0.019989999756970703
+        ],
+        "object_after": [
+          0.022972495588518972,
+          -0.02273718173895957,
+          0.01998999978578226
+        ],
+        "goal_xy": [
+          0.16275164949489002,
+          -0.022737187309082394
+        ],
+        "object_motion_xy_m": 1.4840456943336396e-09,
+        "progress_m": 1.0373844838706958e-09,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.023382466286420822,
+        -0.02273867465555668,
+        0.024993350729346275
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": 1.0373844838706958e-09,
+        "object_motion_m": 1.4840456943336396e-09,
+        "distance_before_m": 0.1397791553014781,
+        "distance_after_m": 0.13977915426409362,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000012",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "D",
+      "actual_ee_delta_m": [
+        -0.0005038122049551043,
+        -0.019709847720756568,
+        0.00013518857068159362
+      ],
+      "distance_before_m": 0.15468028054439545,
+      "distance_after_m": 0.154680280542061,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000012",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.004922710012409799,
+          -0.01800351661942237,
+          0.019989999993937718
+        ],
+        "object_after": [
+          -0.004922710007847062,
+          -0.018003516617087982,
+          0.01998999999489653
+        ],
+        "goal_xy": [
+          -0.004922710026008657,
+          0.1366767636017253
+        ],
+        "object_motion_xy_m": 5.12522652832854e-12,
+        "progress_m": 2.334438198303701e-12,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          -0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          -0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.004907529801130295,
+        -0.06401003897190094,
+        0.024993717670440674
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": 2.334438198303701e-12,
+        "object_motion_m": 5.12522652832854e-12,
+        "distance_before_m": 0.15468028054439545,
+        "distance_after_m": 0.154680280542061,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000013",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -6.065110122063094e-05,
+        0.01955450053443881,
+        2.5215624062990827e-05
+      ],
+      "distance_before_m": 0.14974007577604315,
+      "distance_after_m": 0.14974007581859153,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000013",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.0038929302314101135,
+          -0.0013043833039140093,
+          0.019989999983638776
+        ],
+        "object_after": [
+          -0.0038929302739586177,
+          -0.00130438328903201,
+          0.019989999985739308
+        ],
+        "goal_xy": [
+          0.14584714521072,
+          -0.0013043833181119596
+        ],
+        "object_motion_xy_m": 4.507603702178778e-11,
+        "progress_m": -4.254838148476381e-11,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.05417182296514511,
+        -0.0013051456771790981,
+        0.02499389462172985
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -4.254838148476381e-11,
+        "object_motion_m": 4.507603702178778e-11,
+        "distance_before_m": 0.14974007577604315,
+        "distance_after_m": 0.14974007581859153,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000014",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -1.7311787778060556e-05,
+        0.019710712423100307,
+        7.59764944717467e-06
+      ],
+      "distance_before_m": 0.13625566377590012,
+      "distance_after_m": 0.07519095437496941,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000014",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.020355002806297512,
+          0.03668281396668675,
+          0.019989999995036128
+        ],
+        "object_after": [
+          -0.018189480129804456,
+          0.09777872651849995,
+          0.019955474772230256
+        ],
+        "goal_xy": [
+          -0.02035500279582978,
+          0.17293847737562928
+        ],
+        "object_motion_xy_m": 0.06113427859230213,
+        "progress_m": 0.061064709400930714,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        -0.020339304581284523,
+        -0.009987047873437405,
+        0.024993259459733963
+      ],
+      "result": {
+        "contact": true,
+        "object_motion": "detected",
+        "goal_progress": "closer",
+        "success": false,
+        "progress_m": 0.061064709400930714,
+        "object_motion_m": 0.06113427859230213,
+        "distance_before_m": 0.13625566377590012,
+        "distance_after_m": 0.07519095437496941,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    },
+    {
+      "episode_id": "probe_dev_000015",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "A",
+      "actual_ee_delta_m": [
+        0.014621714805515423,
+        -8.12725126572815e-05,
+        0.001023224427212227
+      ],
+      "distance_before_m": 0.13470136159145624,
+      "distance_after_m": 0.13470136177768838,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000015",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          0.0308852090650772,
+          -0.03821855479903858,
+          0.019989999999868023
+        ],
+        "object_after": [
+          0.030885208822060733,
+          -0.03821855461280654,
+          0.01998999999834038
+        ],
+        "goal_xy": [
+          0.030885209065335865,
+          -0.17291991601930332
+        ],
+        "object_motion_xy_m": 3.061688672208741e-10,
+        "progress_m": -1.8623214081969763e-10,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "applied_action": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.03085934743285179,
+        0.009752430021762848,
+        0.025002531707286835
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -1.8623214081969763e-10,
+        "object_motion_m": 3.061688672208741e-10,
+        "distance_before_m": 0.13470136159145624,
+        "distance_after_m": 0.13470136177768838,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    }
+  ],
+  "student_probs": [
+    [
+      0.43385666608810425,
+      0.11050126701593399,
+      0.28420472145080566,
+      0.1153629794716835,
+      0.0560743473470211
+    ],
+    [
+      0.4104037880897522,
+      0.11768428981304169,
+      0.28459739685058594,
+      0.11391893774271011,
+      0.07339561730623245
+    ],
+    [
+      0.41973620653152466,
+      0.11368074268102646,
+      0.2902529537677765,
+      0.11707411706447601,
+      0.059256087988615036
+    ],
+    [
+      0.36041060090065,
+      0.10922933369874954,
+      0.3219270706176758,
+      0.13759349286556244,
+      0.07083949446678162
+    ],
+    [
+      0.42536675930023193,
+      0.1115368902683258,
+      0.2716636061668396,
+      0.11877276003360748,
+      0.07266002148389816
+    ],
+    [
+      0.3642088770866394,
+      0.0947955921292305,
+      0.3323194086551666,
+      0.133925661444664,
+      0.07475043088197708
+    ],
+    [
+      0.3651125431060791,
+      0.11282001435756683,
+      0.3178718090057373,
+      0.13614170253276825,
+      0.06805393844842911
+    ],
+    [
+      0.3524894416332245,
+      0.11348690837621689,
+      0.32540369033813477,
+      0.13899721205234528,
+      0.06962275505065918
+    ],
+    [
+      0.4201407730579376,
+      0.11636972427368164,
+      0.2736652195453644,
+      0.11946452409029007,
+      0.07035962492227554
+    ],
+    [
+      0.3716745674610138,
+      0.11110083013772964,
+      0.3038661479949951,
+      0.14388954639434814,
+      0.06946904957294464
+    ],
+    [
+      0.4123982787132263,
+      0.11252835392951965,
+      0.27349045872688293,
+      0.12403762340545654,
+      0.07754529267549515
+    ],
+    [
+      0.35233113169670105,
+      0.11228771507740021,
+      0.33842986822128296,
+      0.13154156506061554,
+      0.0654098317027092
+    ],
+    [
+      0.41701939702033997,
+      0.11164993792772293,
+      0.29737618565559387,
+      0.10868935286998749,
+      0.06526509672403336
+    ],
+    [
+      0.3700394034385681,
+      0.11255102604627609,
+      0.3145543336868286,
+      0.13716694712638855,
+      0.06568825989961624
+    ],
+    [
+      0.4236646294593811,
+      0.1011199951171875,
+      0.30619025230407715,
+      0.10499463975429535,
+      0.06403044611215591
+    ],
+    [
+      0.386018842458725,
+      0.09581171721220016,
+      0.3206465244293213,
+      0.12830737233161926,
+      0.0692155733704567
+    ]
+  ],
+  "teacher_probs": {
+    "result": [
+      [
+        0.27070319652557373,
+        0.2054344266653061,
+        0.2781171500682831,
+        0.1882707178592682,
+        0.05747444927692413
+      ],
+      [
+        0.3556850850582123,
+        0.16648127138614655,
+        0.23294652998447418,
+        0.16016854345798492,
+        0.08471851795911789
+      ],
+      [
+        0.271921306848526,
+        0.19652551412582397,
+        0.2850852310657501,
+        0.18397781252861023,
+        0.0624900758266449
+      ],
+      [
+        0.24413008987903595,
+        0.18902476131916046,
+        0.3113698959350586,
+        0.19196230173110962,
+        0.06351286917924881
+      ],
+      [
+        0.4020133912563324,
+        0.17260263860225677,
+        0.18240348994731903,
+        0.15220656991004944,
+        0.09077391028404236
+      ],
+      [
+        0.34459415078163147,
+        0.1569548100233078,
+        0.22736740112304688,
+        0.1840725988149643,
+        0.0870109498500824
+      ],
+      [
+        0.40076860785484314,
+        0.18991072475910187,
+        0.1784757673740387,
+        0.153838112950325,
+        0.07700680941343307
+      ],
+      [
+        0.2473006546497345,
+        0.20584462583065033,
+        0.29279473423957825,
+        0.1915852576494217,
+        0.062474701553583145
+      ],
+      [
+        0.27143141627311707,
+        0.2037850022315979,
+        0.2716613709926605,
+        0.1851559281349182,
+        0.06796621531248093
+      ],
+      [
+        0.3412555158138275,
+        0.13148996233940125,
+        0.3178485631942749,
+        0.1461709439754486,
+        0.06323497742414474
+      ],
+      [
+        0.39533475041389465,
+        0.18034133315086365,
+        0.17313410341739655,
+        0.1635131984949112,
+        0.08767669647932053
+      ],
+      [
+        0.38255560398101807,
+        0.1863669753074646,
+        0.18355464935302734,
+        0.1640741378068924,
+        0.08344868570566177
+      ],
+      [
+        0.37028390169143677,
+        0.1659768521785736,
+        0.23855988681316376,
+        0.15295785665512085,
+        0.07222143560647964
+      ],
+      [
+        0.38509678840637207,
+        0.18185654282569885,
+        0.19268423318862915,
+        0.16173453629016876,
+        0.07862790673971176
+      ],
+      [
+        0.3618648648262024,
+        0.15085546672344208,
+        0.24497893452644348,
+        0.15896329283714294,
+        0.08333748579025269
+      ],
+      [
+        0.26487112045288086,
+        0.18954846262931824,
+        0.2835826277732849,
+        0.19419528543949127,
+        0.06780250370502472
+      ]
+    ],
+    "result_interpreted": [
+      [
+        0.27070319652557373,
+        0.2054344266653061,
+        0.2781171500682831,
+        0.1882707178592682,
+        0.05747444927692413
+      ],
+      [
+        0.3556850850582123,
+        0.16648127138614655,
+        0.23294652998447418,
+        0.16016854345798492,
+        0.08471851795911789
+      ],
+      [
+        0.271921306848526,
+        0.19652551412582397,
+        0.2850852310657501,
+        0.18397781252861023,
+        0.0624900758266449
+      ],
+      [
+        0.24413008987903595,
+        0.18902476131916046,
+        0.3113698959350586,
+        0.19196230173110962,
+        0.06351286917924881
+      ],
+      [
+        0.4020133912563324,
+        0.17260263860225677,
+        0.18240348994731903,
+        0.15220656991004944,
+        0.09077391028404236
+      ],
+      [
+        0.34459415078163147,
+        0.1569548100233078,
+        0.22736740112304688,
+        0.1840725988149643,
+        0.0870109498500824
+      ],
+      [
+        0.40076860785484314,
+        0.18991072475910187,
+        0.1784757673740387,
+        0.153838112950325,
+        0.07700680941343307
+      ],
+      [
+        0.2473006546497345,
+        0.20584462583065033,
+        0.29279473423957825,
+        0.1915852576494217,
+        0.062474701553583145
+      ],
+      [
+        0.27143141627311707,
+        0.2037850022315979,
+        0.2716613709926605,
+        0.1851559281349182,
+        0.06796621531248093
+      ],
+      [
+        0.3412555158138275,
+        0.13148996233940125,
+        0.3178485631942749,
+        0.1461709439754486,
+        0.06323497742414474
+      ],
+      [
+        0.39533475041389465,
+        0.18034133315086365,
+        0.17313410341739655,
+        0.1635131984949112,
+        0.08767669647932053
+      ],
+      [
+        0.38255560398101807,
+        0.1863669753074646,
+        0.18355464935302734,
+        0.1640741378068924,
+        0.08344868570566177
+      ],
+      [
+        0.36539584398269653,
+        0.16491496562957764,
+        0.24008949100971222,
+        0.1557091921567917,
+        0.0738905593752861
+      ],
+      [
+        0.3866553008556366,
+        0.1813136637210846,
+        0.18871411681175232,
+        0.16440828144550323,
+        0.07890865206718445
+      ],
+      [
+        0.32963240146636963,
+        0.07612749934196472,
+        0.41806209087371826,
+        0.09982636570930481,
+        0.0763515830039978
+      ],
+      [
+        0.2690112888813019,
+        0.18475213646888733,
+        0.2810435891151428,
+        0.19573169946670532,
+        0.06946133822202682
+      ]
+    ],
+    "causal": [
+      [
+        0.14981132745742798,
+        0.2246914952993393,
+        0.37617188692092896,
+        0.2013353407382965,
+        0.04798991605639458
+      ],
+      [
+        0.4909966289997101,
+        0.12854571640491486,
+        0.2526533007621765,
+        0.061012085527181625,
+        0.06679224967956543
+      ],
+      [
+        0.1488182097673416,
+        0.22224490344524384,
+        0.3816812038421631,
+        0.19700586795806885,
+        0.050249841064214706
+      ],
+      [
+        0.12135801464319229,
+        0.2234957218170166,
+        0.3917372524738312,
+        0.2120782881975174,
+        0.05133068189024925
+      ],
+      [
+        0.4935069680213928,
+        0.17094162106513977,
+        0.10153350979089737,
+        0.13727764785289764,
+        0.09674028307199478
+      ],
+      [
+        0.46563801169395447,
+        0.1497485488653183,
+        0.13347725570201874,
+        0.15226523578166962,
+        0.09887094795703888
+      ],
+      [
+        0.49382609128952026,
+        0.17843252420425415,
+        0.09615913033485413,
+        0.14357952773571014,
+        0.0880027487874031
+      ],
+      [
+        0.12777577340602875,
+        0.23068419098854065,
+        0.3890266716480255,
+        0.2027372270822525,
+        0.049776218831539154
+      ],
+      [
+        0.14686481654644012,
+        0.23207460343837738,
+        0.3627936840057373,
+        0.20330975949764252,
+        0.05495719984173775
+      ],
+      [
+        0.43393683433532715,
+        0.04154765605926514,
+        0.37777602672576904,
+        0.09334076941013336,
+        0.0533987395465374
+      ],
+      [
+        0.48298323154449463,
+        0.17694029211997986,
+        0.10266999900341034,
+        0.14312155544757843,
+        0.09428485482931137
+      ],
+      [
+        0.4750381112098694,
+        0.17897608876228333,
+        0.1048664078116417,
+        0.14816060662269592,
+        0.09295877814292908
+      ],
+      [
+        0.5096948742866516,
+        0.1175265684723854,
+        0.2571907341480255,
+        0.053344979882240295,
+        0.062242887914180756
+      ],
+      [
+        0.49701204895973206,
+        0.17844530940055847,
+        0.0945749431848526,
+        0.14547181129455566,
+        0.08449586480855942
+      ],
+      [
+        0.22382701933383942,
+        0.07256736606359482,
+        0.5964076519012451,
+        0.06888162344694138,
+        0.03831624612212181
+      ],
+      [
+        0.15074394643306732,
+        0.2112765908241272,
+        0.3902147710323334,
+        0.19135986268520355,
+        0.056404802948236465
+      ]
+    ],
+    "causal_shuffled": [
+      [
+        0.5237562656402588,
+        0.13908445835113525,
+        0.22307176887989044,
+        0.06364872306585312,
+        0.050438813865184784
+      ],
+      [
+        0.28994593024253845,
+        0.12953659892082214,
+        0.21054400503635406,
+        0.29691410064697266,
+        0.07305923849344254
+      ],
+      [
+        0.4939354658126831,
+        0.14299415051937103,
+        0.2428889125585556,
+        0.06720088422298431,
+        0.05298059806227684
+      ],
+      [
+        0.44071003794670105,
+        0.14534571766853333,
+        0.27221670746803284,
+        0.0810151994228363,
+        0.060712311416864395
+      ],
+      [
+        0.2617730498313904,
+        0.07839624583721161,
+        0.5382463335990906,
+        0.08228810131549835,
+        0.03929631784558296
+      ],
+      [
+        0.20173649489879608,
+        0.056805986911058426,
+        0.6513513326644897,
+        0.056540075689554214,
+        0.033566106110811234
+      ],
+      [
+        0.25283175706863403,
+        0.07919822633266449,
+        0.5607434511184692,
+        0.07252807170152664,
+        0.03469853848218918
+      ],
+      [
+        0.47488462924957275,
+        0.15144014358520508,
+        0.2437480390071869,
+        0.0707550048828125,
+        0.05917217582464218
+      ],
+      [
+        0.5124677419662476,
+        0.14277860522270203,
+        0.22533847391605377,
+        0.0630742609500885,
+        0.05634089186787605
+      ],
+      [
+        0.3555791974067688,
+        0.3809478282928467,
+        0.14606919884681702,
+        0.07772472500801086,
+        0.03967905417084694
+      ],
+      [
+        0.2514900863170624,
+        0.08369778841733932,
+        0.5338189005851746,
+        0.08902788907289505,
+        0.04196525737643242
+      ],
+      [
+        0.2527833878993988,
+        0.08321869373321533,
+        0.5381209850311279,
+        0.08070064336061478,
+        0.04517640545964241
+      ],
+      [
+        0.29785799980163574,
+        0.13327185809612274,
+        0.19809404015541077,
+        0.3056056499481201,
+        0.06517042219638824
+      ],
+      [
+        0.251986026763916,
+        0.07570480555295944,
+        0.5607630014419556,
+        0.07911854982376099,
+        0.03242766484618187
+      ],
+      [
+        0.4854843318462372,
+        0.16849403083324432,
+        0.10938319563865662,
+        0.14205734431743622,
+        0.09458114951848984
+      ],
+      [
+        0.5340056419372559,
+        0.12965203821659088,
+        0.22068819403648376,
+        0.060563039034605026,
+        0.055091023445129395
+      ]
+    ],
+    "binary": [
+      [
+        0.3293381333351135,
+        0.21465785801410675,
+        0.27419570088386536,
+        0.13146471977233887,
+        0.050343580543994904
+      ],
+      [
+        0.39524227380752563,
+        0.16061024367809296,
+        0.23666583001613617,
+        0.13090187311172485,
+        0.07657986879348755
+      ],
+      [
+        0.3119206428527832,
+        0.20609737932682037,
+        0.29407382011413574,
+        0.13573135435581207,
+        0.052176810801029205
+      ],
+      [
+        0.27941015362739563,
+        0.20804433524608612,
+        0.29761216044425964,
+        0.1557167023420334,
+        0.05921657383441925
+      ],
+      [
+        0.43889325857162476,
+        0.173964723944664,
+        0.17433509230613708,
+        0.12722092866897583,
+        0.08558592945337296
+      ],
+      [
+        0.3944593071937561,
+        0.15487074851989746,
+        0.22622661292552948,
+        0.14507168531417847,
+        0.07937167584896088
+      ],
+      [
+        0.4269905388355255,
+        0.17937029898166656,
+        0.18459348380565643,
+        0.13339103758335114,
+        0.07565463334321976
+      ],
+      [
+        0.28338345885276794,
+        0.22907941043376923,
+        0.28129294514656067,
+        0.15257418155670166,
+        0.05367003008723259
+      ],
+      [
+        0.3223910629749298,
+        0.21040940284729004,
+        0.2721332013607025,
+        0.1375945806503296,
+        0.0574716255068779
+      ],
+      [
+        0.3817542791366577,
+        0.13980001211166382,
+        0.2889227569103241,
+        0.13507665693759918,
+        0.05444635823369026
+      ],
+      [
+        0.4364536702632904,
+        0.17239759862422943,
+        0.17310866713523865,
+        0.13262149691581726,
+        0.08541856706142426
+      ],
+      [
+        0.42274585366249084,
+        0.1729183942079544,
+        0.18893784284591675,
+        0.134812131524086,
+        0.08058587461709976
+      ],
+      [
+        0.41039106249809265,
+        0.1560707986354828,
+        0.23859405517578125,
+        0.12555792927742004,
+        0.06938623636960983
+      ],
+      [
+        0.4338974356651306,
+        0.17295397818088531,
+        0.18328621983528137,
+        0.1321922391653061,
+        0.07767016440629959
+      ],
+      [
+        0.4418741762638092,
+        0.1698722541332245,
+        0.184230774641037,
+        0.12497318536043167,
+        0.07904964685440063
+      ],
+      [
+        0.2896430790424347,
+        0.18707183003425598,
+        0.3191182613372803,
+        0.14612331986427307,
+        0.05804352089762688
+      ]
+    ],
+    "shuffled": [
+      [
+        0.2784091532230377,
+        0.19710825383663177,
+        0.28087228536605835,
+        0.18363751471042633,
+        0.059972841292619705
+      ],
+      [
+        0.35575002431869507,
+        0.16818998754024506,
+        0.2338491827249527,
+        0.16134370863437653,
+        0.08086716383695602
+      ],
+      [
+        0.26737040281295776,
+        0.2007889300584793,
+        0.2831156253814697,
+        0.19015498459339142,
+        0.05857003480195999
+      ],
+      [
+        0.24063143134117126,
+        0.2023095041513443,
+        0.29517439007759094,
+        0.19935275614261627,
+        0.06253189593553543
+      ],
+      [
+        0.3964671194553375,
+        0.18417750298976898,
+        0.16933570802211761,
+        0.16006197035312653,
+        0.08995769172906876
+      ],
+      [
+        0.35023510456085205,
+        0.1613214761018753,
+        0.21424762904644012,
+        0.18278686702251434,
+        0.09140891581773758
+      ],
+      [
+        0.3910195231437683,
+        0.19240517914295197,
+        0.17411458492279053,
+        0.15640519559383392,
+        0.08605547249317169
+      ],
+      [
+        0.24988460540771484,
+        0.22787301242351532,
+        0.27152979373931885,
+        0.19297324120998383,
+        0.057739414274692535
+      ],
+      [
+        0.2753881514072418,
+        0.19817465543746948,
+        0.2599725127220154,
+        0.19465211033821106,
+        0.07181257754564285
+      ],
+      [
+        0.38212621212005615,
+        0.14383815228939056,
+        0.27919381856918335,
+        0.13475669920444489,
+        0.06008511781692505
+      ],
+      [
+        0.3988800346851349,
+        0.18726572394371033,
+        0.16895830631256104,
+        0.161195307970047,
+        0.0837007462978363
+      ],
+      [
+        0.3857496678829193,
+        0.16909532248973846,
+        0.19635088741779327,
+        0.1661413013935089,
+        0.08266283571720123
+      ],
+      [
+        0.369144082069397,
+        0.16538327932357788,
+        0.2306130826473236,
+        0.15516924858093262,
+        0.07969045639038086
+      ],
+      [
+        0.3895462453365326,
+        0.19185031950473785,
+        0.17876550555229187,
+        0.16333884000778198,
+        0.07649917900562286
+      ],
+      [
+        0.3970385789871216,
+        0.17248433828353882,
+        0.1969100534915924,
+        0.15044008195400238,
+        0.08312703669071198
+      ],
+      [
+        0.260716050863266,
+        0.17992880940437317,
+        0.30908578634262085,
+        0.18609698116779327,
+        0.06417236477136612
+      ]
+    ],
+    "hard_shuffled": [
+      [
+        0.27813470363616943,
+        0.19766765832901,
+        0.28919172286987305,
+        0.17903314530849457,
+        0.05597272887825966
+      ],
+      [
+        0.3513833284378052,
+        0.16314339637756348,
+        0.24150383472442627,
+        0.15841864049434662,
+        0.08555080741643906
+      ],
+      [
+        0.26233163475990295,
+        0.2104920595884323,
+        0.28616464138031006,
+        0.18539966642856598,
+        0.055611904710531235
+      ],
+      [
+        0.24063143134117126,
+        0.2023095041513443,
+        0.29517439007759094,
+        0.19935275614261627,
+        0.06253189593553543
+      ],
+      [
+        0.4052448272705078,
+        0.1718393713235855,
+        0.1798269897699356,
+        0.1502951979637146,
+        0.09279360622167587
+      ],
+      [
+        0.34757837653160095,
+        0.165694460272789,
+        0.21509921550750732,
+        0.1909256875514984,
+        0.08070222288370132
+      ],
+      [
+        0.3879616856575012,
+        0.1899152249097824,
+        0.17716501653194427,
+        0.1574779897928238,
+        0.08748016506433487
+      ],
+      [
+        0.24592627584934235,
+        0.21447983384132385,
+        0.27330493927001953,
+        0.20000948011875153,
+        0.06627947092056274
+      ],
+      [
+        0.2804821729660034,
+        0.19259855151176453,
+        0.27973365783691406,
+        0.18241439759731293,
+        0.06477123498916626
+      ],
+      [
+        0.33918288350105286,
+        0.13928084075450897,
+        0.29833322763442993,
+        0.15377689898014069,
+        0.06942606717348099
+      ],
+      [
+        0.40020862221717834,
+        0.1864347606897354,
+        0.16590487957000732,
+        0.1585710495710373,
+        0.08888059854507446
+      ],
+      [
+        0.34231436252593994,
+        0.1595773547887802,
+        0.23632726073265076,
+        0.17973171174526215,
+        0.08204927295446396
+      ],
+      [
+        0.381858766078949,
+        0.16621163487434387,
+        0.22607561945915222,
+        0.14639587700366974,
+        0.07945814728736877
+      ],
+      [
+        0.38241249322891235,
+        0.18863354623317719,
+        0.18103346228599548,
+        0.16269882023334503,
+        0.08522170782089233
+      ],
+      [
+        0.39685648679733276,
+        0.18328867852687836,
+        0.18388885259628296,
+        0.151277557015419,
+        0.08468843251466751
+      ],
+      [
+        0.25592225790023804,
+        0.18703648447990417,
+        0.2905438244342804,
+        0.19835259020328522,
+        0.06814482063055038
+      ]
+    ],
+    "neutral": [
+      [
+        0.34707409143447876,
+        0.2043505758047104,
+        0.27284279465675354,
+        0.12182167172431946,
+        0.053910695016384125
+      ],
+      [
+        0.3878961205482483,
+        0.16206195950508118,
+        0.23757518827915192,
+        0.13328030705451965,
+        0.07918648421764374
+      ],
+      [
+        0.3396293520927429,
+        0.19358806312084198,
+        0.283027708530426,
+        0.12604516744613647,
+        0.05770966038107872
+      ],
+      [
+        0.2978452742099762,
+        0.19811466336250305,
+        0.29098787903785706,
+        0.14841045439243317,
+        0.06464174389839172
+      ],
+      [
+        0.4307385981082916,
+        0.17128793895244598,
+        0.1903187483549118,
+        0.12181723117828369,
+        0.08583755046129227
+      ],
+      [
+        0.39779332280158997,
+        0.1464575231075287,
+        0.2453235387802124,
+        0.13330431282520294,
+        0.07712119072675705
+      ],
+      [
+        0.4212755560874939,
+        0.1739930808544159,
+        0.20235279202461243,
+        0.12636785209178925,
+        0.0760107934474945
+      ],
+      [
+        0.30254194140434265,
+        0.21909183263778687,
+        0.2738535404205322,
+        0.14365707337856293,
+        0.060855504125356674
+      ],
+      [
+        0.34444838762283325,
+        0.1994795948266983,
+        0.26913097500801086,
+        0.12442584335803986,
+        0.06251513957977295
+      ],
+      [
+        0.368648499250412,
+        0.1576262265443802,
+        0.27743420004844666,
+        0.13705909252166748,
+        0.059231948107481
+      ],
+      [
+        0.4317804276943207,
+        0.16771163046360016,
+        0.18578366935253143,
+        0.12473736703395844,
+        0.08998695760965347
+      ],
+      [
+        0.4119998812675476,
+        0.16837380826473236,
+        0.20822860300540924,
+        0.1262994408607483,
+        0.08509819954633713
+      ],
+      [
+        0.4019310176372528,
+        0.15708352625370026,
+        0.23935116827487946,
+        0.12684090435504913,
+        0.07479339838027954
+      ],
+      [
+        0.42895203828811646,
+        0.16719910502433777,
+        0.19877323508262634,
+        0.12529705464839935,
+        0.0797785148024559
+      ],
+      [
+        0.43431034684181213,
+        0.16238683462142944,
+        0.20331385731697083,
+        0.11788785457611084,
+        0.08210112154483795
+      ],
+      [
+        0.30462127923965454,
+        0.17819072306156158,
+        0.3162030577659607,
+        0.13852040469646454,
+        0.06246451660990715
+      ]
+    ],
+    "no_feedback": [
+      [
+        0.43385666608810425,
+        0.11050126701593399,
+        0.28420472145080566,
+        0.1153629794716835,
+        0.0560743473470211
+      ],
+      [
+        0.4104037880897522,
+        0.11768428981304169,
+        0.28459739685058594,
+        0.11391893774271011,
+        0.07339561730623245
+      ],
+      [
+        0.41973620653152466,
+        0.11368074268102646,
+        0.2902529537677765,
+        0.11707411706447601,
+        0.059256087988615036
+      ],
+      [
+        0.36041060090065,
+        0.10922933369874954,
+        0.3219270706176758,
+        0.13759349286556244,
+        0.07083949446678162
+      ],
+      [
+        0.42536675930023193,
+        0.1115368902683258,
+        0.2716636061668396,
+        0.11877276003360748,
+        0.07266002148389816
+      ],
+      [
+        0.3642088770866394,
+        0.0947955921292305,
+        0.3323194086551666,
+        0.133925661444664,
+        0.07475043088197708
+      ],
+      [
+        0.3651125431060791,
+        0.11282001435756683,
+        0.3178718090057373,
+        0.13614170253276825,
+        0.06805393844842911
+      ],
+      [
+        0.3524894416332245,
+        0.11348690837621689,
+        0.32540369033813477,
+        0.13899721205234528,
+        0.06962275505065918
+      ],
+      [
+        0.4201407730579376,
+        0.11636972427368164,
+        0.2736652195453644,
+        0.11946452409029007,
+        0.07035962492227554
+      ],
+      [
+        0.3716745674610138,
+        0.11110083013772964,
+        0.3038661479949951,
+        0.14388954639434814,
+        0.06946904957294464
+      ],
+      [
+        0.4123982787132263,
+        0.11252835392951965,
+        0.27349045872688293,
+        0.12403762340545654,
+        0.07754529267549515
+      ],
+      [
+        0.35233113169670105,
+        0.11228771507740021,
+        0.33842986822128296,
+        0.13154156506061554,
+        0.0654098317027092
+      ],
+      [
+        0.41701939702033997,
+        0.11164993792772293,
+        0.29737618565559387,
+        0.10868935286998749,
+        0.06526509672403336
+      ],
+      [
+        0.3700394034385681,
+        0.11255102604627609,
+        0.3145543336868286,
+        0.13716694712638855,
+        0.06568825989961624
+      ],
+      [
+        0.4236646294593811,
+        0.1011199951171875,
+        0.30619025230407715,
+        0.10499463975429535,
+        0.06403044611215591
+      ],
+      [
+        0.386018842458725,
+        0.09581171721220016,
+        0.3206465244293213,
+        0.12830737233161926,
+        0.0692155733704567
+      ]
+    ],
+    "directional": [
+      [
+        0.3177896738052368,
+        0.27253633737564087,
+        0.18907660245895386,
+        0.1821296215057373,
+        0.038467783480882645
+      ],
+      [
+        0.26309430599212646,
+        0.10372405499219894,
+        0.494203120470047,
+        0.10547468066215515,
+        0.03350378945469856
+      ],
+      [
+        0.3128434717655182,
+        0.26016098260879517,
+        0.2043144851922989,
+        0.1851578801870346,
+        0.037523090839385986
+      ],
+      [
+        0.33683356642723083,
+        0.202887162566185,
+        0.2985534965991974,
+        0.1278417557477951,
+        0.033884067088365555
+      ],
+      [
+        0.4142034649848938,
+        0.2392571121454239,
+        0.1278378963470459,
+        0.1528887301683426,
+        0.0658128410577774
+      ],
+      [
+        0.2513216435909271,
+        0.18064559996128082,
+        0.2160334289073944,
+        0.30468904972076416,
+        0.04731028899550438
+      ],
+      [
+        0.5643332004547119,
+        0.14782653748989105,
+        0.13823461532592773,
+        0.0958089530467987,
+        0.05379676818847656
+      ],
+      [
+        0.36099064350128174,
+        0.2102782130241394,
+        0.27969515323638916,
+        0.11491437256336212,
+        0.03412161394953728
+      ],
+      [
+        0.2938227951526642,
+        0.2729259729385376,
+        0.20078904926776886,
+        0.19076430797576904,
+        0.041697822511196136
+      ],
+      [
+        0.2552911341190338,
+        0.1415126472711563,
+        0.3478252589702606,
+        0.22061266005039215,
+        0.0347583033144474
+      ],
+      [
+        0.40195897221565247,
+        0.2477044314146042,
+        0.12244846671819687,
+        0.16575874388217926,
+        0.06212930381298065
+      ],
+      [
+        0.5844219326972961,
+        0.14572100341320038,
+        0.12698380649089813,
+        0.08759580552577972,
+        0.05527729168534279
+      ],
+      [
+        0.2813883125782013,
+        0.10603024065494537,
+        0.4758930206298828,
+        0.10379812121391296,
+        0.03289027139544487
+      ],
+      [
+        0.5878777503967285,
+        0.13474731147289276,
+        0.1311204880475998,
+        0.09061513841152191,
+        0.055639274418354034
+      ],
+      [
+        0.30827492475509644,
+        0.13334544003009796,
+        0.2879731357097626,
+        0.21901868283748627,
+        0.05138787627220154
+      ],
+      [
+        0.200238436460495,
+        0.19333474338054657,
+        0.2730599641799927,
+        0.2986396253108978,
+        0.03472720459103584
+      ]
+    ],
+    "wrong_directional": [
+      [
+        0.3969975709915161,
+        0.2057228684425354,
+        0.24504631757736206,
+        0.11716369539499283,
+        0.035069454461336136
+      ],
+      [
+        0.2904588580131531,
+        0.17725582420825958,
+        0.28735706210136414,
+        0.19364459812641144,
+        0.05128360912203789
+      ],
+      [
+        0.39043155312538147,
+        0.18653208017349243,
+        0.2712271809577942,
+        0.11793098598718643,
+        0.03387826681137085
+      ],
+      [
+        0.274127334356308,
+        0.2611798048019409,
+        0.2306412011384964,
+        0.19677655398845673,
+        0.037275075912475586
+      ],
+      [
+        0.595657229423523,
+        0.13361114263534546,
+        0.12630832195281982,
+        0.08633776754140854,
+        0.05808562412858009
+      ],
+      [
+        0.31258583068847656,
+        0.11567100137472153,
+        0.3225157856941223,
+        0.1948619782924652,
+        0.05436540022492409
+      ],
+      [
+        0.39777615666389465,
+        0.27045902609825134,
+        0.1243809312582016,
+        0.15257446467876434,
+        0.0548093281686306
+      ],
+      [
+        0.2891388237476349,
+        0.2766458988189697,
+        0.21647898852825165,
+        0.18005366623401642,
+        0.0376826710999012
+      ],
+      [
+        0.3734806180000305,
+        0.20184847712516785,
+        0.2673501968383789,
+        0.11924415081739426,
+        0.03807646781206131
+      ],
+      [
+        0.19880764186382294,
+        0.07612776756286621,
+        0.6148166060447693,
+        0.08942335098981857,
+        0.020824560895562172
+      ],
+      [
+        0.5926629900932312,
+        0.1420501321554184,
+        0.11283911019563675,
+        0.09317438304424286,
+        0.05927326902747154
+      ],
+      [
+        0.3972722887992859,
+        0.2644663155078888,
+        0.12537045776844025,
+        0.15463154017925262,
+        0.05825943127274513
+      ],
+      [
+        0.3124600946903229,
+        0.1712656170129776,
+        0.28524091839790344,
+        0.1819944530725479,
+        0.0490388460457325
+      ],
+      [
+        0.40769270062446594,
+        0.25351080298423767,
+        0.12772417068481445,
+        0.15287981927394867,
+        0.05819243937730789
+      ],
+      [
+        0.24316474795341492,
+        0.17160576581954956,
+        0.22701919078826904,
+        0.30831560492515564,
+        0.049894608557224274
+      ],
+      [
+        0.12114967405796051,
+        0.1136234849691391,
+        0.5990407466888428,
+        0.14352647960186005,
+        0.02265968918800354
+      ]
+    ],
+    "directional_residual": [
+      [
+        0.5727028846740723,
+        0.17621012032032013,
+        0.1677119880914688,
+        0.07780060917139053,
+        0.005574353039264679
+      ],
+      [
+        0.27317550778388977,
+        0.09408623725175858,
+        0.5526871085166931,
+        0.07299307733774185,
+        0.007058045826852322
+      ],
+      [
+        0.5401211380958557,
+        0.18847505748271942,
+        0.18210402131080627,
+        0.08526484668254852,
+        0.004034950863569975
+      ],
+      [
+        0.54377281665802,
+        0.12435593456029892,
+        0.2628926634788513,
+        0.06222941726446152,
+        0.006749127525836229
+      ],
+      [
+        0.4340411424636841,
+        0.21995337307453156,
+        0.22404657304286957,
+        0.10839124023914337,
+        0.013567579910159111
+      ],
+      [
+        0.2398516684770584,
+        0.15658818185329437,
+        0.3677200973033905,
+        0.22636090219020844,
+        0.009479183703660965
+      ],
+      [
+        0.5038300156593323,
+        0.12628911435604095,
+        0.28412720561027527,
+        0.07453353703022003,
+        0.01122017577290535
+      ],
+      [
+        0.5486872792243958,
+        0.1309950351715088,
+        0.26050975918769836,
+        0.054692745208740234,
+        0.005115211475640535
+      ],
+      [
+        0.5311487913131714,
+        0.20097242295742035,
+        0.17153044044971466,
+        0.09010924398899078,
+        0.006239145994186401
+      ],
+      [
+        0.26131364703178406,
+        0.15410055220127106,
+        0.34183481335639954,
+        0.2315296083688736,
+        0.01122148148715496
+      ],
+      [
+        0.42456910014152527,
+        0.21020576357841492,
+        0.23209281265735626,
+        0.11824966222047806,
+        0.014882657676935196
+      ],
+      [
+        0.5099085569381714,
+        0.14241528511047363,
+        0.27029332518577576,
+        0.06843359023332596,
+        0.008949232287704945
+      ],
+      [
+        0.29329556226730347,
+        0.09519679099321365,
+        0.5332964062690735,
+        0.07083944231271744,
+        0.007371768821030855
+      ],
+      [
+        0.5414607524871826,
+        0.11763051152229309,
+        0.25846025347709656,
+        0.070589579641819,
+        0.011858968064188957
+      ],
+      [
+        0.3236715495586395,
+        0.12155131250619888,
+        0.43335840106010437,
+        0.11227470636367798,
+        0.009144017472863197
+      ],
+      [
+        0.36355629563331604,
+        0.1327478587627411,
+        0.3245920240879059,
+        0.17272555828094482,
+        0.0063783410005271435
+      ]
+    ],
+    "wrong_directional_residual": [
+      [
+        0.6382523775100708,
+        0.11865990608930588,
+        0.19390523433685303,
+        0.044648878276348114,
+        0.004533581435680389
+      ],
+      [
+        0.3247947692871094,
+        0.1731574833393097,
+        0.3460905849933624,
+        0.14432212710380554,
+        0.011634908616542816
+      ],
+      [
+        0.6078764796257019,
+        0.12186292558908463,
+        0.21800170838832855,
+        0.048973605036735535,
+        0.0032852415461093187
+      ],
+      [
+        0.4868829548358917,
+        0.17612525820732117,
+        0.2234412133693695,
+        0.105382040143013,
+        0.008168473839759827
+      ],
+      [
+        0.5992755889892578,
+        0.11792923510074615,
+        0.2125316858291626,
+        0.05876685678958893,
+        0.011496709659695625
+      ],
+      [
+        0.2704094648361206,
+        0.09088574349880219,
+        0.4976077079772949,
+        0.1312234103679657,
+        0.009873641654849052
+      ],
+      [
+        0.36537420749664307,
+        0.23771995306015015,
+        0.2630271315574646,
+        0.12211759388446808,
+        0.011761121451854706
+      ],
+      [
+        0.48572176694869995,
+        0.19047458469867706,
+        0.222847118973732,
+        0.0947130024433136,
+        0.006243497133255005
+      ],
+      [
+        0.6059499382972717,
+        0.13339978456497192,
+        0.20498384535312653,
+        0.05055304244160652,
+        0.005113360472023487
+      ],
+      [
+        0.2053050398826599,
+        0.08363579213619232,
+        0.6095944046974182,
+        0.09468195587396622,
+        0.006782780401408672
+      ],
+      [
+        0.6012914776802063,
+        0.11578787863254547,
+        0.20543697476387024,
+        0.06384554505348206,
+        0.013638092204928398
+      ],
+      [
+        0.34586524963378906,
+        0.2579037547111511,
+        0.26627784967422485,
+        0.12054160237312317,
+        0.009411490522325039
+      ],
+      [
+        0.34858641028404236,
+        0.1645808219909668,
+        0.3421272039413452,
+        0.13294140994548798,
+        0.01176416128873825
+      ],
+      [
+        0.38313737511634827,
+        0.2258073091506958,
+        0.25688451528549194,
+        0.12151552736759186,
+        0.012655332684516907
+      ],
+      [
+        0.27742063999176025,
+        0.16997504234313965,
+        0.3712185025215149,
+        0.17173868417739868,
+        0.009647209197282791
+      ],
+      [
+        0.20046721398830414,
+        0.07110213488340378,
+        0.6489825248718262,
+        0.07565506547689438,
+        0.0037930512335151434
+      ]
+    ]
+  },
+  "counterfactual": [
+    {
+      "scene_id": "dev_000000",
+      "progress_m": [
+        -1.2897949375201279e-10,
+        -2.7919333511761124e-13,
+        -4.676814491233472e-14,
+        -2.1010970741031088e-14,
+        -8.240630400280224e-14
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000001",
+      "progress_m": [
+        7.843808935703578e-12,
+        2.8343577485046012e-11,
+        0.06087539245430747,
+        2.2291113399575124e-11,
+        5.353606447044967e-12
+      ],
+      "contact": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000002",
+      "progress_m": [
+        -2.9992675010248604e-13,
+        -2.6353919047039653e-13,
+        -3.138878046371474e-13,
+        -2.906008766956347e-13,
+        -3.5946245979801006e-13
+      ],
+      "contact": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000003",
+      "progress_m": [
+        -2.5998064812071675e-11,
+        6.8456906809899465e-12,
+        -1.4203138665180859e-11,
+        -1.1303902258674725e-11,
+        -2.1056628662918797e-11
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000004",
+      "progress_m": [
+        -4.166740286137838e-10,
+        -7.49569850633236e-12,
+        -4.933969899312274e-12,
+        -2.582989377941658e-12,
+        -4.66812699606578e-12
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000005",
+      "progress_m": [
+        -4.038158696317851e-12,
+        -8.148287600207027e-12,
+        -9.403589018575076e-13,
+        0.04841901046197912,
+        -3.7195246882504307e-13
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000006",
+      "progress_m": [
+        2.7103864153055213e-09,
+        5.2946108608509235e-09,
+        6.702531918367782e-09,
+        1.2737188248568287e-09,
+        3.6883214538097064e-09
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000007",
+      "progress_m": [
+        -4.083178239966401e-12,
+        -1.0855205623272468e-13,
+        -1.3399975573591405e-11,
+        -3.301164896996056e-12,
+        -6.489392356812118e-12
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000008",
+      "progress_m": [
+        2.2209460659450286e-09,
+        -4.572453526918707e-13,
+        -8.233136394864005e-13,
+        -6.191713808334498e-13,
+        -1.0829392937949933e-12
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000009",
+      "progress_m": [
+        -9.00682306514966e-11,
+        -8.308391002964655e-09,
+        -5.847070883024941e-10,
+        0.061602789757391904,
+        -7.276880487072646e-10
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000010",
+      "progress_m": [
+        -1.6510381950496367e-10,
+        -4.0518755017870944e-11,
+        -1.8140128288379742e-11,
+        -1.1106615627198835e-11,
+        -2.4732854653208847e-11
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000011",
+      "progress_m": [
+        0.00036829526933698786,
+        1.795919746250263e-09,
+        1.0373844838706958e-09,
+        5.502051314554279e-10,
+        1.600756360797817e-09
+      ],
+      "contact": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000012",
+      "progress_m": [
+        2.158218048720073e-12,
+        1.1243367348257038e-11,
+        0.06110627240213015,
+        2.334438198303701e-12,
+        5.353578691469352e-12
+      ],
+      "contact": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000013",
+      "progress_m": [
+        -1.8222479081231313e-11,
+        4.515554596906668e-12,
+        -4.254838148476381e-11,
+        -9.449691029672636e-12,
+        -2.213276784068796e-11
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000014",
+      "progress_m": [
+        1.0777573278275554e-11,
+        1.1377010444846292e-12,
+        0.061064709400930714,
+        4.360956040727615e-13,
+        1.63621893811694e-12
+      ],
+      "contact": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "scene_id": "dev_000015",
+      "progress_m": [
+        -1.8623214081969763e-10,
+        -6.222800053024002e-14,
+        -2.6145752229922437e-14,
+        0.05658763923528806,
+        -3.5360603334311236e-14
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "teacher_noop_baseline_probs": {
+    "directional_residual": [
+      [
+        0.1733117699623108,
+        0.12303599715232849,
+        0.23066215217113495,
+        0.19441752135753632,
+        0.27857255935668945
+      ],
+      [
+        0.30581068992614746,
+        0.10037913918495178,
+        0.19689226150512695,
+        0.1273602992296219,
+        0.26955750584602356
+      ],
+      [
+        0.15879777073860168,
+        0.10249608010053635,
+        0.2127102017402649,
+        0.16606003046035767,
+        0.3599358797073364
+      ],
+      [
+        0.15885604918003082,
+        0.12680481374263763,
+        0.26014143228530884,
+        0.20113292336463928,
+        0.25306469202041626
+      ],
+      [
+        0.3376394212245941,
+        0.10091587901115417,
+        0.12893164157867432,
+        0.1393493413925171,
+        0.29316383600234985
+      ],
+      [
+        0.30787038803100586,
+        0.08822402358055115,
+        0.15750326216220856,
+        0.14542850852012634,
+        0.3009738624095917
+      ],
+      [
+        0.34166133403778076,
+        0.11032913625240326,
+        0.12920325994491577,
+        0.14620529115200043,
+        0.2726009488105774
+      ],
+      [
+        0.15257927775382996,
+        0.119857057929039,
+        0.2298591583967209,
+        0.19214500486850739,
+        0.3055594265460968
+      ],
+      [
+        0.16208191215991974,
+        0.11020942777395248,
+        0.22340291738510132,
+        0.17637503147125244,
+        0.3279306888580322
+      ],
+      [
+        0.3223021626472473,
+        0.09055974334478378,
+        0.2744441330432892,
+        0.12169700115919113,
+        0.19099703431129456
+      ],
+      [
+        0.3351610600948334,
+        0.11382941901683807,
+        0.12386175990104675,
+        0.14925652742385864,
+        0.2778911590576172
+      ],
+      [
+        0.32302775979042053,
+        0.091907799243927,
+        0.12718512117862701,
+        0.1346888244152069,
+        0.32319045066833496
+      ],
+      [
+        0.322584867477417,
+        0.10026585310697556,
+        0.2139606773853302,
+        0.12840694189071655,
+        0.23478150367736816
+      ],
+      [
+        0.34205833077430725,
+        0.10976950824260712,
+        0.1358640491962433,
+        0.14991381764411926,
+        0.2623943090438843
+      ],
+      [
+        0.31461194157600403,
+        0.08649179339408875,
+        0.1586409956216812,
+        0.1596929281949997,
+        0.2805623412132263
+      ],
+      [
+        0.1741877943277359,
+        0.1143231987953186,
+        0.22099384665489197,
+        0.1817506104707718,
+        0.30874451994895935
+      ]
+    ],
+    "wrong_directional_residual": [
+      [
+        0.1733117699623108,
+        0.12303599715232849,
+        0.23066215217113495,
+        0.19441752135753632,
+        0.27857255935668945
+      ],
+      [
+        0.30581068992614746,
+        0.10037913918495178,
+        0.19689226150512695,
+        0.1273602992296219,
+        0.26955750584602356
+      ],
+      [
+        0.15879777073860168,
+        0.10249608010053635,
+        0.2127102017402649,
+        0.16606003046035767,
+        0.3599358797073364
+      ],
+      [
+        0.15885604918003082,
+        0.12680481374263763,
+        0.26014143228530884,
+        0.20113292336463928,
+        0.25306469202041626
+      ],
+      [
+        0.3376394212245941,
+        0.10091587901115417,
+        0.12893164157867432,
+        0.1393493413925171,
+        0.29316383600234985
+      ],
+      [
+        0.30787038803100586,
+        0.08822402358055115,
+        0.15750326216220856,
+        0.14542850852012634,
+        0.3009738624095917
+      ],
+      [
+        0.34166133403778076,
+        0.11032913625240326,
+        0.12920325994491577,
+        0.14620529115200043,
+        0.2726009488105774
+      ],
+      [
+        0.15257927775382996,
+        0.119857057929039,
+        0.2298591583967209,
+        0.19214500486850739,
+        0.3055594265460968
+      ],
+      [
+        0.16208191215991974,
+        0.11020942777395248,
+        0.22340291738510132,
+        0.17637503147125244,
+        0.3279306888580322
+      ],
+      [
+        0.3223021626472473,
+        0.09055974334478378,
+        0.2744441330432892,
+        0.12169700115919113,
+        0.19099703431129456
+      ],
+      [
+        0.3351610600948334,
+        0.11382941901683807,
+        0.12386175990104675,
+        0.14925652742385864,
+        0.2778911590576172
+      ],
+      [
+        0.32302775979042053,
+        0.091907799243927,
+        0.12718512117862701,
+        0.1346888244152069,
+        0.32319045066833496
+      ],
+      [
+        0.322584867477417,
+        0.10026585310697556,
+        0.2139606773853302,
+        0.12840694189071655,
+        0.23478150367736816
+      ],
+      [
+        0.34205833077430725,
+        0.10976950824260712,
+        0.1358640491962433,
+        0.14991381764411926,
+        0.2623943090438843
+      ],
+      [
+        0.31461194157600403,
+        0.08649179339408875,
+        0.1586409956216812,
+        0.1596929281949997,
+        0.2805623412132263
+      ],
+      [
+        0.1741877943277359,
+        0.1143231987953186,
+        0.22099384665489197,
+        0.1817506104707718,
+        0.30874451994895935
+      ]
+    ]
+  },
+  "donors": {
+    "result": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "result_interpreted": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "causal": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "causal_shuffled": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      2,
+      14
+    ],
+    "binary": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "shuffled": [
+      2,
+      12,
+      0,
+      8,
+      10,
+      11,
+      11,
+      8,
+      0,
+      null,
+      6,
+      4,
+      1,
+      6,
+      13,
+      3
+    ],
+    "hard_shuffled": [
+      3,
+      2,
+      12,
+      8,
+      9,
+      10,
+      11,
+      0,
+      7,
+      2,
+      6,
+      14,
+      8,
+      1,
+      8,
+      1
+    ],
+    "neutral": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "no_feedback": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "directional": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "wrong_directional": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "replay": [
+    {
+      "scene_id": "dev_000000",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000001",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000002",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000003",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000004",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000005",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000006",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000007",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000008",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000009",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000010",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000011",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000012",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000013",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000014",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    },
+    {
+      "scene_id": "dev_000015",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    }
+  ],
+  "rejected": []
+}

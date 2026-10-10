@@ -1,0 +1,229 @@
+{
+  "status": "development_only_single_seed",
+  "groups": {
+    "frozen": {
+      "scenes_requested": 64,
+      "scenes_valid": 64,
+      "invalid_resets": 0,
+      "successes": 8,
+      "success_rate": 0.125,
+      "conservative_success_rate_all_scenes": 0.125,
+      "mean_progress_m": 0.023543307180621566,
+      "safety_failures": 0,
+      "interactions": 737,
+      "seconds": 247.58906333101913,
+      "action_counts": {
+        "A": 636,
+        "C": 101
+      },
+      "exact95_success_interval": [
+        0.055542791179602057,
+        0.23152630596600407
+      ]
+    },
+    "result": {
+      "scenes_requested": 64,
+      "scenes_valid": 64,
+      "invalid_resets": 0,
+      "successes": 8,
+      "success_rate": 0.125,
+      "conservative_success_rate_all_scenes": 0.125,
+      "mean_progress_m": 0.02377384296040507,
+      "safety_failures": 0,
+      "interactions": 737,
+      "seconds": 246.57992003811523,
+      "action_counts": {
+        "A": 637,
+        "C": 100
+      },
+      "exact95_success_interval": [
+        0.055542791179602057,
+        0.23152630596600407
+      ],
+      "train_interactions": 1536,
+      "training_contact_fraction": 0.23177083333333334,
+      "training_motion_fraction": 0.23177083333333334,
+      "feedback_changed_fraction": 0.0,
+      "unmatched_donor_fraction": 0.0,
+      "mean_update_seconds": 47.2439659088462,
+      "mean_rollout_seconds": 118.92760482011363,
+      "mean_teacher_oracle_accuracy": 0.23502604166666666,
+      "mean_teacher_repeat_positive_accuracy": 0.0,
+      "mean_teacher_reject_negative_accuracy": 0.9025435096526532
+    },
+    "causal": {
+      "scenes_requested": 64,
+      "scenes_valid": 64,
+      "invalid_resets": 0,
+      "successes": 6,
+      "success_rate": 0.09375,
+      "conservative_success_rate_all_scenes": 0.09375,
+      "mean_progress_m": 0.0214748400821324,
+      "safety_failures": 0,
+      "interactions": 744,
+      "seconds": 248.40406999806874,
+      "action_counts": {
+        "A": 624,
+        "C": 120
+      },
+      "exact95_success_interval": [
+        0.035187332870818315,
+        0.1929691044483439
+      ],
+      "train_interactions": 1536,
+      "training_contact_fraction": 0.23111979166666666,
+      "training_motion_fraction": 0.23111979166666666,
+      "feedback_changed_fraction": 1.0,
+      "unmatched_donor_fraction": 0.0,
+      "mean_update_seconds": 48.05072838490984,
+      "mean_rollout_seconds": 118.82906660282363,
+      "mean_teacher_oracle_accuracy": 0.4485677083333333,
+      "mean_teacher_repeat_positive_accuracy": 0.8647056555074216,
+      "mean_teacher_reject_negative_accuracy": 1.0
+    },
+    "causal_shuffled": {
+      "scenes_requested": 64,
+      "scenes_valid": 64,
+      "invalid_resets": 0,
+      "successes": 6,
+      "success_rate": 0.09375,
+      "conservative_success_rate_all_scenes": 0.09375,
+      "mean_progress_m": 0.02144636123383297,
+      "safety_failures": 0,
+      "interactions": 744,
+      "seconds": 249.0414737870451,
+      "action_counts": {
+        "A": 627,
+        "C": 117
+      },
+      "exact95_success_interval": [
+        0.035187332870818315,
+        0.1929691044483439
+      ],
+      "train_interactions": 1536,
+      "training_contact_fraction": 0.23177083333333334,
+      "training_motion_fraction": 0.23177083333333334,
+      "feedback_changed_fraction": 1.0,
+      "unmatched_donor_fraction": 0.0,
+      "mean_update_seconds": 48.09388396240926,
+      "mean_rollout_seconds": 119.0443010746967,
+      "mean_teacher_oracle_accuracy": 0.04296875,
+      "mean_teacher_repeat_positive_accuracy": 0.0,
+      "mean_teacher_reject_negative_accuracy": 0.19279658026944335
+    },
+    "binary": {
+      "scenes_requested": 64,
+      "scenes_valid": 64,
+      "invalid_resets": 0,
+      "successes": 9,
+      "success_rate": 0.140625,
+      "conservative_success_rate_all_scenes": 0.140625,
+      "mean_progress_m": 0.025101539623156505,
+      "safety_failures": 0,
+      "interactions": 731,
+      "seconds": 244.74344032304361,
+      "action_counts": {
+        "A": 666,
+        "C": 65
+      },
+      "exact95_success_interval": [
+        0.06637407166842633,
+        0.2502368356240119
+      ],
+      "train_interactions": 1536,
+      "training_contact_fraction": 0.23307291666666666,
+      "training_motion_fraction": 0.23307291666666666,
+      "feedback_changed_fraction": 1.0,
+      "unmatched_donor_fraction": 0.0,
+      "mean_update_seconds": 45.998339578780964,
+      "mean_rollout_seconds": 118.97924759980135,
+      "mean_teacher_oracle_accuracy": 0.19075520833333334,
+      "mean_teacher_repeat_positive_accuracy": 0.05961987227696047,
+      "mean_teacher_reject_negative_accuracy": 0.7338096931877209
+    }
+  },
+  "paired_comparisons": {
+    "result_minus_frozen": {
+      "paired_scenes": 64,
+      "bootstrap_degenerate": true,
+      "conservative95_difference_interval": [
+        -0.19858655171832215,
+        0.19858655171832215
+      ],
+      "interval_note": "Bonferroni combination of 97.5% exact binomial marginal intervals; conservative and does not exploit pairing. Scene bootstrap degeneracy is not evidence of zero uncertainty.",
+      "success_difference": 0.0,
+      "paired_bootstrap95_success_difference": [
+        0.0,
+        0.0
+      ],
+      "progress_difference_m": 0.00023053577978350364,
+      "paired_bootstrap95_progress_difference_m": [
+        -0.001074322462846124,
+        0.0017658025107274722
+      ]
+    },
+    "result_minus_causal": {
+      "paired_scenes": 64,
+      "bootstrap_degenerate": false,
+      "conservative95_difference_interval": [
+        -0.15924719103336382,
+        0.2173736355478414
+      ],
+      "interval_note": "Bonferroni combination of 97.5% exact binomial marginal intervals; conservative and does not exploit pairing. Scene bootstrap degeneracy is not evidence of zero uncertainty.",
+      "success_difference": 0.03125,
+      "paired_bootstrap95_success_difference": [
+        0.0,
+        0.078125
+      ],
+      "progress_difference_m": 0.0022990028782726695,
+      "paired_bootstrap95_progress_difference_m": [
+        -1.5139035072799524e-06,
+        0.0052418745568188355
+      ]
+    },
+    "result_minus_causal_shuffled": {
+      "paired_scenes": 64,
+      "bootstrap_degenerate": false,
+      "conservative95_difference_interval": [
+        -0.15924719103336382,
+        0.2173736355478414
+      ],
+      "interval_note": "Bonferroni combination of 97.5% exact binomial marginal intervals; conservative and does not exploit pairing. Scene bootstrap degeneracy is not evidence of zero uncertainty.",
+      "success_difference": 0.03125,
+      "paired_bootstrap95_success_difference": [
+        0.0,
+        0.078125
+      ],
+      "progress_difference_m": 0.0023274817265720965,
+      "paired_bootstrap95_progress_difference_m": [
+        1.750843331781608e-05,
+        0.005231946860870554
+      ]
+    },
+    "result_minus_binary": {
+      "paired_scenes": 64,
+      "bootstrap_degenerate": false,
+      "conservative95_difference_interval": [
+        -0.21761471398361046,
+        0.1884648335150403
+      ],
+      "interval_note": "Bonferroni combination of 97.5% exact binomial marginal intervals; conservative and does not exploit pairing. Scene bootstrap degeneracy is not evidence of zero uncertainty.",
+      "success_difference": -0.015625,
+      "paired_bootstrap95_success_difference": [
+        -0.046875,
+        0.0
+      ],
+      "progress_difference_m": -0.001327696662751436,
+      "paired_bootstrap95_progress_difference_m": [
+        -0.0037860832243031815,
+        9.69555149565093e-05
+      ]
+    }
+  },
+  "limitations": [
+    "No final-test evaluation.",
+    "One training seed; scene bootstrap does not capture training-seed uncertainty.",
+    "All-zero observed successes yield a degenerate bootstrap; use the nonzero exact or conservative intervals, not a false certainty claim.",
+    "Local feedback and success rates are not by themselves proof of the SDPO mechanism."
+  ]
+}

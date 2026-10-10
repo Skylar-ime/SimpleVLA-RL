@@ -1,0 +1,573 @@
+{
+  "updates": [
+    {
+      "loss": 0.01376937809982337,
+      "valid": 64,
+      "executed": 64,
+      "gradient_norm": 0.10458000749349594,
+      "optimizer_steps": 1,
+      "seconds": 11.619530710000618,
+      "mean_teacher_student_total_variation": 0.11088556051254272,
+      "mean_teacher_entropy": 1.4711353778839111,
+      "teacher_argmax_counts": {
+        "0": 57,
+        "1": 0,
+        "2": 7,
+        "3": 0,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.375,
+      "teacher_repeat_positive_accuracy": 0.6666666666666666,
+      "teacher_reject_negative_accuracy": 0.7692307692307693,
+      "update": 1,
+      "group": "sdpo_result",
+      "rollout_seconds": 30.797088042001633,
+      "contact_count": 12,
+      "motion_count": 12,
+      "progress_counts": {
+        "unchanged": 52,
+        "closer": 12
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": 8,
+      "group_progress_witness_count": 12,
+      "groups_with_progress_witness": 6,
+      "solution_context_count": 46,
+      "gpu_peak_allocated_gib": 14.93101453781128
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 8,
+    "scenes_valid": 8,
+    "invalid_resets": 0,
+    "successes": 3,
+    "success_rate": 0.375,
+    "conservative_success_rate_all_scenes": 0.375,
+    "mean_progress_m": 0.00609462576196112,
+    "safety_failures": 0,
+    "interactions": 63,
+    "seconds": 21.62915738099946,
+    "action_counts": {
+      "A": 62,
+      "C": 1
+    }
+  },
+  "total_train_interactions": 64,
+  "elapsed_seconds": 65.74875029400027,
+  "training_episodes": [
+    {
+      "episode_id": "train_g11_000000_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c05",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000000_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000000"
+    },
+    {
+      "episode_id": "train_g11_000001_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000001_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000001"
+    },
+    {
+      "episode_id": "train_g11_000002_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000002_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000002"
+    },
+    {
+      "episode_id": "train_g11_000003_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c04",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000003_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000003"
+    },
+    {
+      "episode_id": "train_g11_000004_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c01",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c06",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000004_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000004"
+    },
+    {
+      "episode_id": "train_g11_000005_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c03",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c05",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c06",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000005_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000005"
+    },
+    {
+      "episode_id": "train_g11_000006_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c02",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c05",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c06",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000006_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000006"
+    },
+    {
+      "episode_id": "train_g11_000007_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c01",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c03",
+      "success": true,
+      "local_progress_witness": true,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    },
+    {
+      "episode_id": "train_g11_000007_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g11_000007"
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

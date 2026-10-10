@@ -1,0 +1,14 @@
+{
+  "version": "v8-feedback-only-sdpo",
+  "question": "Does measured rich result feedback improve SDPO when no same-state successful solution is available?",
+  "scene_profile": "directional_long",
+  "conditions": ["sdpo_result", "sdpo_binary", "sdpo_shuffled", "sdpo_neutral", "sdpo_causal"],
+  "rollout": {"candidates_per_state": 8, "transitions_per_update": 128, "updates": 24, "seed": 11, "one_step": true},
+  "solution": {"criterion": "actual task success", "expected_count": 0, "feedback_only_without_solution": true},
+  "teacher": {"regularization": "ema", "update_rate": 0.05, "stop_gradient": true},
+  "loss": {"name": "JSD", "alpha": 0.5, "optimizer_steps_per_rollout": 1, "grpo_weight": 0, "behavior_cloning_weight": 0},
+  "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+  "teacher_input": ["student_input", "structured_environment_feedback"],
+  "primary_diagnostic": "teacher distribution TV and argmax changes on identical feedback-only rows",
+  "limitations": ["single seed", "local calibrated PandaPush pilot", "five-action support instead of full language vocabulary", "one-token action response"]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12b_molmo2_multiseed/seed_12/sdpo_advantage_shuffled",
+  "backbone": "molmo2",
+  "condition": "sdpo_advantage_shuffled",
+  "seed": 12,
+  "updates": 12,
+  "transitions": 1536,
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 15,
+    "success_rate": 0.234375,
+    "conservative_success_rate_all_scenes": 0.234375,
+    "mean_progress_m": 0.03479130065455956,
+    "safety_failures": 2,
+    "interactions": 665,
+    "seconds": 1465.0138410429936,
+    "action_counts": {
+      "C": 619,
+      "E": 8,
+      "D": 38
+    }
+  },
+  "protocol": "protocol_v12b.json",
+  "protocol_sha256": "8ffc5593bb1c329e1f8f566de83c3ae99d674915f611499813a3d8acc00dec4e",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

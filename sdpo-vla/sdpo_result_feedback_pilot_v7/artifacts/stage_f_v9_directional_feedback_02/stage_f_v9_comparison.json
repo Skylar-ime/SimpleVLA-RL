@@ -1,0 +1,574 @@
+{
+  "conditions": {
+    "sdpo_result": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 11,
+        "success_rate": 0.171875,
+        "conservative_success_rate_all_scenes": 0.171875,
+        "mean_progress_m": 0.026118300155922425,
+        "safety_failures": 0,
+        "interactions": 734,
+        "seconds": 247.3322930610011,
+        "action_counts": {
+          "A": 640,
+          "C": 94
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_binary": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 13,
+        "success_rate": 0.203125,
+        "conservative_success_rate_all_scenes": 0.203125,
+        "mean_progress_m": 0.028294827801401568,
+        "safety_failures": 0,
+        "interactions": 724,
+        "seconds": 243.6652795150003,
+        "action_counts": {
+          "A": 718,
+          "C": 6
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_causal": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 1,
+        "success_rate": 0.015625,
+        "conservative_success_rate_all_scenes": 0.015625,
+        "mean_progress_m": 0.004458232246648805,
+        "safety_failures": 0,
+        "interactions": 763,
+        "seconds": 257.4547123930024,
+        "action_counts": {
+          "A": 502,
+          "C": 261
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_directional": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 7,
+        "success_rate": 0.109375,
+        "conservative_success_rate_all_scenes": 0.109375,
+        "mean_progress_m": 0.01721625306996077,
+        "safety_failures": 0,
+        "interactions": 746,
+        "seconds": 251.6696499910031,
+        "action_counts": {
+          "A": 580,
+          "C": 166
+        }
+      },
+      "updates": 12
+    }
+  },
+  "updates": {
+    "1": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05229377001879089,
+        "teacher_argmax_changed_feedback_rows": 7,
+        "teacher_oracle_accuracy": 0.2421875,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 109,
+          "1": 0,
+          "2": 19,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.12925812255134184,
+        "teacher_argmax_changed_feedback_rows": 27,
+        "teacher_oracle_accuracy": 0.25,
+        "feedback_record_unique_count": 55,
+        "teacher_argmax_counts": {
+          "0": 75,
+          "1": 0,
+          "2": 51,
+          "3": 2,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.12987669267805063,
+        "teacher_argmax_changed_feedback_rows": 38,
+        "teacher_oracle_accuracy": 0.4921875,
+        "feedback_record_unique_count": 55,
+        "teacher_argmax_counts": {
+          "0": 102,
+          "1": 2,
+          "2": 11,
+          "3": 13,
+          "4": 0
+        }
+      }
+    },
+    "2": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05692839739800469,
+        "teacher_argmax_changed_feedback_rows": 21,
+        "teacher_oracle_accuracy": 0.1328125,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 102,
+          "1": 0,
+          "2": 26,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.15528245972520863,
+        "teacher_argmax_changed_feedback_rows": 26,
+        "teacher_oracle_accuracy": 0.3046875,
+        "feedback_record_unique_count": 55,
+        "teacher_argmax_counts": {
+          "0": 63,
+          "1": 0,
+          "2": 63,
+          "3": 2,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.14978419270319848,
+        "teacher_argmax_changed_feedback_rows": 45,
+        "teacher_oracle_accuracy": 0.4921875,
+        "feedback_record_unique_count": 55,
+        "teacher_argmax_counts": {
+          "0": 75,
+          "1": 0,
+          "2": 35,
+          "3": 18,
+          "4": 0
+        }
+      }
+    },
+    "3": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05781001712631695,
+        "teacher_argmax_changed_feedback_rows": 33,
+        "teacher_oracle_accuracy": 0.1484375,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 109,
+          "1": 0,
+          "2": 19,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.1569086045942019,
+        "teacher_argmax_changed_feedback_rows": 34,
+        "teacher_oracle_accuracy": 0.390625,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 50,
+          "1": 0,
+          "2": 72,
+          "3": 6,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.16318615758877555,
+        "teacher_argmax_changed_feedback_rows": 54,
+        "teacher_oracle_accuracy": 0.5859375,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 67,
+          "1": 0,
+          "2": 39,
+          "3": 22,
+          "4": 0
+        }
+      }
+    },
+    "4": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.056122462236310705,
+        "teacher_argmax_changed_feedback_rows": 18,
+        "teacher_oracle_accuracy": 0.2109375,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 107,
+          "1": 0,
+          "2": 21,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.16131032934635836,
+        "teacher_argmax_changed_feedback_rows": 31,
+        "teacher_oracle_accuracy": 0.46875,
+        "feedback_record_unique_count": 57,
+        "teacher_argmax_counts": {
+          "0": 62,
+          "1": 0,
+          "2": 64,
+          "3": 2,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.17531317600190682,
+        "teacher_argmax_changed_feedback_rows": 38,
+        "teacher_oracle_accuracy": 0.5859375,
+        "feedback_record_unique_count": 56,
+        "teacher_argmax_counts": {
+          "0": 75,
+          "1": 0,
+          "2": 47,
+          "3": 6,
+          "4": 0
+        }
+      }
+    },
+    "5": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05865128327815913,
+        "teacher_argmax_changed_feedback_rows": 35,
+        "teacher_oracle_accuracy": 0.203125,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 99,
+          "1": 0,
+          "2": 29,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.15392375398368577,
+        "teacher_argmax_changed_feedback_rows": 30,
+        "teacher_oracle_accuracy": 0.4140625,
+        "feedback_record_unique_count": 61,
+        "teacher_argmax_counts": {
+          "0": 56,
+          "1": 0,
+          "2": 68,
+          "3": 4,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.16404138492247233,
+        "teacher_argmax_changed_feedback_rows": 47,
+        "teacher_oracle_accuracy": 0.578125,
+        "feedback_record_unique_count": 61,
+        "teacher_argmax_counts": {
+          "0": 69,
+          "1": 0,
+          "2": 52,
+          "3": 7,
+          "4": 0
+        }
+      }
+    },
+    "6": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05385199144053412,
+        "teacher_argmax_changed_feedback_rows": 16,
+        "teacher_oracle_accuracy": 0.0546875,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 109,
+          "1": 0,
+          "2": 19,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.1501836033039916,
+        "teacher_argmax_changed_feedback_rows": 28,
+        "teacher_oracle_accuracy": 0.265625,
+        "feedback_record_unique_count": 63,
+        "teacher_argmax_counts": {
+          "0": 67,
+          "1": 0,
+          "2": 47,
+          "3": 14,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.1498050125660022,
+        "teacher_argmax_changed_feedback_rows": 84,
+        "teacher_oracle_accuracy": 0.5,
+        "feedback_record_unique_count": 64,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 0,
+          "2": 62,
+          "3": 37,
+          "4": 0
+        }
+      }
+    },
+    "7": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05914839524507981,
+        "teacher_argmax_changed_feedback_rows": 17,
+        "teacher_oracle_accuracy": 0.1328125,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 105,
+          "1": 0,
+          "2": 23,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.17504770139134868,
+        "teacher_argmax_changed_feedback_rows": 42,
+        "teacher_oracle_accuracy": 0.4375,
+        "feedback_record_unique_count": 61,
+        "teacher_argmax_counts": {
+          "0": 48,
+          "1": 0,
+          "2": 73,
+          "3": 7,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.18212390296180392,
+        "teacher_argmax_changed_feedback_rows": 67,
+        "teacher_oracle_accuracy": 0.6015625,
+        "feedback_record_unique_count": 61,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 0,
+          "2": 83,
+          "3": 13,
+          "4": 0
+        }
+      }
+    },
+    "8": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05806302958144743,
+        "teacher_argmax_changed_feedback_rows": 18,
+        "teacher_oracle_accuracy": 0.1328125,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 102,
+          "1": 0,
+          "2": 26,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.16379800975506675,
+        "teacher_argmax_changed_feedback_rows": 36,
+        "teacher_oracle_accuracy": 0.375,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 70,
+          "1": 0,
+          "2": 56,
+          "3": 2,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.16068656264138914,
+        "teacher_argmax_changed_feedback_rows": 57,
+        "teacher_oracle_accuracy": 0.5390625,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 75,
+          "1": 0,
+          "2": 45,
+          "3": 8,
+          "4": 0
+        }
+      }
+    },
+    "9": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05121463925090887,
+        "teacher_argmax_changed_feedback_rows": 26,
+        "teacher_oracle_accuracy": 0.296875,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 102,
+          "1": 0,
+          "2": 26,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.13840286207157054,
+        "teacher_argmax_changed_feedback_rows": 21,
+        "teacher_oracle_accuracy": 0.3125,
+        "feedback_record_unique_count": 58,
+        "teacher_argmax_counts": {
+          "0": 74,
+          "1": 0,
+          "2": 48,
+          "3": 6,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.13702420140436578,
+        "teacher_argmax_changed_feedback_rows": 55,
+        "teacher_oracle_accuracy": 0.6484375,
+        "feedback_record_unique_count": 56,
+        "teacher_argmax_counts": {
+          "0": 73,
+          "1": 0,
+          "2": 27,
+          "3": 28,
+          "4": 0
+        }
+      }
+    },
+    "10": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05767772473047414,
+        "teacher_argmax_changed_feedback_rows": 39,
+        "teacher_oracle_accuracy": 0.1796875,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 121,
+          "1": 0,
+          "2": 7,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.14899740704641623,
+        "teacher_argmax_changed_feedback_rows": 24,
+        "teacher_oracle_accuracy": 0.3125,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 64,
+          "1": 0,
+          "2": 59,
+          "3": 5,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.13813937703614215,
+        "teacher_argmax_changed_feedback_rows": 48,
+        "teacher_oracle_accuracy": 0.421875,
+        "feedback_record_unique_count": 58,
+        "teacher_argmax_counts": {
+          "0": 84,
+          "1": 0,
+          "2": 34,
+          "3": 10,
+          "4": 0
+        }
+      }
+    },
+    "11": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05874764955672181,
+        "teacher_argmax_changed_feedback_rows": 23,
+        "teacher_oracle_accuracy": 0.1015625,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 108,
+          "1": 0,
+          "2": 20,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.14506196821363745,
+        "teacher_argmax_changed_feedback_rows": 29,
+        "teacher_oracle_accuracy": 0.28125,
+        "feedback_record_unique_count": 64,
+        "teacher_argmax_counts": {
+          "0": 66,
+          "1": 0,
+          "2": 56,
+          "3": 6,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.15202498557937183,
+        "teacher_argmax_changed_feedback_rows": 47,
+        "teacher_oracle_accuracy": 0.4375,
+        "feedback_record_unique_count": 64,
+        "teacher_argmax_counts": {
+          "0": 77,
+          "1": 0,
+          "2": 38,
+          "3": 13,
+          "4": 0
+        }
+      }
+    },
+    "12": {
+      "sdpo_binary": {
+        "teacher_tv_feedback_rows": 0.05816205175214903,
+        "teacher_argmax_changed_feedback_rows": 20,
+        "teacher_oracle_accuracy": 0.203125,
+        "feedback_record_unique_count": 1,
+        "teacher_argmax_counts": {
+          "0": 110,
+          "1": 0,
+          "2": 18,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "sdpo_causal": {
+        "teacher_tv_feedback_rows": 0.1589352874222525,
+        "teacher_argmax_changed_feedback_rows": 35,
+        "teacher_oracle_accuracy": 0.3984375,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 69,
+          "1": 0,
+          "2": 55,
+          "3": 4,
+          "4": 0
+        }
+      },
+      "sdpo_directional": {
+        "teacher_tv_feedback_rows": 0.16099020453654356,
+        "teacher_argmax_changed_feedback_rows": 36,
+        "teacher_oracle_accuracy": 0.53125,
+        "feedback_record_unique_count": 59,
+        "teacher_argmax_counts": {
+          "0": 72,
+          "1": 0,
+          "2": 44,
+          "3": 12,
+          "4": 0
+        }
+      }
+    }
+  }
+}

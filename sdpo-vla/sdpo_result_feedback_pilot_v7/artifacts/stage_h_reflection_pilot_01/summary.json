@@ -1,0 +1,679 @@
+{
+  "updates": [
+    {
+      "loss": 0.08623716840520501,
+      "valid": 27,
+      "executed": 32,
+      "gradient_norm": 0.11675750464200974,
+      "optimizer_steps": 1,
+      "seconds": 5.948200202008593,
+      "mean_teacher_student_total_variation": 0.3505639433860779,
+      "mean_teacher_entropy": 1.139793872833252,
+      "teacher_argmax_counts": {
+        "0": 5,
+        "1": 9,
+        "2": 4,
+        "3": 9,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.4074074074074074,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 1.0,
+      "update": 1,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 11.295611363995704,
+      "contact_count": 5,
+      "motion_count": 5,
+      "progress_counts": {
+        "unchanged": 27,
+        "closer": 5
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.931350231170654
+    },
+    {
+      "loss": 0.08587668184190989,
+      "valid": 29,
+      "executed": 32,
+      "gradient_norm": 0.15197253227233887,
+      "optimizer_steps": 1,
+      "seconds": 6.0198291019914905,
+      "mean_teacher_student_total_variation": 0.3507772982120514,
+      "mean_teacher_entropy": 1.1239413022994995,
+      "teacher_argmax_counts": {
+        "0": 7,
+        "1": 11,
+        "2": 5,
+        "3": 6,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.3103448275862069,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.9655172413793104,
+      "update": 2,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 11.19907806700212,
+      "contact_count": 3,
+      "motion_count": 3,
+      "progress_counts": {
+        "unchanged": 29,
+        "closer": 3
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.08361657336354256,
+      "valid": 32,
+      "executed": 32,
+      "gradient_norm": 0.11592331528663635,
+      "optimizer_steps": 1,
+      "seconds": 6.214255421000416,
+      "mean_teacher_student_total_variation": 0.3301016092300415,
+      "mean_teacher_entropy": 1.159970998764038,
+      "teacher_argmax_counts": {
+        "0": 6,
+        "1": 13,
+        "2": 6,
+        "3": 7,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.34375,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.96875,
+      "update": 3,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 10.514354884988279,
+      "contact_count": 0,
+      "motion_count": 0,
+      "progress_counts": {
+        "unchanged": 32
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.09147179964929819,
+      "valid": 29,
+      "executed": 32,
+      "gradient_norm": 0.15160508453845978,
+      "optimizer_steps": 1,
+      "seconds": 6.0538101510028355,
+      "mean_teacher_student_total_variation": 0.34615203738212585,
+      "mean_teacher_entropy": 1.1203186511993408,
+      "teacher_argmax_counts": {
+        "0": 4,
+        "1": 14,
+        "2": 8,
+        "3": 3,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.1724137931034483,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.9655172413793104,
+      "update": 4,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 11.203538019995904,
+      "contact_count": 3,
+      "motion_count": 3,
+      "progress_counts": {
+        "unchanged": 29,
+        "closer": 3
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.09189419727772474,
+      "valid": 30,
+      "executed": 32,
+      "gradient_norm": 0.18689413368701935,
+      "optimizer_steps": 1,
+      "seconds": 6.097621263004839,
+      "mean_teacher_student_total_variation": 0.3364914655685425,
+      "mean_teacher_entropy": 1.1447666883468628,
+      "teacher_argmax_counts": {
+        "0": 7,
+        "1": 15,
+        "2": 5,
+        "3": 3,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.26666666666666666,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 1.0,
+      "update": 5,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 10.95022263599094,
+      "contact_count": 2,
+      "motion_count": 2,
+      "progress_counts": {
+        "unchanged": 30,
+        "closer": 2
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.08434405270963907,
+      "valid": 29,
+      "executed": 32,
+      "gradient_norm": 0.14594198763370514,
+      "optimizer_steps": 1,
+      "seconds": 6.043648720005876,
+      "mean_teacher_student_total_variation": 0.33823418617248535,
+      "mean_teacher_entropy": 1.1174346208572388,
+      "teacher_argmax_counts": {
+        "0": 11,
+        "1": 10,
+        "2": 4,
+        "3": 4,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.3793103448275862,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.9655172413793104,
+      "update": 6,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 11.068349801003933,
+      "contact_count": 3,
+      "motion_count": 3,
+      "progress_counts": {
+        "unchanged": 29,
+        "closer": 3
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.07952221296727657,
+      "valid": 30,
+      "executed": 32,
+      "gradient_norm": 0.18167637288570404,
+      "optimizer_steps": 1,
+      "seconds": 6.082104404995334,
+      "mean_teacher_student_total_variation": 0.32380712032318115,
+      "mean_teacher_entropy": 1.163234829902649,
+      "teacher_argmax_counts": {
+        "0": 7,
+        "1": 14,
+        "2": 6,
+        "3": 3,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.16666666666666666,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.9666666666666667,
+      "update": 7,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 10.770495746997767,
+      "contact_count": 6,
+      "motion_count": 2,
+      "progress_counts": {
+        "unchanged": 30,
+        "closer": 2
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.09302591811865568,
+      "valid": 28,
+      "executed": 32,
+      "gradient_norm": 0.1905142366886139,
+      "optimizer_steps": 1,
+      "seconds": 5.998438968003029,
+      "mean_teacher_student_total_variation": 0.3540826141834259,
+      "mean_teacher_entropy": 1.115943193435669,
+      "teacher_argmax_counts": {
+        "0": 6,
+        "1": 14,
+        "2": 2,
+        "3": 6,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.14285714285714285,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 1.0,
+      "update": 8,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 11.5079969750077,
+      "contact_count": 4,
+      "motion_count": 4,
+      "progress_counts": {
+        "unchanged": 28,
+        "closer": 4
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.0821785256266594,
+      "valid": 30,
+      "executed": 32,
+      "gradient_norm": 0.15438801050186157,
+      "optimizer_steps": 1,
+      "seconds": 6.119850574003067,
+      "mean_teacher_student_total_variation": 0.330680251121521,
+      "mean_teacher_entropy": 1.1492136716842651,
+      "teacher_argmax_counts": {
+        "0": 6,
+        "1": 13,
+        "2": 5,
+        "3": 6,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.16666666666666666,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 1.0,
+      "update": 9,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 10.923461059996043,
+      "contact_count": 2,
+      "motion_count": 2,
+      "progress_counts": {
+        "unchanged": 30,
+        "closer": 2
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.08492370881140232,
+      "valid": 30,
+      "executed": 32,
+      "gradient_norm": 0.15123607218265533,
+      "optimizer_steps": 1,
+      "seconds": 6.104906537992065,
+      "mean_teacher_student_total_variation": 0.34030044078826904,
+      "mean_teacher_entropy": 1.1293511390686035,
+      "teacher_argmax_counts": {
+        "0": 7,
+        "1": 14,
+        "2": 5,
+        "3": 4,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.4,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 1.0,
+      "update": 10,
+      "group": "sdpo_reflection",
+      "rollout_seconds": 10.926115738009685,
+      "contact_count": 2,
+      "motion_count": 2,
+      "progress_counts": {
+        "unchanged": 30,
+        "closer": 2
+      },
+      "feedback_changed_count": 32,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": null,
+      "group_progress_witness_count": null,
+      "groups_with_progress_witness": null,
+      "solution_context_count": null,
+      "feedback_used_count": null,
+      "feedback_record_unique_count": null,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 14,
+    "success_rate": 0.21875,
+    "conservative_success_rate_all_scenes": 0.21875,
+    "mean_progress_m": 0.00373352794113932,
+    "safety_failures": 0,
+    "interactions": 614,
+    "seconds": 208.3792916770035,
+    "action_counts": {
+      "A": 614
+    }
+  },
+  "total_train_interactions": 320,
+  "elapsed_seconds": 655.5408296009991,
+  "training_episodes": [
+    {
+      "episode_id": "train_s11_00000003",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000004",
+      "success": true,
+      "length": 2,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000005",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000006",
+      "success": true,
+      "length": 2,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000007",
+      "success": true,
+      "length": 2,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000000",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000001",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000002",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000011",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000008",
+      "success": true,
+      "length": 5,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000009",
+      "success": true,
+      "length": 3,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000010",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000012",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000013",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000014",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000016",
+      "success": true,
+      "length": 3,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000017",
+      "success": true,
+      "length": 4,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000018",
+      "success": true,
+      "length": 5,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000021",
+      "success": true,
+      "length": 2,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000015",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000023",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000019",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000025",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000020",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000027",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000022",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000026",
+      "success": true,
+      "length": 5,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000024",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000028",
+      "success": true,
+      "length": 8,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000032",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000029",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000030",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000034",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000035",
+      "success": true,
+      "length": 2,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000031",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000038",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000033",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000040",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000039",
+      "success": true,
+      "length": 4,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000036",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000043",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000037",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000044",
+      "success": true,
+      "length": 3,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000041",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000042",
+      "success": false,
+      "length": 12,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000047",
+      "success": true,
+      "length": 4,
+      "safety_failure": null
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

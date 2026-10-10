@@ -1,0 +1,5288 @@
+{
+  "config": {
+    "model_id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+    "revision": null,
+    "scene_profile": "directional_long",
+    "dev_scenes": 64,
+    "seed": 11,
+    "query": "Molmo2 point grounding"
+  },
+  "summary": {
+    "cube": {
+      "scenes": 64,
+      "parsed": 51,
+      "parse_rate": 0.796875,
+      "inside_bbox": 51,
+      "inside_bbox_rate_parsed": 1.0,
+      "mean_error_pixels_parsed": 2.7537839753415367,
+      "mean_error_normalized_parsed": 0.0043464717028724315,
+      "geometry_reference": "simulator projected center at z=0.02",
+      "geometry_parsed": 51,
+      "geometry_within_32px": 51,
+      "geometry_within_32px_rate_parsed": 1.0,
+      "geometry_mean_error_pixels_parsed": 3.4719279140618893,
+      "geometry_mean_error_normalized_parsed": 0.005479963776392917
+    },
+    "target": {
+      "scenes": 64,
+      "parsed": 59,
+      "parse_rate": 0.921875,
+      "inside_bbox": 58,
+      "inside_bbox_rate_parsed": 0.9830508474576272,
+      "mean_error_pixels_parsed": 3.5199817666718762,
+      "mean_error_normalized_parsed": 0.005555810216220283,
+      "geometry_reference": "simulator projected center at z=0.02",
+      "geometry_parsed": 64,
+      "geometry_within_32px": 61,
+      "geometry_within_32px_rate_parsed": 0.953125,
+      "geometry_mean_error_pixels_parsed": 16.85609304658682,
+      "geometry_mean_error_normalized_parsed": 0.02660503950346641
+    }
+  },
+  "scenes": [
+    {
+      "scene_id": "dev_000000",
+      "targets": {
+        "cube": {
+          "bbox": [
+            216,
+            212,
+            235,
+            238
+          ],
+          "centroid": [
+            225.5,
+            225.0
+          ],
+          "pixels": 540
+        },
+        "target": {
+          "bbox": [
+            288,
+            212,
+            312,
+            238
+          ],
+          "centroid": [
+            299.9139072847682,
+            224.98675496688742
+          ],
+          "pixels": 604
+        }
+      },
+      "reference_points": {
+        "cube": [
+          225.55228423626113,
+          225.7710710789606
+        ],
+        "target": [
+          299.6619682253187,
+          225.7710743440109
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 505 497\">center of the solid green cube</points>",
+          "points": [
+            [
+              226.24,
+              222.656
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.4580349875459433,
+            "error_normalized": 0.003879672339481088,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.190081628841445,
+            "error_normalized": 0.005035107929224136,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 670 500\">blue target center</points>",
+          "points": [
+            [
+              300.16,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.0169793454968334,
+            "error_normalized": 0.001605162927516669,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.8397662842344786,
+            "error_normalized": 0.0029038196771887883,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000001",
+      "targets": {
+        "cube": {
+          "bbox": [
+            218,
+            204,
+            236,
+            227
+          ],
+          "centroid": [
+            227.0,
+            216.76904176904176
+          ],
+          "pixels": 407
+        },
+        "target": {
+          "bbox": [
+            216,
+            238,
+            238,
+            267
+          ],
+          "centroid": [
+            227.24444444444444,
+            252.51111111111112
+          ],
+          "pixels": 675
+        }
+      },
+      "reference_points": {
+        "cube": [
+          226.6817859903834,
+          215.60596801563452
+        ],
+        "target": [
+          227.152201772115,
+          253.42626544524762
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 499 483\">center of the solid green cube</points>",
+          "points": [
+            [
+              223.552,
+              216.384
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.4694323979444928,
+            "error_normalized": 0.00547602494521173,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.2250417228767523,
+            "error_normalized": 0.0050902876603921825,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 499 566\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              223.552,
+              253.56799999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.840723902959623,
+            "error_normalized": 0.006062057849214315,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.602990630566632,
+            "error_normalized": 0.005686828364788527,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000002",
+      "targets": {
+        "cube": {
+          "bbox": [
+            217,
+            216,
+            237,
+            242
+          ],
+          "centroid": [
+            226.6153846153846,
+            228.97252747252747
+          ],
+          "pixels": 546
+        },
+        "target": {
+          "bbox": [
+            282,
+            216,
+            306,
+            242
+          ],
+          "centroid": [
+            293.65686274509807,
+            228.99346405228758
+          ],
+          "pixels": 612
+        }
+      },
+      "reference_points": {
+        "cube": [
+          226.69280785623783,
+          229.63500632891103
+        ],
+        "target": [
+          293.4359882600894,
+          229.63500931974022
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 505 510\">center of the solid green cube</points>",
+          "points": [
+            [
+              226.24,
+              228.48000000000002
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 0.6192712819610896,
+            "error_normalized": 0.0009774350956892254,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.2405944440046446,
+            "error_normalized": 0.0019581088037009795,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 655 511\">blue target center</points>",
+          "points": [
+            [
+              293.44,
+              228.928
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 0.22652812706898304,
+            "error_normalized": 0.00035754369370528087,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 0.7070207014342954,
+            "error_normalized": 0.0011159355634452225,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000003",
+      "targets": {
+        "cube": {
+          "bbox": [
+            205,
+            208,
+            224,
+            233
+          ],
+          "centroid": [
+            214.55512572533848,
+            220.56673114119923
+          ],
+          "pixels": 517
+        },
+        "target": {
+          "bbox": [
+            137,
+            208,
+            160,
+            233
+          ],
+          "centroid": [
+            148.8927943760984,
+            220.50087873462215
+          ],
+          "pixels": 569
+        }
+      },
+      "reference_points": {
+        "cube": [
+          214.68326539613253,
+          221.18824271532773
+        ],
+        "target": [
+          149.14001421918704,
+          221.1882398863037
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 477 487\">center of the solid green cube</points>",
+          "points": [
+            [
+              213.696,
+              218.176
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.5404118566559633,
+            "error_normalized": 0.004009692970643168,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.16990522546744,
+            "error_normalized": 0.005003262233586381,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 333 485\">blue target center</points>",
+          "points": [
+            [
+              149.184,
+              217.28
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.2340161623796932,
+            "error_normalized": 0.00510445258679816,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.9084874002366843,
+            "error_normalized": 0.006169013269842721,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000004",
+      "targets": {
+        "cube": {
+          "bbox": [
+            200,
+            202,
+            218,
+            226
+          ],
+          "centroid": [
+            209.03805496828753,
+            214.04862579281183
+          ],
+          "pixels": 473
+        },
+        "target": {
+          "bbox": [
+            265,
+            202,
+            286,
+            226
+          ],
+          "centroid": [
+            275.64579256360076,
+            214.02739726027397
+          ],
+          "pixels": 511
+        }
+      },
+      "reference_points": {
+        "cube": [
+          209.34470333342622,
+          215.1166731917872
+        ],
+        "target": [
+          275.4597518688478,
+          215.116675967158
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 468 474\">center of the solid green cube</points>",
+          "points": [
+            [
+              209.66400000000002,
+              212.35199999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.8084098715612056,
+            "error_normalized": 0.002854327864610763,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.783050164598578,
+            "error_normalized": 0.00439266438341516,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 612 473\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              274.176,
+              211.904
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.5824612494585795,
+            "error_normalized": 0.0040760621911688525,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.4596684423113038,
+            "error_normalized": 0.005460613875480854,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000005",
+      "targets": {
+        "cube": {
+          "bbox": [
+            220,
+            214,
+            220,
+            240
+          ],
+          "centroid": [
+            220.0,
+            227.0
+          ],
+          "pixels": 27
+        },
+        "target": {
+          "bbox": [
+            220,
+            198,
+            221,
+            208
+          ],
+          "centroid": [
+            220.5,
+            203.0
+          ],
+          "pixels": 22
+        }
+      },
+      "reference_points": {
+        "cube": [
+          210.9441536471451,
+          227.9605157349148
+        ],
+        "target": [
+          212.64767314779854,
+          198.216441395481
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 479 452\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              214.59199999999998,
+              202.496
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.929458659945288,
+            "error_normalized": 0.009358840239313866,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.700534943780776,
+            "error_normalized": 0.007419152084713648,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000006",
+      "targets": {
+        "cube": {
+          "bbox": [
+            222,
+            209,
+            241,
+            234
+          ],
+          "centroid": [
+            231.44487427466152,
+            221.56673114119923
+          ],
+          "pixels": 517
+        },
+        "target": {
+          "bbox": [
+            150,
+            209,
+            172,
+            234
+          ],
+          "centroid": [
+            161.3357142857143,
+            221.5375
+          ],
+          "pixels": 560
+        }
+      },
+      "reference_points": {
+        "cube": [
+          231.28114959359309,
+          222.5076339682763
+        ],
+        "target": [
+          161.57679912896396,
+          222.50763094170148
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 511 486\">center of the solid green cube</points>",
+          "points": [
+            [
+              228.928,
+              217.728
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.590262834399093,
+            "error_normalized": 0.0072451026286432605,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.32749602351123,
+            "error_normalized": 0.008408724475377584,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 362 486\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              162.176,
+              217.728
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.9010729718415313,
+            "error_normalized": 0.006157310607796215,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.817044075231243,
+            "error_normalized": 0.007603045827835923,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000007",
+      "targets": {
+        "cube": {
+          "bbox": [
+            204,
+            212,
+            224,
+            238
+          ],
+          "centroid": [
+            214.3090909090909,
+            224.97272727272727
+          ],
+          "pixels": 550
+        },
+        "target": {
+          "bbox": [
+            134,
+            212,
+            157,
+            238
+          ],
+          "centroid": [
+            145.6578512396694,
+            225.00661157024794
+          ],
+          "pixels": 605
+        }
+      },
+      "reference_points": {
+        "cube": [
+          214.24570661583226,
+          225.8688065279866
+        ],
+        "target": [
+          145.89911065480675,
+          225.86880351553717
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 477 497\">center of the solid green cube</points>",
+          "points": [
+            [
+              213.696,
+              222.656
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.3964777735268536,
+            "error_normalized": 0.0037825126888921374,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.2594943089017776,
+            "error_normalized": 0.005144666359516532,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 327 494\">blue target center</points>",
+          "points": [
+            [
+              146.496,
+              221.312
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.7884888807351125,
+            "error_normalized": 0.005979612004503642,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.595730101911666,
+            "error_normalized": 0.007253731963314469,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000008",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            204,
+            244,
+            228
+          ],
+          "centroid": [
+            234.08350730688935,
+            215.97077244258872
+          ],
+          "pixels": 479
+        },
+        "target": {
+          "bbox": [
+            291,
+            204,
+            314,
+            228
+          ],
+          "centroid": [
+            302.08687615526804,
+            215.99075785582255
+          ],
+          "pixels": 541
+        }
+      },
+      "reference_points": {
+        "cube": [
+          234.03968573297936,
+          216.6734980289392
+        ],
+        "target": [
+          301.84347741378605,
+          216.67350089579858
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 520 480\">center of the solid green cube</points>",
+          "points": [
+            [
+              232.96,
+              215.04
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.4589743001562183,
+            "error_normalized": 0.00230279156521732,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.9580697363851653,
+            "error_normalized": 0.0030905455103439864,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 677 477\">blue target center</points>",
+          "points": [
+            [
+              303.29600000000005,
+              213.696
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.5938184378939915,
+            "error_normalized": 0.0040939879611641495,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.312904080703694,
+            "error_normalized": 0.005228966385906623,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000009",
+      "targets": {
+        "cube": null,
+        "target": null
+      },
+      "reference_points": {
+        "cube": [
+          223.52433566860594,
+          224.6660862615874
+        ],
+        "target": [
+          223.5875061529388,
+          194.83181498845022
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 500 481\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              224.0,
+              215.488
+            ]
+          ],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 20.660303250563317,
+            "error_normalized": 0.03260946546840132,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000010",
+      "targets": {
+        "cube": {
+          "bbox": [
+            211,
+            208,
+            229,
+            233
+          ],
+          "centroid": [
+            220.0,
+            220.5
+          ],
+          "pixels": 494
+        },
+        "target": {
+          "bbox": [
+            278,
+            208,
+            300,
+            233
+          ],
+          "centroid": [
+            288.8517857142857,
+            220.5232142857143
+          ],
+          "pixels": 560
+        }
+      },
+      "reference_points": {
+        "cube": [
+          220.13348538113672,
+          221.47277255192463
+        ],
+        "target": [
+          288.6297691111987,
+          221.47277551221268
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 486 490\">center of the solid green cube</points>",
+          "points": [
+            [
+              217.728,
+              219.51999999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.474345165897433,
+            "error_normalized": 0.0039054157272371158,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.0983351268726183,
+            "error_normalized": 0.004890298612946675,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 640 492\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              286.72,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.1344800853354777,
+            "error_normalized": 0.0033689851398400823,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.1826572202938634,
+            "error_normalized": 0.0034450261640079707,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000011",
+      "targets": {
+        "cube": {
+          "bbox": [
+            203,
+            205,
+            222,
+            230
+          ],
+          "centroid": [
+            212.95967741935485,
+            217.48790322580646
+          ],
+          "pixels": 496
+        },
+        "target": {
+          "bbox": [
+            135,
+            205,
+            158,
+            230
+          ],
+          "centroid": [
+            146.77601410934744,
+            217.52028218694886
+          ],
+          "pixels": 567
+        }
+      },
+      "reference_points": {
+        "cube": [
+          213.1265702153458,
+          218.6189736667542
+        ],
+        "target": [
+          146.96574284157936,
+          218.6189708442448
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 468 482\">center of the solid green cube</points>",
+          "points": [
+            [
+              209.66400000000002,
+              215.93599999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.6427864711939804,
+            "error_normalized": 0.005749640661151512,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.3803812839405,
+            "error_normalized": 0.00691383328137715,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 327 477\">blue target center</points>",
+          "points": [
+            [
+              146.496,
+              213.696
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.8345198065530997,
+            "error_normalized": 0.006052265530821038,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.945331158830474,
+            "error_normalized": 0.007805529458978025,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000012",
+      "targets": {
+        "cube": {
+          "bbox": [
+            217,
+            206,
+            236,
+            231
+          ],
+          "centroid": [
+            226.3435294117647,
+            220.75058823529412
+          ],
+          "pixels": 425
+        },
+        "target": {
+          "bbox": [
+            216,
+            247,
+            238,
+            278
+          ],
+          "centroid": [
+            227.0,
+            262.5
+          ],
+          "pixels": 736
+        }
+      },
+      "reference_points": {
+        "cube": [
+          226.34174914333224,
+          219.7178381365019
+        ],
+        "target": [
+          226.8019497476183,
+          262.89752098566436
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 499 491\">center of the solid green cube</points>",
+          "points": [
+            [
+              223.552,
+              219.968
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.8991517384863155,
+            "error_normalized": 0.004575914852617058,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.8009429199238998,
+            "error_normalized": 0.004420905652666604,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 500 581\">blue target center</points>",
+          "points": [
+            [
+              224.0,
+              260.288
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.727323973040169,
+            "error_normalized": 0.0058830715558390355,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.8289061313645245,
+            "error_normalized": 0.006043405111639743,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000013",
+      "targets": {
+        "cube": {
+          "bbox": [
+            216,
+            210,
+            235,
+            236
+          ],
+          "centroid": [
+            225.82758620689654,
+            222.9655172413793
+          ],
+          "pixels": 522
+        },
+        "target": {
+          "bbox": [
+            141,
+            210,
+            165,
+            236
+          ],
+          "centroid": [
+            153.08445945945945,
+            223.0152027027027
+          ],
+          "pixels": 592
+        }
+      },
+      "reference_points": {
+        "cube": [
+          225.88530884391974,
+          223.68415276063752
+        ],
+        "target": [
+          153.3676262404946,
+          223.68414959525828
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 499 491\">center of the solid green cube</points>",
+          "points": [
+            [
+              223.552,
+              219.968
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.7634295791716457,
+            "error_normalized": 0.005940059321317646,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.387951857245935,
+            "error_normalized": 0.006925782396827469,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 342 487\">blue target center</points>",
+          "points": [
+            [
+              153.216,
+              218.176
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.840990158185722,
+            "error_normalized": 0.007640841447567995,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.510236154698868,
+            "error_normalized": 0.008697154801176016,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000014",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            219,
+            245,
+            246
+          ],
+          "centroid": [
+            234.49227373068433,
+            235.20309050772627
+          ],
+          "pixels": 453
+        },
+        "target": {
+          "bbox": [
+            225,
+            258,
+            249,
+            291
+          ],
+          "centroid": [
+            236.54822954822956,
+            274.52991452991455
+          ],
+          "pixels": 819
+        }
+      },
+      "reference_points": {
+        "cube": [
+          234.27986749407916,
+          233.262949158826
+        ],
+        "target": [
+          236.1454028859282,
+          275.59442816458966
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 518 526\">center of the solid green cube</points>",
+          "points": [
+            [
+              232.06400000000002,
+              235.64800000000002
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.4686955598953033,
+            "error_normalized": 0.0038964985961765395,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.2555393203433303,
+            "error_normalized": 0.005138423950522796,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 523 609\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              234.304,
+              272.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.8141570702506282,
+            "error_normalized": 0.004441762383255104,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.3199057144477675,
+            "error_normalized": 0.005240017508004433,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000015",
+      "targets": {
+        "cube": {
+          "bbox": [
+            217,
+            202,
+            219,
+            226
+          ],
+          "centroid": [
+            218.26666666666668,
+            214.75555555555556
+          ],
+          "pixels": 45
+        },
+        "target": {
+          "bbox": [
+            218,
+            184,
+            219,
+            198
+          ],
+          "centroid": [
+            218.65217391304347,
+            192.2173913043478
+          ],
+          "pixels": 23
+        }
+      },
+      "reference_points": {
+        "cube": [
+          209.61655393123397,
+          215.1006832916666
+        ],
+        "target": [
+          211.3832265364488,
+          188.680624069388
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 479 424\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              214.59199999999998,
+              189.952
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.649409636284325,
+            "error_normalized": 0.007338457773059656,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.451466919634288,
+            "error_normalized": 0.005447668892666182,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000016",
+      "targets": {
+        "cube": {
+          "bbox": [
+            223,
+            224,
+            223,
+            232
+          ],
+          "centroid": [
+            223.0,
+            228.0
+          ],
+          "pixels": 9
+        },
+        "target": {
+          "bbox": [
+            223,
+            191,
+            223,
+            198
+          ],
+          "centroid": [
+            223.0,
+            194.5
+          ],
+          "pixels": 8
+        }
+      },
+      "reference_points": {
+        "cube": [
+          231.90828325089382,
+          220.2645961338783
+        ],
+        "target": [
+          230.91819333188772,
+          192.68808480887014
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 512 441\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              229.376,
+              197.568
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 7.0757331775583605,
+            "error_normalized": 0.011168077927942308,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.117805442329651,
+            "error_normalized": 0.008077756547019452,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000017",
+      "targets": {
+        "cube": {
+          "bbox": [
+            219,
+            211,
+            238,
+            236
+          ],
+          "centroid": [
+            228.44487427466152,
+            223.56673114119923
+          ],
+          "pixels": 517
+        },
+        "target": {
+          "bbox": [
+            153,
+            211,
+            175,
+            236
+          ],
+          "centroid": [
+            164.14716312056737,
+            223.56028368794327
+          ],
+          "pixels": 564
+        }
+      },
+      "reference_points": {
+        "cube": [
+          228.17961031333337,
+          224.51579025588256
+        ],
+        "target": [
+          164.37140982957274,
+          224.51578746031493
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 505 492\">center of the solid green cube</points>",
+          "points": [
+            [
+              226.24,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.845591929883709,
+            "error_normalized": 0.006069741364502305,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.535456791748631,
+            "error_normalized": 0.007158598779517946,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 370 491\">blue target center</points>",
+          "points": [
+            [
+              165.76,
+              219.968
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.937733471722194,
+            "error_normalized": 0.006215174197232164,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.755055567036515,
+            "error_normalized": 0.007505205438326705,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000018",
+      "targets": {
+        "cube": {
+          "bbox": [
+            232,
+            219,
+            252,
+            245
+          ],
+          "centroid": [
+            241.65189873417722,
+            233.95147679324896
+          ],
+          "pixels": 474
+        },
+        "target": {
+          "bbox": [
+            233,
+            263,
+            258,
+            296
+          ],
+          "centroid": [
+            245.1981460023175,
+            279.5457705677868
+          ],
+          "pixels": 863
+        }
+      },
+      "reference_points": {
+        "cube": [
+          241.42422190110725,
+          232.87659136452305
+        ],
+        "target": [
+          244.96552079757498,
+          280.2065421050846
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 535 523\">center of the solid green cube</points>",
+          "points": [
+            [
+              239.68,
+              234.304
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.003161808029433,
+            "error_normalized": 0.00316171718364178,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.2538423753528813,
+            "error_normalized": 0.0035573822038786123,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 540 619\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              241.92000000000002,
+              277.312
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.9668592314349316,
+            "error_normalized": 0.006261145228928787,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.201615275887275,
+            "error_normalized": 0.00663167556588589,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000019",
+      "targets": {
+        "cube": {
+          "bbox": [
+            195,
+            209,
+            215,
+            234
+          ],
+          "centroid": [
+            204.84787472035794,
+            223.12304250559285
+          ],
+          "pixels": 447
+        },
+        "target": {
+          "bbox": [
+            189,
+            246,
+            213,
+            276
+          ],
+          "centroid": [
+            201.54533152909337,
+            261.063599458728
+          ],
+          "pixels": 739
+        }
+      },
+      "reference_points": {
+        "cube": [
+          205.10070536751618,
+          222.04397254841297
+        ],
+        "target": [
+          201.71209853597495,
+          261.8559479763321
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 462 492\">center of the solid green cube</points>",
+          "points": [
+            [
+              206.976,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.443398950591993,
+            "error_normalized": 0.005434934706013928,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.483349467354288,
+            "error_normalized": 0.0039196277866567365,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 443 577\">blue target center</points>",
+          "points": [
+            [
+              198.464,
+              258.496
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.0108815705085705,
+            "error_normalized": 0.006330628475541875,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.673263795578098,
+            "error_normalized": 0.007376108303854591,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000020",
+      "targets": {
+        "cube": {
+          "bbox": [
+            214,
+            204,
+            233,
+            228
+          ],
+          "centroid": [
+            223.40286298568506,
+            216.10224948875256
+          ],
+          "pixels": 489
+        },
+        "target": {
+          "bbox": [
+            285,
+            204,
+            307,
+            228
+          ],
+          "centroid": [
+            296.0261194029851,
+            216.0410447761194
+          ],
+          "pixels": 536
+        }
+      },
+      "reference_points": {
+        "cube": [
+          223.48042424781556,
+          217.04923980072726
+        ],
+        "target": [
+          295.83442268528336,
+          217.04924286528228
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 496 479\">center of the solid green cube</points>",
+          "points": [
+            [
+              222.208,
+              214.59199999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.925759868944632,
+            "error_normalized": 0.0030395487997046124,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.767144901284941,
+            "error_normalized": 0.004367560098715092,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 662 477\">blue target center</points>",
+          "points": [
+            [
+              296.576,
+              213.696
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.4086518372272923,
+            "error_normalized": 0.003801727784867979,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.434264787005934,
+            "error_normalized": 0.005420517676968907,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000021",
+      "targets": {
+        "cube": {
+          "bbox": [
+            218,
+            218,
+            238,
+            245
+          ],
+          "centroid": [
+            227.93150684931507,
+            231.58219178082192
+          ],
+          "pixels": 584
+        },
+        "target": {
+          "bbox": [
+            291,
+            218,
+            316,
+            245
+          ],
+          "centroid": [
+            303.4899536321484,
+            231.49304482225656
+          ],
+          "pixels": 647
+        }
+      },
+      "reference_points": {
+        "cube": [
+          227.84963300656784,
+          232.18868938934534
+        ],
+        "target": [
+          303.23131813364654,
+          232.1886928048393
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 505 511\">center of the solid green cube</points>",
+          "points": [
+            [
+              226.24,
+              228.928
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.1473686518522723,
+            "error_normalized": 0.004967691331738178,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.636346203213044,
+            "error_normalized": 0.005739475578200667,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 682 515\">blue target center</points>",
+          "points": [
+            [
+              305.536,
+              230.72
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.1872137610705584,
+            "error_normalized": 0.0034522180409766183,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.73287706640551,
+            "error_normalized": 0.00431347300402798,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000022",
+      "targets": {
+        "cube": {
+          "bbox": [
+            234,
+            217,
+            254,
+            243
+          ],
+          "centroid": [
+            243.74358974358975,
+            232.2948717948718
+          ],
+          "pixels": 468
+        },
+        "target": {
+          "bbox": [
+            236,
+            259,
+            261,
+            292
+          ],
+          "centroid": [
+            247.99175500588927,
+            275.59010600706716
+          ],
+          "pixels": 849
+        }
+      },
+      "reference_points": {
+        "cube": [
+          243.72584639790705,
+          230.7196604753324
+        ],
+        "target": [
+          247.65756991152728,
+          276.70642332066296
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 546 517\">center of the solid green cube</points>",
+          "points": [
+            [
+              244.608,
+              231.616
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.0991232893809835,
+            "error_normalized": 0.0017348159180387442,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.2576245549316114,
+            "error_normalized": 0.0019849885066492326,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 549 609\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              245.95200000000003,
+              272.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.430415314545784,
+            "error_normalized": 0.00541444181071765,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.2332168372059735,
+            "error_normalized": 0.006681554312101368,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000023",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            205,
+            243,
+            229
+          ],
+          "centroid": [
+            233.96194503171247,
+            217.04862579281183
+          ],
+          "pixels": 473
+        },
+        "target": {
+          "bbox": [
+            286,
+            205,
+            309,
+            229
+          ],
+          "centroid": [
+            297.6456400742115,
+            216.98515769944342
+          ],
+          "pixels": 539
+        }
+      },
+      "reference_points": {
+        "cube": [
+          233.5017516901803,
+          217.8158279475497
+        ],
+        "target": [
+          297.3602170049377,
+          217.81583066182895
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 523 482\">center of the solid green cube</points>",
+          "points": [
+            [
+              234.304,
+              215.93599999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.16401793635682,
+            "error_normalized": 0.0018372432504925858,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.0438579850365324,
+            "error_normalized": 0.003225950537950012,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 668 480\">blue target center</points>",
+          "points": [
+            [
+              299.264,
+              215.04
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.530361105672921,
+            "error_normalized": 0.003993829233642885,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.3659509139971586,
+            "error_normalized": 0.005312693563456358,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000024",
+      "targets": {
+        "cube": {
+          "bbox": [
+            199,
+            203,
+            217,
+            227
+          ],
+          "centroid": [
+            208.1421568627451,
+            216.73529411764707
+          ],
+          "pixels": 408
+        },
+        "target": {
+          "bbox": [
+            194,
+            237,
+            216,
+            267
+          ],
+          "centroid": [
+            205.3160173160173,
+            252.01298701298703
+          ],
+          "pixels": 693
+        }
+      },
+      "reference_points": {
+        "cube": [
+          208.41150274292553,
+          215.63702944388677
+        ],
+        "target": [
+          205.71239934195245,
+          252.9738708154842
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 458 481\">center of the solid green cube</points>",
+          "points": [
+            [
+              205.184,
+              215.488
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.2103636305756704,
+            "error_normalized": 0.005067120297443574,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.230941616732972,
+            "error_normalized": 0.005099599836628821,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 449 562\">blue target center</points>",
+          "points": [
+            [
+              201.15200000000002,
+              251.776
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.170755693206733,
+            "error_normalized": 0.006582967931560001,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.715096674371472,
+            "error_normalized": 0.00744213578660314,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000025",
+      "targets": {
+        "cube": {
+          "bbox": [
+            211,
+            216,
+            214,
+            242
+          ],
+          "centroid": [
+            212.98701298701297,
+            230.11688311688312
+          ],
+          "pixels": 77
+        },
+        "target": {
+          "bbox": [
+            213,
+            199,
+            215,
+            205
+          ],
+          "centroid": [
+            214.23529411764707,
+            202.35294117647058
+          ],
+          "pixels": 17
+        }
+      },
+      "reference_points": {
+        "cube": [
+          204.11010988640137,
+          229.7970288254532
+        ],
+        "target": [
+          207.1099002605748,
+          195.1391381151575
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 468 448\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              209.66400000000002,
+              200.704
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.859602546864788,
+            "error_normalized": 0.007670218559731046,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 6.122998716013665,
+            "error_normalized": 0.00966431677073613,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000026",
+      "targets": {
+        "cube": {
+          "bbox": [
+            221,
+            207,
+            240,
+            232
+          ],
+          "centroid": [
+            230.37037037037038,
+            219.5185185185185
+          ],
+          "pixels": 513
+        },
+        "target": {
+          "bbox": [
+            151,
+            207,
+            173,
+            232
+          ],
+          "centroid": [
+            161.8435251798561,
+            219.4748201438849
+          ],
+          "pixels": 556
+        }
+      },
+      "reference_points": {
+        "cube": [
+          230.26444302452035,
+          220.10884633922007
+        ],
+        "target": [
+          162.07076986196927,
+          220.10884341016055
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 508 485\">center of the solid green cube</points>",
+          "points": [
+            [
+              227.584,
+              217.28
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.574188718944235,
+            "error_normalized": 0.005641368483048946,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.8970689522535427,
+            "error_normalized": 0.006150990810022397,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 362 482\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              162.176,
+              215.93599999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.554403960834417,
+            "error_normalized": 0.005610140945942723,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.174170038183691,
+            "error_normalized": 0.006588357008538835,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000027",
+      "targets": {
+        "cube": {
+          "bbox": [
+            234,
+            219,
+            255,
+            246
+          ],
+          "centroid": [
+            244.0406779661017,
+            232.52372881355933
+          ],
+          "pixels": 590
+        },
+        "target": {
+          "bbox": [
+            157,
+            219,
+            180,
+            246
+          ],
+          "centroid": [
+            168.8330658105939,
+            232.48314606741573
+          ],
+          "pixels": 623
+        }
+      },
+      "reference_points": {
+        "cube": [
+          243.91268992150077,
+          233.17698448796773
+        ],
+        "target": [
+          169.10227023711667,
+          233.17698108392977
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 543 514\">center of the solid green cube</points>",
+          "points": [
+            [
+              243.264,
+              230.272
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.3819133722369505,
+            "error_normalized": 0.0037595247716688948,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.9765304449291032,
+            "error_normalized": 0.0046980465670035275,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 386 512\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              172.928,
+              229.376
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.140315428047586,
+            "error_normalized": 0.008113285483505086,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.392927351541392,
+            "error_normalized": 0.008511998885538675,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000028",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            203,
+            226,
+            228
+          ],
+          "centroid": [
+            225.03703703703704,
+            215.96296296296296
+          ],
+          "pixels": 27
+        },
+        "target": {
+          "bbox": [
+            225,
+            186,
+            225,
+            197
+          ],
+          "centroid": [
+            225.0,
+            191.5
+          ],
+          "pixels": 12
+        }
+      },
+      "reference_points": {
+        "cube": [
+          234.02601503715843,
+          216.26389281952692
+        ],
+        "target": [
+          232.6954827287509,
+          187.5638305265244
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 501 446\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              224.448,
+              199.808
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 8.326317793598793,
+            "error_normalized": 0.013141954853053391,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 14.762813331348317,
+            "error_normalized": 0.023301083517829377,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000029",
+      "targets": {
+        "cube": {
+          "bbox": [
+            227,
+            206,
+            246,
+            231
+          ],
+          "centroid": [
+            236.37037037037038,
+            218.55555555555554
+          ],
+          "pixels": 513
+        },
+        "target": {
+          "bbox": [
+            292,
+            206,
+            315,
+            231
+          ],
+          "centroid": [
+            303.298769771529,
+            218.50087873462215
+          ],
+          "pixels": 569
+        }
+      },
+      "reference_points": {
+        "cube": [
+          236.22577648320535,
+          219.46590196036286
+        ],
+        "target": [
+          303.0926460360659,
+          219.46590482404403
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 527 484\">center of the solid green cube</points>",
+          "points": [
+            [
+              236.096,
+              216.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.7452572455725763,
+            "error_normalized": 0.0027546500742395633,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.6370971677957717,
+            "error_normalized": 0.004162297522313011,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 677 484\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              303.29600000000005,
+              216.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.6688810330602857,
+            "error_normalized": 0.002634100659532453,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.641743260949138,
+            "error_normalized": 0.004169630745470979,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000030",
+      "targets": {
+        "cube": {
+          "bbox": [
+            213,
+            212,
+            232,
+            235
+          ],
+          "centroid": [
+            222.49774774774775,
+            224.39414414414415
+          ],
+          "pixels": 444
+        },
+        "target": {
+          "bbox": [
+            211,
+            246,
+            233,
+            277
+          ],
+          "centroid": [
+            222.0,
+            261.5
+          ],
+          "pixels": 736
+        }
+      },
+      "reference_points": {
+        "cube": [
+          222.2853120479908,
+          222.98868212949176
+        ],
+        "target": [
+          221.98117229637685,
+          262.5400077183614
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 492 500\">center of the solid green cube</points>",
+          "points": [
+            [
+              220.416,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.118731528914406,
+            "error_normalized": 0.0033441281955560675,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.1253449997524836,
+            "error_normalized": 0.0033545666555488893,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 489 582\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              219.072,
+              260.736
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.0260337076774277,
+            "error_normalized": 0.004776180702673616,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.4231166059475733,
+            "error_normalized": 0.005402921796557607,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000031",
+      "targets": {
+        "cube": {
+          "bbox": [
+            226,
+            205,
+            227,
+            229
+          ],
+          "centroid": [
+            226.07407407407408,
+            217.85185185185185
+          ],
+          "pixels": 27
+        },
+        "target": {
+          "bbox": [
+            226,
+            188,
+            226,
+            196
+          ],
+          "centroid": [
+            226.0,
+            192.0
+          ],
+          "pixels": 9
+        }
+      },
+      "reference_points": {
+        "cube": [
+          235.0989090576715,
+          217.81663738695664
+        ],
+        "target": [
+          233.5184747824764,
+          186.80042357620056
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 496 421\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              222.208,
+              188.608
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.0877232629143645,
+            "error_normalized": 0.008030275937516283,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 11.454002459093077,
+            "error_normalized": 0.018078577702125235,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000032",
+      "targets": {
+        "cube": {
+          "bbox": [
+            198,
+            205,
+            217,
+            230
+          ],
+          "centroid": [
+            207.53682170542635,
+            217.54263565891472
+          ],
+          "pixels": 516
+        },
+        "target": {
+          "bbox": [
+            268,
+            205,
+            289,
+            230
+          ],
+          "centroid": [
+            278.2173112338858,
+            217.49907918968694
+          ],
+          "pixels": 543
+        }
+      },
+      "reference_points": {
+        "cube": [
+          207.5941071614457,
+          218.26567494398492
+        ],
+        "target": [
+          277.9816830641083,
+          218.26567794196035
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 462 483\">center of the solid green cube</points>",
+          "points": [
+            [
+              206.976,
+              216.384
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.287228641456558,
+            "error_normalized": 0.0020317145118559803,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.980595127190601,
+            "error_normalized": 0.0031260987616551486,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 623 481\">blue target center</points>",
+          "points": [
+            [
+              279.104,
+              215.488
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.1978754457759724,
+            "error_normalized": 0.0034690460533740985,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.995845465614394,
+            "error_normalized": 0.004728532687774348,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000033",
+      "targets": {
+        "cube": {
+          "bbox": [
+            208,
+            214,
+            227,
+            240
+          ],
+          "centroid": [
+            217.51762523191096,
+            227.02411873840444
+          ],
+          "pixels": 539
+        },
+        "target": {
+          "bbox": [
+            276,
+            214,
+            299,
+            240
+          ],
+          "centroid": [
+            287.47157190635454,
+            227.04347826086956
+          ],
+          "pixels": 598
+        }
+      },
+      "reference_points": {
+        "cube": [
+          217.77288263903574,
+          228.26396776036148
+        ],
+        "target": [
+          287.2822025489645,
+          228.2639708565473
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 479 502\">center of the solid green cube</points>",
+          "points": [
+            [
+              214.59199999999998,
+              224.89600000000002
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.617757919256367,
+            "error_normalized": 0.005710136512048017,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.632625734737625,
+            "error_normalized": 0.007311966677973855,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 642 505\">blue target center</points>",
+          "points": [
+            [
+              287.616,
+              226.24
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 0.8163557986099075,
+            "error_normalized": 0.0012885060737902346,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.0513114747572025,
+            "error_normalized": 0.00323771485296115,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000034",
+      "targets": {
+        "cube": {
+          "bbox": [
+            228,
+            210,
+            247,
+            235
+          ],
+          "centroid": [
+            237.390350877193,
+            224.06798245614036
+          ],
+          "pixels": 456
+        },
+        "target": {
+          "bbox": [
+            229,
+            248,
+            252,
+            280
+          ],
+          "centroid": [
+            240.2020725388601,
+            264.0
+          ],
+          "pixels": 772
+        }
+      },
+      "reference_points": {
+        "cube": [
+          237.33208592806542,
+          223.1196147380345
+        ],
+        "target": [
+          239.82072058529243,
+          264.76837897378266
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 527 499\">center of the solid green cube</points>",
+          "points": [
+            [
+              236.096,
+              223.552
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.3934066485900254,
+            "error_normalized": 0.002199301986983097,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.309528707713703,
+            "error_normalized": 0.0020669121191580707,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 527 584\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              236.096,
+              261.632
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.739963680702737,
+            "error_normalized": 0.007481384958042082,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.869334298000819,
+            "error_normalized": 0.007685578799063875,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000035",
+      "targets": {
+        "cube": {
+          "bbox": [
+            221,
+            214,
+            240,
+            240
+          ],
+          "centroid": [
+            230.5,
+            227.0
+          ],
+          "pixels": 540
+        },
+        "target": {
+          "bbox": [
+            147,
+            214,
+            170,
+            240
+          ],
+          "centroid": [
+            158.95325542570953,
+            227.02170283806345
+          ],
+          "pixels": 599
+        }
+      },
+      "reference_points": {
+        "cube": [
+          230.41870557692548,
+          228.18879550635847
+        ],
+        "target": [
+          159.2554309941773,
+          228.18879233754367
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 502 500\">center of the solid green cube</points>",
+          "points": [
+            [
+              224.89600000000002,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 6.356478270237367,
+            "error_normalized": 0.010032832342298612,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 6.931542734737522,
+            "error_normalized": 0.010940493017449215,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 365 500\">blue target center</points>",
+          "points": [
+            [
+              163.51999999999998,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.475933166901509,
+            "error_normalized": 0.00864301222241157,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.977669282629154,
+            "error_normalized": 0.009434934119280357,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000036",
+      "targets": {
+        "cube": {
+          "bbox": [
+            194,
+            218,
+            214,
+            245
+          ],
+          "centroid": [
+            204.3866090712743,
+            234.1792656587473
+          ],
+          "pixels": 463
+        },
+        "target": {
+          "bbox": [
+            187,
+            262,
+            213,
+            296
+          ],
+          "centroid": [
+            200.37175141242938,
+            279.04067796610167
+          ],
+          "pixels": 885
+        }
+      },
+      "reference_points": {
+        "cube": [
+          204.58754946624748,
+          232.63601894436815
+        ],
+        "target": [
+          200.64247878905022,
+          279.91308934414354
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 455 523\">center of the solid green cube</points>",
+          "points": [
+            [
+              203.84,
+              234.304
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 0.5606604433051253,
+            "error_normalized": 0.0008849258959913169,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.8278377954385472,
+            "error_normalized": 0.002884992187642112,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 449 619\">blue target center</points>",
+          "points": [
+            [
+              201.15200000000002,
+              277.312
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.8966062767193772,
+            "error_normalized": 0.0029935338381902707,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.650524031323764,
+            "error_normalized": 0.004183489991622631,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000037",
+      "targets": {
+        "cube": {
+          "bbox": [
+            229,
+            210,
+            230,
+            236
+          ],
+          "centroid": [
+            229.5,
+            223.0
+          ],
+          "pixels": 54
+        },
+        "target": {
+          "bbox": [
+            229,
+            193,
+            229,
+            203
+          ],
+          "centroid": [
+            229.0,
+            198.0
+          ],
+          "pixels": 11
+        }
+      },
+      "reference_points": {
+        "cube": [
+          238.55040204009222,
+          223.74099170497786
+        ],
+        "target": [
+          236.58468759561566,
+          193.5141887383376
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 501 499\">center of the solid green cube</points>",
+          "points": [
+            [
+              224.448,
+              223.552
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.082067295894449,
+            "error_normalized": 0.00802134876645836,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 14.103668358443045,
+            "error_normalized": 0.022260713249690225,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 502 446\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              224.89600000000002,
+              199.808
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.484604776343156,
+            "error_normalized": 0.0070783358220844325,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 13.27544642960558,
+            "error_normalized": 0.020953478110832247,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000038",
+      "targets": {
+        "cube": {
+          "bbox": [
+            197,
+            209,
+            217,
+            234
+          ],
+          "centroid": [
+            207.47792706333973,
+            221.51247600767755
+          ],
+          "pixels": 521
+        },
+        "target": {
+          "bbox": [
+            267,
+            209,
+            289,
+            234
+          ],
+          "centroid": [
+            278.17902350813745,
+            221.500904159132
+          ],
+          "pixels": 553
+        }
+      },
+      "reference_points": {
+        "cube": [
+          207.4983954611112,
+          222.70185144606367
+        ],
+        "target": [
+          277.9619650148423,
+          222.7018545082745
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 462 488\">center of the solid green cube</points>",
+          "points": [
+            [
+              206.976,
+              218.624
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.931761317679478,
+            "error_normalized": 0.004627384617302605,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.111176161873045,
+            "error_normalized": 0.006488929782841325,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 620 492\">blue target center</points>",
+          "points": [
+            [
+              277.76,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.1630123537064223,
+            "error_normalized": 0.0018356560756909348,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.2947593992005113,
+            "error_normalized": 0.003621964134746092,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000039",
+      "targets": {
+        "cube": null,
+        "target": null
+      },
+      "reference_points": {
+        "cube": [
+          231.91509211506704,
+          223.04348328147796
+        ],
+        "target": [
+          230.7612079727051,
+          190.5274191610546
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 518 443\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              232.06400000000002,
+              198.464
+            ]
+          ],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 8.042796931385144,
+            "error_normalized": 0.012694455914930337,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000040",
+      "targets": {
+        "cube": {
+          "bbox": [
+            224,
+            211,
+            224,
+            237
+          ],
+          "centroid": [
+            224.0,
+            224.0
+          ],
+          "pixels": 27
+        },
+        "target": {
+          "bbox": [
+            224,
+            194,
+            224,
+            205
+          ],
+          "centroid": [
+            224.0,
+            199.5
+          ],
+          "pixels": 12
+        }
+      },
+      "reference_points": {
+        "cube": [
+          233.0005015004081,
+          224.91267974714526
+        ],
+        "target": [
+          231.8184979697235,
+          195.37557340473796
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 518 443\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              232.06400000000002,
+              198.464
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 8.130276256069061,
+            "error_normalized": 0.012832530074969662,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.0981688270963774,
+            "error_normalized": 0.0048900361314746,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000041",
+      "targets": {
+        "cube": {
+          "bbox": [
+            196,
+            216,
+            216,
+            242
+          ],
+          "centroid": [
+            206.44,
+            231.4311111111111
+          ],
+          "pixels": 450
+        },
+        "target": {
+          "bbox": [
+            190,
+            258,
+            215,
+            290
+          ],
+          "centroid": [
+            202.91990291262135,
+            274.00485436893206
+          ],
+          "pixels": 824
+        }
+      },
+      "reference_points": {
+        "cube": [
+          206.516643516572,
+          229.811919216998
+        ],
+        "target": [
+          203.09273979955975,
+          274.817705944779
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 452 515\">center of the solid green cube</points>",
+          "points": [
+            [
+              202.496,
+              230.72
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.007594666672964,
+            "error_normalized": 0.006325440546989943,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.121915209682256,
+            "error_normalized": 0.006505879902326547,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 449 609\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              201.15200000000002,
+              272.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.1215720772997653,
+            "error_normalized": 0.003348611613023871,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.7765984709218983,
+            "error_normalized": 0.004382481266564896,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000042",
+      "targets": {
+        "cube": {
+          "bbox": [
+            229,
+            219,
+            249,
+            246
+          ],
+          "centroid": [
+            238.91423670668954,
+            232.5591766723842
+          ],
+          "pixels": 583
+        },
+        "target": {
+          "bbox": [
+            302,
+            219,
+            328,
+            246
+          ],
+          "centroid": [
+            314.77760968229956,
+            232.4750378214826
+          ],
+          "pixels": 661
+        }
+      },
+      "reference_points": {
+        "cube": [
+          238.64219415809077,
+          233.2000248237804
+        ],
+        "target": [
+          314.5016014787004,
+          233.20002827589067
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 532 515\">center of the solid green cube</points>",
+          "points": [
+            [
+              238.336,
+              230.72
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.9279337439874356,
+            "error_normalized": 0.003042979964401529,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.4988553357519456,
+            "error_normalized": 0.003944101681058901,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 705 516\">blue target center</points>",
+          "points": [
+            [
+              315.84,
+              231.168
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.6843458831040512,
+            "error_normalized": 0.002658509812068122,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.433197385301083,
+            "error_normalized": 0.003840469578374492,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000043",
+      "targets": {
+        "cube": null,
+        "target": null
+      },
+      "reference_points": {
+        "cube": [
+          228.72961849546178,
+          228.1703745334368
+        ],
+        "target": [
+          228.03027624178566,
+          194.4318131335278
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 085 852\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              38.080000000000005,
+              381.69599999999997
+            ]
+          ],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 266.73766724460137,
+            "error_normalized": 0.42100895827352336,
+            "within_32px": false
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000044",
+      "targets": {
+        "cube": {
+          "bbox": [
+            209,
+            203,
+            227,
+            228
+          ],
+          "centroid": [
+            218.08809523809524,
+            217.42142857142858
+          ],
+          "pixels": 420
+        },
+        "target": {
+          "bbox": [
+            206,
+            237,
+            228,
+            267
+          ],
+          "centroid": [
+            217.0155807365439,
+            252.1359773371105
+          ],
+          "pixels": 706
+        }
+      },
+      "reference_points": {
+        "cube": [
+          218.04988247342888,
+          216.31297612173142
+        ],
+        "target": [
+          217.04866971883635,
+          252.71123395319174
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 482 482\">center of the solid green cube</points>",
+          "points": [
+            [
+              215.93599999999998,
+              215.93599999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.614959264433901,
+            "error_normalized": 0.004127355866981691,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.147233128429601,
+            "error_normalized": 0.003389114075671821,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 482 566\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              215.93599999999998,
+              253.56799999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.7933720957307928,
+            "error_normalized": 0.0028305927903615486,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.4043083572274437,
+            "error_normalized": 0.002216508844358183,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000045",
+      "targets": {
+        "cube": {
+          "bbox": [
+            220,
+            204,
+            238,
+            229
+          ],
+          "centroid": [
+            229.0,
+            216.5
+          ],
+          "pixels": 494
+        },
+        "target": {
+          "bbox": [
+            281,
+            204,
+            303,
+            229
+          ],
+          "centroid": [
+            292.0271247739602,
+            216.54430379746836
+          ],
+          "pixels": 553
+        }
+      },
+      "reference_points": {
+        "cube": [
+          228.87159667922103,
+          217.70307459248338
+        ],
+        "target": [
+          291.8634828954906,
+          217.70307726854304
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 511 480\">center of the solid green cube</points>",
+          "points": [
+            [
+              228.928,
+              215.04
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.461774264378746,
+            "error_normalized": 0.0023072109261298847,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.6636718303359808,
+            "error_normalized": 0.004204241995728024,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 649 480\">blue target center</points>",
+          "points": [
+            [
+              290.752,
+              215.04
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.9720225922247543,
+            "error_normalized": 0.003112568186641066,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.8857191071202504,
+            "error_normalized": 0.00455471327956321,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000046",
+      "targets": {
+        "cube": {
+          "bbox": [
+            201,
+            204,
+            220,
+            228
+          ],
+          "centroid": [
+            210.69387755102042,
+            216.0
+          ],
+          "pixels": 490
+        },
+        "target": {
+          "bbox": [
+            273,
+            204,
+            295,
+            228
+          ],
+          "centroid": [
+            283.58555133079847,
+            216.0190114068441
+          ],
+          "pixels": 526
+        }
+      },
+      "reference_points": {
+        "cube": [
+          210.7757579609293,
+          217.06824988273584
+        ],
+        "target": [
+          283.3705668829611,
+          217.06825295775968
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 468 479\">center of the solid green cube</points>",
+          "points": [
+            [
+              209.66400000000002,
+              214.59199999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.744451710451118,
+            "error_normalized": 0.0027533786471260206,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.714372716750406,
+            "error_normalized": 0.004284266416700813,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 632 477\">blue target center</points>",
+          "points": [
+            [
+              283.136,
+              213.696
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.3661103937370433,
+            "error_normalized": 0.003734581929570168,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.3804011054460705,
+            "error_normalized": 0.005335501216052272,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000047",
+      "targets": {
+        "cube": {
+          "bbox": [
+            230,
+            213,
+            249,
+            239
+          ],
+          "centroid": [
+            239.46468401486987,
+            226.04646840148698
+          ],
+          "pixels": 538
+        },
+        "target": {
+          "bbox": [
+            301,
+            213,
+            325,
+            239
+          ],
+          "centroid": [
+            312.71150729335494,
+            225.93517017828202
+          ],
+          "pixels": 617
+        }
+      },
+      "reference_points": {
+        "cube": [
+          239.1361115157654,
+          226.4954574332154
+        ],
+        "target": [
+          312.4103835971749,
+          226.4954606718177
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 533 500\">center of the solid green cube</points>",
+          "points": [
+            [
+              238.78400000000002,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.1567020300412394,
+            "error_normalized": 0.003404059442948557,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.5201766447065874,
+            "error_normalized": 0.003977754453705331,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 705 502\">blue target center</points>",
+          "points": [
+            [
+              315.84,
+              224.89600000000002
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.2965650721564446,
+            "error_normalized": 0.005203177493626211,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.784249345804017,
+            "error_normalized": 0.005972920477943698,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000048",
+      "targets": {
+        "cube": {
+          "bbox": [
+            217,
+            209,
+            236,
+            234
+          ],
+          "centroid": [
+            226.45581395348836,
+            223.71395348837208
+          ],
+          "pixels": 430
+        },
+        "target": {
+          "bbox": [
+            215,
+            250,
+            238,
+            281
+          ],
+          "centroid": [
+            226.855033557047,
+            265.4939597315436
+          ],
+          "pixels": 745
+        }
+      },
+      "reference_points": {
+        "cube": [
+          226.34957151538106,
+          222.47462386499467
+        ],
+        "target": [
+          226.81398936224292,
+          266.44984225227563
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 499 505\">center of the solid green cube</points>",
+          "points": [
+            [
+              223.552,
+              226.24
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.8487720711132463,
+            "error_normalized": 0.006074760782869575,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.69089158068477,
+            "error_normalized": 0.007403931353823848,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 496 584\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              222.208,
+              261.632
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 6.042321892152488,
+            "error_normalized": 0.009536979428689632,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 6.665338849068908,
+            "error_normalized": 0.010520326560452596,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000049",
+      "targets": {
+        "cube": {
+          "bbox": [
+            230,
+            215,
+            250,
+            241
+          ],
+          "centroid": [
+            239.50980392156862,
+            230.119825708061
+          ],
+          "pixels": 459
+        },
+        "target": {
+          "bbox": [
+            231,
+            255,
+            255,
+            287
+          ],
+          "centroid": [
+            242.6275,
+            271.0325
+          ],
+          "pixels": 800
+        }
+      },
+      "reference_points": {
+        "cube": [
+          239.39370688420547,
+          229.10172790703325
+        ],
+        "target": [
+          242.2729323169071,
+          271.95282815157674
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 530 514\">center of the solid green cube</points>",
+          "points": [
+            [
+              237.44,
+              230.272
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.0753903943277696,
+            "error_normalized": 0.003275720137139707,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.277390471783136,
+            "error_normalized": 0.0035945496562667105,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 535 605\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              239.68,
+              271.03999999999996
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.9475095419692785,
+            "error_normalized": 0.004652241037362794,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.7489185572461396,
+            "error_normalized": 0.004338792305264031,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000050",
+      "targets": {
+        "cube": null,
+        "target": null
+      },
+      "reference_points": {
+        "cube": [
+          223.57813202707925,
+          229.7918031767859
+        ],
+        "target": [
+          223.6327888464743,
+          200.0229526330961
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 085 839\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              38.080000000000005,
+              375.87199999999996
+            ]
+          ],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 255.64179022325726,
+            "error_normalized": 0.4034956326373528,
+            "within_32px": false
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000051",
+      "targets": {
+        "cube": {
+          "bbox": [
+            221,
+            214,
+            241,
+            241
+          ],
+          "centroid": [
+            230.5744680851064,
+            227.4787234042553
+          ],
+          "pixels": 564
+        },
+        "target": {
+          "bbox": [
+            145,
+            214,
+            168,
+            241
+          ],
+          "centroid": [
+            156.9516129032258,
+            227.50645161290322
+          ],
+          "pixels": 620
+        }
+      },
+      "reference_points": {
+        "cube": [
+          230.5904970329863,
+          228.33416832460492
+        ],
+        "target": [
+          157.2289871741997,
+          228.33416505582426
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 505 500\">center of the solid green cube</points>",
+          "points": [
+            [
+              226.24,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.55779903416086,
+            "error_normalized": 0.008772226306980331,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 6.140996621073085,
+            "error_normalized": 0.009692724004474226,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 358 500\">blue target center</points>",
+          "points": [
+            [
+              160.384,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.906779401576309,
+            "error_normalized": 0.007744680778216692,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.360885436389448,
+            "error_normalized": 0.008461425100971389,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000052",
+      "targets": {
+        "cube": {
+          "bbox": [
+            204,
+            208,
+            223,
+            233
+          ],
+          "centroid": [
+            213.53667953667954,
+            220.54633204633205
+          ],
+          "pixels": 518
+        },
+        "target": {
+          "bbox": [
+            267,
+            208,
+            289,
+            233
+          ],
+          "centroid": [
+            278.04528985507244,
+            220.53804347826087
+          ],
+          "pixels": 552
+        }
+      },
+      "reference_points": {
+        "cube": [
+          213.60918613406753,
+          221.72720169770082
+        ],
+        "target": [
+          277.7953499395761,
+          221.7272044748999
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 477 486\">center of the solid green cube</points>",
+          "points": [
+            [
+              213.696,
+              217.728
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.822831651624804,
+            "error_normalized": 0.004455454024580181,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.0001438556895925,
+            "error_normalized": 0.006313680459999583,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 617 492\">blue target center</points>",
+          "points": [
+            [
+              276.416,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.633854351656841,
+            "error_normalized": 0.0025788158293029067,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.9031193947848313,
+            "error_normalized": 0.003003813905044626,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000053",
+      "targets": {
+        "cube": null,
+        "target": null
+      },
+      "reference_points": {
+        "cube": [
+          227.8640361043016,
+          227.056194318735
+        ],
+        "target": [
+          227.3166298395053,
+          194.88950272612476
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 105 873\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              47.04,
+              391.104
+            ]
+          ],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 266.4578619720754,
+            "error_normalized": 0.4205673238859902,
+            "within_32px": false
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000054",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            202,
+            244,
+            227
+          ],
+          "centroid": [
+            234.096018735363,
+            216.44262295081967
+          ],
+          "pixels": 427
+        },
+        "target": {
+          "bbox": [
+            226,
+            236,
+            247,
+            265
+          ],
+          "centroid": [
+            236.45205479452054,
+            250.56164383561645
+          ],
+          "pixels": 657
+        }
+      },
+      "reference_points": {
+        "cube": [
+          234.29186364587127,
+          215.29088189681084
+        ],
+        "target": [
+          236.01089640417277,
+          251.25069885150754
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 514 482\">center of the solid green cube</points>",
+          "points": [
+            [
+              230.272,
+              215.93599999999998
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.857432579152172,
+            "error_normalized": 0.006088430211358069,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.071299681730627,
+            "error_normalized": 0.006425990208023123,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 518 559\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              232.06400000000002,
+              250.43200000000002
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.3899695219702615,
+            "error_normalized": 0.006928967004882674,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.030912928200198,
+            "error_normalized": 0.006362245236390365,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000055",
+      "targets": {
+        "cube": {
+          "bbox": [
+            201,
+            211,
+            221,
+            237
+          ],
+          "centroid": [
+            211.29038112522687,
+            223.98003629764065
+          ],
+          "pixels": 551
+        },
+        "target": {
+          "bbox": [
+            133,
+            211,
+            156,
+            237
+          ],
+          "centroid": [
+            144.69320066334993,
+            224.03482587064676
+          ],
+          "pixels": 603
+        }
+      },
+      "reference_points": {
+        "cube": [
+          211.2803881212114,
+          225.20228933273367
+        ],
+        "target": [
+          144.91949094522553,
+          225.2022864164372
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 465 494\">center of the solid green cube</points>",
+          "points": [
+            [
+              208.32000000000002,
+              221.312
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.9926910367109434,
+            "error_normalized": 0.006301917203663068,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.888583529059379,
+            "error_normalized": 0.007715961079898997,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 327 492\">blue target center</points>",
+          "points": [
+            [
+              146.496,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.04301695894146,
+            "error_normalized": 0.006381349794910089,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.0392378848350905,
+            "error_normalized": 0.00795374839370323,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000056",
+      "targets": {
+        "cube": {
+          "bbox": [
+            233,
+            220,
+            235,
+            246
+          ],
+          "centroid": [
+            233.875,
+            234.125
+          ],
+          "pixels": 72
+        },
+        "target": {
+          "bbox": [
+            232,
+            202,
+            234,
+            211
+          ],
+          "centroid": [
+            232.7391304347826,
+            207.2173913043478
+          ],
+          "pixels": 23
+        }
+      },
+      "reference_points": {
+        "cube": [
+          243.0036479765244,
+          233.89024775934024
+        ],
+        "target": [
+          240.29058841090637,
+          200.498787603439
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "There are none.",
+          "points": [],
+          "metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "inside_bbox": false
+          },
+          "geometry_metrics": {
+            "parsed": false,
+            "error_pixels": null,
+            "error_normalized": null,
+            "within_32px": false
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 515 466\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              230.72,
+              208.768
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.545834841402233,
+            "error_normalized": 0.004018252411018968,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 12.648163352456086,
+            "error_normalized": 0.019963397491243023,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000057",
+      "targets": {
+        "cube": {
+          "bbox": [
+            210,
+            208,
+            229,
+            233
+          ],
+          "centroid": [
+            219.55512572533848,
+            220.56673114119923
+          ],
+          "pixels": 517
+        },
+        "target": {
+          "bbox": [
+            138,
+            208,
+            161,
+            233
+          ],
+          "centroid": [
+            150.0281690140845,
+            220.53521126760563
+          ],
+          "pixels": 568
+        }
+      },
+      "reference_points": {
+        "cube": [
+          219.6597507161581,
+          221.5668097013497
+        ],
+        "target": [
+          150.27720771479466,
+          221.56680670148594
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 485 486\">center of the solid green cube</points>",
+          "points": [
+            [
+              217.28,
+              217.728
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.637937816691096,
+            "error_normalized": 0.005741987722583164,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.516599760243493,
+            "error_normalized": 0.007128835532084172,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 339 484\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              151.872,
+              216.832
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.136844981038508,
+            "error_normalized": 0.006529444506272017,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.996174229686831,
+            "error_normalized": 0.007885778298663023,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000058",
+      "targets": {
+        "cube": {
+          "bbox": [
+            224,
+            204,
+            242,
+            229
+          ],
+          "centroid": [
+            232.96341463414635,
+            216.5487804878049
+          ],
+          "pixels": 492
+        },
+        "target": {
+          "bbox": [
+            160,
+            204,
+            181,
+            229
+          ],
+          "centroid": [
+            170.57407407407408,
+            216.5425925925926
+          ],
+          "pixels": 540
+        }
+      },
+      "reference_points": {
+        "cube": [
+          232.61895955488416,
+          217.59650610190278
+        ],
+        "target": [
+          170.79117584671621,
+          217.59650347658294
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 518 477\">center of the solid green cube</points>",
+          "points": [
+            [
+              232.06400000000002,
+              213.696
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.991204305245111,
+            "error_normalized": 0.004721207250341995,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.939787806283227,
+            "error_normalized": 0.006218416683613709,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 386 476\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              172.928,
+              213.248
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.049111953985995,
+            "error_normalized": 0.006390969911712074,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.845152211015764,
+            "error_normalized": 0.007647410679219287,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000059",
+      "targets": {
+        "cube": {
+          "bbox": [
+            215,
+            220,
+            234,
+            245
+          ],
+          "centroid": [
+            224.5,
+            233.78205128205127
+          ],
+          "pixels": 468
+        },
+        "target": {
+          "bbox": [
+            213,
+            257,
+            236,
+            290
+          ],
+          "centroid": [
+            224.5,
+            273.5
+          ],
+          "pixels": 816
+        }
+      },
+      "reference_points": {
+        "cube": [
+          224.46763019192582,
+          232.2165951877953
+        ],
+        "target": [
+          224.5523612083922,
+          274.29599641087486
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 499 524\">center of the solid green cube</points>",
+          "points": [
+            [
+              223.552,
+              234.752
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.3562833462998862,
+            "error_normalized": 0.0021407079271853397,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.6956736097155694,
+            "error_normalized": 0.004254752431463164,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 496 605\">center of the translucent blue square target</points>",
+          "points": [
+            [
+              222.208,
+              271.03999999999996
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.3622706613240085,
+            "error_normalized": 0.005306884787515143,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.012174236376627,
+            "error_normalized": 0.006332668771972925,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000060",
+      "targets": {
+        "cube": {
+          "bbox": [
+            201,
+            219,
+            221,
+            246
+          ],
+          "centroid": [
+            211.01703577512777,
+            232.5229982964225
+          ],
+          "pixels": 587
+        },
+        "target": {
+          "bbox": [
+            131,
+            219,
+            156,
+            246
+          ],
+          "centroid": [
+            143.75803981623278,
+            232.5436447166922
+          ],
+          "pixels": 653
+        }
+      },
+      "reference_points": {
+        "cube": [
+          210.9569125942154,
+          233.61809266670716
+        ],
+        "target": [
+          144.0297840730908,
+          233.6180896156153
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 468 514\">center of the solid green cube</points>",
+          "points": [
+            [
+              209.66400000000002,
+              230.272
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.626347109441653,
+            "error_normalized": 0.004145330024187233,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 3.5871937653926933,
+            "error_normalized": 0.005661895171739461,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 318 512\">blue target center</points>",
+          "points": [
+            [
+              142.464,
+              229.376
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 3.4217703162520636,
+            "error_normalized": 0.00540079686224257,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 4.5218363604243805,
+            "error_normalized": 0.007137100789892805,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000061",
+      "targets": {
+        "cube": {
+          "bbox": [
+            225,
+            214,
+            245,
+            240
+          ],
+          "centroid": [
+            234.579185520362,
+            229.58597285067873
+          ],
+          "pixels": 442
+        },
+        "target": {
+          "bbox": [
+            225,
+            252,
+            249,
+            283
+          ],
+          "centroid": [
+            236.56606217616581,
+            267.5103626943005
+          ],
+          "pixels": 772
+        }
+      },
+      "reference_points": {
+        "cube": [
+          234.62795127395435,
+          228.04421440862882
+        ],
+        "target": [
+          236.50680799560706,
+          268.3590430288212
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 520 511\">center of the solid green cube</points>",
+          "points": [
+            [
+              232.96,
+              228.928
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.7477671531357362,
+            "error_normalized": 0.0027586116203513083,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.8876277238378398,
+            "error_normalized": 0.0029793624193782684,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 518 589\">blue target center</points>",
+          "points": [
+            [
+              232.06400000000002,
+              263.87199999999996
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 5.788458079086404,
+            "error_normalized": 0.009136290090035833,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 6.314435685658939,
+            "error_normalized": 0.00996647386762447,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000062",
+      "targets": {
+        "cube": {
+          "bbox": [
+            195,
+            208,
+            215,
+            233
+          ],
+          "centroid": [
+            205.53333333333333,
+            221.81290322580645
+          ],
+          "pixels": 465
+        },
+        "target": {
+          "bbox": [
+            190,
+            242,
+            213,
+            272
+          ],
+          "centroid": [
+            201.97759103641457,
+            257.06162464985994
+          ],
+          "pixels": 714
+        }
+      },
+      "reference_points": {
+        "cube": [
+          205.4329719281626,
+          221.07990380410268
+        ],
+        "target": [
+          202.32827577445312,
+          258.04783207930876
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 462 492\">center of the solid green cube</points>",
+          "points": [
+            [
+              206.976,
+              220.416
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.0081398689781524,
+            "error_normalized": 0.0031695743726016,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 1.6797928120992356,
+            "error_normalized": 0.0026513234116602447,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 449 571\">blue target center</points>",
+          "points": [
+            [
+              201.15200000000002,
+              255.808
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 1.5010580675458625,
+            "error_normalized": 0.0023692150413313707,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.5299155007758443,
+            "error_normalized": 0.003993125907204374,
+            "within_32px": true
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "dev_000063",
+      "targets": {
+        "cube": {
+          "bbox": [
+            199,
+            214,
+            218,
+            240
+          ],
+          "centroid": [
+            208.53531598513013,
+            227.04646840148698
+          ],
+          "pixels": 538
+        },
+        "target": {
+          "bbox": [
+            272,
+            214,
+            295,
+            240
+          ],
+          "centroid": [
+            283.04230118443314,
+            226.99492385786803
+          ],
+          "pixels": 591
+        }
+      },
+      "reference_points": {
+        "cube": [
+          208.91882252247993,
+          227.62915385255036
+        ],
+        "target": [
+          282.81887061388056,
+          227.62915713515986
+        ]
+      },
+      "queries": {
+        "cube": {
+          "text": "<points coords=\"1 1 458 500\">center of the solid green cube</points>",
+          "points": [
+            [
+              205.184,
+              224.0
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 4.5290494094729565,
+            "error_normalized": 0.007148485602159054,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 5.207653690473712,
+            "error_normalized": 0.008219569729029267,
+            "within_32px": true
+          }
+        },
+        "target": {
+          "text": "<points coords=\"1 1 627 505\">blue target center</points>",
+          "points": [
+            [
+              280.896,
+              226.24
+            ]
+          ],
+          "metrics": {
+            "parsed": true,
+            "error_pixels": 2.275196432283899,
+            "error_normalized": 0.0035910866647307694,
+            "inside_bbox": true
+          },
+          "geometry_metrics": {
+            "parsed": true,
+            "error_pixels": 2.372169670131307,
+            "error_normalized": 0.0037441456693636218,
+            "within_32px": true
+          }
+        }
+      }
+    }
+  ],
+  "rejected": [],
+  "seconds": 202.74726657295832,
+  "limitations": [
+    "Color masks provide visible-image reference centers, not simulator projected centers.",
+    "A parsed point outside the visible mask can still identify the object approximately.",
+    "Pointing probe does not establish action-token or closed-loop control quality."
+  ]
+}

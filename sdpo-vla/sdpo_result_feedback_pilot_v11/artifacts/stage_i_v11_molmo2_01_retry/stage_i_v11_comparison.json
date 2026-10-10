@@ -1,0 +1,1441 @@
+{
+  "conditions": {
+    "sdpo_result": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 5,
+        "success_rate": 0.078125,
+        "conservative_success_rate_all_scenes": 0.078125,
+        "mean_progress_m": 0.02539442860603583,
+        "safety_failures": 2,
+        "interactions": 732,
+        "seconds": 348.0066459029913,
+        "action_counts": {
+          "C": 543,
+          "E": 150,
+          "D": 32,
+          "B": 7
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_binary": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 9,
+        "success_rate": 0.140625,
+        "conservative_success_rate_all_scenes": 0.140625,
+        "mean_progress_m": 0.02986358116517291,
+        "safety_failures": 2,
+        "interactions": 705,
+        "seconds": 335.82997602201067,
+        "action_counts": {
+          "C": 616,
+          "E": 57,
+          "B": 15,
+          "D": 14,
+          "A": 3
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_causal": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 13,
+        "success_rate": 0.203125,
+        "conservative_success_rate_all_scenes": 0.203125,
+        "mean_progress_m": 0.037225349942661745,
+        "safety_failures": 2,
+        "interactions": 679,
+        "seconds": 323.35764100798406,
+        "action_counts": {
+          "C": 611,
+          "E": 9,
+          "D": 40,
+          "B": 19
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_directional": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 13,
+        "success_rate": 0.203125,
+        "conservative_success_rate_all_scenes": 0.203125,
+        "mean_progress_m": 0.03677301263893472,
+        "safety_failures": 2,
+        "interactions": 677,
+        "seconds": 323.2279563830234,
+        "action_counts": {
+          "C": 619,
+          "E": 9,
+          "D": 30,
+          "B": 18,
+          "A": 1
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_directional_residual": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 10,
+        "success_rate": 0.15625,
+        "conservative_success_rate_all_scenes": 0.15625,
+        "mean_progress_m": 0.030978906810441798,
+        "safety_failures": 2,
+        "interactions": 699,
+        "seconds": 333.2352697439492,
+        "action_counts": {
+          "C": 594,
+          "E": 9,
+          "D": 78,
+          "B": 17,
+          "A": 1
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_wrong_directional": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 11,
+        "success_rate": 0.171875,
+        "conservative_success_rate_all_scenes": 0.171875,
+        "mean_progress_m": 0.030647962764110987,
+        "safety_failures": 2,
+        "interactions": 692,
+        "seconds": 329.6527602788992,
+        "action_counts": {
+          "C": 613,
+          "E": 9,
+          "D": 52,
+          "B": 17,
+          "A": 1
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_wrong_directional_residual": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 10,
+        "success_rate": 0.15625,
+        "conservative_success_rate_all_scenes": 0.15625,
+        "mean_progress_m": 0.029303647059444486,
+        "safety_failures": 2,
+        "interactions": 698,
+        "seconds": 332.4253143669339,
+        "action_counts": {
+          "C": 614,
+          "E": 8,
+          "D": 59,
+          "B": 17
+        }
+      },
+      "updates": 12
+    }
+  },
+  "updates": {
+    "1": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.1938626659102738,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.15625,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 1,
+          "2": 7,
+          "3": 13,
+          "4": 107
+        },
+        "teacher_entropy": 1.0350595712661743,
+        "teacher_student_tv": 0.5322321653366089
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.038604377943556756,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.09375,
+        "teacher_argmax_counts": {
+          "0": 15,
+          "1": 1,
+          "2": 90,
+          "3": 22,
+          "4": 0
+        },
+        "teacher_entropy": 1.3681361675262451,
+        "teacher_student_tv": 0.21687982976436615
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.1973837569821626,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3515625,
+        "teacher_argmax_counts": {
+          "0": 33,
+          "1": 6,
+          "2": 33,
+          "3": 56,
+          "4": 0
+        },
+        "teacher_entropy": 1.0203051567077637,
+        "teacher_student_tv": 0.48137155175209045
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.3833330855704844,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9375,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 32,
+          "2": 8,
+          "3": 48,
+          "4": 0
+        },
+        "teacher_entropy": 0.2743092179298401,
+        "teacher_student_tv": 0.7651574611663818
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.3359732271055691,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.7890625,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 32,
+          "2": 15,
+          "3": 41,
+          "4": 0
+        },
+        "teacher_entropy": 0.3626502454280853,
+        "teacher_student_tv": 0.6892905831336975
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.32071847282350063,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.0625,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 26,
+          "2": 50,
+          "3": 6,
+          "4": 0
+        },
+        "teacher_entropy": 0.30880850553512573,
+        "teacher_student_tv": 0.6466836929321289
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3223207409027964,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.03125,
+        "teacher_argmax_counts": {
+          "0": 42,
+          "1": 30,
+          "2": 50,
+          "3": 6,
+          "4": 0
+        },
+        "teacher_entropy": 0.2738235294818878,
+        "teacher_student_tv": 0.6562466621398926
+      }
+    },
+    "2": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.17587577179074287,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1484375,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 0,
+          "2": 18,
+          "3": 4,
+          "4": 105
+        },
+        "teacher_entropy": 1.0041667222976685,
+        "teacher_student_tv": 0.5024556517601013
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03586796027957462,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 2,
+          "2": 91,
+          "3": 11,
+          "4": 0
+        },
+        "teacher_entropy": 1.3424055576324463,
+        "teacher_student_tv": 0.21391385793685913
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.15766503813210875,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.34375,
+        "teacher_argmax_counts": {
+          "0": 19,
+          "1": 10,
+          "2": 61,
+          "3": 38,
+          "4": 0
+        },
+        "teacher_entropy": 0.9736354947090149,
+        "teacher_student_tv": 0.4118841886520386
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.33134061470627785,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9296875,
+        "teacher_argmax_counts": {
+          "0": 49,
+          "1": 31,
+          "2": 32,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.2847611904144287,
+        "teacher_student_tv": 0.6916052103042603
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.298333500046283,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.796875,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 33,
+          "2": 21,
+          "3": 28,
+          "4": 0
+        },
+        "teacher_entropy": 0.39365437626838684,
+        "teacher_student_tv": 0.6430164575576782
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.33008245355449617,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.15625,
+        "teacher_argmax_counts": {
+          "0": 49,
+          "1": 31,
+          "2": 27,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.3380545973777771,
+        "teacher_student_tv": 0.6833145618438721
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3415041887201369,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.1484375,
+        "teacher_argmax_counts": {
+          "0": 48,
+          "1": 32,
+          "2": 27,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.27251914143562317,
+        "teacher_student_tv": 0.7038329243659973
+      }
+    },
+    "3": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.18419228494167328,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 22,
+          "3": 7,
+          "4": 99
+        },
+        "teacher_entropy": 0.9100103378295898,
+        "teacher_student_tv": 0.5175073742866516
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.030360912205651402,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2734375,
+        "teacher_argmax_counts": {
+          "0": 8,
+          "1": 0,
+          "2": 109,
+          "3": 11,
+          "4": 0
+        },
+        "teacher_entropy": 1.3526380062103271,
+        "teacher_student_tv": 0.18675273656845093
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.1562123962212354,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3984375,
+        "teacher_argmax_counts": {
+          "0": 18,
+          "1": 7,
+          "2": 62,
+          "3": 41,
+          "4": 0
+        },
+        "teacher_entropy": 0.9460331201553345,
+        "teacher_student_tv": 0.4149092435836792
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.3450020672753453,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.96875,
+        "teacher_argmax_counts": {
+          "0": 60,
+          "1": 12,
+          "2": 32,
+          "3": 24,
+          "4": 0
+        },
+        "teacher_entropy": 0.2647017538547516,
+        "teacher_student_tv": 0.7109055519104004
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.29482070019003004,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.8046875,
+        "teacher_argmax_counts": {
+          "0": 58,
+          "1": 12,
+          "2": 23,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.42312705516815186,
+        "teacher_student_tv": 0.635719895362854
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.3316992458421737,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.09375,
+        "teacher_argmax_counts": {
+          "0": 23,
+          "1": 49,
+          "2": 29,
+          "3": 27,
+          "4": 0
+        },
+        "teacher_entropy": 0.3922947347164154,
+        "teacher_student_tv": 0.6777781248092651
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3456393461674452,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.0859375,
+        "teacher_argmax_counts": {
+          "0": 22,
+          "1": 50,
+          "2": 29,
+          "3": 27,
+          "4": 0
+        },
+        "teacher_entropy": 0.32596316933631897,
+        "teacher_student_tv": 0.7009902596473694
+      }
+    },
+    "4": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.17684592120349407,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 2,
+          "2": 23,
+          "3": 6,
+          "4": 97
+        },
+        "teacher_entropy": 0.9635266065597534,
+        "teacher_student_tv": 0.49696415662765503
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03638906154083088,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 4,
+          "1": 2,
+          "2": 101,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 1.3473310470581055,
+        "teacher_student_tv": 0.21392390131950378
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.17341273301281035,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3984375,
+        "teacher_argmax_counts": {
+          "0": 13,
+          "1": 7,
+          "2": 62,
+          "3": 46,
+          "4": 0
+        },
+        "teacher_entropy": 0.8952564597129822,
+        "teacher_student_tv": 0.4394933581352234
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.33089891308918595,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9453125,
+        "teacher_argmax_counts": {
+          "0": 63,
+          "1": 9,
+          "2": 40,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.22998246550559998,
+        "teacher_student_tv": 0.6876681447029114
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.2817542946431786,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.71875,
+        "teacher_argmax_counts": {
+          "0": 62,
+          "1": 9,
+          "2": 22,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.40600818395614624,
+        "teacher_student_tv": 0.6102291941642761
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.32041015662252903,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1640625,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 48,
+          "2": 27,
+          "3": 29,
+          "4": 0
+        },
+        "teacher_entropy": 0.3781830370426178,
+        "teacher_student_tv": 0.6569584012031555
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3358685225248337,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.171875,
+        "teacher_argmax_counts": {
+          "0": 23,
+          "1": 49,
+          "2": 25,
+          "3": 31,
+          "4": 0
+        },
+        "teacher_entropy": 0.3036438226699829,
+        "teacher_student_tv": 0.6778870820999146
+      }
+    },
+    "5": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.17520956974476576,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3046875,
+        "teacher_argmax_counts": {
+          "0": 4,
+          "1": 0,
+          "2": 30,
+          "3": 9,
+          "4": 85
+        },
+        "teacher_entropy": 0.8777400851249695,
+        "teacher_student_tv": 0.4911649227142334
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03729705192381516,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 8,
+          "1": 0,
+          "2": 82,
+          "3": 38,
+          "4": 0
+        },
+        "teacher_entropy": 1.3331375122070312,
+        "teacher_student_tv": 0.21207518875598907
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.18226198921911418,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.6015625,
+        "teacher_argmax_counts": {
+          "0": 11,
+          "1": 8,
+          "2": 64,
+          "3": 45,
+          "4": 0
+        },
+        "teacher_entropy": 0.7829927206039429,
+        "teacher_student_tv": 0.45026299357414246
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.29502937523648143,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9453125,
+        "teacher_argmax_counts": {
+          "0": 23,
+          "1": 25,
+          "2": 56,
+          "3": 24,
+          "4": 0
+        },
+        "teacher_entropy": 0.23947080969810486,
+        "teacher_student_tv": 0.6236636638641357
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.26589875062927604,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.7109375,
+        "teacher_argmax_counts": {
+          "0": 20,
+          "1": 28,
+          "2": 41,
+          "3": 39,
+          "4": 0
+        },
+        "teacher_entropy": 0.3696650266647339,
+        "teacher_student_tv": 0.5837386250495911
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.2882839518133551,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "0": 34,
+          "1": 14,
+          "2": 46,
+          "3": 34,
+          "4": 0
+        },
+        "teacher_entropy": 0.3460439443588257,
+        "teacher_student_tv": 0.6146079301834106
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3218451696448028,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 15,
+          "2": 43,
+          "3": 38,
+          "4": 0
+        },
+        "teacher_entropy": 0.22678667306900024,
+        "teacher_student_tv": 0.6656777858734131
+      }
+    },
+    "6": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.17213103268295527,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1640625,
+        "teacher_argmax_counts": {
+          "0": 3,
+          "1": 0,
+          "2": 13,
+          "3": 9,
+          "4": 103
+        },
+        "teacher_entropy": 1.0137476921081543,
+        "teacher_student_tv": 0.4951385259628296
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.030050601810216904,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "0": 13,
+          "1": 0,
+          "2": 95,
+          "3": 20,
+          "4": 0
+        },
+        "teacher_entropy": 1.3317219018936157,
+        "teacher_student_tv": 0.19394199550151825
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.16068483307026327,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.4375,
+        "teacher_argmax_counts": {
+          "0": 6,
+          "1": 15,
+          "2": 49,
+          "3": 58,
+          "4": 0
+        },
+        "teacher_entropy": 0.9659727811813354,
+        "teacher_student_tv": 0.4186413586139679
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.3352827988564968,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9140625,
+        "teacher_argmax_counts": {
+          "0": 43,
+          "1": 29,
+          "2": 24,
+          "3": 32,
+          "4": 0
+        },
+        "teacher_entropy": 0.27356410026550293,
+        "teacher_student_tv": 0.7016372084617615
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.2964189131744206,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.796875,
+        "teacher_argmax_counts": {
+          "0": 36,
+          "1": 35,
+          "2": 23,
+          "3": 34,
+          "4": 0
+        },
+        "teacher_entropy": 0.3642553389072418,
+        "teacher_student_tv": 0.6333428621292114
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.3003540242789313,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.15625,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 26,
+          "2": 40,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.40583938360214233,
+        "teacher_student_tv": 0.6351233720779419
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.30220391508191824,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.15625,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 25,
+          "2": 41,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.3650479316711426,
+        "teacher_student_tv": 0.644600510597229
+      }
+    },
+    "7": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.18156456435099244,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3671875,
+        "teacher_argmax_counts": {
+          "0": 3,
+          "1": 0,
+          "2": 40,
+          "3": 12,
+          "4": 73
+        },
+        "teacher_entropy": 0.758150041103363,
+        "teacher_student_tv": 0.49616706371307373
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03373484360054135,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.28125,
+        "teacher_argmax_counts": {
+          "0": 3,
+          "1": 0,
+          "2": 94,
+          "3": 31,
+          "4": 0
+        },
+        "teacher_entropy": 1.3110134601593018,
+        "teacher_student_tv": 0.20580309629440308
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.15805906476452947,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.5546875,
+        "teacher_argmax_counts": {
+          "0": 5,
+          "1": 8,
+          "2": 70,
+          "3": 45,
+          "4": 0
+        },
+        "teacher_entropy": 0.7143921852111816,
+        "teacher_student_tv": 0.40728357434272766
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.2609564163722098,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.953125,
+        "teacher_argmax_counts": {
+          "0": 14,
+          "1": 18,
+          "2": 56,
+          "3": 40,
+          "4": 0
+        },
+        "teacher_entropy": 0.24552173912525177,
+        "teacher_student_tv": 0.5873541831970215
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.22311150236055255,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.734375,
+        "teacher_argmax_counts": {
+          "0": 14,
+          "1": 18,
+          "2": 44,
+          "3": 52,
+          "4": 0
+        },
+        "teacher_entropy": 0.42248716950416565,
+        "teacher_student_tv": 0.5150747299194336
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.24269654438830912,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.109375,
+        "teacher_argmax_counts": {
+          "0": 25,
+          "1": 7,
+          "2": 43,
+          "3": 53,
+          "4": 0
+        },
+        "teacher_entropy": 0.3922819495201111,
+        "teacher_student_tv": 0.5660127401351929
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.2900658608414233,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "0": 25,
+          "1": 7,
+          "2": 45,
+          "3": 51,
+          "4": 0
+        },
+        "teacher_entropy": 0.2450975477695465,
+        "teacher_student_tv": 0.6249768733978271
+      }
+    },
+    "8": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.1727850919123739,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.3203125,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 38,
+          "3": 4,
+          "4": 86
+        },
+        "teacher_entropy": 0.8202327489852905,
+        "teacher_student_tv": 0.49037760496139526
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.027404600812587887,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.265625,
+        "teacher_argmax_counts": {
+          "0": 9,
+          "1": 0,
+          "2": 85,
+          "3": 34,
+          "4": 0
+        },
+        "teacher_entropy": 1.3197746276855469,
+        "teacher_student_tv": 0.18173743784427643
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.15674535592552274,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.5234375,
+        "teacher_argmax_counts": {
+          "0": 3,
+          "1": 9,
+          "2": 71,
+          "3": 45,
+          "4": 0
+        },
+        "teacher_entropy": 0.7637402415275574,
+        "teacher_student_tv": 0.41325661540031433
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.28186019184067845,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9609375,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 19,
+          "2": 64,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.239203542470932,
+        "teacher_student_tv": 0.6200807690620422
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.23038580897264183,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.625,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 19,
+          "2": 29,
+          "3": 51,
+          "4": 0
+        },
+        "teacher_entropy": 0.45966392755508423,
+        "teacher_student_tv": 0.5323299765586853
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.268776640528813,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.140625,
+        "teacher_argmax_counts": {
+          "0": 27,
+          "1": 21,
+          "2": 31,
+          "3": 49,
+          "4": 0
+        },
+        "teacher_entropy": 0.3593783378601074,
+        "teacher_student_tv": 0.6079968810081482
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.3060671715065837,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.1484375,
+        "teacher_argmax_counts": {
+          "0": 28,
+          "1": 20,
+          "2": 31,
+          "3": 49,
+          "4": 0
+        },
+        "teacher_entropy": 0.23062151670455933,
+        "teacher_student_tv": 0.658190906047821
+      }
+    },
+    "9": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.15737172705121338,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2265625,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 30,
+          "3": 0,
+          "4": 98
+        },
+        "teacher_entropy": 0.9468928575515747,
+        "teacher_student_tv": 0.4648771286010742
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.02852799548418261,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.34375,
+        "teacher_argmax_counts": {
+          "0": 22,
+          "1": 0,
+          "2": 82,
+          "3": 24,
+          "4": 0
+        },
+        "teacher_entropy": 1.3308191299438477,
+        "teacher_student_tv": 0.1910400241613388
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.15365402400493622,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.5703125,
+        "teacher_argmax_counts": {
+          "0": 21,
+          "1": 5,
+          "2": 67,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.8740319013595581,
+        "teacher_student_tv": 0.41664963960647583
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.29152851458638906,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.953125,
+        "teacher_argmax_counts": {
+          "0": 38,
+          "1": 18,
+          "2": 56,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.21846917271614075,
+        "teacher_student_tv": 0.6302347183227539
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.2627312713302672,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.828125,
+        "teacher_argmax_counts": {
+          "0": 36,
+          "1": 20,
+          "2": 46,
+          "3": 26,
+          "4": 0
+        },
+        "teacher_entropy": 0.3477456569671631,
+        "teacher_student_tv": 0.5753225684165955
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.2661214180989191,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2265625,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 27,
+          "2": 30,
+          "3": 42,
+          "4": 0
+        },
+        "teacher_entropy": 0.38850685954093933,
+        "teacher_student_tv": 0.5921357870101929
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.2981431386433542,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.2265625,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 27,
+          "2": 30,
+          "3": 42,
+          "4": 0
+        },
+        "teacher_entropy": 0.2683444917201996,
+        "teacher_student_tv": 0.6428858041763306
+      }
+    },
+    "10": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.1624542330391705,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 0,
+          "2": 21,
+          "3": 5,
+          "4": 101
+        },
+        "teacher_entropy": 0.9859272837638855,
+        "teacher_student_tv": 0.4797482192516327
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.02466773078776896,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2890625,
+        "teacher_argmax_counts": {
+          "0": 8,
+          "1": 0,
+          "2": 111,
+          "3": 9,
+          "4": 0
+        },
+        "teacher_entropy": 1.3447853326797485,
+        "teacher_student_tv": 0.17832106351852417
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.15062299650162458,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.40625,
+        "teacher_argmax_counts": {
+          "0": 21,
+          "1": 14,
+          "2": 60,
+          "3": 33,
+          "4": 0
+        },
+        "teacher_entropy": 0.960197925567627,
+        "teacher_student_tv": 0.40753746032714844
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.3095299322158098,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.953125,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 18,
+          "2": 40,
+          "3": 24,
+          "4": 0
+        },
+        "teacher_entropy": 0.24677599966526031,
+        "teacher_student_tv": 0.6679526567459106
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.2787550250068307,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.8125,
+        "teacher_argmax_counts": {
+          "0": 43,
+          "1": 21,
+          "2": 29,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.3499390184879303,
+        "teacher_student_tv": 0.6132042407989502
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.2680057566612959,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 31,
+          "1": 33,
+          "2": 43,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.39420807361602783,
+        "teacher_student_tv": 0.6021676659584045
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.29667777102440596,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 31,
+          "1": 33,
+          "2": 43,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.28780755400657654,
+        "teacher_student_tv": 0.6411166787147522
+      }
+    },
+    "11": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.1640983736142516,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.265625,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 27,
+          "3": 9,
+          "4": 92
+        },
+        "teacher_entropy": 0.8856395483016968,
+        "teacher_student_tv": 0.47672468423843384
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.020594451096258126,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.375,
+        "teacher_argmax_counts": {
+          "0": 9,
+          "1": 0,
+          "2": 98,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 1.299017310142517,
+        "teacher_student_tv": 0.16785016655921936
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.14399874745868146,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.46875,
+        "teacher_argmax_counts": {
+          "0": 5,
+          "1": 4,
+          "2": 71,
+          "3": 48,
+          "4": 0
+        },
+        "teacher_entropy": 0.843161940574646,
+        "teacher_student_tv": 0.39349043369293213
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.2797006529290229,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 1.0,
+        "teacher_argmax_counts": {
+          "0": 48,
+          "1": 0,
+          "2": 56,
+          "3": 24,
+          "4": 0
+        },
+        "teacher_entropy": 0.2059699147939682,
+        "teacher_student_tv": 0.6238910555839539
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.24437633575871587,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.7421875,
+        "teacher_argmax_counts": {
+          "0": 46,
+          "1": 0,
+          "2": 43,
+          "3": 39,
+          "4": 0
+        },
+        "teacher_entropy": 0.35652580857276917,
+        "teacher_student_tv": 0.5656799674034119
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.24578611366450787,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.25,
+        "teacher_argmax_counts": {
+          "0": 9,
+          "1": 39,
+          "2": 45,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.4748719036579132,
+        "teacher_student_tv": 0.5645090341567993
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.2811026521958411,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.2421875,
+        "teacher_argmax_counts": {
+          "0": 8,
+          "1": 37,
+          "2": 48,
+          "3": 35,
+          "4": 0
+        },
+        "teacher_entropy": 0.33722904324531555,
+        "teacher_student_tv": 0.6162294149398804
+      }
+    },
+    "12": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.14246965548954904,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2578125,
+        "teacher_argmax_counts": {
+          "0": 3,
+          "1": 0,
+          "2": 31,
+          "3": 3,
+          "4": 91
+        },
+        "teacher_entropy": 0.8881710767745972,
+        "teacher_student_tv": 0.43376317620277405
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.02562698331894353,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.2890625,
+        "teacher_argmax_counts": {
+          "0": 9,
+          "1": 0,
+          "2": 93,
+          "3": 26,
+          "4": 0
+        },
+        "teacher_entropy": 1.32568359375,
+        "teacher_student_tv": 0.18526217341423035
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.12244298961013556,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.453125,
+        "teacher_argmax_counts": {
+          "0": 15,
+          "1": 1,
+          "2": 85,
+          "3": 27,
+          "4": 0
+        },
+        "teacher_entropy": 0.9186757206916809,
+        "teacher_student_tv": 0.35483938455581665
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.2590839306358248,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.9296875,
+        "teacher_argmax_counts": {
+          "0": 41,
+          "1": 15,
+          "2": 56,
+          "3": 16,
+          "4": 0
+        },
+        "teacher_entropy": 0.24647237360477448,
+        "teacher_student_tv": 0.590783953666687
+      },
+      "sdpo_directional_residual": {
+        "valid": 128,
+        "loss": 0.2427519673947245,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.7578125,
+        "teacher_argmax_counts": {
+          "0": 39,
+          "1": 16,
+          "2": 37,
+          "3": 36,
+          "4": 0
+        },
+        "teacher_entropy": 0.3495325446128845,
+        "teacher_student_tv": 0.5638460516929626
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.24300480587407947,
+        "subtract_noop_baseline": false,
+        "teacher_oracle_accuracy": 0.1796875,
+        "teacher_argmax_counts": {
+          "0": 30,
+          "1": 26,
+          "2": 33,
+          "3": 39,
+          "4": 0
+        },
+        "teacher_entropy": 0.42706021666526794,
+        "teacher_student_tv": 0.575363039970398
+      },
+      "sdpo_wrong_directional_residual": {
+        "valid": 128,
+        "loss": 0.2735101939179003,
+        "subtract_noop_baseline": true,
+        "teacher_oracle_accuracy": 0.21875,
+        "teacher_argmax_counts": {
+          "0": 31,
+          "1": 25,
+          "2": 29,
+          "3": 43,
+          "4": 0
+        },
+        "teacher_entropy": 0.3211608827114105,
+        "teacher_student_tv": 0.616551399230957
+      }
+    }
+  }
+}

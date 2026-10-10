@@ -1,0 +1,38 @@
+{
+  "update": 24,
+  "reference": "sdpo_result",
+  "comparisons": {
+    "sdpo_binary": {
+      "mean_teacher_tv_all": 0.06274412143508455,
+      "mean_teacher_tv_solution_rows": null,
+      "mean_teacher_tv_feedback_rows": 0.06274412143508455,
+      "teacher_argmax_changed_all": 12,
+      "teacher_argmax_changed_feedback_rows": 12,
+      "feedback_row_count": 128
+    },
+    "sdpo_shuffled": {
+      "mean_teacher_tv_all": 0.02351762938194227,
+      "mean_teacher_tv_solution_rows": null,
+      "mean_teacher_tv_feedback_rows": 0.02351762938194227,
+      "teacher_argmax_changed_all": 7,
+      "teacher_argmax_changed_feedback_rows": 7,
+      "feedback_row_count": 128
+    },
+    "sdpo_neutral": {
+      "mean_teacher_tv_all": 0.06758466454795878,
+      "mean_teacher_tv_solution_rows": null,
+      "mean_teacher_tv_feedback_rows": 0.06758466454795878,
+      "teacher_argmax_changed_all": 22,
+      "teacher_argmax_changed_feedback_rows": 22,
+      "feedback_row_count": 128
+    },
+    "sdpo_causal": {
+      "mean_teacher_tv_all": 0.16247812445764864,
+      "mean_teacher_tv_solution_rows": null,
+      "mean_teacher_tv_feedback_rows": 0.16247812445764864,
+      "teacher_argmax_changed_all": 36,
+      "teacher_argmax_changed_feedback_rows": 36,
+      "feedback_row_count": 128
+    }
+  }
+}

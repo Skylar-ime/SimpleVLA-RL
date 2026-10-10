@@ -1,0 +1,15 @@
+Environment name: sdpo-vla-pilot
+Created: 2026-09-25
+Purpose: SDPO result-feedback pilot
+Dependency status: pip check passed
+Simulator smoke: PandaPush-v3 reset/render/zero-action step passed on CPU
+Pilot code tests: 11 passed; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 avoids unrelated ROS plugin
+CUDA status: working when activated with conda activate / conda run -n sdpo-vla-pilot
+Repair scope: environment-only matching NVIDIA userspace libraries, not a system driver installation
+Loaded kernel module: 580.173.02
+Environment userspace CUDA/NVML: 580.173.02, extracted from NVIDIA repository package with verified SHA256
+System userspace/DKMS: 580.178.04; system package mismatch remains outside this environment
+GPU: NVIDIA GeForce RTX 4090; nvidia-smi reports 49140 MiB total; PyTorch reports 47.36 GiB usable total
+GPU verification: BF16 matmul forward/backward finite; activation/deactivation restoration passed
+Training status: stage-A 128-scene feedback probe complete; directional physics probe v2 passed; directional model probe is blocked by host NVIDIA API mismatch; efficacy not established
+Model download status: complete, 7,509,337,976 weight bytes; both SHA256 hashes match downloaded repository metadata

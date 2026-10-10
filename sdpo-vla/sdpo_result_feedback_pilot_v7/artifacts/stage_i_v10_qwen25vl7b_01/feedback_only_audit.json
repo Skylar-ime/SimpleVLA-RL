@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "errors": [],
+  "first_rollout_hashes": {
+    "sdpo_result": "3c16816bb0bbf49d989ac05e36aa8bdebfc3f46fdfb1f635663fc0c9197d3990",
+    "sdpo_binary": "3c16816bb0bbf49d989ac05e36aa8bdebfc3f46fdfb1f635663fc0c9197d3990",
+    "sdpo_causal": "3c16816bb0bbf49d989ac05e36aa8bdebfc3f46fdfb1f635663fc0c9197d3990",
+    "sdpo_directional": "3c16816bb0bbf49d989ac05e36aa8bdebfc3f46fdfb1f635663fc0c9197d3990",
+    "sdpo_wrong_directional": "3c16816bb0bbf49d989ac05e36aa8bdebfc3f46fdfb1f635663fc0c9197d3990"
+  },
+  "coverage": {
+    "sdpo_result": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        61,
+        64,
+        60,
+        59,
+        61,
+        58,
+        59,
+        64,
+        65,
+        51,
+        65,
+        64
+      ]
+    },
+    "sdpo_binary": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sdpo_causal": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        61,
+        63,
+        60,
+        58,
+        61,
+        57,
+        60,
+        63,
+        66,
+        53,
+        64,
+        64
+      ]
+    },
+    "sdpo_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        61,
+        64,
+        60,
+        58,
+        61,
+        57,
+        59,
+        63,
+        64,
+        52,
+        65,
+        65
+      ]
+    },
+    "sdpo_wrong_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        61,
+        64,
+        59,
+        59,
+        61,
+        57,
+        60,
+        63,
+        64,
+        53,
+        64,
+        64
+      ]
+    }
+  }
+}

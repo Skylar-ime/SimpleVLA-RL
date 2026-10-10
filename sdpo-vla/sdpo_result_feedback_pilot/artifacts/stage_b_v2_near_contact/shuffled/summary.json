@@ -1,0 +1,1195 @@
+{
+  "updates": [
+    {
+      "loss": 0.011245426692767069,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.0825699120759964,
+      "optimizer_steps": 1,
+      "seconds": 33.59099452896044,
+      "update": 1,
+      "group": "shuffled",
+      "rollout_seconds": 85.3245313889347,
+      "contact_count": 24,
+      "motion_count": 14,
+      "progress_counts": {
+        "unchanged": 243,
+        "farther": 9,
+        "closer": 4
+      },
+      "feedback_changed_count": 53,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.931350231170654
+    },
+    {
+      "loss": 0.010887914733757498,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.0818326324224472,
+      "optimizer_steps": 1,
+      "seconds": 32.776095245964825,
+      "update": 2,
+      "group": "shuffled",
+      "rollout_seconds": 85.35351958498359,
+      "contact_count": 18,
+      "motion_count": 20,
+      "progress_counts": {
+        "unchanged": 241,
+        "farther": 11,
+        "closer": 4
+      },
+      "feedback_changed_count": 38,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.011587169210542925,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08823100477457047,
+      "optimizer_steps": 1,
+      "seconds": 32.75928460480645,
+      "update": 3,
+      "group": "shuffled",
+      "rollout_seconds": 84.70608164207079,
+      "contact_count": 14,
+      "motion_count": 13,
+      "progress_counts": {
+        "unchanged": 244,
+        "farther": 9,
+        "closer": 3
+      },
+      "feedback_changed_count": 52,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.010910484626947436,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08080983906984329,
+      "optimizer_steps": 1,
+      "seconds": 32.76815048395656,
+      "update": 4,
+      "group": "shuffled",
+      "rollout_seconds": 84.78018531296402,
+      "contact_count": 25,
+      "motion_count": 19,
+      "progress_counts": {
+        "unchanged": 241,
+        "farther": 11,
+        "closer": 4
+      },
+      "feedback_changed_count": 51,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.01053726660029497,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07839930057525635,
+      "optimizer_steps": 1,
+      "seconds": 32.751055964967236,
+      "update": 5,
+      "group": "shuffled",
+      "rollout_seconds": 84.93086142395623,
+      "contact_count": 24,
+      "motion_count": 28,
+      "progress_counts": {
+        "unchanged": 232,
+        "farther": 15,
+        "closer": 9
+      },
+      "feedback_changed_count": 53,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.00953431986272335,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.0736691802740097,
+      "optimizer_steps": 1,
+      "seconds": 32.79866910399869,
+      "update": 6,
+      "group": "shuffled",
+      "rollout_seconds": 84.66425779811107,
+      "contact_count": 24,
+      "motion_count": 25,
+      "progress_counts": {
+        "unchanged": 232,
+        "closer": 8,
+        "farther": 16
+      },
+      "feedback_changed_count": 53,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.009623475369153311,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07355361431837082,
+      "optimizer_steps": 1,
+      "seconds": 33.320691623026505,
+      "update": 7,
+      "group": "shuffled",
+      "rollout_seconds": 85.01923850784078,
+      "contact_count": 10,
+      "motion_count": 17,
+      "progress_counts": {
+        "unchanged": 243,
+        "closer": 6,
+        "farther": 7
+      },
+      "feedback_changed_count": 26,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.009505152233032277,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07231706380844116,
+      "optimizer_steps": 1,
+      "seconds": 33.30367100890726,
+      "update": 8,
+      "group": "shuffled",
+      "rollout_seconds": 84.85081523400731,
+      "contact_count": 22,
+      "motion_count": 28,
+      "progress_counts": {
+        "unchanged": 230,
+        "farther": 19,
+        "closer": 7
+      },
+      "feedback_changed_count": 70,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.00935762480730773,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07833639532327652,
+      "optimizer_steps": 1,
+      "seconds": 33.20449979999103,
+      "update": 9,
+      "group": "shuffled",
+      "rollout_seconds": 85.19384369417094,
+      "contact_count": 17,
+      "motion_count": 13,
+      "progress_counts": {
+        "unchanged": 243,
+        "closer": 3,
+        "farther": 10
+      },
+      "feedback_changed_count": 37,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.008175877645044238,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.06467188149690628,
+      "optimizer_steps": 1,
+      "seconds": 33.5183861379046,
+      "update": 10,
+      "group": "shuffled",
+      "rollout_seconds": 84.7718482799828,
+      "contact_count": 31,
+      "motion_count": 31,
+      "progress_counts": {
+        "unchanged": 230,
+        "closer": 9,
+        "farther": 17
+      },
+      "feedback_changed_count": 67,
+      "unmatched_donor_count": 1,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 54,
+    "invalid_resets": 10,
+    "successes": 0,
+    "success_rate": 0.0,
+    "conservative_success_rate_all_scenes": 0.0,
+    "mean_progress_m": -0.035928824711352864,
+    "safety_failures": 0,
+    "interactions": 864,
+    "seconds": 286.82414244813845,
+    "action_counts": {
+      "A": 861,
+      "C": 3
+    }
+  },
+  "total_train_interactions": 2560,
+  "elapsed_seconds": 1480.487987906905,
+  "training_episodes": [
+    {
+      "episode_id": "train_s11_00000000",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000001",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000002",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000003",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000004",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000005",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000006",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000007",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000008",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000010",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000011",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000012",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000013",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000016",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000017",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000018",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000019",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000020",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000021",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000022",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000023",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000024",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000025",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000026",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000028",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000029",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000030",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000031",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000033",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000034",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000035",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000036",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000037",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000038",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000039",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000040",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000041",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000042",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000044",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000045",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000046",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000047",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000048",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000049",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000050",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000051",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000053",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000055",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000057",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000058",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000059",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000060",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000061",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000062",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000063",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000064",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000065",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000067",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000068",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000069",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000073",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000075",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000076",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000077",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000078",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000079",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000080",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000081",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000082",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000083",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000084",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000085",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000086",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000087",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000088",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000089",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000090",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000091",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000092",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000093",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000094",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000095",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000096",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000098",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000099",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000100",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000101",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000102",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000103",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000104",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000105",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000106",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000107",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000108",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000109",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000110",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000111",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000112",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000113",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000114",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000115",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000116",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000117",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000118",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000119",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000120",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000121",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000122",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000123",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000125",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000126",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000127",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000128",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000129",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000130",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000132",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000133",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000134",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000135",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000136",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000137",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000139",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000141",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000142",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000143",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000144",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000145",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000146",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000147",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000148",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000150",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000151",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000152",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000153",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000154",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000155",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000156",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000157",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000158",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000159",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000160",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000161",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000162",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000163",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000169",
+      "success": true,
+      "length": 4,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000164",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000165",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000166",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000167",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000168",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000170",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000171",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000172",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000173",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000174",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000175",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000176",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000177",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000178",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000179",
+      "success": false,
+      "length": 16,
+      "safety_failure": null
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

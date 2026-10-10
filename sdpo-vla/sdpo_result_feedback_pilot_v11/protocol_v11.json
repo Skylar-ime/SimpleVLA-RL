@@ -1,0 +1,53 @@
+{
+  "version": "v11-directional-noop-baseline-residual",
+  "question": "Does subtracting the same-state no-op teacher baseline remove privileged directional bias before SDPO distillation?",
+  "scene_profile": "directional_long",
+  "conditions": [
+    "sdpo_result",
+    "sdpo_binary",
+    "sdpo_causal",
+    "sdpo_directional",
+    "sdpo_directional_residual",
+    "sdpo_wrong_directional",
+    "sdpo_wrong_directional_residual"
+  ],
+  "rollout": {
+    "candidates_per_state": 8,
+    "transitions_per_update": 128,
+    "updates": 12,
+    "seed": 12,
+    "one_step": true
+  },
+  "solution": {
+    "criterion": "actual task success",
+    "expected_count": 0,
+    "feedback_only_without_solution": true
+  },
+  "teacher": {
+    "regularization": "ema",
+    "update_rate": 0.05,
+    "stop_gradient": true,
+    "no_op_baseline": "same teacher, same state/outcome, directional vector replaced by hold/zero"
+  },
+  "loss": {
+    "name": "JSD",
+    "alpha": 0.5,
+    "optimizer_steps_per_rollout": 1,
+    "residual_target": "log_softmax(log_student + log_teacher_privileged - log_teacher_noop_baseline)",
+    "grpo_weight": 0,
+    "behavior_cloning_weight": 0
+  },
+  "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+  "teacher_input": ["student_input", "structured_environment_feedback"],
+  "directional_feedback": "measured target displacement vector and dominant axis/sign; no expert action label",
+  "baseline_invariant": "only target_dx_m, target_dy_m, target_direction change; outcome fields remain identical",
+  "primary_diagnostic": "privileged teacher, no-op teacher, residual norm, corrected target distribution, action coverage, and no-feedback deployment",
+  "limitations": [
+    "single repeat seed",
+    "local calibrated PandaPush pilot",
+    "five-action support instead of full language vocabulary",
+    "one-token action response",
+    "directional vector is simulator-provided feedback",
+    "residual baseline tests directional bias; it does not prove long-horizon credit assignment"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "errors": [],
+  "first_rollout_hashes": {
+    "sdpo_result": "4a13d54760099060a3974fd115954011970c53bff527975b94b8dbd845fd2262",
+    "sdpo_binary": "4a13d54760099060a3974fd115954011970c53bff527975b94b8dbd845fd2262",
+    "sdpo_causal": "4a13d54760099060a3974fd115954011970c53bff527975b94b8dbd845fd2262",
+    "sdpo_directional": "4a13d54760099060a3974fd115954011970c53bff527975b94b8dbd845fd2262",
+    "sdpo_wrong_directional": "4a13d54760099060a3974fd115954011970c53bff527975b94b8dbd845fd2262"
+  },
+  "coverage": {
+    "sdpo_result": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        51,
+        55,
+        49,
+        46,
+        44,
+        56,
+        51,
+        50,
+        54,
+        47,
+        59,
+        63
+      ]
+    },
+    "sdpo_binary": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sdpo_causal": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        51,
+        54,
+        49,
+        47,
+        44,
+        52,
+        52,
+        53,
+        52,
+        45,
+        56,
+        58
+      ]
+    },
+    "sdpo_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        51,
+        54,
+        49,
+        47,
+        43,
+        52,
+        51,
+        50,
+        51,
+        45,
+        56,
+        58
+      ]
+    },
+    "sdpo_wrong_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        51,
+        54,
+        48,
+        46,
+        44,
+        52,
+        52,
+        51,
+        51,
+        45,
+        55,
+        59
+      ]
+    }
+  }
+}

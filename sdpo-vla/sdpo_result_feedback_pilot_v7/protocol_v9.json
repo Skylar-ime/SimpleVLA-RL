@@ -1,0 +1,15 @@
+{
+  "version": "v9-directional-feedback-sdpo",
+  "question": "Does target-relative measured direction make feedback-conditioned SDPO more useful than outcome-only feedback?",
+  "scene_profile": "directional_long",
+  "conditions": ["sdpo_result", "sdpo_binary", "sdpo_causal", "sdpo_directional"],
+  "rollout": {"candidates_per_state": 8, "transitions_per_update": 128, "updates": 12, "seed": 11, "one_step": true},
+  "solution": {"criterion": "actual task success", "expected_count": 0, "feedback_only_without_solution": true},
+  "teacher": {"regularization": "ema", "update_rate": 0.05, "stop_gradient": true},
+  "loss": {"name": "JSD", "alpha": 0.5, "optimizer_steps_per_rollout": 1, "grpo_weight": 0, "behavior_cloning_weight": 0},
+  "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+  "teacher_input": ["student_input", "structured_environment_feedback"],
+  "directional_feedback": "measured target displacement vector and dominant axis/sign; no expert action label",
+  "primary_diagnostic": "teacher distribution TV, action coverage, and directional/oracle accuracy on identical feedback-only rows",
+  "limitations": ["single seed", "local calibrated PandaPush pilot", "five-action support instead of full language vocabulary", "one-token action response", "directional vector is simulator-provided feedback"]
+}

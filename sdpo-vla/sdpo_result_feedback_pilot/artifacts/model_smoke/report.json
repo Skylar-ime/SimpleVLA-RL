@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "elapsed_seconds": 22.864579686895013,
+  "padding_logprob_max_error": 0.01607656478881836,
+  "padding_probability_max_error": 0.002695932984352112,
+  "duplicate_batch_probability_max_error": 0.002695932984352112,
+  "changed_trainable_tensors": 144,
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "gpu_peak_allocated_gib": 11.035033226013184,
+  "gpu_peak_reserved_gib": 11.3828125,
+  "update": {
+    "loss": 0.006589511292986572,
+    "valid": 3,
+    "executed": 4,
+    "gradient_norm": 0.051476456224918365,
+    "optimizer_steps": 1,
+    "seconds": 0.5993292389903218,
+    "donor_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "valid_mask": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "teacher_log_probs": [
+      [
+        -1.2472801208496094,
+        -1.53857421875,
+        -1.4522285461425781,
+        -1.7932147979736328,
+        -2.327333450317383
+      ],
+      [
+        -0.8451904058456421,
+        -2.275028705596924,
+        -1.2216991186141968,
+        -2.152426242828369,
+        -2.868225574493408
+      ],
+      [
+        -0.7440297603607178,
+        -1.921231985092163,
+        -1.7793538570404053,
+        -2.089709997177124,
+        -2.454475164413452
+      ],
+      [
+        -0.9560664892196655,
+        -2.029390811920166,
+        -1.3419631719589233,
+        -1.9903987646102905,
+        -2.4509758949279785
+      ]
+    ]
+  },
+  "note": "Engineering GPU and optimizer smoke only. An intermediate fixed-height action-scale bug was discovered afterward and corrected before phase_a_v1; do not interpret these four transitions as valid learning data.",
+  "robot_geometry_valid_for_learning": false
+}

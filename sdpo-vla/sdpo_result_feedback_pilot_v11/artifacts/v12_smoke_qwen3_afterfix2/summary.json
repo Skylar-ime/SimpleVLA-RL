@@ -1,0 +1,132 @@
+{
+  "updates": [
+    {
+      "loss": 0.09776572324335575,
+      "valid": 8,
+      "executed": 8,
+      "gradient_norm": 2.308408737182617,
+      "optimizer_steps": 1,
+      "seconds": 7.1455607989337295,
+      "teacher_privileged_log_probs": null,
+      "teacher_noop_baseline_log_probs": null,
+      "teacher_residual_log_probs": null,
+      "subtract_noop_baseline": false,
+      "mean_abs_teacher_residual": null,
+      "mean_abs_teacher_residual_by_action": null,
+      "mean_teacher_student_total_variation": 0.2779788076877594,
+      "mean_teacher_entropy": 0.0018314385088160634,
+      "teacher_argmax_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 8,
+        "3": 0,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 0.0,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.25,
+      "update": 1,
+      "group": "sdpo_advantage",
+      "rollout_seconds": 17.048306275042705,
+      "contact_count": 0,
+      "motion_count": 0,
+      "progress_counts": {
+        "unchanged": 8
+      },
+      "feedback_changed_count": 8,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": 1,
+      "group_progress_witness_count": 0,
+      "groups_with_progress_witness": 0,
+      "solution_context_count": 0,
+      "feedback_used_count": 8,
+      "feedback_record_unique_count": 3,
+      "gpu_peak_allocated_gib": 19.26021099090576
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 4,
+    "scenes_valid": 4,
+    "invalid_resets": 0,
+    "successes": 1,
+    "success_rate": 0.25,
+    "conservative_success_rate_all_scenes": 0.25,
+    "mean_progress_m": 0.03479824959054235,
+    "safety_failures": 0,
+    "interactions": 41,
+    "seconds": 88.41214111202862,
+    "action_counts": {
+      "C": 39,
+      "D": 2
+    }
+  },
+  "total_train_interactions": 8,
+  "elapsed_seconds": 124.42910267098341,
+  "training_episodes": [
+    {
+      "episode_id": "train_g12_000000_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

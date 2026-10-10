@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12b_molmo2_multiseed/seed_14/sdpo_result",
+  "backbone": "molmo2",
+  "condition": "sdpo_result",
+  "seed": 14,
+  "updates": 12,
+  "transitions": 1536,
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 4,
+    "success_rate": 0.0625,
+    "conservative_success_rate_all_scenes": 0.0625,
+    "mean_progress_m": 0.02412706329756832,
+    "safety_failures": 2,
+    "interactions": 740,
+    "seconds": 1618.7700214129873,
+    "action_counts": {
+      "C": 526,
+      "E": 164,
+      "D": 41,
+      "B": 9
+    }
+  },
+  "protocol": "protocol_v12b.json",
+  "protocol_sha256": "8ffc5593bb1c329e1f8f566de83c3ae99d674915f611499813a3d8acc00dec4e",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

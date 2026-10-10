@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reflective VLA Project Page</title>
+  <meta name="description" content="Reflective VLA: In-Context Action Consequences Make VLAs Generalize.">
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container main-container has-text-centered">
+        <h1 class="title is-1 paper-title">Reflective VLA: In-Context Action Consequences Make VLAs Generalize</h1>
+        <p class="is-size-5">
+          Qing Lian<sup>1</sup>, Kent Yu<sup>1,2,3</sup>, and Lei Zhang<sup>1,2,3</sup>
+        </p>
+        <p class="is-size-6 affiliation">
+          <sup>1</sup>Futian Laboratory<br>
+          <sup>2</sup>International Digital Economy Academy (IDEA)<br>
+          <sup>3</sup>Visincept
+        </p>
+        <p class="is-size-7 contact">Contact: lianqing1997@gmail.com</p>
+        <div class="paper-links">
+          <a class="button is-dark is-rounded" href="static/paper/reflective_vla.pdf">Paper</a>
+          <span class="button is-light is-rounded is-static">Code Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section teaser-section">
+    <div class="container main-container">
+      <div class="figure-wrap teaser-wrap">
+        <img class="media-img teaser-img" src="static/images/fig1.png" alt="Reflective VLA teaser">
+        <p class="caption-text">
+          <strong>Reflective VLA</strong> moves from reactive single-frame control to reflective control. Past observation-action-consequence triplets expose deployment-specific factors such as camera geometry and calibration bias, enabling the policy to adapt online without test-time fine-tuning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container main-container">
+      <h3 class="title is-3 section-title">Abstract</h3>
+      <div class="paper-box">
+        <p>
+          Most vision-language-action (VLA) models are reactive: they predict the next action from the current instruction and observation, implicitly assuming that the current observation fully specifies the action-relevant state. In embodied control, embodiment-specific factors such as camera-to-robot geometry, robot calibration, or systematic actuation bias are often hard to identify from a single observation. We propose <strong>Reflective VLA</strong>, which conditions each decision on a context of observation-action-consequence triplets. Each triplet records not only what the robot observed and executed, but also how the scene changed afterward, exposing the deployment-specific mapping from actions to observed effects. Across LIBERO, SimplerEnv-Bridge, LIBERO-Plus, LIBERO-Plus-Hard, and real-world cross-camera deployment, Reflective VLA improves generalization while preserving strong in-distribution performance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container main-container">
+      <h3 class="title is-3 section-title">Method</h3>
+      <div class="figure-grid method-figure-grid">
+        <div class="figure-wrap method-main-figure">
+          <img class="media-img" src="static/images/fig2.png" alt="Reflective VLA method overview">
+          <p class="caption-text">
+            Reflective VLA packs historical triplets <em>(O, A, O')</em> and the current observation into one multimodal prompt. The action expert attends to the full shared VLM token sequence and predicts the next continuous action chunk.
+          </p>
+        </div>
+        <div class="figure-wrap method-mask-figure">
+          <img class="media-img mask-img" src="static/images/block_causal_mask.png" alt="Block-causal attention mask">
+          <p class="caption-text">
+            The block-causal mask supervises all sampled targets in one forward pass while preventing future leakage.
+          </p>
+        </div>
+      </div>
+      <div class="columns three-points">
+        <div class="column">
+          <div class="paper-box small-box">
+            <h4 class="title is-5">Causal Triplets</h4>
+            <p>Each context unit binds the pre-action observation, executed action chunk, and aligned post-action observation.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="paper-box small-box">
+            <h4 class="title is-5">Block-Causal Training</h4>
+            <p>A block-causal mask supervises multiple context positions in one forward pass without future leakage.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="paper-box small-box">
+            <h4 class="title is-5">Cached Inference</h4>
+            <p>A rolling context buffer reuses completed triplets and supports real-time online deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container main-container">
+      <h3 class="title is-3 section-title">Main Results</h3>
+      <div class="table-wrap">
+        <table class="result-table">
+          <thead>
+              <tr>
+                <th>Method</th>
+                <th>SimplerEnv Avg</th>
+                <th>LIBERO-Plus Avg</th>
+                <th>LIBERO-Plus-Hard Avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reactive baseline pi_0.5</td>
+              <td>72.9</td>
+              <td>82.3</td>
+              <td>64.6</td>
+            </tr>
+            <tr>
+              <td class="best">Reflective VLA (ours)</td>
+              <td class="best">78.2</td>
+              <td class="best">87.7</td>
+              <td class="best">68.8</td>
+            </tr>
+            <tr>
+              <td>Gain</td>
+              <td>+5.3</td>
+              <td>+5.4</td>
+              <td>+4.2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption-text">
+        Success rates are reported in percent. Reflective VLA preserves nominal benchmark performance and improves robustness under deployment shifts that change sensing or embodiment-specific factors.
+      </p>
+
+      <h4 class="title is-4 subsection-title">Detailed LIBERO Results</h4>
+      <div class="table-wrap">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Spatial</th>
+              <th>Object</th>
+              <th>Goal</th>
+              <th>Long</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reactive baseline pi_0.5</td>
+              <td>97.5</td>
+              <td>98.2</td>
+              <td>97.8</td>
+              <td>94.0</td>
+            </tr>
+            <tr>
+              <td class="best">Reflective VLA (ours)</td>
+              <td class="best">98.4</td>
+              <td class="best">99.0</td>
+              <td class="best">98.2</td>
+              <td class="best">94.6</td>
+            </tr>
+            <tr>
+              <td>Gain</td>
+              <td>+0.9</td>
+              <td>+0.8</td>
+              <td>+0.4</td>
+              <td>+0.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="title is-4 subsection-title">LIBERO-Plus / Hard Perturbations</h4>
+      <div class="table-wrap">
+        <table class="result-table perturbation-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Camera</th>
+              <th>Robot</th>
+              <th>Lang</th>
+              <th>Light</th>
+              <th>Bg</th>
+              <th>Noise</th>
+              <th>Layout</th>
+              <th>Camera*</th>
+              <th>Rob. Calib*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reactive baseline pi_0.5</td>
+              <td>90.0</td>
+              <td>50.0</td>
+              <td class="best">92.9</td>
+              <td>92.0</td>
+              <td>85.8</td>
+              <td>90.2</td>
+              <td class="best">75.0</td>
+              <td>74.0</td>
+              <td>55.2</td>
+            </tr>
+            <tr>
+              <td class="best">Reflective VLA (ours)</td>
+              <td class="best">95.7</td>
+              <td class="best">72.9</td>
+              <td>92.2</td>
+              <td class="best">92.1</td>
+              <td class="best">92.7</td>
+              <td class="best">95.4</td>
+              <td>73.0</td>
+              <td class="best">76.3</td>
+              <td class="best">61.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption-text">
+        Camera* and Rob. Calib* denote the two harder LIBERO-Plus-Hard shifts.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="videos">
+    <div class="container main-container">
+      <h3 class="title is-3 section-title">Videos</h3>
+
+      <h4 class="title is-4">LIBERO-Plus-Hard Visualizations</h4>
+      <p class="caption-text video-intro">
+        Representative Reflective VLA successful rollouts from LIBERO-Plus-Hard camera perturbation evaluation.
+      </p>
+      <div class="video-carousel simulation-carousel" data-carousel aria-label="LIBERO-Plus-Hard simulation videos">
+        <div class="carousel-grid">
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/camera_plusplus/camera_goal_open_drawer_reflective_success.jpg">
+              <source src="static/videos/camera_plusplus/camera_goal_open_drawer_reflective_success.mp4" type="video/mp4">
+            </video>
+            <p>Open the middle drawer</p>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/camera_plusplus/camera_object_yellow_dairy_reflective_success.jpg">
+              <source src="static/videos/camera_plusplus/camera_object_yellow_dairy_reflective_success.mp4" type="video/mp4">
+            </video>
+            <p>Place the yellow dairy product in the basket</p>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/camera_plusplus/camera_spatial_black_bowl_reflective_success.jpg">
+              <source src="static/videos/camera_plusplus/camera_spatial_black_bowl_reflective_success.mp4" type="video/mp4">
+            </video>
+            <p>Move the black bowl onto the plate</p>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/camera_plusplus/camera_libero10_moka_pot_reflective_success.jpg">
+              <source src="static/videos/camera_plusplus/camera_libero10_moka_pot_reflective_success.mp4" type="video/mp4">
+            </video>
+            <p>Turn on the stove and place the moka pot</p>
+          </article>
+        </div>
+        <div class="carousel-dots" aria-hidden="true"></div>
+      </div>
+
+      <h4 class="title is-4 video-subtitle">Real-Robot Deployment</h4>
+      <p class="caption-text video-intro">
+        Real-world robot clips are shown as a four-at-a-time autoplay carousel.
+      </p>
+      <div class="video-carousel" data-carousel aria-label="Real-robot deployment videos">
+        <div class="carousel-grid">
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_0011_0019.jpg">
+              <source src="static/videos/pink_cake_0011_0019.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_0210_0217.jpg">
+              <source src="static/videos/pink_cake_0210_0217.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_0233_0247.jpg">
+              <source src="static/videos/pink_cake_0233_0247.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card is-visible">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_0259_0319.jpg">
+              <source src="static/videos/pink_cake_0259_0319.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_0335_0340.jpg">
+              <source src="static/videos/pink_cake_0335_0340.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_1056_1112.jpg">
+              <source src="static/videos/pink_cake_1056_1112.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_1118_1124.jpg">
+              <source src="static/videos/pink_cake_1118_1124.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/pink_cake_1300_1308.jpg">
+              <source src="static/videos/pink_cake_1300_1308.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/eggplant_brown_10s_19s.jpg">
+              <source src="static/videos/eggplant_brown_10s_19s.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="video-item carousel-card">
+            <video autoplay muted loop playsinline preload="metadata" poster="static/images/eggplant_brown_44s_53s.jpg">
+              <source src="static/videos/eggplant_brown_44s_53s.mp4" type="video/mp4">
+            </video>
+          </article>
+        </div>
+        <div class="carousel-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container main-container has-text-centered">
+      <p>Reflective VLA: In-Context Action Consequences Make VLAs Generalize</p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const carousels = document.querySelectorAll("[data-carousel]");
+      const pageSize = () => {
+        if (window.matchMedia("(max-width: 768px)").matches) return 1;
+        if (window.matchMedia("(max-width: 1100px)").matches) return 2;
+        return 4;
+      };
+
+      carousels.forEach((carousel) => {
+        const cards = Array.from(carousel.querySelectorAll(".carousel-card"));
+        const dots = carousel.querySelector(".carousel-dots");
+        let page = 0;
+        let pages = 1;
+
+        const render = () => {
+          const size = pageSize();
+          pages = Math.max(1, Math.ceil(cards.length / size));
+          page %= pages;
+
+          cards.forEach((card, index) => {
+            const visible = Math.floor(index / size) === page;
+            card.classList.toggle("is-visible", visible);
+            const video = card.querySelector("video");
+            if (!video) return;
+            if (visible) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+
+          dots.innerHTML = "";
+          dots.hidden = pages <= 1;
+          for (let i = 0; i < pages; i += 1) {
+            const dot = document.createElement("span");
+            dot.className = i === page ? "carousel-dot is-active" : "carousel-dot";
+            dots.appendChild(dot);
+          }
+        };
+
+        render();
+        window.addEventListener("resize", render);
+        setInterval(() => {
+          page = (page + 1) % pages;
+          render();
+        }, 7000);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+{
+  "protocol_version": "result-feedback-pilot-v1-calibrated",
+  "status": "stage_a_in_progress_not_an_effectiveness_result",
+  "date": "2026-09-25",
+  "model": {
+    "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+    "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+    "image_size_px": [
+      448,
+      448
+    ],
+    "temperature": 1.0,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "vision_trainable": false,
+    "token_ids": {
+      "A": 32,
+      "B": 33,
+      "C": 34,
+      "D": 35,
+      "E": 36
+    },
+    "action_lm_head_precision": "float32_selected_frozen_rows",
+    "trainable_parameter_count": 3686400,
+    "image_processor": "Qwen2VLImageProcessorFast",
+    "padding_side": "left"
+  },
+  "source_revisions": {
+    "panda_gym": "10c4d8adaab07d8a29b2f8dc0aa85f8edd8532ae",
+    "sdpo": "7c457fc1b1f636ae794eb0362ba37d4743b06fbc",
+    "panda_gym_installed_version": "3.0.7"
+  },
+  "environment": {
+    "base_id": "PandaPush-v3",
+    "proposed_wrapper_id": "PandaPushOutcomePilot-v0",
+    "coordinate_frame": "world",
+    "physics_dt_s": 0.002,
+    "physics_steps_per_sim_step": 20,
+    "sim_steps_per_decision": 4,
+    "set_action_calls_per_decision": 1,
+    "max_decisions": 32,
+    "success_distance_m": 0.02,
+    "success_comparison": "strict_less_than",
+    "result_deadband_m": 0.002,
+    "ee_z_m": 0.025,
+    "camera_extrinsics": {
+      "target_position": [
+        0.0,
+        0.0,
+        0.02
+      ],
+      "distance": 0.8,
+      "yaw": 180.0,
+      "pitch": -30.0,
+      "roll": 0.0,
+      "width": 448,
+      "height": 448
+    },
+    "actions": {
+      "A": [
+        0.4,
+        0.0,
+        0.0
+      ],
+      "B": [
+        -0.4,
+        0.0,
+        0.0
+      ],
+      "C": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "D": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "E": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "action_scale_m": 0.05,
+    "initial_goal_distance_m": [
+      0.1,
+      0.14
+    ],
+    "initial_ee_object_center_distance_m": [
+      0.055,
+      0.085
+    ],
+    "contact_sampling": "every_0.002_second_physics_step",
+    "contact_links": [
+      9,
+      10,
+      11
+    ],
+    "goal_marker_color": "blue",
+    "object_color": "green",
+    "reset_settle_sim_steps": 10,
+    "fixed_z_target": true,
+    "actual_action_displacement": "measured; target displacement is 0.02 m"
+  },
+  "feedback": {
+    "fields": [
+      "contact",
+      "object_motion",
+      "goal_progress",
+      "success"
+    ],
+    "includes_correction": false,
+    "includes_expert_action": false,
+    "includes_success_demonstration": false,
+    "source": "simulator_measurements",
+    "shuffled_unmatched_behavior": "binary_feedback_with_reported_donor_null"
+  },
+  "training": {
+    "teacher": "current_policy_cached_before_single_optimizer_step",
+    "loss": "symmetric_js_full_5_action_distribution",
+    "grpo_weight": 0.0,
+    "bc_weight": 0.0,
+    "optimizer": "AdamW",
+    "learning_rate": 2e-05,
+    "weight_decay": 0.0,
+    "grad_clip": 1.0,
+    "transitions_per_update": 256,
+    "microbatch_size": 4,
+    "optimizer_steps_per_rollout_batch": 1,
+    "parallel_envs": 8,
+    "pilot_updates": 10,
+    "report_updates": 60,
+    "report_seeds": [
+      11,
+      22,
+      33
+    ],
+    "train_groups": [
+      "result",
+      "binary",
+      "shuffled"
+    ],
+    "frozen_baseline": true,
+    "followup_group": "neutral"
+  },
+  "evaluation": {
+    "train_scenes": 2048,
+    "dev_scenes": 128,
+    "test_scenes": 256,
+    "probe_scenes": 128,
+    "actions_enumerated_per_probe_scene": 5,
+    "dev_eval_every_updates": 20,
+    "dev_eval_scenes": 64,
+    "policy": "greedy_without_feedback_or_updates",
+    "primary_checkpoint": "final",
+    "primary_metric": "test_success_rate",
+    "primary_comparisons": [
+      "result_minus_binary",
+      "result_minus_shuffled"
+    ],
+    "engineering_effect_threshold_percentage_points": 5.0,
+    "statistical_status": "exploratory_no_power_guarantee"
+  },
+  "runtime_calibration_required": [
+    "package_lock_and_gpu_worker",
+    "action_token_ids_in_exact_template",
+    "collision_geometry_and_ee_z_m",
+    "camera_extrinsics_and_world_axis_projection",
+    "feedback_noise_deadband",
+    "snapshot_replay_tolerance",
+    "peak_gpu_memory",
+    "end_to_end_seconds_per_transition"
+  ],
+  "implementation_notes": [
+    "QwenActionPolicy evaluates five selected LM-head rows in float32; transformer forward remains BF16.",
+    "Initial reset proposals may be rejected only by common physics validity checks; rejection reasons are recorded.",
+    "Diagnostic counterfactuals never enter feedback or training labels.",
+    "Any stage-A probe at the initial scene can have low contact coverage; low coverage is not evidence that SDPO fails."
+  ]
+}

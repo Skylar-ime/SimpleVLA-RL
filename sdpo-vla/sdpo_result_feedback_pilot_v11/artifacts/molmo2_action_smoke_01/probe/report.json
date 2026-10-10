@@ -1,0 +1,606 @@
+{
+  "summary": {
+    "scenes": 1,
+    "rejected": 0,
+    "seconds": 10.78542412398383,
+    "executed_interactions": 7,
+    "attempt_interactions": 1,
+    "replay_interactions": 1,
+    "counterfactual_interactions": 5,
+    "attempt_contact_count": 0,
+    "counterfactual_contact_count": 0,
+    "informative_progress_scenes": 0,
+    "groups": {
+      "result": {
+        "expected_progress_difference_m": -8.75459906689603e-12,
+        "bootstrap95_progress_difference_m": [
+          -8.75459906689603e-12,
+          -8.75459906689603e-12
+        ],
+        "mean_total_variation": 0.4209456145763397,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 0
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "result_interpreted": {
+        "expected_progress_difference_m": -8.75459906689603e-12,
+        "bootstrap95_progress_difference_m": [
+          -8.75459906689603e-12,
+          -8.75459906689603e-12
+        ],
+        "mean_total_variation": 0.4209456145763397,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 0
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "causal": {
+        "expected_progress_difference_m": -3.252006937588707e-11,
+        "bootstrap95_progress_difference_m": [
+          -3.252006937588707e-11,
+          -3.252006937588707e-11
+        ],
+        "mean_total_variation": 0.4886077046394348,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 1.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "causal_shuffled": {
+        "expected_progress_difference_m": -3.55441651454273e-11,
+        "bootstrap95_progress_difference_m": [
+          -3.55441651454273e-11,
+          -3.55441651454273e-11
+        ],
+        "mean_total_variation": 0.5147114992141724,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 0,
+          "changed": 0
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 1.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "binary": {
+        "expected_progress_difference_m": -2.429322558978962e-11,
+        "bootstrap95_progress_difference_m": [
+          -2.429322558978962e-11,
+          -2.429322558978962e-11
+        ],
+        "mean_total_variation": 0.23886123299598694,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "shuffled": {
+        "expected_progress_difference_m": -2.429322558978962e-11,
+        "bootstrap95_progress_difference_m": [
+          -2.429322558978962e-11,
+          -2.429322558978962e-11
+        ],
+        "mean_total_variation": 0.23886123299598694,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 0,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "hard_shuffled": {
+        "expected_progress_difference_m": -2.429322558978962e-11,
+        "bootstrap95_progress_difference_m": [
+          -2.429322558978962e-11,
+          -2.429322558978962e-11
+        ],
+        "mean_total_variation": 0.23886123299598694,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 0,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "neutral": {
+        "expected_progress_difference_m": -1.1524268266713517e-11,
+        "bootstrap95_progress_difference_m": [
+          -1.1524268266713517e-11,
+          -1.1524268266713517e-11
+        ],
+        "mean_total_variation": 0.11841700226068497,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "no_feedback": {
+        "expected_progress_difference_m": 0.0,
+        "bootstrap95_progress_difference_m": [
+          0.0,
+          0.0
+        ],
+        "mean_total_variation": 0.0,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "directional": {
+        "expected_progress_difference_m": 7.957159873829745e-12,
+        "bootstrap95_progress_difference_m": [
+          7.957159873829745e-12,
+          7.957159873829745e-12
+        ],
+        "mean_total_variation": 0.7998111844062805,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 1.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "wrong_directional": {
+        "expected_progress_difference_m": -1.1476917998113808e-10,
+        "bootstrap95_progress_difference_m": [
+          -1.1476917998113808e-10,
+          -1.1476917998113808e-10
+        ],
+        "mean_total_variation": 0.8904134035110474,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "directional_residual": {
+        "expected_progress_difference_m": 1.0332530851845744e-11,
+        "bootstrap95_progress_difference_m": [
+          1.0332530851845744e-11,
+          1.0332530851845744e-11
+        ],
+        "mean_total_variation": 0.8186641931533813,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1,
+          "mean_abs_residual_logit": 4.0618414878845215,
+          "mean_abs_residual_logit_by_action": [
+            1.4699413776397705,
+            5.349985599517822,
+            2.9256229400634766,
+            1.5694823265075684,
+            8.99417495727539
+          ]
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 1.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      },
+      "wrong_directional_residual": {
+        "expected_progress_difference_m": -1.116341530040484e-10,
+        "bootstrap95_progress_difference_m": [
+          -1.116341530040484e-10,
+          -1.116341530040484e-10
+        ],
+        "mean_total_variation": 0.866060197353363,
+        "expected_contact_difference": 0.0,
+        "matching": {
+          "matched": 1,
+          "changed": 1,
+          "mean_abs_residual_logit": 3.4847445487976074,
+          "mean_abs_residual_logit_by_action": [
+            4.969290256500244,
+            1.04339599609375,
+            1.710127830505371,
+            2.313866138458252,
+            7.387043476104736
+          ]
+        },
+        "teacher_repeat_previous_accuracy": null,
+        "teacher_oracle_accuracy": 0.0,
+        "teacher_argmax_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0
+        }
+      }
+    },
+    "note": "Initial-state local diagnosis only; no training or action supervision."
+  },
+  "records": [
+    {
+      "episode_id": "probe_dev_000000",
+      "decision_index": 0,
+      "instruction": "Push the green cube to the blue target.",
+      "action_label": "C",
+      "actual_ee_delta_m": [
+        -0.00016503332978903135,
+        0.019879841998252754,
+        2.7573679444836685e-05
+      ],
+      "distance_before_m": 0.1516128474513746,
+      "distance_after_m": 0.15161284745142137,
+      "terminated": false,
+      "truncated": false,
+      "scene_id": "dev_000000",
+      "safety_failure": null,
+      "measurements": {
+        "object_before": [
+          -0.003175648178979132,
+          0.007246465892078286,
+          0.019989999999800685
+        ],
+        "object_after": [
+          -0.003175648178932382,
+          0.007246465891860643,
+          0.01998999999981419
+        ],
+        "goal_xy": [
+          -0.15478849530056638,
+          0.007246465892757729
+        ],
+        "object_motion_xy_m": 2.2260709792362196e-13,
+        "progress_m": -4.676814491233472e-14,
+        "simulated_time_s": 0.16,
+        "requested_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ],
+        "applied_action": [
+          0.0,
+          0.4000000059604645,
+          0.0
+        ]
+      },
+      "rollout_group_id": null,
+      "rollout_candidate_index": null,
+      "proprio": [
+        0.04878327250480652,
+        0.007243755739182234,
+        0.02500312775373459
+      ],
+      "result": {
+        "contact": false,
+        "object_motion": "none",
+        "goal_progress": "unchanged",
+        "success": false,
+        "progress_m": -4.676814491233472e-14,
+        "object_motion_m": 2.2260709792362196e-13,
+        "distance_before_m": 0.1516128474513746,
+        "distance_after_m": 0.15161284745142137,
+        "interpretation": null,
+        "target_dx_m": null,
+        "target_dy_m": null,
+        "target_direction": null
+      }
+    }
+  ],
+  "student_probs": [
+    [
+      0.09288351237773895,
+      0.16817308962345123,
+      0.40125781297683716,
+      0.2255062609910965,
+      0.11217939853668213
+    ]
+  ],
+  "teacher_probs": {
+    "result": [
+      [
+        0.16075749695301056,
+        0.11582843959331512,
+        0.14930899441242218,
+        0.10885413736104965,
+        0.46525102853775024
+      ]
+    ],
+    "result_interpreted": [
+      [
+        0.16075749695301056,
+        0.11582843959331512,
+        0.14930899441242218,
+        0.10885413736104965,
+        0.46525102853775024
+      ]
+    ],
+    "causal": [
+      [
+        0.3446976840496063,
+        0.4049666225910187,
+        0.01603076606988907,
+        0.19896692037582397,
+        0.035338062793016434
+      ]
+    ],
+    "causal_shuffled": [
+      [
+        0.3681472837924957,
+        0.4076208174228668,
+        0.01341092586517334,
+        0.18438945710659027,
+        0.02643151395022869
+      ]
+    ],
+    "binary": [
+      [
+        0.2811979651451111,
+        0.21871988475322723,
+        0.25671204924583435,
+        0.1449984312057495,
+        0.09837174415588379
+      ]
+    ],
+    "shuffled": [
+      [
+        0.2811979651451111,
+        0.21871988475322723,
+        0.25671204924583435,
+        0.1449984312057495,
+        0.09837174415588379
+      ]
+    ],
+    "hard_shuffled": [
+      [
+        0.2811979651451111,
+        0.21871988475322723,
+        0.25671204924583435,
+        0.1449984312057495,
+        0.09837174415588379
+      ]
+    ],
+    "neutral": [
+      [
+        0.18228779733181,
+        0.1438903659582138,
+        0.42046603560447693,
+        0.13137194514274597,
+        0.1219838559627533
+      ]
+    ],
+    "no_feedback": [
+      [
+        0.09288351237773895,
+        0.16817308962345123,
+        0.40125781297683716,
+        0.2255062609910965,
+        0.11217939853668213
+      ]
+    ],
+    "directional": [
+      [
+        0.029712330549955368,
+        0.9679841995239258,
+        0.0006967569352127612,
+        0.0014865124830976129,
+        0.00012021303700748831
+      ]
+    ],
+    "wrong_directional": [
+      [
+        0.9832968711853027,
+        0.01304788887500763,
+        0.002349438611418009,
+        0.0007061334908939898,
+        0.0005996804102323949
+      ]
+    ],
+    "directional_residual": [
+      [
+        0.01125500537455082,
+        0.9868372678756714,
+        0.0005995995015837252,
+        0.0013078585034236312,
+        3.8798225432401523e-07
+      ]
+    ],
+    "wrong_directional_residual": [
+      [
+        0.958943784236908,
+        0.034246545284986496,
+        0.005205271765589714,
+        0.0015994780696928501,
+        4.982876816939097e-06
+      ]
+    ]
+  },
+  "counterfactual": [
+    {
+      "scene_id": "dev_000000",
+      "progress_m": [
+        -1.2897949375201279e-10,
+        -2.7919333511761124e-13,
+        -4.676814491233472e-14,
+        -2.1010970741031088e-14,
+        -8.240630400280224e-14
+      ],
+      "contact": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsafe": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "teacher_noop_baseline_probs": {
+    "directional_residual": [
+      [
+        0.006832022685557604,
+        0.004596202168613672,
+        0.012991616502404213,
+        0.007141444832086563,
+        0.9684388637542725
+      ]
+    ],
+    "wrong_directional_residual": [
+      [
+        0.006832022685557604,
+        0.004596202168613672,
+        0.012991616502404213,
+        0.007141444832086563,
+        0.9684388637542725
+      ]
+    ]
+  },
+  "donors": {
+    "result": [
+      0
+    ],
+    "result_interpreted": [
+      0
+    ],
+    "causal": [
+      0
+    ],
+    "causal_shuffled": [
+      null
+    ],
+    "binary": [
+      0
+    ],
+    "shuffled": [
+      null
+    ],
+    "hard_shuffled": [
+      null
+    ],
+    "neutral": [
+      0
+    ],
+    "no_feedback": [
+      0
+    ],
+    "directional": [
+      0
+    ],
+    "wrong_directional": [
+      0
+    ]
+  },
+  "replay": [
+    {
+      "scene_id": "dev_000000",
+      "distance_error_m": 0.0,
+      "pixel_mean_absolute_error": 0.0,
+      "feedback_equal": true
+    }
+  ],
+  "rejected": []
+}

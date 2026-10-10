@@ -1,0 +1,1238 @@
+{
+  "status": "passed",
+  "errors": [],
+  "first_rollout_batches_identical": true,
+  "first_rollout_sha256": {
+    "result": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f",
+    "binary": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f",
+    "shuffled": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f",
+    "neutral": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f"
+  },
+  "groups": {
+    "result": {
+      "executed_transitions": 2560,
+      "valid_transitions": 2560,
+      "episode_count": 161,
+      "contact_transitions": 208,
+      "episodes_with_contact": 104,
+      "first_contact_decision_mean": 1.7980769230769231,
+      "action_counts": {
+        "A": 956,
+        "C": 766,
+        "B": 304,
+        "D": 348,
+        "E": 186
+      },
+      "feedback_tuple_counts": [
+        {
+          "tuple": [
+            false,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 2286
+        },
+        {
+          "tuple": [
+            true,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 66
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 81
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 43
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 48
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 8
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 12
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 15
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            true
+          ],
+          "count": 1
+        }
+      ],
+      "optimizer_steps_by_checkpoint": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "donor_errors": [],
+      "changed_matched_feedback_count": null,
+      "train_episode_successes": 1,
+      "dataset_manifest": [
+        {
+          "update": 1,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_001/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_001/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0000",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "ac8ec7b1f1786baeaf1b0162a3401a1e5d9e3f98e1a4006a223835fa6d33c289",
+          "transitions_sha256": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f"
+        },
+        {
+          "update": 2,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_002/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_002/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0001",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "78246c7fbedc3d8d3e8e7bcaf25b38d99d33e8d3c9b4fb51d974fea3d9dcc9b2",
+          "transitions_sha256": "a7c7df9a8fac3f68ca204d534bf6a9c13fbe6047211a63ed3814443333f1b8ea"
+        },
+        {
+          "update": 3,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_003/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_003/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0002",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "c204cfaca307e4e3caa4bfef4d0514ad3538426cf65edf2a6cb2c7b42f6b477e",
+          "transitions_sha256": "2eadfc196d75931ca8ba6110a3d92dd2a38d298b9e0b2fdc9928c50af311075b"
+        },
+        {
+          "update": 4,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_004/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_004/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0003",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "b6016f4cbcdbe7cf46d3ca5a65d843dab9a355aaf046637975ddcefac2ad30ba",
+          "transitions_sha256": "d932a0cd00078a95fa01d765ca5c233fdd8908d0a6f9fe273f0578b648689224"
+        },
+        {
+          "update": 5,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_005/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_005/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0004",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "562cb885580f665011151e0ac68541704c3da2a5538ac85ce1a57310f2722a92",
+          "transitions_sha256": "e289cd4440f5f12694a626758c997ff8aee7e7c986f84b2a621877a386621b99"
+        },
+        {
+          "update": 6,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_006/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_006/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0005",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "c8c9c5be50856c728e2354be503a6e6ce9668cc4105ef0c00a0383cb6059e953",
+          "transitions_sha256": "b2820634d2a0252a4dd0ce133110aad33bb007fa4cda64b059884f8bdc46c156"
+        },
+        {
+          "update": 7,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_007/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_007/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0006",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "82f6e91f91f379de22f597a09585bf3b0a9359e868ac01e56281cd379cd08515",
+          "transitions_sha256": "0c465c15e0ac5b4adc0f07ff0480a49cea2b2948190378b52ecac5922f18b24b"
+        },
+        {
+          "update": 8,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_008/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_008/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0007",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "6c10e937fa45371b1c9cc366e0a91805927de2b1ca92775734392f3ce65a7c98",
+          "transitions_sha256": "8f3c396e991d1a2920c3d727b97a13dff445702491cc1fa47e6376878ce6d057"
+        },
+        {
+          "update": 9,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_009/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_009/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0008",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "68be4ec5e12e81dfb3cdc2640673a617f948dca9a799f1a1031c8b10dee71b66",
+          "transitions_sha256": "2f14bf5c068bf75c9ef62b26259ec59c29ce377d5bc6832026e0b47572745717"
+        },
+        {
+          "update": 10,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_010/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/result/update_010/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0009",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "6387216687de19c70d939bae0485fd7db943df92e4403a0972539d920cbe25ff",
+          "transitions_sha256": "f060d3bc4f8814cee507055835784fe666504ef4e4eb3d9f3dce9264a704a193"
+        }
+      ]
+    },
+    "binary": {
+      "executed_transitions": 2560,
+      "valid_transitions": 2560,
+      "episode_count": 161,
+      "contact_transitions": 205,
+      "episodes_with_contact": 104,
+      "first_contact_decision_mean": 1.8365384615384615,
+      "action_counts": {
+        "A": 968,
+        "C": 755,
+        "B": 304,
+        "D": 343,
+        "E": 190
+      },
+      "feedback_tuple_counts": [
+        {
+          "tuple": [
+            false,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 2291
+        },
+        {
+          "tuple": [
+            true,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 66
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 78
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 41
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 48
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 8
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 12
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 15
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            true
+          ],
+          "count": 1
+        }
+      ],
+      "optimizer_steps_by_checkpoint": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "donor_errors": [],
+      "changed_matched_feedback_count": null,
+      "train_episode_successes": 1,
+      "dataset_manifest": [
+        {
+          "update": 1,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_001/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_001/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0000",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "ac8ec7b1f1786baeaf1b0162a3401a1e5d9e3f98e1a4006a223835fa6d33c289",
+          "transitions_sha256": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f"
+        },
+        {
+          "update": 2,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_002/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_002/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0001",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "78246c7fbedc3d8d3e8e7bcaf25b38d99d33e8d3c9b4fb51d974fea3d9dcc9b2",
+          "transitions_sha256": "a7c7df9a8fac3f68ca204d534bf6a9c13fbe6047211a63ed3814443333f1b8ea"
+        },
+        {
+          "update": 3,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_003/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_003/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0002",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "6f3a052fae0e0675c3ac236473b803d19da64f239fe254ec525b8b6b66185332",
+          "transitions_sha256": "23794dbd3f271d8211176a24ebada82e669bbfaa0dcb7e3386566a2bcc4eb8a6"
+        },
+        {
+          "update": 4,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_004/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_004/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0003",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "c32f76841f6df8a37410270e8ab83acd73426a8ff3aa83753b8af4b73727eef7",
+          "transitions_sha256": "fea8a2e8a6e7888762f5ef9329ec1e61ac5bce4e15455c4fd74f7771f3b3a3ca"
+        },
+        {
+          "update": 5,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_005/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_005/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0004",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "428c2139940ef278c75f721ded40ad359adf91a95a7b6041bc587bb9203ca54a",
+          "transitions_sha256": "918c47307ae7afbcbfb9295bba0a388eafbb4c4584ea970098c61513f5b80e94"
+        },
+        {
+          "update": 6,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_006/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_006/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0005",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "d871e263a51d7e0081ec5c9b9688517ab5ba90d0c5e329de3b527403b02783c8",
+          "transitions_sha256": "3172f2b57f9b08d9f64566e981e51ffbe1e799a04512f75779cbcbdc6f7c2655"
+        },
+        {
+          "update": 7,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_007/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_007/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0006",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "6f21eb9059d44f8960a079c68f67735f09b98bb6f375fd6186dbce126ac9644a",
+          "transitions_sha256": "1c996a26cb01f5d3e4e25ca2d52cfcbfe0c7fbdb25029e8bc42f9d4e55f4eda2"
+        },
+        {
+          "update": 8,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_008/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_008/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0007",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "4b82bc9b6f3659583acc7abfa75922ef267eb5a1d7b0d9503d52ce5ed7fb8bbe",
+          "transitions_sha256": "290ca56aad83f143bc5e07a98e655735643e98a7482ad6243c8366c614653e01"
+        },
+        {
+          "update": 9,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_009/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_009/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0008",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "b20c2a2242dc651b108b80b1f43c6e0a922884c7ee2ef59f15993bf11f163cc8",
+          "transitions_sha256": "d5dac529e9d5865e0248490d0a33f4b3e62b1d51a94cd8a51fbdcb5fe5455735"
+        },
+        {
+          "update": 10,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_010/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/binary/update_010/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0009",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "dfbd6029972b7e8f7dd6bb9a6c03c605789ae542374d40acb2c701ec14732e8c",
+          "transitions_sha256": "d187fa1febe25fab305439d409ee3ac57d5024e7e2b7b877a0a0ee8f3d637e47"
+        }
+      ]
+    },
+    "shuffled": {
+      "executed_transitions": 2560,
+      "valid_transitions": 2560,
+      "episode_count": 161,
+      "contact_transitions": 209,
+      "episodes_with_contact": 104,
+      "first_contact_decision_mean": 1.8653846153846154,
+      "action_counts": {
+        "A": 958,
+        "C": 760,
+        "B": 304,
+        "D": 351,
+        "E": 187
+      },
+      "feedback_tuple_counts": [
+        {
+          "tuple": [
+            false,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 2285
+        },
+        {
+          "tuple": [
+            true,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 67
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 81
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 43
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 48
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 8
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 12
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 15
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            true
+          ],
+          "count": 1
+        }
+      ],
+      "optimizer_steps_by_checkpoint": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "donor_errors": [],
+      "changed_matched_feedback_count": 499,
+      "train_episode_successes": 1,
+      "dataset_manifest": [
+        {
+          "update": 1,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_001/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_001/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0000",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "ac8ec7b1f1786baeaf1b0162a3401a1e5d9e3f98e1a4006a223835fa6d33c289",
+          "transitions_sha256": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f"
+        },
+        {
+          "update": 2,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_002/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_002/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0001",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "d33c29b8519c2a2d74f0f82ea6b086588b72b97ebde59b11231eb0bdae30d378",
+          "transitions_sha256": "8f2e8fe27d6cd734fee4224675f9c9be808961703e7c18994aba79a77b80d56a"
+        },
+        {
+          "update": 3,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_003/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_003/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0002",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "eacd7478367c162c14173940be412341b0af88b737b1b307cfa7dbddd1e791e2",
+          "transitions_sha256": "b2a9c437fe32cbd08df755bc906877fda18a322c1dc208d879956dd9d0718d9e"
+        },
+        {
+          "update": 4,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_004/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_004/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0003",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "2403980a708d196af6d7bba71bb9004b9fd24323a155f20f6a72d18ec802aad0",
+          "transitions_sha256": "b06784078d9ed3211d5211f95278ca51653bc1e06b4b21b6fe175fc5293b6c53"
+        },
+        {
+          "update": 5,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_005/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_005/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0004",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "2e4dca330d2bd49d8c59610a1f5a97a85fd5b3719324a910c86e133df3da2921",
+          "transitions_sha256": "8698adbf67241ea09f95446e3cf749897bec085ff5374f961d2f041ddd1a2a57"
+        },
+        {
+          "update": 6,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_006/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_006/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0005",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "5030ed761653cb6d3b8af2cf13f296a3914994572321fa82936c8c92710461d8",
+          "transitions_sha256": "e25fd199e008edca18fb46bfd4091f1042cce47a54db9eb839a86a1a7ec54771"
+        },
+        {
+          "update": 7,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_007/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_007/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0006",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "82f6e91f91f379de22f597a09585bf3b0a9359e868ac01e56281cd379cd08515",
+          "transitions_sha256": "0c465c15e0ac5b4adc0f07ff0480a49cea2b2948190378b52ecac5922f18b24b"
+        },
+        {
+          "update": 8,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_008/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_008/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0007",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "51f2502798af463f76bcee4e682e8320ce605dc7f22b0f3565bcf9e015a7dd55",
+          "transitions_sha256": "124043f2f6b7ce6c1f1ea71fefb0183cc1f7826157aef83dd35ccc1e3df55594"
+        },
+        {
+          "update": 9,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_009/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_009/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0008",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "e8eb21fb1f57614b6cc4c50e162147962b082357f433060d5e743db745661071",
+          "transitions_sha256": "a75a3fe60165c1e65601f83aa76817588bfccdc717892ebe303254a72c116d5e"
+        },
+        {
+          "update": 10,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_010/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/shuffled/update_010/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0009",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "6e3d480f716b6a57a5b66008f84a6cbd214bba8c92555befc9261b1bb72bacdd",
+          "transitions_sha256": "de9d19d72993968b2f2cef4edabf26f781c8f38324495646dd3b95230d7f4b1e"
+        }
+      ]
+    },
+    "neutral": {
+      "executed_transitions": 2560,
+      "valid_transitions": 2560,
+      "episode_count": 161,
+      "contact_transitions": 210,
+      "episodes_with_contact": 104,
+      "first_contact_decision_mean": 1.875,
+      "action_counts": {
+        "A": 967,
+        "C": 753,
+        "B": 304,
+        "D": 345,
+        "E": 191
+      },
+      "feedback_tuple_counts": [
+        {
+          "tuple": [
+            false,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 2285
+        },
+        {
+          "tuple": [
+            true,
+            "none",
+            "unchanged",
+            false
+          ],
+          "count": 69
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 80
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "farther",
+            false
+          ],
+          "count": 42
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 48
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "closer",
+            false
+          ],
+          "count": 8
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 12
+        },
+        {
+          "tuple": [
+            false,
+            "detected",
+            "unchanged",
+            false
+          ],
+          "count": 15
+        },
+        {
+          "tuple": [
+            true,
+            "detected",
+            "closer",
+            true
+          ],
+          "count": 1
+        }
+      ],
+      "optimizer_steps_by_checkpoint": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "donor_errors": [],
+      "changed_matched_feedback_count": null,
+      "train_episode_successes": 1,
+      "dataset_manifest": [
+        {
+          "update": 1,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_001/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_001/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0000",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "ac8ec7b1f1786baeaf1b0162a3401a1e5d9e3f98e1a4006a223835fa6d33c289",
+          "transitions_sha256": "8fece6992629288253f4afcbeccee0d3ef719c9af9ccf80f025f6aae568f292f"
+        },
+        {
+          "update": 2,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_002/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_002/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0001",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "f873016c29696ad6600fa44e3ce82920546203eda9dad5cb56ea6f25cfa0b7ad",
+          "transitions_sha256": "9f775d5a50b60f7c550264dfdeb9643365b2575736dd43307a13099caca4622c"
+        },
+        {
+          "update": 3,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_003/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_003/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0002",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "e3417d37f2a1d2a462e73986dc49d0274d147675536e3617e11c268f17902d5d",
+          "transitions_sha256": "0e5520ddaf1b4456b8bc28123f6f4dbf926f6758fa6983c0ee6afa00e72414f3"
+        },
+        {
+          "update": 4,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_004/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_004/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0003",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "0cf7ec11c57b4e8a72d6047892b1b9c8845c58c624a3560bd8cfc3acee9e4fd3",
+          "transitions_sha256": "2e4d373b2bfcc37562c46c51c436fd5028460ee4ded0d8e41fc3b6ab8721990f"
+        },
+        {
+          "update": 5,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_005/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_005/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0004",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "2e4dca330d2bd49d8c59610a1f5a97a85fd5b3719324a910c86e133df3da2921",
+          "transitions_sha256": "7c665430a698823440c4bcde62a8e543cbf3bb1f32a056e2678a60870e97a672"
+        },
+        {
+          "update": 6,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_006/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_006/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0005",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "2c9cd9cffd95a8432ce5c780d5adcc1f6cc5b5eaa316d2eed67632afe8051043",
+          "transitions_sha256": "45be4e36d36b54386b69a09936328659b3b11308164e3235bc61b457a053f34f"
+        },
+        {
+          "update": 7,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_007/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_007/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0006",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "9391d9a55862ed3555640548bc118275e274f77b10c7c6805a8ee881ffcb295e",
+          "transitions_sha256": "bc2c03111ffe24c7fe1e953eecc22b8b2631b653eb10f93474c56ac2b57aeb9f"
+        },
+        {
+          "update": 8,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_008/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_008/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0007",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "304cc816ce082e5f49fcfc754a7b8b8a2c2892b7b033b36dd05d868e06fb6953",
+          "transitions_sha256": "4a207f03db8589480f3823433c31a8e0de15ee2672a47c0e65987a726b16d9e3"
+        },
+        {
+          "update": 9,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_009/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_009/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0008",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "80dba9b9419ce4d651aaa325ad4eaa5f9d3f91431007598542380508c664e0f4",
+          "transitions_sha256": "86d5415787ded59a06e7731b6d2159a51c9b2225b2ac5711801f7b94d27c83f7"
+        },
+        {
+          "update": 10,
+          "pre_action_images": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_010/pre_action_images.npz",
+          "transition_records": "/home/skylar/@lab/sdpo_result_feedback_pilot/artifacts/stage_b_v2_near_contact/neutral/update_010/transitions.jsonl",
+          "split": "train",
+          "policy_revision_before_update": "round_0009",
+          "feedback_schema_version": "result-v1",
+          "feedback_source": "simulator_measurements",
+          "observation_time_rule": "decision_index * 0.16 seconds within episode",
+          "result_time_rule": "(decision_index + 1) * 0.16 seconds within episode",
+          "action_world_delta_rule": "measurements.requested_action * 0.05 meters, z target fixed at 0.025 m",
+          "feedback_applies_to_decision": "decision_index",
+          "image_ref_rule": "pre_action_images.npz images[image_index]",
+          "teacher_donor_ref_rule": "update.json donor_indices[row] indexes this same transitions.jsonl",
+          "image_sha256": "e0718c21455311317d844b896036cc8e14314d4b453b89d27ef042439983c01f",
+          "transitions_sha256": "5a0d92b3212e4825ef1b4301cee4bb15d72407d2a984a0a9d77a9202acf4c1cd"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Checks cover this saved single-seed development experiment, not a multi-seed final result.",
+    "Run configuration pins source hashes. Raw records remain unchanged.",
+    "No claim of exact physics resume from optimizer checkpoints."
+  ]
+}

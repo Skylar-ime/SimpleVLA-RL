@@ -1,0 +1,971 @@
+{
+  "conditions": {
+    "sdpo_result": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 2,
+        "success_rate": 0.03125,
+        "conservative_success_rate_all_scenes": 0.03125,
+        "mean_progress_m": 0.020694742385975795,
+        "safety_failures": 1,
+        "interactions": 753,
+        "seconds": 269.8138534610043,
+        "action_counts": {
+          "D": 339,
+          "C": 54,
+          "E": 360
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_binary": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 0,
+        "success_rate": 0.0,
+        "conservative_success_rate_all_scenes": 0.0,
+        "mean_progress_m": 0.000767980262803888,
+        "safety_failures": 0,
+        "interactions": 768,
+        "seconds": 275.66653159301495,
+        "action_counts": {
+          "E": 746,
+          "C": 11,
+          "A": 11
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_causal": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 0,
+        "success_rate": 0.0,
+        "conservative_success_rate_all_scenes": 0.0,
+        "mean_progress_m": 0.0007681364978144836,
+        "safety_failures": 0,
+        "interactions": 768,
+        "seconds": 275.6583293300355,
+        "action_counts": {
+          "E": 753,
+          "D": 2,
+          "A": 11,
+          "C": 2
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_directional": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 2,
+        "success_rate": 0.03125,
+        "conservative_success_rate_all_scenes": 0.03125,
+        "mean_progress_m": 0.00966906044006096,
+        "safety_failures": 0,
+        "interactions": 753,
+        "seconds": 270.32550607598387,
+        "action_counts": {
+          "E": 682,
+          "C": 33,
+          "D": 38
+        }
+      },
+      "updates": 12
+    },
+    "sdpo_wrong_directional": {
+      "evaluation": {
+        "scenes_requested": 64,
+        "scenes_valid": 64,
+        "invalid_resets": 0,
+        "successes": 2,
+        "success_rate": 0.03125,
+        "conservative_success_rate_all_scenes": 0.03125,
+        "mean_progress_m": 0.005736719637281762,
+        "safety_failures": 0,
+        "interactions": 753,
+        "seconds": 270.13422027003253,
+        "action_counts": {
+          "E": 670,
+          "D": 61,
+          "C": 22
+        }
+      },
+      "updates": 12
+    }
+  },
+  "updates": {
+    "1": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.028747510950779542,
+        "teacher_oracle_accuracy": 0.1640625,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 6,
+          "2": 17,
+          "3": 58,
+          "4": 47
+        },
+        "teacher_entropy": 1.4851889610290527,
+        "teacher_student_tv": 0.1802099198102951
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.038389386027120054,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "0": 26,
+          "1": 0,
+          "2": 54,
+          "3": 3,
+          "4": 45
+        },
+        "teacher_entropy": 1.5174586772918701,
+        "teacher_student_tv": 0.24610862135887146
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.05357624014141038,
+        "teacher_oracle_accuracy": 0.2421875,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 1,
+          "2": 5,
+          "3": 22,
+          "4": 71
+        },
+        "teacher_entropy": 1.4146194458007812,
+        "teacher_student_tv": 0.2442147433757782
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.19936424936167896,
+        "teacher_oracle_accuracy": 0.890625,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 40,
+          "2": 22,
+          "3": 34,
+          "4": 0
+        },
+        "teacher_entropy": 1.0259636640548706,
+        "teacher_student_tv": 0.5587590932846069
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.21793270763009787,
+        "teacher_oracle_accuracy": 0.0234375,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 32,
+          "2": 51,
+          "3": 5,
+          "4": 0
+        },
+        "teacher_entropy": 0.8923856019973755,
+        "teacher_student_tv": 0.5852335691452026
+      }
+    },
+    "2": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.02735263336217031,
+        "teacher_oracle_accuracy": 0.1015625,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 13,
+          "2": 14,
+          "3": 51,
+          "4": 49
+        },
+        "teacher_entropy": 1.514634132385254,
+        "teacher_student_tv": 0.17431150376796722
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03836748411413282,
+        "teacher_oracle_accuracy": 0.1015625,
+        "teacher_argmax_counts": {
+          "0": 39,
+          "1": 0,
+          "2": 39,
+          "3": 3,
+          "4": 47
+        },
+        "teacher_entropy": 1.5305757522583008,
+        "teacher_student_tv": 0.24426360428333282
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.04659570654621348,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 60,
+          "1": 0,
+          "2": 5,
+          "3": 6,
+          "4": 57
+        },
+        "teacher_entropy": 1.466803789138794,
+        "teacher_student_tv": 0.23408925533294678
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.22333514411002398,
+        "teacher_oracle_accuracy": 0.9375,
+        "teacher_argmax_counts": {
+          "0": 41,
+          "1": 39,
+          "2": 35,
+          "3": 13,
+          "4": 0
+        },
+        "teacher_entropy": 0.9680619239807129,
+        "teacher_student_tv": 0.5963592529296875
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.21284116245806217,
+        "teacher_oracle_accuracy": 0.09375,
+        "teacher_argmax_counts": {
+          "0": 41,
+          "1": 39,
+          "2": 27,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.9559723138809204,
+        "teacher_student_tv": 0.5879583358764648
+      }
+    },
+    "3": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.0325102668866748,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 6,
+          "2": 18,
+          "3": 55,
+          "4": 49
+        },
+        "teacher_entropy": 1.4726892709732056,
+        "teacher_student_tv": 0.18013325333595276
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03707837697584182,
+        "teacher_oracle_accuracy": 0.1953125,
+        "teacher_argmax_counts": {
+          "0": 33,
+          "1": 0,
+          "2": 41,
+          "3": 0,
+          "4": 54
+        },
+        "teacher_entropy": 1.5387237071990967,
+        "teacher_student_tv": 0.2349143624305725
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.05847604724112898,
+        "teacher_oracle_accuracy": 0.2734375,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 0,
+          "2": 11,
+          "3": 8,
+          "4": 69
+        },
+        "teacher_entropy": 1.41953706741333,
+        "teacher_student_tv": 0.25215932726860046
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.20626457780599594,
+        "teacher_oracle_accuracy": 0.9765625,
+        "teacher_argmax_counts": {
+          "0": 56,
+          "1": 16,
+          "2": 35,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.9778441190719604,
+        "teacher_student_tv": 0.5735860466957092
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.20784771163016558,
+        "teacher_oracle_accuracy": 0.0859375,
+        "teacher_argmax_counts": {
+          "0": 16,
+          "1": 56,
+          "2": 35,
+          "3": 21,
+          "4": 0
+        },
+        "teacher_entropy": 0.9771817922592163,
+        "teacher_student_tv": 0.5739894509315491
+      }
+    },
+    "4": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.029509592975955456,
+        "teacher_oracle_accuracy": 0.125,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 9,
+          "2": 13,
+          "3": 56,
+          "4": 49
+        },
+        "teacher_entropy": 1.4800506830215454,
+        "teacher_student_tv": 0.17278604209423065
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03317410021554679,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 21,
+          "1": 0,
+          "2": 48,
+          "3": 2,
+          "4": 57
+        },
+        "teacher_entropy": 1.5339500904083252,
+        "teacher_student_tv": 0.222217857837677
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.05483037524390966,
+        "teacher_oracle_accuracy": 0.265625,
+        "teacher_argmax_counts": {
+          "0": 44,
+          "1": 0,
+          "2": 10,
+          "3": 10,
+          "4": 64
+        },
+        "teacher_entropy": 1.4292311668395996,
+        "teacher_student_tv": 0.24250590801239014
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.20485038589686155,
+        "teacher_oracle_accuracy": 0.96875,
+        "teacher_argmax_counts": {
+          "0": 56,
+          "1": 16,
+          "2": 44,
+          "3": 12,
+          "4": 0
+        },
+        "teacher_entropy": 0.9678492546081543,
+        "teacher_student_tv": 0.5702031254768372
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.19502951041795313,
+        "teacher_oracle_accuracy": 0.1328125,
+        "teacher_argmax_counts": {
+          "0": 16,
+          "1": 56,
+          "2": 33,
+          "3": 23,
+          "4": 0
+        },
+        "teacher_entropy": 1.009847640991211,
+        "teacher_student_tv": 0.555600643157959
+      }
+    },
+    "5": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.03509954136097804,
+        "teacher_oracle_accuracy": 0.203125,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 4,
+          "2": 13,
+          "3": 66,
+          "4": 45
+        },
+        "teacher_entropy": 1.4665796756744385,
+        "teacher_student_tv": 0.1855478286743164
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.0378590730833821,
+        "teacher_oracle_accuracy": 0.1015625,
+        "teacher_argmax_counts": {
+          "0": 38,
+          "1": 0,
+          "2": 43,
+          "3": 0,
+          "4": 47
+        },
+        "teacher_entropy": 1.5235337018966675,
+        "teacher_student_tv": 0.23496422171592712
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.059923758963122964,
+        "teacher_oracle_accuracy": 0.1796875,
+        "teacher_argmax_counts": {
+          "0": 38,
+          "1": 0,
+          "2": 10,
+          "3": 17,
+          "4": 63
+        },
+        "teacher_entropy": 1.3863276243209839,
+        "teacher_student_tv": 0.25396493077278137
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.1999044893309474,
+        "teacher_oracle_accuracy": 0.9140625,
+        "teacher_argmax_counts": {
+          "0": 15,
+          "1": 33,
+          "2": 66,
+          "3": 14,
+          "4": 0
+        },
+        "teacher_entropy": 0.9444824457168579,
+        "teacher_student_tv": 0.5551509261131287
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.18134090397506952,
+        "teacher_oracle_accuracy": 0.1875,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 16,
+          "2": 48,
+          "3": 32,
+          "4": 0
+        },
+        "teacher_entropy": 0.978836715221405,
+        "teacher_student_tv": 0.5300716757774353
+      }
+    },
+    "6": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.026610011147568002,
+        "teacher_oracle_accuracy": 0.1484375,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 7,
+          "2": 11,
+          "3": 67,
+          "4": 43
+        },
+        "teacher_entropy": 1.4858815670013428,
+        "teacher_student_tv": 0.15804913640022278
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03388652059948072,
+        "teacher_oracle_accuracy": 0.1015625,
+        "teacher_argmax_counts": {
+          "0": 29,
+          "1": 0,
+          "2": 51,
+          "3": 1,
+          "4": 47
+        },
+        "teacher_entropy": 1.5188413858413696,
+        "teacher_student_tv": 0.2202095091342926
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.047903191385557875,
+        "teacher_oracle_accuracy": 0.21875,
+        "teacher_argmax_counts": {
+          "0": 42,
+          "1": 0,
+          "2": 4,
+          "3": 14,
+          "4": 68
+        },
+        "teacher_entropy": 1.4319263696670532,
+        "teacher_student_tv": 0.22359013557434082
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.1973574780859053,
+        "teacher_oracle_accuracy": 0.9140625,
+        "teacher_argmax_counts": {
+          "0": 31,
+          "1": 41,
+          "2": 34,
+          "3": 22,
+          "4": 0
+        },
+        "teacher_entropy": 1.0072892904281616,
+        "teacher_student_tv": 0.5485195517539978
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.19870251580141485,
+        "teacher_oracle_accuracy": 0.0546875,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 32,
+          "2": 39,
+          "3": 17,
+          "4": 0
+        },
+        "teacher_entropy": 0.94151771068573,
+        "teacher_student_tv": 0.5550864934921265
+      }
+    },
+    "7": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.028237538237590343,
+        "teacher_oracle_accuracy": 0.1953125,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 9,
+          "2": 18,
+          "3": 44,
+          "4": 57
+        },
+        "teacher_entropy": 1.4763047695159912,
+        "teacher_student_tv": 0.1644323766231537
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.03065604664152488,
+        "teacher_oracle_accuracy": 0.1171875,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 0,
+          "2": 46,
+          "3": 3,
+          "4": 47
+        },
+        "teacher_entropy": 1.515650749206543,
+        "teacher_student_tv": 0.2033793330192566
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.048996855126461014,
+        "teacher_oracle_accuracy": 0.140625,
+        "teacher_argmax_counts": {
+          "0": 31,
+          "1": 0,
+          "2": 11,
+          "3": 22,
+          "4": 64
+        },
+        "teacher_entropy": 1.3964810371398926,
+        "teacher_student_tv": 0.22529248893260956
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.17121517984196544,
+        "teacher_oracle_accuracy": 0.921875,
+        "teacher_argmax_counts": {
+          "0": 8,
+          "1": 24,
+          "2": 66,
+          "3": 30,
+          "4": 0
+        },
+        "teacher_entropy": 0.9411620497703552,
+        "teacher_student_tv": 0.5047100782394409
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.16123086330480874,
+        "teacher_oracle_accuracy": 0.1171875,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 8,
+          "2": 55,
+          "3": 41,
+          "4": 0
+        },
+        "teacher_entropy": 0.9651644229888916,
+        "teacher_student_tv": 0.49297043681144714
+      }
+    },
+    "8": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.03630779107334092,
+        "teacher_oracle_accuracy": 0.171875,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 13,
+          "2": 19,
+          "3": 53,
+          "4": 42
+        },
+        "teacher_entropy": 1.4450833797454834,
+        "teacher_student_tv": 0.17916339635849
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.026986987388227135,
+        "teacher_oracle_accuracy": 0.2265625,
+        "teacher_argmax_counts": {
+          "0": 27,
+          "1": 0,
+          "2": 48,
+          "3": 2,
+          "4": 51
+        },
+        "teacher_entropy": 1.5329169034957886,
+        "teacher_student_tv": 0.1888483762741089
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.062440716312266886,
+        "teacher_oracle_accuracy": 0.21875,
+        "teacher_argmax_counts": {
+          "0": 39,
+          "1": 0,
+          "2": 20,
+          "3": 9,
+          "4": 60
+        },
+        "teacher_entropy": 1.37245512008667,
+        "teacher_student_tv": 0.24030089378356934
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.18707039603032172,
+        "teacher_oracle_accuracy": 0.9765625,
+        "teacher_argmax_counts": {
+          "0": 26,
+          "1": 22,
+          "2": 65,
+          "3": 15,
+          "4": 0
+        },
+        "teacher_entropy": 0.959739089012146,
+        "teacher_student_tv": 0.5385971069335938
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.166123921982944,
+        "teacher_oracle_accuracy": 0.1953125,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 24,
+          "2": 41,
+          "3": 39,
+          "4": 0
+        },
+        "teacher_entropy": 1.0023291110992432,
+        "teacher_student_tv": 0.49822473526000977
+      }
+    },
+    "9": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.030893736169673502,
+        "teacher_oracle_accuracy": 0.171875,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 10,
+          "2": 17,
+          "3": 56,
+          "4": 45
+        },
+        "teacher_entropy": 1.451724886894226,
+        "teacher_student_tv": 0.15815220773220062
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.021777802263386548,
+        "teacher_oracle_accuracy": 0.1640625,
+        "teacher_argmax_counts": {
+          "0": 30,
+          "1": 0,
+          "2": 45,
+          "3": 3,
+          "4": 50
+        },
+        "teacher_entropy": 1.5282366275787354,
+        "teacher_student_tv": 0.16080445051193237
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.04679333591775503,
+        "teacher_oracle_accuracy": 0.1796875,
+        "teacher_argmax_counts": {
+          "0": 33,
+          "1": 0,
+          "2": 12,
+          "3": 13,
+          "4": 70
+        },
+        "teacher_entropy": 1.4083189964294434,
+        "teacher_student_tv": 0.19819676876068115
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.1865385805722326,
+        "teacher_oracle_accuracy": 0.9921875,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 24,
+          "2": 57,
+          "3": 15,
+          "4": 0
+        },
+        "teacher_entropy": 0.9406035542488098,
+        "teacher_student_tv": 0.5247052907943726
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.1652920946944505,
+        "teacher_oracle_accuracy": 0.140625,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 32,
+          "2": 34,
+          "3": 38,
+          "4": 0
+        },
+        "teacher_entropy": 0.989272952079773,
+        "teacher_student_tv": 0.4915977716445923
+      }
+    },
+    "10": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.01376579119823873,
+        "teacher_oracle_accuracy": 0.09375,
+        "teacher_argmax_counts": {
+          "0": 1,
+          "1": 5,
+          "2": 22,
+          "3": 57,
+          "4": 43
+        },
+        "teacher_entropy": 1.4996798038482666,
+        "teacher_student_tv": 0.10513169318437576
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.020005688173114322,
+        "teacher_oracle_accuracy": 0.1015625,
+        "teacher_argmax_counts": {
+          "0": 34,
+          "1": 0,
+          "2": 48,
+          "3": 1,
+          "4": 45
+        },
+        "teacher_entropy": 1.5174782276153564,
+        "teacher_student_tv": 0.15186570584774017
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.03487522166687995,
+        "teacher_oracle_accuracy": 0.2421875,
+        "teacher_argmax_counts": {
+          "0": 54,
+          "1": 0,
+          "2": 3,
+          "3": 9,
+          "4": 62
+        },
+        "teacher_entropy": 1.4664009809494019,
+        "teacher_student_tv": 0.1781689077615738
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.17684034374542534,
+        "teacher_oracle_accuracy": 0.96875,
+        "teacher_argmax_counts": {
+          "0": 40,
+          "1": 24,
+          "2": 44,
+          "3": 20,
+          "4": 0
+        },
+        "teacher_entropy": 0.9840309023857117,
+        "teacher_student_tv": 0.5148035287857056
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.17147974483668804,
+        "teacher_oracle_accuracy": 0.1171875,
+        "teacher_argmax_counts": {
+          "0": 25,
+          "1": 39,
+          "2": 38,
+          "3": 26,
+          "4": 0
+        },
+        "teacher_entropy": 0.9941145777702332,
+        "teacher_student_tv": 0.5046801567077637
+      }
+    },
+    "11": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.02127902934444137,
+        "teacher_oracle_accuracy": 0.1484375,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 10,
+          "2": 13,
+          "3": 59,
+          "4": 46
+        },
+        "teacher_entropy": 1.47626793384552,
+        "teacher_student_tv": 0.13283038139343262
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.016741094368626364,
+        "teacher_oracle_accuracy": 0.1953125,
+        "teacher_argmax_counts": {
+          "0": 19,
+          "1": 0,
+          "2": 53,
+          "3": 2,
+          "4": 54
+        },
+        "teacher_entropy": 1.5348173379898071,
+        "teacher_student_tv": 0.1307540386915207
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.03966878235223703,
+        "teacher_oracle_accuracy": 0.234375,
+        "teacher_argmax_counts": {
+          "0": 38,
+          "1": 0,
+          "2": 9,
+          "3": 13,
+          "4": 68
+        },
+        "teacher_entropy": 1.4204872846603394,
+        "teacher_student_tv": 0.18033768236637115
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.1604368907865137,
+        "teacher_oracle_accuracy": 0.953125,
+        "teacher_argmax_counts": {
+          "0": 48,
+          "1": 0,
+          "2": 62,
+          "3": 18,
+          "4": 0
+        },
+        "teacher_entropy": 0.962806761264801,
+        "teacher_student_tv": 0.48818904161453247
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.1575927424710244,
+        "teacher_oracle_accuracy": 0.1171875,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 48,
+          "2": 39,
+          "3": 41,
+          "4": 0
+        },
+        "teacher_entropy": 1.0183194875717163,
+        "teacher_student_tv": 0.4730997383594513
+      }
+    },
+    "12": {
+      "sdpo_result": {
+        "valid": 128,
+        "loss": 0.02820642183360178,
+        "teacher_oracle_accuracy": 0.140625,
+        "teacher_argmax_counts": {
+          "0": 0,
+          "1": 12,
+          "2": 17,
+          "3": 63,
+          "4": 36
+        },
+        "teacher_entropy": 1.4595166444778442,
+        "teacher_student_tv": 0.15659849345684052
+      },
+      "sdpo_binary": {
+        "valid": 128,
+        "loss": 0.013843907021509949,
+        "teacher_oracle_accuracy": 0.171875,
+        "teacher_argmax_counts": {
+          "0": 36,
+          "1": 1,
+          "2": 38,
+          "3": 4,
+          "4": 49
+        },
+        "teacher_entropy": 1.5365203619003296,
+        "teacher_student_tv": 0.11064466089010239
+      },
+      "sdpo_causal": {
+        "valid": 128,
+        "loss": 0.048191545021836646,
+        "teacher_oracle_accuracy": 0.2265625,
+        "teacher_argmax_counts": {
+          "0": 49,
+          "1": 0,
+          "2": 16,
+          "3": 5,
+          "4": 58
+        },
+        "teacher_entropy": 1.3803247213363647,
+        "teacher_student_tv": 0.1986117660999298
+      },
+      "sdpo_directional": {
+        "valid": 128,
+        "loss": 0.17595260590314865,
+        "teacher_oracle_accuracy": 0.953125,
+        "teacher_argmax_counts": {
+          "0": 32,
+          "1": 24,
+          "2": 60,
+          "3": 12,
+          "4": 0
+        },
+        "teacher_entropy": 0.9435238242149353,
+        "teacher_student_tv": 0.5080377459526062
+      },
+      "sdpo_wrong_directional": {
+        "valid": 128,
+        "loss": 0.15563662513159215,
+        "teacher_oracle_accuracy": 0.1328125,
+        "teacher_argmax_counts": {
+          "0": 24,
+          "1": 32,
+          "2": 33,
+          "3": 39,
+          "4": 0
+        },
+        "teacher_entropy": 1.005772590637207,
+        "teacher_student_tv": 0.47635045647621155
+      }
+    }
+  }
+}

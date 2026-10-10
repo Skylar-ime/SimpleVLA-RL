@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "errors": [],
+  "first_rollout_hashes": {
+    "sdpo_result": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_binary": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_causal": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_directional": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_directional_residual": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_wrong_directional": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38",
+    "sdpo_wrong_directional_residual": "ab356a71d15dd58fb6b61afd229fc12b3dfd9f93567c4fb99bd9ae6484ce5a38"
+  },
+  "coverage": {
+    "sdpo_result": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        41,
+        37,
+        35,
+        31,
+        40,
+        34,
+        37,
+        37,
+        43,
+        41,
+        37
+      ]
+    },
+    "sdpo_binary": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sdpo_causal": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        38,
+        37,
+        36,
+        32,
+        41,
+        33,
+        36,
+        42,
+        45,
+        43,
+        43
+      ]
+    },
+    "sdpo_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        40,
+        37,
+        36,
+        31,
+        38,
+        33,
+        37,
+        39,
+        43,
+        38,
+        39
+      ]
+    },
+    "sdpo_directional_residual": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        40,
+        38,
+        35,
+        32,
+        38,
+        35,
+        37,
+        41,
+        44,
+        43,
+        45
+      ]
+    },
+    "sdpo_wrong_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        42,
+        37,
+        35,
+        31,
+        40,
+        35,
+        36,
+        42,
+        45,
+        43,
+        47
+      ]
+    },
+    "sdpo_wrong_directional_residual": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        34,
+        41,
+        37,
+        36,
+        32,
+        38,
+        32,
+        37,
+        39,
+        42,
+        42,
+        41
+      ]
+    }
+  }
+}

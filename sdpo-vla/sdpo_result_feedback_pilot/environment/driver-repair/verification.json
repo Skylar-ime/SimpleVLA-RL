@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-09-25T16:43:21.329333+08:00",
+  "repair_scope": "conda_environment_only",
+  "system_driver_repaired": false,
+  "environment": "sdpo-vla-pilot",
+  "loaded_driver": "580.173.02",
+  "torch": "2.5.1+cu124",
+  "torch_cuda_build": "12.4",
+  "cuda_available": true,
+  "device_count": 1,
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "cuda_total_memory_bytes": 50854952960,
+  "cuda_total_memory_gib": 47.36236572265625,
+  "bf16_forward_backward_passed": true,
+  "activation_deactivation_passed": true,
+  "project_tests_passed": 4,
+  "project_test_note": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 to avoid unrelated inherited ROS launch_testing plugin requiring lark",
+  "nvidia_smi": "NVIDIA GeForce RTX 4090, 49140 MiB, 47516 MiB, 580.173.02"
+}

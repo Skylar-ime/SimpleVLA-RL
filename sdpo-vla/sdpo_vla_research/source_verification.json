@@ -1,0 +1,65 @@
+{
+  "checked_date": "2026-10-09",
+  "sources": [
+    {
+      "name": "SDPO",
+      "url": "https://arxiv.org/abs/2601.20802v2",
+      "status": 200,
+      "title": "Reinforcement Learning via Self-Distillation"
+    },
+    {
+      "name": "ROAD-VLA",
+      "url": "https://arxiv.org/abs/2606.25800",
+      "status": 200,
+      "title": "ROAD-VLA: Robust Online Adaptation via Self-Distillation for Vision-Language-Action Models"
+    },
+    {
+      "name": "VLA-OPD",
+      "url": "https://arxiv.org/abs/2603.26666",
+      "status": 200,
+      "title": "VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation"
+    },
+    {
+      "name": "FORCE",
+      "url": "https://arxiv.org/abs/2606.26006",
+      "status": 200,
+      "title": "FORCE: Efficient VLA Reinforcement Fine-Tuning via Value-Calibrated Warm-up and Self-Distillation"
+    },
+    {
+      "name": "LfH",
+      "url": "https://arxiv.org/abs/2607.09042v2",
+      "status": 200,
+      "title": "Learning from Hindsight for VLA Reinforcement Learning"
+    },
+    {
+      "name": "Reflective VLA",
+      "url": "https://arxiv.org/abs/2606.25215",
+      "status": 200,
+      "title": "Reflective VLA: In-Context Action Consequences Make VLAs Generalize"
+    },
+    {
+      "name": "CorrectVLA",
+      "url": "https://arxiv.org/abs/2608.29967",
+      "status": 200,
+      "title": "Training-Free Action Correction for VLA Model Failures via Language Feedback"
+    },
+    {
+      "name": "FIRE-VLA",
+      "url": "https://arxiv.org/abs/2608.13395",
+      "status": 200,
+      "title": "FIRE-VLA: Failure-Informed Self-Evolution for Vision-Language-Action Models in Autonomous Driving"
+    },
+    {
+      "name": "Juno",
+      "url": "https://arxiv.org/abs/2610.09940",
+      "status": 200,
+      "title": "Juno: Taming Predictive Latents for Vision-Language-Action Models"
+    },
+    {
+      "name": "AutodidactWAM",
+      "url": "https://arxiv.org/abs/2610.08119",
+      "status": 200,
+      "title": "AutodidactWAM: Cross-Modal Self-Distillation from Generated Video to Robot Actions"
+    }
+  ]
+}

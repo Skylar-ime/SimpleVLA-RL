@@ -126,6 +126,11 @@ tests/e2e/toy_examples/deepspeed/synchronous/output.txt
 # data
 *.parquet
 
+# Local SDPO-VLA runs and downloaded model weights
+/sdpo-vla/*/artifacts/
+/sdpo-vla/sdpo_result_feedback_pilot/models/
+/sdpo-vla/*/environment/driver-repair/packages/
+
 
 # local logs
 logs

@@ -1,0 +1,90 @@
+{
+  "status": "development_grouped_mechanism_probe",
+  "groups": 64,
+  "candidates_per_group": 8,
+  "transitions": 512,
+  "elapsed_seconds": 350.9057833450006,
+  "metrics": {
+    "solution_only": {
+      "valid": 378,
+      "solution_contexts": 378,
+      "teacher_solution_argmax_accuracy": 0.5370370370370371,
+      "teacher_argmax_counts": {
+        "A": 280,
+        "B": 0,
+        "C": 98,
+        "D": 0,
+        "E": 0
+      },
+      "mean_predicted_group_progress_m": 0.009391303792083984,
+      "mean_entropy_nats": 1.4345036745071411
+    },
+    "solution_plus_binary": {
+      "valid": 458,
+      "solution_contexts": 378,
+      "teacher_solution_argmax_accuracy": 0.2619047619047619,
+      "teacher_argmax_counts": {
+        "A": 323,
+        "B": 2,
+        "C": 133,
+        "D": 0,
+        "E": 0
+      },
+      "mean_predicted_group_progress_m": 0.004007800281491264,
+      "mean_entropy_nats": 1.4606032371520996
+    },
+    "solution_plus_causal": {
+      "valid": 458,
+      "solution_contexts": 378,
+      "teacher_solution_argmax_accuracy": 0.41534391534391535,
+      "teacher_argmax_counts": {
+        "A": 254,
+        "B": 11,
+        "C": 186,
+        "D": 7,
+        "E": 0
+      },
+      "mean_predicted_group_progress_m": 0.0064445977276631925,
+      "mean_entropy_nats": 1.3962799310684204
+    },
+    "solution_plus_causal_shuffled": {
+      "valid": 458,
+      "solution_contexts": 378,
+      "teacher_solution_argmax_accuracy": 0.30158730158730157,
+      "teacher_argmax_counts": {
+        "A": 244,
+        "B": 12,
+        "C": 197,
+        "D": 5,
+        "E": 0
+      },
+      "mean_predicted_group_progress_m": 0.0044986985593281955,
+      "mean_entropy_nats": 1.4138802289962769
+    }
+  },
+  "pair_metrics": {
+    "solution_plus_causal_minus_solution_only": {
+      "shared_valid": 378,
+      "mean_total_variation": 0.13850520551204681,
+      "mean_progress_delta_m": -0.002946706064420791
+    },
+    "solution_plus_causal_minus_solution_plus_binary": {
+      "shared_valid": 458,
+      "mean_total_variation": 0.09780339151620865,
+      "mean_progress_delta_m": 0.0024367974461719285
+    },
+    "solution_plus_causal_minus_solution_plus_causal_shuffled": {
+      "shared_valid": 458,
+      "mean_total_variation": 0.23303832113742828,
+      "mean_progress_delta_m": 0.001945899168334997
+    }
+  },
+  "gate": {
+    "has_self_generated_solutions": true,
+    "rich_changes_solution_teacher": true,
+    "rich_beats_binary_progress": true,
+    "rich_beats_shuffled_progress": true,
+    "status": "passed"
+  },
+  "note": "Mechanism probe uses only self-generated same-state candidates and measured outcomes; no expert action labels."
+}

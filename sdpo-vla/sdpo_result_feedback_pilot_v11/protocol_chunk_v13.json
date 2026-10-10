@@ -1,0 +1,39 @@
+{
+  "version": "v13-position-specific-suffix-feedback",
+  "question": "Does position-specific suffix feedback improve temporal credit assignment over aggregate chunk feedback?",
+  "scene_profile": "directional_long",
+  "chunk": {
+    "length": 2,
+    "candidates_per_initial_state": 8,
+    "chunks_per_update": 64,
+    "updates": 12,
+    "seed": 12,
+    "receding_horizon_evaluation": true
+  },
+  "student_input": ["initial_RGB", "instruction", "proprioception", "previous_chunk_actions"],
+  "teacher_input": ["student_input", "position_specific_executed_suffix_feedback"],
+  "objective": "mean per-action-position JSD between no-feedback student and suffix-feedback EMA teacher",
+  "suffix_definition": "at position t, aggregate and transcribe executed outcomes from step t through final executed step",
+  "residual_target": "log_softmax(log_student_t + log_teacher_directional_suffix_t - log_teacher_noop_suffix_t)",
+  "conditions": [
+    "chunk_suffix_result",
+    "chunk_suffix_directional",
+    "chunk_suffix_directional_residual",
+    "chunk_suffix_wrong_directional",
+    "chunk_suffix_wrong_directional_residual"
+  ],
+  "controls": [
+    "v12 aggregate chunk feedback under matched primitive-action budget",
+    "wrong-directional suffix feedback",
+    "directional suffix no-op residual"
+  ],
+  "limitations": [
+    "single repeat seed",
+    "open-loop action chunk",
+    "chunk length two",
+    "local calibrated PandaPush pilot",
+    "five-action support",
+    "suffix feedback tests temporal informativeness, not causal credit by itself",
+    "no leave-one-action-out counterfactual training labels"
+  ]
+}

@@ -1,0 +1,1276 @@
+{
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+  "matched_arguments": {
+    "seed": 12,
+    "transitions": 128,
+    "updates": 12,
+    "microbatch_size": 4,
+    "parallel_envs": 8,
+    "dev_scenes": 64,
+    "scene_profile": "directional_long",
+    "one_step_rollouts": true,
+    "grouped_candidates": 8,
+    "expect_feedback_only": true
+  },
+  "runs": {
+    "v10_3b": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/artifacts/stage_i_v10_directional_control_03",
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 11,
+            "success_rate": 0.171875,
+            "conservative_success_rate_all_scenes": 0.171875,
+            "mean_progress_m": 0.026195177707880657,
+            "safety_failures": 0,
+            "interactions": 732,
+            "seconds": 247.06496298300044,
+            "action_counts": {
+              "A": 642,
+              "C": 90
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.028294884606387915,
+            "safety_failures": 0,
+            "interactions": 724,
+            "seconds": 243.7981479440059,
+            "action_counts": {
+              "A": 721,
+              "C": 3
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 0.0018444835990966207,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 258.7793391520099,
+            "action_counts": {
+              "A": 492,
+              "C": 276
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 6,
+            "success_rate": 0.09375,
+            "conservative_success_rate_all_scenes": 0.09375,
+            "mean_progress_m": 0.016576860241834107,
+            "safety_failures": 0,
+            "interactions": 751,
+            "seconds": 253.00675552600296,
+            "action_counts": {
+              "A": 575,
+              "C": 176
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.022135875002514294,
+            "safety_failures": 0,
+            "interactions": 737,
+            "seconds": 248.70919352899364,
+            "action_counts": {
+              "A": 608,
+              "C": 129
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v11_3b": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v11_v10_comparable_01",
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 11,
+            "success_rate": 0.171875,
+            "conservative_success_rate_all_scenes": 0.171875,
+            "mean_progress_m": 0.026438043176490976,
+            "safety_failures": 0,
+            "interactions": 730,
+            "seconds": 246.4448792320036,
+            "action_counts": {
+              "A": 642,
+              "C": 88
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.028294827801401568,
+            "safety_failures": 0,
+            "interactions": 724,
+            "seconds": 244.53007117600646,
+            "action_counts": {
+              "A": 719,
+              "C": 5
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 0.0005439283361593533,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 259.26655919500627,
+            "action_counts": {
+              "A": 486,
+              "C": 282
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 7,
+            "success_rate": 0.109375,
+            "conservative_success_rate_all_scenes": 0.109375,
+            "mean_progress_m": 0.017939421553917284,
+            "safety_failures": 0,
+            "interactions": 748,
+            "seconds": 252.34167875401909,
+            "action_counts": {
+              "A": 583,
+              "C": 165
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.020101919678798333,
+            "safety_failures": 0,
+            "interactions": 741,
+            "seconds": 250.03043000097387,
+            "action_counts": {
+              "A": 605,
+              "C": 136
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.02022270695855945,
+            "safety_failures": 0,
+            "interactions": 743,
+            "seconds": 250.96317627397366,
+            "action_counts": {
+              "A": 596,
+              "C": 147
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-3B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "b9a6d9ce86e4946719f99f7479ebc4ab3a15626190799d7aed8152385dab0fef",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.021185683158394523,
+            "safety_failures": 0,
+            "interactions": 740,
+            "seconds": 249.41695148899453,
+            "action_counts": {
+              "A": 610,
+              "C": 130
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v10_7b": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/artifacts/stage_i_v10_qwen25vl7b_01",
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.020694742385975795,
+            "safety_failures": 1,
+            "interactions": 753,
+            "seconds": 269.8138534610043,
+            "action_counts": {
+              "D": 339,
+              "C": 54,
+              "E": 360
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 0.000767980262803888,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 275.66653159301495,
+            "action_counts": {
+              "E": 746,
+              "C": 11,
+              "A": 11
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 0.0007681364978144836,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 275.6583293300355,
+            "action_counts": {
+              "E": 753,
+              "D": 2,
+              "A": 11,
+              "C": 2
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.00966906044006096,
+            "safety_failures": 0,
+            "interactions": 753,
+            "seconds": 270.32550607598387,
+            "action_counts": {
+              "E": 682,
+              "C": 33,
+              "D": 38
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v7/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.005736719637281762,
+            "safety_failures": 0,
+            "interactions": 753,
+            "seconds": 270.13422027003253,
+            "action_counts": {
+              "E": 670,
+              "D": 61,
+              "C": 22
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v11_7b": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v11_qwen25vl7b_01",
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.019511142206269143,
+            "safety_failures": 1,
+            "interactions": 753,
+            "seconds": 269.53948787396075,
+            "action_counts": {
+              "D": 339,
+              "C": 55,
+              "E": 359
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 0.0007678791238242258,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 275.7207527309656,
+            "action_counts": {
+              "E": 746,
+              "C": 11,
+              "D": 1,
+              "A": 10
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 0,
+            "success_rate": 0.0,
+            "conservative_success_rate_all_scenes": 0.0,
+            "mean_progress_m": 3.5002538247268927e-07,
+            "safety_failures": 0,
+            "interactions": 768,
+            "seconds": 275.4684153299895,
+            "action_counts": {
+              "E": 757,
+              "D": 1,
+              "A": 10
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.00871912052428069,
+            "safety_failures": 0,
+            "interactions": 753,
+            "seconds": 270.437367208011,
+            "action_counts": {
+              "E": 685,
+              "C": 33,
+              "D": 35
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.0057369773530097645,
+            "safety_failures": 0,
+            "interactions": 753,
+            "seconds": 270.2096635720227,
+            "action_counts": {
+              "E": 672,
+              "C": 21,
+              "D": 60
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.019201823687594113,
+            "safety_failures": 1,
+            "interactions": 753,
+            "seconds": 269.3915390300099,
+            "action_counts": {
+              "D": 113,
+              "C": 112,
+              "E": 524,
+              "A": 4
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+            "local_path": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen2.5-VL-7B-Instruct"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ceac251a3f04d81d6c5c5fc33c3aea562587c3c7eb345f604b17ade1aa6600b0",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 2,
+            "success_rate": 0.03125,
+            "conservative_success_rate_all_scenes": 0.03125,
+            "mean_progress_m": 0.01571633869963936,
+            "safety_failures": 1,
+            "interactions": 753,
+            "seconds": 270.1777332610218,
+            "action_counts": {
+              "D": 138,
+              "C": 82,
+              "E": 532,
+              "A": 1
+            }
+          },
+          "updates": 12
+        }
+      }
+    }
+  },
+  "paired": {
+    "v10_vs_v11_3b_sdpo_result": {
+      "first_successes": 11,
+      "second_successes": 11,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.00024286546861031688
+    },
+    "v10_vs_v11_7b_sdpo_result": {
+      "first_successes": 2,
+      "second_successes": 2,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.0011836001797066499
+    },
+    "3b_vs_7b_v10_sdpo_result": {
+      "first_successes": 11,
+      "second_successes": 2,
+      "success_difference": -9,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000027",
+        "dev_000035",
+        "dev_000055",
+        "dev_000057"
+      ],
+      "mean_progress_difference_m": -0.005500435321904867
+    },
+    "3b_vs_7b_v11_sdpo_result": {
+      "first_successes": 11,
+      "second_successes": 2,
+      "success_difference": -9,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000027",
+        "dev_000035",
+        "dev_000055",
+        "dev_000057"
+      ],
+      "mean_progress_difference_m": -0.006926900970221833
+    },
+    "v10_vs_v11_3b_sdpo_binary": {
+      "first_successes": 13,
+      "second_successes": 13,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -5.680498634842712e-08
+    },
+    "v10_vs_v11_7b_sdpo_binary": {
+      "first_successes": 0,
+      "second_successes": 0,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -1.0113897966216104e-07
+    },
+    "3b_vs_7b_v10_sdpo_binary": {
+      "first_successes": 13,
+      "second_successes": 0,
+      "success_difference": -13,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000027",
+        "dev_000035",
+        "dev_000051",
+        "dev_000055",
+        "dev_000057",
+        "dev_000060"
+      ],
+      "mean_progress_difference_m": -0.027526904343584027
+    },
+    "3b_vs_7b_v11_sdpo_binary": {
+      "first_successes": 13,
+      "second_successes": 0,
+      "success_difference": -13,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000027",
+        "dev_000035",
+        "dev_000051",
+        "dev_000055",
+        "dev_000057",
+        "dev_000060"
+      ],
+      "mean_progress_difference_m": -0.02752694867757734
+    },
+    "v10_vs_v11_3b_sdpo_causal": {
+      "first_successes": 0,
+      "second_successes": 0,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.0013005552629372673
+    },
+    "v10_vs_v11_7b_sdpo_causal": {
+      "first_successes": 0,
+      "second_successes": 0,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.000767786472432011
+    },
+    "3b_vs_7b_v10_sdpo_causal": {
+      "first_successes": 0,
+      "second_successes": 0,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.001076347101282137
+    },
+    "3b_vs_7b_v11_sdpo_causal": {
+      "first_successes": 0,
+      "second_successes": 0,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.0005435783107768806
+    },
+    "v10_vs_v11_3b_sdpo_directional": {
+      "first_successes": 6,
+      "second_successes": 7,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000055"
+      ],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0013625613120831757
+    },
+    "v10_vs_v11_7b_sdpo_directional": {
+      "first_successes": 2,
+      "second_successes": 2,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": -0.0009499399157802707
+    },
+    "3b_vs_7b_v10_sdpo_directional": {
+      "first_successes": 6,
+      "second_successes": 2,
+      "success_difference": -4,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017"
+      ],
+      "mean_progress_difference_m": -0.006907799801773145
+    },
+    "3b_vs_7b_v11_sdpo_directional": {
+      "first_successes": 7,
+      "second_successes": 2,
+      "success_difference": -5,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000055"
+      ],
+      "mean_progress_difference_m": -0.009220301029636592
+    },
+    "v10_vs_v11_3b_sdpo_wrong_directional": {
+      "first_successes": 9,
+      "second_successes": 8,
+      "success_difference": -1,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000057"
+      ],
+      "mean_progress_difference_m": -0.002033955323715964
+    },
+    "v10_vs_v11_7b_sdpo_wrong_directional": {
+      "first_successes": 2,
+      "second_successes": 2,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 2.5771572800489286e-07
+    },
+    "3b_vs_7b_v10_sdpo_wrong_directional": {
+      "first_successes": 9,
+      "second_successes": 2,
+      "success_difference": -7,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000055",
+        "dev_000057"
+      ],
+      "mean_progress_difference_m": -0.016399155365232534
+    },
+    "3b_vs_7b_v11_sdpo_wrong_directional": {
+      "first_successes": 8,
+      "second_successes": 2,
+      "success_difference": -6,
+      "gained_scene_ids": [
+        "dev_000009",
+        "dev_000050"
+      ],
+      "lost_scene_ids": [
+        "dev_000003",
+        "dev_000006",
+        "dev_000007",
+        "dev_000011",
+        "dev_000013",
+        "dev_000017",
+        "dev_000026",
+        "dev_000055"
+      ],
+      "mean_progress_difference_m": -0.014364942325788567
+    },
+    "raw_vs_residual_3b_sdpo_directional": {
+      "first_successes": 7,
+      "second_successes": 8,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000026",
+        "dev_000057"
+      ],
+      "lost_scene_ids": [
+        "dev_000055"
+      ],
+      "mean_progress_difference_m": 0.002283285404642168
+    },
+    "raw_vs_residual_3b_sdpo_wrong_directional": {
+      "first_successes": 8,
+      "second_successes": 8,
+      "success_difference": 0,
+      "gained_scene_ids": [
+        "dev_000057"
+      ],
+      "lost_scene_ids": [
+        "dev_000055"
+      ],
+      "mean_progress_difference_m": 0.00108376347959619
+    },
+    "raw_vs_residual_7b_sdpo_directional": {
+      "first_successes": 2,
+      "second_successes": 2,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.010482703163313421
+    },
+    "raw_vs_residual_7b_sdpo_wrong_directional": {
+      "first_successes": 2,
+      "second_successes": 2,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.009979361346629596
+    }
+  }
+}

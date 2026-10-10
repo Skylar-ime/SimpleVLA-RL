@@ -1,0 +1,52 @@
+{
+  "version": "v12-same-state-action-relative-advantage",
+  "question": "Does same-state counterfactual action-relative feedback provide identifiable SDPO targets?",
+  "scene_profile": "directional_long",
+  "backbones": ["qwen3", "molmo2"],
+  "conditions": [
+    "sdpo_result",
+    "sdpo_advantage",
+    "sdpo_advantage_shuffled",
+    "sdpo_advantage_reversed"
+  ],
+  "rollout": {
+    "candidates_per_state": 8,
+    "counterfactual_actions": ["A", "B", "C", "D", "E"],
+    "transitions_per_update": 128,
+    "updates": 12,
+    "seeds": [12, 13, 14, 15, 16],
+    "one_step": true
+  },
+  "feedback": {
+    "action_relative_advantage": "progress(s,a) - progress(s,E)",
+    "counterfactual_state": "exact simulator snapshot before candidate action",
+    "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+    "teacher_input": ["student_input", "same_state_action_progress_table"],
+    "action_prescription": false,
+    "reversed_control": "multiply every action-relative advantage by -1",
+    "shuffled_control": "replace counterfactual table with another group table"
+  },
+  "loss": {
+    "name": "JSD",
+    "alpha": 0.5,
+    "optimizer_steps_per_rollout": 1,
+    "grpo_weight": 0,
+    "behavior_cloning_weight": 0,
+    "teacher": "EMA LoRA, update rate 0.05, stop-gradient"
+  },
+  "primary_diagnostics": [
+    "counterfactual replay identity",
+    "teacher action advantage alignment",
+    "teacher action distribution sensitivity",
+    "paired dev success and progress",
+    "safety failures",
+    "action coverage"
+  ],
+  "limitations": [
+    "local calibrated PandaPush pilot",
+    "five-action support",
+    "one-step counterfactual credit only",
+    "simulator-measured progress is privileged feedback",
+    "multi-seed results remain model- and task-specific"
+  ]
+}

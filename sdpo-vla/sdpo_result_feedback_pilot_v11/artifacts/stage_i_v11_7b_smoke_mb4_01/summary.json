@@ -1,0 +1,308 @@
+{
+  "updates": [
+    {
+      "loss": 0.27649572491645813,
+      "valid": 8,
+      "executed": 8,
+      "gradient_norm": 0.8715322017669678,
+      "optimizer_steps": 1,
+      "seconds": 3.8188819600036368,
+      "teacher_privileged_log_probs": [
+        [
+          -0.4497319459915161,
+          -1.7637444734573364,
+          -3.259450912475586,
+          -2.5074596405029297,
+          -2.6462783813476562
+        ],
+        [
+          -0.35851794481277466,
+          -1.9536678791046143,
+          -3.7784359455108643,
+          -3.5678703784942627,
+          -2.221360445022583
+        ],
+        [
+          -0.35851794481277466,
+          -1.9536678791046143,
+          -3.7784359455108643,
+          -3.5678703784942627,
+          -2.221360445022583
+        ],
+        [
+          -0.2772616147994995,
+          -2.229604721069336,
+          -3.2567501068115234,
+          -3.4689807891845703,
+          -2.734743118286133
+        ],
+        [
+          -0.45405304431915283,
+          -1.7297431230545044,
+          -3.2278738021850586,
+          -2.5206098556518555,
+          -2.6946096420288086
+        ],
+        [
+          -0.7501212358474731,
+          -0.8923674821853638,
+          -3.9787683486938477,
+          -3.7067995071411133,
+          -2.593722343444824
+        ],
+        [
+          -0.3794649839401245,
+          -1.9348105192184448,
+          -2.4526615142822266,
+          -3.5022335052490234,
+          -2.898120880126953
+        ],
+        [
+          -0.7501212358474731,
+          -0.8923674821853638,
+          -3.9787683486938477,
+          -3.7067995071411133,
+          -2.593722343444824
+        ]
+      ],
+      "teacher_noop_baseline_log_probs": [
+        [
+          -3.222870349884033,
+          -3.1149773597717285,
+          -3.578331470489502,
+          -2.6044278144836426,
+          -0.20590269565582275
+        ],
+        [
+          -3.0766425132751465,
+          -2.550227642059326,
+          -3.405789852142334,
+          -2.289577007293701,
+          -0.29930630326271057
+        ],
+        [
+          -3.0766425132751465,
+          -2.550227642059326,
+          -3.405789852142334,
+          -2.289577007293701,
+          -0.29930630326271057
+        ],
+        [
+          -4.225756645202637,
+          -3.9112062454223633,
+          -4.755440711975098,
+          -3.5233545303344727,
+          -0.07551661133766174
+        ],
+        [
+          -3.2284469604492188,
+          -3.1584510803222656,
+          -3.5840930938720703,
+          -2.622631072998047,
+          -0.20148468017578125
+        ],
+        [
+          -3.177330255508423,
+          -2.3318636417388916,
+          -3.6029551029205322,
+          -2.871471643447876,
+          -0.2518903911113739
+        ],
+        [
+          -3.1401262283325195,
+          -2.704625129699707,
+          -3.042819023132324,
+          -2.386916160583496,
+          -0.2873964011669159
+        ],
+        [
+          -3.177330255508423,
+          -2.3318636417388916,
+          -3.6029551029205322,
+          -2.871471643447876,
+          -0.2518903911113739
+        ]
+      ],
+      "teacher_residual_log_probs": [
+        [
+          2.7731385231018066,
+          1.351232886314392,
+          0.318880558013916,
+          0.09696817398071289,
+          -2.440375804901123
+        ],
+        [
+          2.7181246280670166,
+          0.5965597629547119,
+          -0.3726460933685303,
+          -1.2782933712005615,
+          -1.9220541715621948
+        ],
+        [
+          2.7181246280670166,
+          0.5965597629547119,
+          -0.3726460933685303,
+          -1.2782933712005615,
+          -1.9220541715621948
+        ],
+        [
+          3.9484949111938477,
+          1.6816015243530273,
+          1.4986906051635742,
+          0.054373741149902344,
+          -2.659226417541504
+        ],
+        [
+          2.7743940353393555,
+          1.4287079572677612,
+          0.3562192916870117,
+          0.1020212173461914,
+          -2.4931249618530273
+        ],
+        [
+          2.42720890045166,
+          1.4394961595535278,
+          -0.37581324577331543,
+          -0.8353278636932373,
+          -2.341831922531128
+        ],
+        [
+          2.7606611251831055,
+          0.7698146104812622,
+          0.5901575088500977,
+          -1.1153173446655273,
+          -2.610724449157715
+        ],
+        [
+          2.42720890045166,
+          1.4394961595535278,
+          -0.37581324577331543,
+          -0.8353278636932373,
+          -2.341831922531128
+        ]
+      ],
+      "subtract_noop_baseline": true,
+      "mean_abs_teacher_residual": 1.510970950126648,
+      "mean_abs_teacher_residual_by_action": [
+        2.8184194564819336,
+        1.162933588027954,
+        0.5326083302497864,
+        0.6994904279708862,
+        2.341403007507324
+      ],
+      "mean_teacher_student_total_variation": 0.6526488661766052,
+      "mean_teacher_entropy": 0.8907321095466614,
+      "teacher_argmax_counts": {
+        "0": 8,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "teacher_oracle_accuracy": 1.0,
+      "teacher_repeat_positive_accuracy": null,
+      "teacher_reject_negative_accuracy": 0.875,
+      "update": 1,
+      "group": "sdpo_directional_residual",
+      "rollout_seconds": 4.278158359986264,
+      "contact_count": 0,
+      "motion_count": 0,
+      "progress_counts": {
+        "unchanged": 8
+      },
+      "feedback_changed_count": 8,
+      "unmatched_donor_count": 0,
+      "grouped_rollout_count": 1,
+      "group_progress_witness_count": 0,
+      "groups_with_progress_witness": 0,
+      "solution_context_count": 0,
+      "feedback_used_count": 8,
+      "feedback_record_unique_count": 5,
+      "gpu_peak_allocated_gib": 26.327025890350342
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 4,
+    "scenes_valid": 4,
+    "invalid_resets": 0,
+    "successes": 0,
+    "success_rate": 0.0,
+    "conservative_success_rate_all_scenes": 0.0,
+    "mean_progress_m": 2.93822813302036e-11,
+    "safety_failures": 0,
+    "interactions": 48,
+    "seconds": 17.283602040959522,
+    "action_counts": {
+      "E": 48
+    }
+  },
+  "total_train_interactions": 8,
+  "elapsed_seconds": 27.90193344000727,
+  "training_episodes": [
+    {
+      "episode_id": "train_g12_000000_c00",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c01",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c02",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c03",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c04",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c05",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c06",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    },
+    {
+      "episode_id": "train_g12_000000_c07",
+      "success": false,
+      "local_progress_witness": false,
+      "length": 1,
+      "safety_failure": null,
+      "rollout_group_id": "train_g12_000000"
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

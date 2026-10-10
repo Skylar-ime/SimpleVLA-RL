@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "errors": [],
+  "first_rollout_hashes": {
+    "sdpo_result": "c4e974f85c9865266d7798eca005bb465e8d2597a25b504e6086428da86d0810",
+    "sdpo_binary": "c4e974f85c9865266d7798eca005bb465e8d2597a25b504e6086428da86d0810",
+    "sdpo_causal": "c4e974f85c9865266d7798eca005bb465e8d2597a25b504e6086428da86d0810",
+    "sdpo_directional": "c4e974f85c9865266d7798eca005bb465e8d2597a25b504e6086428da86d0810"
+  },
+  "coverage": {
+    "sdpo_result": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        59,
+        58,
+        56,
+        60,
+        51,
+        62,
+        59,
+        59,
+        61,
+        53,
+        61,
+        59
+      ]
+    },
+    "sdpo_binary": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "sdpo_causal": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        59,
+        58,
+        57,
+        60,
+        51,
+        62,
+        58,
+        59,
+        61,
+        52,
+        60,
+        58
+      ]
+    },
+    "sdpo_directional": {
+      "solution_contexts": 0,
+      "feedback_used_rows": 1536,
+      "feedback_record_unique_counts": [
+        59,
+        58,
+        57,
+        60,
+        51,
+        62,
+        58,
+        59,
+        60,
+        53,
+        59,
+        58
+      ]
+    }
+  }
+}

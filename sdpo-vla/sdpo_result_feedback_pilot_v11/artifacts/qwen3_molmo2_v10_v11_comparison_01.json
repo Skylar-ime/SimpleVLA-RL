@@ -1,0 +1,1479 @@
+{
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+  "matched_arguments": {
+    "seed": 12,
+    "transitions": 128,
+    "updates": 12,
+    "microbatch_size": 4,
+    "parallel_envs": 8,
+    "dev_scenes": 64,
+    "scene_profile": "directional_long",
+    "one_step_rollouts": true,
+    "grouped_candidates": 8,
+    "expect_feedback_only": true
+  },
+  "runs": {
+    "v10_qwen3": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v10_qwen3_01",
+      "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+      "arguments": {
+        "seed": 12,
+        "transitions": 128,
+        "updates": 12,
+        "microbatch_size": 4,
+        "parallel_envs": 8,
+        "dev_scenes": 64,
+        "scene_profile": "directional_long",
+        "one_step_rollouts": true,
+        "grouped_candidates": 8,
+        "expect_feedback_only": true
+      },
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.037504284152763266,
+            "safety_failures": 0,
+            "interactions": 709,
+            "seconds": 247.60360649198992,
+            "action_counts": {
+              "C": 431,
+              "D": 209,
+              "A": 21,
+              "B": 48
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 10,
+            "success_rate": 0.15625,
+            "conservative_success_rate_all_scenes": 0.15625,
+            "mean_progress_m": 0.034848489634637776,
+            "safety_failures": 0,
+            "interactions": 704,
+            "seconds": 246.61600117897615,
+            "action_counts": {
+              "C": 453,
+              "D": 248,
+              "B": 3
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.04002705929639733,
+            "safety_failures": 0,
+            "interactions": 712,
+            "seconds": 248.89611961401533,
+            "action_counts": {
+              "C": 341,
+              "D": 209,
+              "A": 118,
+              "B": 44
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.03943099126651299,
+            "safety_failures": 0,
+            "interactions": 703,
+            "seconds": 246.47025231597945,
+            "action_counts": {
+              "C": 431,
+              "D": 138,
+              "A": 126,
+              "B": 8
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.046105422639390575,
+            "safety_failures": 0,
+            "interactions": 724,
+            "seconds": 252.1633587660035,
+            "action_counts": {
+              "C": 229,
+              "D": 259,
+              "A": 229,
+              "B": 7
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v10_molmo2": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v10_molmo2_01_retry",
+      "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+      "arguments": {
+        "seed": 12,
+        "transitions": 128,
+        "updates": 12,
+        "microbatch_size": 4,
+        "parallel_envs": 8,
+        "dev_scenes": 64,
+        "scene_profile": "directional_long",
+        "one_step_rollouts": true,
+        "grouped_candidates": 8,
+        "expect_feedback_only": true
+      },
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 5,
+            "success_rate": 0.078125,
+            "conservative_success_rate_all_scenes": 0.078125,
+            "mean_progress_m": 0.02539442860603583,
+            "safety_failures": 2,
+            "interactions": 732,
+            "seconds": 348.15839807200246,
+            "action_counts": {
+              "C": 543,
+              "E": 150,
+              "D": 32,
+              "B": 7
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.02986358116517291,
+            "safety_failures": 2,
+            "interactions": 705,
+            "seconds": 335.34776660898933,
+            "action_counts": {
+              "C": 616,
+              "E": 57,
+              "B": 15,
+              "D": 14,
+              "A": 3
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.037225349942661745,
+            "safety_failures": 2,
+            "interactions": 679,
+            "seconds": 323.4867841609521,
+            "action_counts": {
+              "C": 611,
+              "E": 9,
+              "D": 40,
+              "B": 19
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.03677301263893472,
+            "safety_failures": 2,
+            "interactions": 677,
+            "seconds": 322.7768353120191,
+            "action_counts": {
+              "C": 619,
+              "E": 9,
+              "D": 30,
+              "B": 18,
+              "A": 1
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "bca041c1cd04160cabe0163c0a9a557cf5f621a121675f5ee8e38abe1a9761b4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 11,
+            "success_rate": 0.171875,
+            "conservative_success_rate_all_scenes": 0.171875,
+            "mean_progress_m": 0.030647962764110987,
+            "safety_failures": 2,
+            "interactions": 692,
+            "seconds": 329.90620497602504,
+            "action_counts": {
+              "C": 613,
+              "E": 9,
+              "D": 52,
+              "B": 17,
+              "A": 1
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v11_qwen3": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v11_qwen3_01",
+      "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+      "arguments": {
+        "seed": 12,
+        "transitions": 128,
+        "updates": 12,
+        "microbatch_size": 4,
+        "parallel_envs": 8,
+        "dev_scenes": 64,
+        "scene_profile": "directional_long",
+        "one_step_rollouts": true,
+        "grouped_candidates": 8,
+        "expect_feedback_only": true
+      },
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.03648654429481333,
+            "safety_failures": 0,
+            "interactions": 712,
+            "seconds": 249.31781878799666,
+            "action_counts": {
+              "C": 445,
+              "D": 202,
+              "A": 21,
+              "B": 44
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.032889520917504245,
+            "safety_failures": 0,
+            "interactions": 715,
+            "seconds": 258.03166977799265,
+            "action_counts": {
+              "C": 433,
+              "D": 272,
+              "A": 7,
+              "B": 3
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.04055884753947665,
+            "safety_failures": 0,
+            "interactions": 712,
+            "seconds": 248.87203241797397,
+            "action_counts": {
+              "C": 340,
+              "D": 208,
+              "A": 119,
+              "B": 45
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 10,
+            "success_rate": 0.15625,
+            "conservative_success_rate_all_scenes": 0.15625,
+            "mean_progress_m": 0.04142660913431462,
+            "safety_failures": 0,
+            "interactions": 702,
+            "seconds": 246.13829617999727,
+            "action_counts": {
+              "C": 419,
+              "D": 133,
+              "A": 141,
+              "B": 9
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 8,
+            "success_rate": 0.125,
+            "conservative_success_rate_all_scenes": 0.125,
+            "mean_progress_m": 0.04665856760445808,
+            "safety_failures": 0,
+            "interactions": 730,
+            "seconds": 254.4766873869812,
+            "action_counts": {
+              "C": 237,
+              "D": 256,
+              "A": 230,
+              "B": 7
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 12,
+            "success_rate": 0.1875,
+            "conservative_success_rate_all_scenes": 0.1875,
+            "mean_progress_m": 0.05294042035865442,
+            "safety_failures": 0,
+            "interactions": 721,
+            "seconds": 251.67628605198115,
+            "action_counts": {
+              "C": 202,
+              "A": 306,
+              "D": 212,
+              "B": 1
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+            "revision": null,
+            "architecture": "Qwen3VLForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "ef1d667f67f44b14e73793d81f0c9d657e8c80ab46a224007eb26fdab166b5fb",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.045090205142873506,
+            "safety_failures": 0,
+            "interactions": 717,
+            "seconds": 251.5152105660527,
+            "action_counts": {
+              "C": 293,
+              "A": 302,
+              "D": 120,
+              "B": 2
+            }
+          },
+          "updates": 12
+        }
+      }
+    },
+    "v11_molmo2": {
+      "root": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/stage_i_v11_molmo2_01_retry",
+      "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e",
+      "arguments": {
+        "seed": 12,
+        "transitions": 128,
+        "updates": 12,
+        "microbatch_size": 4,
+        "parallel_envs": 8,
+        "dev_scenes": 64,
+        "scene_profile": "directional_long",
+        "one_step_rollouts": true,
+        "grouped_candidates": 8,
+        "expect_feedback_only": true
+      },
+      "conditions": {
+        "sdpo_result": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 5,
+            "success_rate": 0.078125,
+            "conservative_success_rate_all_scenes": 0.078125,
+            "mean_progress_m": 0.02539442860603583,
+            "safety_failures": 2,
+            "interactions": 732,
+            "seconds": 348.0066459029913,
+            "action_counts": {
+              "C": 543,
+              "E": 150,
+              "D": 32,
+              "B": 7
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_binary": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 9,
+            "success_rate": 0.140625,
+            "conservative_success_rate_all_scenes": 0.140625,
+            "mean_progress_m": 0.02986358116517291,
+            "safety_failures": 2,
+            "interactions": 705,
+            "seconds": 335.82997602201067,
+            "action_counts": {
+              "C": 616,
+              "E": 57,
+              "B": 15,
+              "D": 14,
+              "A": 3
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_causal": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.037225349942661745,
+            "safety_failures": 2,
+            "interactions": 679,
+            "seconds": 323.35764100798406,
+            "action_counts": {
+              "C": 611,
+              "E": 9,
+              "D": 40,
+              "B": 19
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 13,
+            "success_rate": 0.203125,
+            "conservative_success_rate_all_scenes": 0.203125,
+            "mean_progress_m": 0.03677301263893472,
+            "safety_failures": 2,
+            "interactions": 677,
+            "seconds": 323.2279563830234,
+            "action_counts": {
+              "C": 619,
+              "E": 9,
+              "D": 30,
+              "B": 18,
+              "A": 1
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 11,
+            "success_rate": 0.171875,
+            "conservative_success_rate_all_scenes": 0.171875,
+            "mean_progress_m": 0.030647962764110987,
+            "safety_failures": 2,
+            "interactions": 692,
+            "seconds": 329.6527602788992,
+            "action_counts": {
+              "C": 613,
+              "E": 9,
+              "D": 52,
+              "B": 17,
+              "A": 1
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 10,
+            "success_rate": 0.15625,
+            "conservative_success_rate_all_scenes": 0.15625,
+            "mean_progress_m": 0.030978906810441798,
+            "safety_failures": 2,
+            "interactions": 699,
+            "seconds": 333.2352697439492,
+            "action_counts": {
+              "C": 594,
+              "E": 9,
+              "D": 78,
+              "B": 17,
+              "A": 1
+            }
+          },
+          "updates": 12
+        },
+        "sdpo_wrong_directional_residual": {
+          "arguments": {
+            "seed": 12,
+            "transitions": 128,
+            "updates": 12,
+            "microbatch_size": 4,
+            "parallel_envs": 8,
+            "dev_scenes": 64,
+            "scene_profile": "directional_long",
+            "one_step_rollouts": true,
+            "grouped_candidates": 8,
+            "expect_feedback_only": true
+          },
+          "model": {
+            "id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Molmo2-8B",
+            "revision": null,
+            "architecture": "Molmo2ForConditionalGeneration"
+          },
+          "protocol_sha256": "79a404d9bbc2b757e7755b38cc0ebe60638bc8979ec1c758f32e893bc206c6e4",
+          "first_rollout_sha256": "255c19df0f4423029dbac3a236536912ea5e01779356c032b8da866d76edecbc",
+          "evaluation": {
+            "scenes_requested": 64,
+            "scenes_valid": 64,
+            "invalid_resets": 0,
+            "successes": 10,
+            "success_rate": 0.15625,
+            "conservative_success_rate_all_scenes": 0.15625,
+            "mean_progress_m": 0.029303647059444486,
+            "safety_failures": 2,
+            "interactions": 698,
+            "seconds": 332.4253143669339,
+            "action_counts": {
+              "C": 614,
+              "E": 8,
+              "D": 59,
+              "B": 17
+            }
+          },
+          "updates": 12
+        }
+      }
+    }
+  },
+  "paired": {
+    "v10_qwen3_vs_molmo2_sdpo_result": {
+      "first_successes": 9,
+      "second_successes": 5,
+      "success_difference": -4,
+      "gained_scene_ids": [
+        "dev_000030",
+        "dev_000036"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000012",
+        "dev_000043",
+        "dev_000048",
+        "dev_000050",
+        "dev_000054"
+      ],
+      "mean_progress_difference_m": -0.01210985554672744
+    },
+    "v10_qwen3_vs_molmo2_sdpo_binary": {
+      "first_successes": 10,
+      "second_successes": 9,
+      "success_difference": -1,
+      "gained_scene_ids": [
+        "dev_000014",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000009",
+        "dev_000012",
+        "dev_000043",
+        "dev_000048",
+        "dev_000050",
+        "dev_000053"
+      ],
+      "mean_progress_difference_m": -0.004984908469464863
+    },
+    "v10_qwen3_vs_molmo2_sdpo_causal": {
+      "first_successes": 8,
+      "second_successes": 13,
+      "success_difference": 5,
+      "gained_scene_ids": [
+        "dev_000014",
+        "dev_000022",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000043",
+        "dev_000050"
+      ],
+      "mean_progress_difference_m": -0.002801709353735579
+    },
+    "v10_qwen3_vs_molmo2_sdpo_directional": {
+      "first_successes": 9,
+      "second_successes": 13,
+      "success_difference": 4,
+      "gained_scene_ids": [
+        "dev_000022",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000050"
+      ],
+      "mean_progress_difference_m": -0.0026579786275782733
+    },
+    "v10_qwen3_vs_molmo2_sdpo_wrong_directional": {
+      "first_successes": 9,
+      "second_successes": 11,
+      "success_difference": 2,
+      "gained_scene_ids": [
+        "dev_000012",
+        "dev_000014",
+        "dev_000022",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000048",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000005",
+        "dev_000007",
+        "dev_000009",
+        "dev_000026",
+        "dev_000043",
+        "dev_000050",
+        "dev_000053"
+      ],
+      "mean_progress_difference_m": -0.015457459875279586
+    },
+    "v11_qwen3_vs_molmo2_sdpo_result": {
+      "first_successes": 8,
+      "second_successes": 5,
+      "success_difference": -3,
+      "gained_scene_ids": [
+        "dev_000030",
+        "dev_000036"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000012",
+        "dev_000048",
+        "dev_000050",
+        "dev_000054"
+      ],
+      "mean_progress_difference_m": -0.011092115688777507
+    },
+    "v11_qwen3_vs_molmo2_sdpo_binary": {
+      "first_successes": 8,
+      "second_successes": 9,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000014",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000044",
+        "dev_000061",
+        "dev_000062"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000009",
+        "dev_000012",
+        "dev_000043",
+        "dev_000048",
+        "dev_000050",
+        "dev_000053"
+      ],
+      "mean_progress_difference_m": -0.00302593975233133
+    },
+    "v11_qwen3_vs_molmo2_sdpo_causal": {
+      "first_successes": 8,
+      "second_successes": 13,
+      "success_difference": 5,
+      "gained_scene_ids": [
+        "dev_000014",
+        "dev_000022",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000043",
+        "dev_000050"
+      ],
+      "mean_progress_difference_m": -0.0033334975968149078
+    },
+    "v11_qwen3_vs_molmo2_sdpo_directional": {
+      "first_successes": 10,
+      "second_successes": 13,
+      "success_difference": 3,
+      "gained_scene_ids": [
+        "dev_000022",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000059"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000050"
+      ],
+      "mean_progress_difference_m": -0.004653596495379895
+    },
+    "v11_qwen3_vs_molmo2_sdpo_wrong_directional": {
+      "first_successes": 8,
+      "second_successes": 11,
+      "success_difference": 3,
+      "gained_scene_ids": [
+        "dev_000012",
+        "dev_000014",
+        "dev_000022",
+        "dev_000024",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000048",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000005",
+        "dev_000009",
+        "dev_000026",
+        "dev_000043",
+        "dev_000050",
+        "dev_000053"
+      ],
+      "mean_progress_difference_m": -0.01601060484034709
+    },
+    "v11_qwen3_vs_molmo2_sdpo_directional_residual": {
+      "first_successes": 12,
+      "second_successes": 10,
+      "success_difference": -2,
+      "gained_scene_ids": [
+        "dev_000012",
+        "dev_000014",
+        "dev_000022",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000048",
+        "dev_000059",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000005",
+        "dev_000006",
+        "dev_000009",
+        "dev_000017",
+        "dev_000026",
+        "dev_000043",
+        "dev_000050",
+        "dev_000053",
+        "dev_000055",
+        "dev_000057"
+      ],
+      "mean_progress_difference_m": -0.021961513548212627
+    },
+    "v11_qwen3_vs_molmo2_sdpo_wrong_directional_residual": {
+      "first_successes": 9,
+      "second_successes": 10,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000022",
+        "dev_000030",
+        "dev_000036",
+        "dev_000041",
+        "dev_000059"
+      ],
+      "lost_scene_ids": [
+        "dev_000001",
+        "dev_000050",
+        "dev_000055",
+        "dev_000060"
+      ],
+      "mean_progress_difference_m": -0.015786558083429013
+    },
+    "v10_vs_v11_qwen3_sdpo_result": {
+      "first_successes": 9,
+      "second_successes": 8,
+      "success_difference": -1,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000043"
+      ],
+      "mean_progress_difference_m": -0.001017739857949935
+    },
+    "v10_vs_v11_qwen3_sdpo_binary": {
+      "first_successes": 10,
+      "second_successes": 8,
+      "success_difference": -2,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000044",
+        "dev_000062"
+      ],
+      "mean_progress_difference_m": -0.0019589687171335333
+    },
+    "v10_vs_v11_qwen3_sdpo_causal": {
+      "first_successes": 8,
+      "second_successes": 8,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0005317882430793291
+    },
+    "v10_vs_v11_qwen3_sdpo_directional": {
+      "first_successes": 9,
+      "second_successes": 10,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000061"
+      ],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.001995617867801622
+    },
+    "v10_vs_v11_qwen3_sdpo_wrong_directional": {
+      "first_successes": 9,
+      "second_successes": 8,
+      "success_difference": -1,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000007"
+      ],
+      "mean_progress_difference_m": 0.0005531449650675064
+    },
+    "raw_vs_residual_qwen3_sdpo_directional": {
+      "first_successes": 10,
+      "second_successes": 12,
+      "success_difference": 2,
+      "gained_scene_ids": [
+        "dev_000005",
+        "dev_000006",
+        "dev_000009",
+        "dev_000017",
+        "dev_000026",
+        "dev_000043",
+        "dev_000053",
+        "dev_000055",
+        "dev_000057"
+      ],
+      "lost_scene_ids": [
+        "dev_000012",
+        "dev_000014",
+        "dev_000024",
+        "dev_000044",
+        "dev_000048",
+        "dev_000061",
+        "dev_000062"
+      ],
+      "mean_progress_difference_m": 0.011513811224339804
+    },
+    "raw_vs_residual_qwen3_sdpo_wrong_directional": {
+      "first_successes": 8,
+      "second_successes": 9,
+      "success_difference": 1,
+      "gained_scene_ids": [
+        "dev_000012",
+        "dev_000014",
+        "dev_000048",
+        "dev_000055",
+        "dev_000060",
+        "dev_000061"
+      ],
+      "lost_scene_ids": [
+        "dev_000005",
+        "dev_000009",
+        "dev_000026",
+        "dev_000043",
+        "dev_000053"
+      ],
+      "mean_progress_difference_m": -0.0015683624615845768
+    },
+    "v10_vs_v11_molmo2_sdpo_result": {
+      "first_successes": 5,
+      "second_successes": 5,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0
+    },
+    "v10_vs_v11_molmo2_sdpo_binary": {
+      "first_successes": 9,
+      "second_successes": 9,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0
+    },
+    "v10_vs_v11_molmo2_sdpo_causal": {
+      "first_successes": 13,
+      "second_successes": 13,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0
+    },
+    "v10_vs_v11_molmo2_sdpo_directional": {
+      "first_successes": 13,
+      "second_successes": 13,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0
+    },
+    "v10_vs_v11_molmo2_sdpo_wrong_directional": {
+      "first_successes": 11,
+      "second_successes": 11,
+      "success_difference": 0,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [],
+      "mean_progress_difference_m": 0.0
+    },
+    "raw_vs_residual_molmo2_sdpo_directional": {
+      "first_successes": 13,
+      "second_successes": 10,
+      "success_difference": -3,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000024",
+        "dev_000044",
+        "dev_000062"
+      ],
+      "mean_progress_difference_m": -0.005794105828492926
+    },
+    "raw_vs_residual_molmo2_sdpo_wrong_directional": {
+      "first_successes": 11,
+      "second_successes": 10,
+      "success_difference": -1,
+      "gained_scene_ids": [],
+      "lost_scene_ids": [
+        "dev_000024"
+      ],
+      "mean_progress_difference_m": -0.0013443157046664988
+    }
+  }
+}

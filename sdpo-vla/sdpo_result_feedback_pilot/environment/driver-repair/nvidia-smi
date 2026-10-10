@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+prefix=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+version=580.173.02
+loaded=$(cat /sys/module/nvidia/version 2>/dev/null || true)
+root="$prefix/opt/nvidia-driver-$version"
+if [[ "$loaded" == "$version" ]]; then
+    export LD_LIBRARY_PATH="$root/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+    exec "$root/usr/bin/nvidia-smi" "$@"
+elif [[ -x /usr/bin/nvidia-smi ]]; then
+    exec /usr/bin/nvidia-smi "$@"
+else
+    printf 'Loaded driver %s differs from bundled %s; no system nvidia-smi available. Recheck driver libraries.\n' "${loaded:-none}" "$version" >&2
+    exit 1
+fi

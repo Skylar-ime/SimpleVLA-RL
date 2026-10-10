@@ -1,0 +1,40 @@
+{
+  "version": "v12-autoregressive-chunk-sdpo",
+  "question": "Does autoregressive chunk-level SDPO improve temporal action credit assignment over one-step SDPO?",
+  "scene_profile": "directional_long",
+  "chunk": {
+    "length": 2,
+    "candidates_per_initial_state": 8,
+    "chunks_per_update": 64,
+    "updates": 12,
+    "seed": 12,
+    "receding_horizon_evaluation": true
+  },
+  "student_input": ["initial_RGB", "instruction", "proprioception", "previous_chunk_actions"],
+  "teacher_input": ["student_input", "executed_chunk_feedback"],
+  "objective": "mean per-action-position JSD between no-feedback student and feedback-conditioned EMA teacher",
+  "residual_target": "log_softmax(log_student_t + log_teacher_directional_t - log_teacher_noop_t)",
+  "conditions": [
+    "chunk_result",
+    "chunk_binary",
+    "chunk_causal",
+    "chunk_directional",
+    "chunk_wrong_directional",
+    "chunk_directional_residual",
+    "chunk_wrong_directional_residual"
+  ],
+  "controls": [
+    "v11 one-step baseline under matched primitive-action budget",
+    "wrong-directional feedback",
+    "directional no-op residual"
+  ],
+  "limitations": [
+    "single repeat seed",
+    "open-loop action chunk",
+    "chunk length two",
+    "local calibrated PandaPush pilot",
+    "five-action support",
+    "residual target does not prove causal credit assignment",
+    "return-to-go weighting excluded from primary experiment"
+  ]
+}

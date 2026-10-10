@@ -1,0 +1,712 @@
+{
+  "updates": [
+    {
+      "loss": 0.012085546441085171,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08825773000717163,
+      "optimizer_steps": 1,
+      "seconds": 33.7243174680043,
+      "update": 1,
+      "group": "result",
+      "rollout_seconds": 85.05204335297458,
+      "contact_count": 0,
+      "motion_count": 0,
+      "progress_counts": {
+        "unchanged": 256
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.931350231170654
+    },
+    {
+      "loss": 0.011273516527580796,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08535598963499069,
+      "optimizer_steps": 1,
+      "seconds": 32.74811687879264,
+      "update": 2,
+      "group": "result",
+      "rollout_seconds": 84.52060980093665,
+      "contact_count": 6,
+      "motion_count": 7,
+      "progress_counts": {
+        "unchanged": 249,
+        "closer": 4,
+        "farther": 3
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.011354884823958855,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08316758275032043,
+      "optimizer_steps": 1,
+      "seconds": 32.77171465312131,
+      "update": 3,
+      "group": "result",
+      "rollout_seconds": 84.7530266190879,
+      "contact_count": 8,
+      "motion_count": 8,
+      "progress_counts": {
+        "unchanged": 250,
+        "closer": 4,
+        "farther": 2
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.011325552921334747,
+      "valid": 255,
+      "executed": 256,
+      "gradient_norm": 0.08745400607585907,
+      "optimizer_steps": 1,
+      "seconds": 32.786474786000326,
+      "update": 4,
+      "group": "result",
+      "rollout_seconds": 84.28440837492235,
+      "contact_count": 5,
+      "motion_count": 6,
+      "progress_counts": {
+        "unchanged": 250,
+        "farther": 6
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.010718945333792362,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08603427559137344,
+      "optimizer_steps": 1,
+      "seconds": 32.76222280994989,
+      "update": 5,
+      "group": "result",
+      "rollout_seconds": 84.57750870590098,
+      "contact_count": 19,
+      "motion_count": 20,
+      "progress_counts": {
+        "unchanged": 240,
+        "farther": 8,
+        "closer": 8
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.009966233046725392,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.08069994300603867,
+      "optimizer_steps": 1,
+      "seconds": 33.26059745182283,
+      "update": 6,
+      "group": "result",
+      "rollout_seconds": 83.91251638997346,
+      "contact_count": 16,
+      "motion_count": 9,
+      "progress_counts": {
+        "unchanged": 248,
+        "farther": 5,
+        "closer": 3
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.010494833748452947,
+      "valid": 255,
+      "executed": 256,
+      "gradient_norm": 0.08567382395267487,
+      "optimizer_steps": 1,
+      "seconds": 32.820400522090495,
+      "update": 7,
+      "group": "result",
+      "rollout_seconds": 84.18741292296909,
+      "contact_count": 9,
+      "motion_count": 8,
+      "progress_counts": {
+        "unchanged": 249,
+        "farther": 4,
+        "closer": 3
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.009835111810389208,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07664356380701065,
+      "optimizer_steps": 1,
+      "seconds": 33.280155363027006,
+      "update": 8,
+      "group": "result",
+      "rollout_seconds": 84.39935213001445,
+      "contact_count": 11,
+      "motion_count": 8,
+      "progress_counts": {
+        "unchanged": 248,
+        "closer": 1,
+        "farther": 7
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.009757422794791637,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07891985774040222,
+      "optimizer_steps": 1,
+      "seconds": 33.16888109105639,
+      "update": 9,
+      "group": "result",
+      "rollout_seconds": 83.99105963413604,
+      "contact_count": 5,
+      "motion_count": 4,
+      "progress_counts": {
+        "unchanged": 253,
+        "farther": 2,
+        "closer": 1
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    },
+    {
+      "loss": 0.00915828815777786,
+      "valid": 256,
+      "executed": 256,
+      "gradient_norm": 0.07144388556480408,
+      "optimizer_steps": 1,
+      "seconds": 33.56752185593359,
+      "update": 10,
+      "group": "result",
+      "rollout_seconds": 83.71491712401621,
+      "contact_count": 11,
+      "motion_count": 10,
+      "progress_counts": {
+        "unchanged": 248,
+        "farther": 5,
+        "closer": 3
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.958816051483154
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 0,
+    "success_rate": 0.0,
+    "conservative_success_rate_all_scenes": 0.0,
+    "mean_progress_m": -0.02300620152105009,
+    "safety_failures": 0,
+    "interactions": 2048,
+    "seconds": 679.8455584938638,
+    "action_counts": {
+      "A": 2035,
+      "C": 13
+    }
+  },
+  "total_train_interactions": 2560,
+  "elapsed_seconds": 1867.994114930043,
+  "training_episodes": [
+    {
+      "episode_id": "train_s11_00000000",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000001",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000002",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000003",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000004",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000005",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000006",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000007",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000008",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000009",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000010",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000011",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000012",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000013",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000014",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000015",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000016",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000017",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000018",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000019",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000020",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000021",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000022",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000023",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000028",
+      "success": false,
+      "length": 30,
+      "safety_failure": "end_effector_out_of_workspace"
+    },
+    {
+      "episode_id": "train_s11_00000024",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000025",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000026",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000027",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000029",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000030",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000031",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000032",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000033",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000034",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000035",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000036",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000037",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000038",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000039",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000040",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000041",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000042",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000043",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000044",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000045",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000046",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000047",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000053",
+      "success": true,
+      "length": 26,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000048",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000049",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000050",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000051",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000052",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000054",
+      "success": false,
+      "length": 32,
+      "safety_failure": "end_effector_out_of_workspace"
+    },
+    {
+      "episode_id": "train_s11_00000055",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000056",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000057",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000058",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000059",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000060",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000061",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000062",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000063",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000064",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000065",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000066",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000067",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000068",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000069",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000070",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000071",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000072",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000073",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000074",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000075",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000076",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000077",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000078",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s11_00000079",
+      "success": false,
+      "length": 32,
+      "safety_failure": null
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

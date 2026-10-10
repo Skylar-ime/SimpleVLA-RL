@@ -1,0 +1,147 @@
+from __future__ import annotations
+from dataclasses import dataclass
+import time
+import numpy as np
+import torch
+from .env_adapter import InvalidScene, PandaPushOutcomePilot, Transition
+from .feedback import feedback_is_informative, select_feedback
+from .losses import reverse_kl_loss
+from .scenes import Scene
+
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    transitions_per_update: int = 256
+    microbatch_size: int = 4
+    parallel_envs: int = 8
+    max_decisions: int = 32
+    seed: int = 11
+
+
+def observation_transition(env, observation):
+    return Transition(env.episode_id,env.decision_index,observation['image'],observation['instruction'],
+        observation['proprio'],'E',None,[0.,0.,0.],0.,0.,False,False,env.scene.scene_id)
+
+
+class RolloutCollector:
+    """Persistent batched policy rollout; keep episodes across optimizer updates."""
+    def __init__(self, config: TrainingConfig, scenes: list[Scene]):
+        if not scenes or any(s.split!='train' for s in scenes):
+            raise ValueError('Training requires explicitly train-only scenes')
+        self.config,self.scenes=config,scenes
+        self.rng=np.random.default_rng(config.seed)
+        self.envs=[PandaPushOutcomePilot(config.max_decisions,config.seed) for _ in range(config.parallel_envs)]
+        self.observations=[None]*len(self.envs)
+        self.episode_counter=0
+        self.resets=[]
+        self.completed=[]
+        for i in range(len(self.envs)):
+            self._reset(i)
+
+    def _reset(self,index):
+        env=self.envs[index]
+        for _ in range(100):
+            scene=self.scenes[int(self.rng.integers(len(self.scenes)))]
+            episode_id=f'train_s{self.config.seed}_{self.episode_counter:08d}'
+            self.episode_counter+=1
+            try:
+                self.observations[index]=env.reset(episode_id,scene)
+                self.resets.append({'episode_id':episode_id,**env.reset_audit,'accepted':True})
+                return
+            except InvalidScene as e:
+                self.resets.append({'episode_id':episode_id,'scene_id':scene.scene_id,'accepted':False,'reason':str(e)})
+        raise RuntimeError('Too many rejected reset proposals')
+
+    def collect(self,policy):
+        transitions=[]
+        while len(transitions)<self.config.transitions_per_update:
+            count=min(len(self.envs),self.config.transitions_per_update-len(transitions))
+            inputs=[observation_transition(self.envs[i],self.observations[i]) for i in range(count)]
+            actions=[]
+            for start in range(0,count,self.config.microbatch_size):
+                actions.extend(policy.sample_batch(inputs[start:start+self.config.microbatch_size]))
+            for i,action in enumerate(actions):
+                obs,t=self.envs[i].step(action)
+                transitions.append(t)
+                self.observations[i]=obs
+                if t.terminated or t.truncated:
+                    self.completed.append({'episode_id':t.episode_id,'success':t.result.success,'length':t.decision_index+1,
+                                           'safety_failure':t.safety_failure})
+                    self._reset(i)
+        return transitions
+
+    def close(self):
+        for env in self.envs:
+            env.close()
+
+
+def sdpo_update(policy,transitions,feedback_mode='result',microbatch_size=4,seed=11):
+    if not transitions or microbatch_size<1:
+        raise ValueError('Need transitions and positive microbatch size')
+    policy.model.eval()  # Disable dropout, not gradients.
+    records,valid,donors=select_feedback(transitions,feedback_mode,seed)
+    # Original SDPO rich-feedback run uses dont_reprompt_on_self_success=True.
+    # Here there is no same-state peer success demonstration, so only failed
+    # attempts receive retrospective feedback and enter distillation.
+    if feedback_mode!='no_feedback':
+        valid=valid & np.asarray([not t.result.success and feedback_is_informative(t.result)
+                                  for t in transitions],dtype=bool)
+    valid_count=int(valid.sum())
+    if feedback_mode=='no_feedback':
+        return {'loss':0.,'valid':0,'executed':len(transitions),'gradient_norm':0.,
+                'optimizer_steps':0,'seconds':0.,'donor_indices':donors,
+                'valid_mask':[False]*len(transitions),'teacher_log_probs':[]}
+    if not valid_count:
+        raise RuntimeError('No valid transitions; refusing an empty optimizer step')
+    start=time.perf_counter()
+    cache=[]
+    # Freeze the teacher for this entire round before ANY optimizer step.
+    with torch.no_grad():
+        for i in range(0,len(transitions),microbatch_size):
+            teacher_fn=getattr(policy,'teacher_log_probs',None)
+            if teacher_fn is None:
+                lp=policy.log_probs(transitions[i:i+microbatch_size],feedback=True,grad=False,
+                                    feedback_records=records[i:i+microbatch_size])
+            else:
+                lp=teacher_fn(transitions[i:i+microbatch_size],feedback=True,
+                              feedback_records=records[i:i+microbatch_size])
+            if not torch.isfinite(lp).all():
+                raise FloatingPointError('Nonfinite teacher probabilities')
+            cache.append(lp.detach().cpu())
+    teacher=torch.cat(cache)
+    policy.optimizer.zero_grad(set_to_none=True)
+    total_loss=0.
+    try:
+        for i in range(0,len(transitions),microbatch_size):
+            mask=torch.as_tensor(valid[i:i+microbatch_size],device=policy.device)
+            if not mask.any():
+                continue
+            student=policy.log_probs(transitions[i:i+microbatch_size],feedback=False,grad=True)
+            q=teacher[i:i+microbatch_size].to(policy.device)
+            loss=reverse_kl_loss(student,q,mask)*int(mask.sum())/valid_count
+            if not torch.isfinite(loss):
+                raise FloatingPointError('Nonfinite student loss')
+            loss.backward()
+            total_loss+=float(loss.detach())
+        norm=torch.nn.utils.clip_grad_norm_(list(policy.trainable_parameters()),1.,error_if_nonfinite=True)
+        policy.optimizer.step()  # Exactly once, after accumulation over the full rollout batch.
+        if hasattr(policy,'update_teacher_ema'):
+            policy.update_teacher_ema()
+    except Exception:
+        policy.optimizer.zero_grad(set_to_none=True)
+        raise
+    policy.optimizer.zero_grad(set_to_none=True)
+    student_probs=[]
+    teacher_probs=teacher.exp()
+    for i in range(0,len(transitions),microbatch_size):
+        with torch.no_grad():
+            student_probs.append(policy.log_probs(transitions[i:i+microbatch_size],feedback=False,grad=False).exp().cpu())
+    student_probs=torch.cat(student_probs)
+    tv=.5*(student_probs-teacher_probs).abs().sum(-1)
+    entropy=-(teacher_probs*teacher.clamp_min(-100.)).sum(-1)
+    return {'loss':total_loss,'valid':valid_count,'executed':len(transitions),'gradient_norm':float(norm),
+            'optimizer_steps':1,'seconds':time.perf_counter()-start,'donor_indices':donors,
+            'valid_mask':valid.tolist(),'teacher_log_probs':teacher.tolist(),
+            'mean_teacher_student_total_variation':float(tv[valid].mean()),
+            'mean_teacher_entropy':float(entropy[valid].mean()),
+            'teacher_argmax_counts':{str(i):int((teacher_probs[valid].argmax(-1)==i).sum()) for i in range(5)}}

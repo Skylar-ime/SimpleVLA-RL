@@ -1,0 +1,93 @@
+{
+  "protocol": {
+    "scene_profile": "directional_long",
+    "dev_scenes": 64,
+    "action_probe": "greedy argmax over A/B/C/D/E at initial state",
+    "closed_loop": "greedy action policy, max 12 decisions",
+    "molmo_probe": "independent image point grounding; no action labels"
+  },
+  "action_models": [
+    {
+      "model": "Qwen3-VL-8B-Instruct",
+      "model_id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/Qwen3-VL-8B-Instruct",
+      "architecture": "Qwen3VLForConditionalGeneration",
+      "model_type": "qwen3_vl",
+      "scenes": 64,
+      "one_step_oracle_accuracy": 0.3125,
+      "one_step_action_counts": {
+        "A": 1,
+        "B": 0,
+        "C": 17,
+        "D": 1,
+        "E": 0
+      },
+      "one_step_mean_total_variation_vs_self": 0.0,
+      "closed_loop_successes": 15,
+      "closed_loop_success_rate": 0.234375,
+      "closed_loop_mean_progress_m": 0.03676017246106885,
+      "closed_loop_safety_failures": 0,
+      "closed_loop_interactions": 673
+    },
+    {
+      "model": "InternVL3.5-8B-HF",
+      "model_id": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/models/InternVL3_5-8B-HF",
+      "architecture": "InternVLForConditionalGeneration",
+      "model_type": "internvl",
+      "scenes": 64,
+      "one_step_oracle_accuracy": 0.25,
+      "one_step_action_counts": {
+        "A": 6,
+        "B": 0,
+        "C": 4,
+        "D": 0,
+        "E": 1
+      },
+      "one_step_mean_total_variation_vs_self": 0.0,
+      "closed_loop_successes": 9,
+      "closed_loop_success_rate": 0.140625,
+      "closed_loop_mean_progress_m": 0.02928325782402645,
+      "closed_loop_safety_failures": 0,
+      "closed_loop_interactions": 747
+    }
+  ],
+  "molmo2_grounding": {
+    "cube": {
+      "scenes": 64,
+      "parsed": 51,
+      "parse_rate": 0.796875,
+      "inside_bbox": 51,
+      "inside_bbox_rate_parsed": 1.0,
+      "mean_error_pixels_parsed": 2.7537839753415367,
+      "mean_error_normalized_parsed": 0.0043464717028724315,
+      "geometry_reference": "simulator projected center at z=0.02",
+      "geometry_parsed": 51,
+      "geometry_within_32px": 51,
+      "geometry_within_32px_rate_parsed": 1.0,
+      "geometry_mean_error_pixels_parsed": 3.4719279140618893,
+      "geometry_mean_error_normalized_parsed": 0.005479963776392917
+    },
+    "target": {
+      "scenes": 64,
+      "parsed": 59,
+      "parse_rate": 0.921875,
+      "inside_bbox": 58,
+      "inside_bbox_rate_parsed": 0.9830508474576272,
+      "mean_error_pixels_parsed": 3.5199817666718762,
+      "mean_error_normalized_parsed": 0.005555810216220283,
+      "geometry_reference": "simulator projected center at z=0.02",
+      "geometry_parsed": 64,
+      "geometry_within_32px": 61,
+      "geometry_within_32px_rate_parsed": 0.953125,
+      "geometry_mean_error_pixels_parsed": 16.85609304658682,
+      "geometry_mean_error_normalized_parsed": 0.02660503950346641
+    }
+  },
+  "limitations": [
+    "Color masks provide visible-image reference centers, not simulator projected centers.",
+    "A parsed point outside the visible mask can still identify the object approximately.",
+    "Pointing probe does not establish action-token or closed-loop control quality.",
+    "Action-policy oracle accuracy and Molmo point accuracy are different tasks.",
+    "This comparison does not claim Molmo can control the robot.",
+    "Closed-loop results are development-scene results, not held-out test results."
+  ]
+}

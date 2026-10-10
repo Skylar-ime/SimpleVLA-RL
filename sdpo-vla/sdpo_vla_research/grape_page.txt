@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GRAPE">
+  <meta name="keywords"
+    content="GRAPE: Generalizing Robot Policy via Preference Alignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRAPE</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico">
+
+  <meta property="og:site_name" content="GRAPE" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="GRAPE: Generalizing Robot Policy via Preference Alignment" />
+  <meta property="og:description" content="by Zijian Zhang, Kaiyuan Zheng, Zhaorun Chen, Joel Jang, Yi Li, Chaoqi Wang, Mingyu Ding, Dieter Fox, Huaxiu Yao" />
+  <meta property="og:url" content="https://grape-vla.github.io/" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:secure" content="" />
+  <meta property="og:video" content="https://github.com/GRAPE-VLA/GRAPE-VLA.github.io/blob/main/static/videos/grape.mov" />
+  <meta property="og:video:secure" content="https://github.com/GRAPE-VLA/GRAPE-VLA.github.io/blob/main/static/videos/grape.mov" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+
+  <meta property="article:publisher" content="https://zzj1111.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GRAPE: Generalizing Robot Policy via Preference Alignment" />
+  <meta name="twitter:description" content="by Zijian Zhang, Kaiyuan Zheng, Zhaorun Chen, Joel Jang, Yi Li, Chaoqi Wang, Mingyu Ding, Dieter Fox, Huaxiu Yao" />
+  <meta name="twitter:url" content="https://grape-vla.github.io/" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player" content="https://github.com/GRAPE-VLA/GRAPE-VLA.github.io/blob/main/static/videos/grape.mov" />
+  <meta name="twitter:player:width" content="1280" />
+  <meta name="twitter:player:height" content="720" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GRAPE: Generalizing Robot Policy via Preference Alignment</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zzj1111.github.io/">Zijian Zhang</a>*&nbsp;&nbsp;
+                <a href="https://linkedin.com/in/kaiyuan-zheng-94984a236">Kaiyuan Zheng</a>*&nbsp;&nbsp;
+                <a href="https://billchan226.github.io/">Zhaorun Chen</a>*&nbsp;&nbsp;
+                <a href="https://joeljang.github.io/">Joel Jang</a>&nbsp;&nbsp;
+                <a href="https://yili.vision/">Yi Li</a>&nbsp;&nbsp;
+                <a href="https://alecwangcq.github.io/">Chaoqi Wang</a>&nbsp;&nbsp;
+                <a href="https://dingmyu.github.io/">Mingyu Ding</a>&nbsp;&nbsp;
+                <a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a>&nbsp;&nbsp;
+                <a href="http://huaxiuyao.mystrikingly.com/">Huaxiu Yao</a>&nbsp;&nbsp;
+
+              </span>
+            </div>
+            <div class="column">
+              <image src="./static/images/logo.jpg" style="width: 60%;"></image>
+            </div>
+            <!-- <div class="is-size-4 publication-authors">
+              Preprint
+            </div> -->
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.19309" class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- arXiv Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.19309" class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/ZijianZhang/OpenVLA-7B-GRAPE-Simpler"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg width="800px" height="800px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet"><ellipse fill="#F4900C" cx="33.5" cy="14.5" rx="2.5" ry="3.5"></ellipse><ellipse fill="#F4900C" cx="2.5" cy="14.5" rx="2.5" ry="3.5"></ellipse><path fill="#FFAC33" d="M34 19a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v9zM7 19a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v9z"></path><path fill="#FFCC4D" d="M28 5c0 2.761-4.478 4-10 4C12.477 9 8 7.761 8 5s4.477-5 10-5c5.522 0 10 2.239 10 5z"></path><path fill="#F4900C" d="M25 4.083C25 5.694 21.865 7 18 7c-3.866 0-7-1.306-7-2.917c0-1.611 3.134-2.917 7-2.917c3.865 0 7 1.306 7 2.917z"></path><path fill="#269" d="M30 5.5C30 6.881 28.881 7 27.5 7h-19C7.119 7 6 6.881 6 5.5S7.119 3 8.5 3h19A2.5 2.5 0 0 1 30 5.5z"></path><path fill="#55ACEE" d="M30 6H6a2 2 0 0 0-2 2v26h28V8a2 2 0 0 0-2-2z"></path><path fill="#3B88C3" d="M35 33v-1a2 2 0 0 0-2-2H22.071l-3.364 3.364a.999.999 0 0 1-1.414 0L13.929 30H3a2 2 0 0 0-2 2v1c0 1.104-.104 2 1 2h32c1.104 0 1-.896 1-2z"></path><circle fill="#FFF" cx="24.5" cy="14.5" r="4.5"></circle><circle fill="#DD2E44" cx="24.5" cy="14.5" r="2.721"></circle><circle fill="#FFF" cx="11.5" cy="14.5" r="4.5"></circle><path fill="#F5F8FA" d="M29 25.5a2.5 2.5 0 0 1-2.5 2.5h-17a2.5 2.5 0 1 1 0-5h17a2.5 2.5 0 0 1 2.5 2.5z"></path><path fill="#CCD6DD" d="M17 23h2v5h-2zm-5 0h2v5h-2zm10 0h2v5h-2zM7 25.5a2.5 2.5 0 0 0 2 2.45v-4.9a2.5 2.5 0 0 0-2 2.45zm20-2.45v4.899a2.5 2.5 0 0 0 0-4.899z"></path><circle fill="#DD2E44" cx="11.5" cy="14.5" r="2.721"></circle></svg>
+                    </span>
+                    <span>Model</span>
+                  </a>
+                </span>
+                <!-- OpenReview Link. -->
+                <!-- <span class="link-block">
+              <!
+                <a href="https://openreview.net/forum?id=uo937r5eTE"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <img src="static/images/openreview.ico"></img>
+                  </span>
+                  <span>OpenReview</span>
+                </a>
+              </span> -->
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                <a href="https://youtu.be/M7lDCSF0KP0"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+                <!-- Bilibili Link. -->
+                <!-- <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1Nu4y1C7ae/"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" fill="white"></path></svg>                    </span>
+                    <span>Bilibili</span>
+                </a>
+              </span> -->
+                <!-- Poster Link. -->
+                <!-- <span class="link-block">
+                <a href="./resources/poster-compressed.pdf"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 428.108 428.108" style="enable-background:new 0 0 428.108 428.108;" xml:space="preserve"><path fill="currentColor" id="XMLID_1137_" d="M236.503,387.867c0,3.866-3.134,7-7,7h-30.898c-3.866,0-7-3.134-7-7s3.134-7,7-7h30.898	C233.369,380.867,236.503,384,236.503,387.867z M314.878,144.35c0,12.285-4.131,23.625-11.076,32.702	c7.079,13.78,11.076,29.392,11.076,45.92c0,55.595-45.229,100.825-100.825,100.825c-55.595,0-100.825-45.23-100.825-100.825	c0-54.853,44.028-99.615,98.601-100.802c8.473-18.695,27.312-31.733,49.137-31.733C290.693,90.437,314.878,114.623,314.878,144.35z	 M221.054,144.35c0,22.008,17.904,39.913,39.912,39.913c9.671,0,18.551-3.458,25.466-9.202	c-14.213-21.399-37.658-36.167-64.602-38.569C221.32,139.033,221.054,141.661,221.054,144.35z M300.878,222.972	c0-12.638-2.715-24.655-7.591-35.498c-9.012,6.772-20.206,10.789-32.321,10.789c-29.728,0-53.913-24.186-53.913-53.913	c0-2.707,0.201-5.368,0.588-7.97c-44.893,3.293-80.413,40.872-80.413,86.592c0,47.876,38.949,86.825,86.825,86.825	S300.878,270.848,300.878,222.972z M300.878,144.35c0-22.008-17.904-39.913-39.912-39.913c-14.163,0-26.628,7.417-33.714,18.569	c28.1,3.689,52.593,18.996,68.486,40.923C299.01,158.141,300.878,151.46,300.878,144.35z M252.177,355.057h-76.244	c-3.866,0-7,3.134-7,7s3.134,7,7,7h76.244c3.866,0,7-3.134,7-7S256.043,355.057,252.177,355.057z M379.295,49.957v371.151	c0,3.866-3.134,7-7,7H55.813c-3.866,0-7-3.134-7-7V49.957c0-3.866,3.134-7,7-7h68.925l86.236-42.243	c1.943-0.951,4.216-0.951,6.159,0l86.236,42.243h68.925C376.161,42.957,379.295,46.09,379.295,49.957z M156.563,42.957h114.983	l-57.492-28.162L156.563,42.957z M365.295,56.957h-63.404c-0.098,0.003-0.196,0.003-0.296,0H126.514	c-0.099,0.002-0.198,0.002-0.296,0H62.813v357.151h302.482V56.957z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>                    </span>
+                    <span>Poster</span>
+                </a>
+              </span> -->
+                <!-- twitter Link. -->
+                <!-- <span class="link-block">
+                <a href="https://x.com/zipengfu/status/1701316023612219445?s=20"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/aiming-lab/grape"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                        data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 496 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                      </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                <a href="./cn.html" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-language"></i>
+                  </span>
+                  <span>中文</span> -->
+                </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser teaser-video">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="hero-body">
+        <video id="teaser" autoplay="" muted="" loop="" playsinline="" width="85%">
+          <source src="static/videos/grape.mov" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">GRAPE Method</h2>
+          <div class="content has-text-justified has-text-centered">
+            <img src="static/images/grape_model.png">
+            <p>
+              <strong>Overview of GRAPE</strong>. Given a complex manipulation task (<strong>top</strong>), GRAPE first
+              adopts a vision-language model to decompose the task into several temporal stages, then identifies spatial keypoints essential for each stage’s subtask completion. Then given user-specified alignment goals, GRAPE prompts a powerful vision-language model to obtain a series of cost functions for each stage, where lower cost implies higher alignment compliance. During iterative preference optimization (<strong>bottom</strong>), we sample multiple offline trajectories from the base VLA model and obtain trajectories with associated multi-stage costs. This score further incorporates the model’s self-evaluation of
+              each trajectory and a binary task success indicator. Then we rank the sampled trajectories with their
+              corresponding scores to obtain a list of preferences. Then we perform a trajectory-wise preference optimization to obtain a improved model, from which we further sample online trajectories and iterate until convergence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experiments</h2>
+
+          <h3 class="title is-4">Simulation Experiments</h3>
+          <div class="has-text-centered">
+            <img src="static/images/grape_simulation_experiments_simpler_env.png" alt="Simpler Env Experiments" style="width: 75%;">
+          </div>
+          <div class="content has-text-justified">
+
+            <p>
+              Comparison of GRAPE with OpenVLA and Octo finetuned on the same data on the Simpler-Env environment. We report the in-domain performance, which includes four tasks and three generalization evaluations (subject, physical, and semantic), where each incorporates multiple tasks.
+            </p>
+          </div>
+
+          <br>
+
+          <div class="has-text-centered">
+            <img src="static/images/grape_simulation_experiments_libero.png" alt="LIBERO Experiments" style="width: 70%;">
+          </div>
+          <div class="content has-text-justified">
+
+            <p>
+              Comparison of GRAPE with OpenVLA and Octo finetuned on the same data on the LIBERO environment. We report
+              the performance on four LIBERO tasks, including LIBERO-Spatial, LIBERO-Object, LIBERO-Goal, LIBERO-Long.
+            </p>
+          </div>
+
+          <br>
+
+          <h3 class="title is-4">Real-world Experiments</h3>
+          <img src="static/images/grape_real_world_experiments.png">
+          <div class="content has-text-justified">
+
+            <p>
+              Comparison of GRAPE with OpenVLA and Octo fine-tuned on the same data on the real-world environment. We
+              report the in-domain performance, which includes four tasks and five generalization evaluations (visual, subject,
+              action, semantic, and language grounding), where each incorporates multiple tasks. We also report the average performance across all tasks.
+            </p>
+          </div>
+
+          <br>
+          <h3 class="title is-4">Rollouts of GRAPE</h3>
+
+          <br>
+          <h4 class="title is-6">Real-World Tasks</h4>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h5>In-domain tasks</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/domain_success.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Language Grounding</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/language_success.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Semantic Gen: New instructions</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/semantics_success.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h5>Action Gen: New actions (<i>knock down</i>)</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/action_knock_success.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Visual Gen: Different background</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/visual_success.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Subject Gen: New objects</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/climb/subject_success.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <br>
+          <h4 class="title is-6">Simpler-Env</h4>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h5>In-domain tasks</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/leap/in-domain.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Subject Gen: New objects</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/leap/subject.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5 style="font-size: 14px;">Semantic Gen: New instructions</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/leap/semantics.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5 style="font-size: 12px;">Physical Gen: Different sizes/shapes</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/leap/physical.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <br>
+          <h4 class="title is-6">LIBERO</h4>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h5>LIBERO-10</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/crawl/libero-10.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>LIBERO-GOAL</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/crawl/libero-goal.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>LIBERO-Object</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/crawl/libero-object.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>LIBERO-Spatial</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/crawl/libero-spatial.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <br>
+          <h4 class="title is-6">Learned Safety Behaviors</h4>
+          <div class="content has-text-justified">
+            <p>We selected safe trajectories based on GCPG reward, then we TPO-trained the OpenVLA-SFT to get
+              GRAPE-Safety. The robot learns to complete the task safely.</p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h5>Unsafe behavior demonstrated by the GRAPE</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/retry/unsafety_success.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h5>Safe behavior demonstrated by the GRAPE-Safety</h5>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="./resources/retry/safety_success.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+
+          <!--BibTex citation -->
+          <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+              <h2 class="title">BibTeX</h2>
+              <pre><code>@misc{zhang2024grape,
+                title={GRAPE: Generalizing Robot Policy via Preference Alignment}, 
+                author={Zijian Zhang and Kaiyuan Zheng and Zhaorun Chen and Joel Jang and Yi Li and Chaoqi Wang and Mingyu Ding and Dieter Fox and Huaxiu Yao},
+                year={2024},
+                eprint={2411.19309},
+                archivePrefix={arXiv},
+                primaryClass={cs.RO},
+                url={https://arxiv.org/abs/2411.19309}, 
+      }</code></pre>
+            </div>
+          </section>
+          <!--End BibTex citation -->
+
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody>
+                <tr>
+                  <td style="padding:0px; padding-bottom: 30px;"> <!-- Add padding-bottom here -->
+                        <br>
+                        <br>
+                        <div>
+                          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=ramCv772Q0lyfA1IJAYxhDOW1uQ92sGQnXzZkOYKF1Y'></script>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+
+          
+
+
+          <footer class="footer">
+            <div class="container">
+              <div class="content has-text-centered">
+                <p>Page template borrowed from <a href="https://nerfies.github.io/"><span
+                      class="dnerf">Nerfies</span></a> and
+                  <a href="https://robot-parkour.github.io/"><span class="dnerf">robot-parkour</span></a>.
+                </p>
+              </div>
+            </div>
+          </footer>
+
+</body>
+
+</html>

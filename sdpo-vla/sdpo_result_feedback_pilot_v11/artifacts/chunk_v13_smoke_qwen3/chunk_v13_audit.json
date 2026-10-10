@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "errors": [
+    "artifacts/chunk_v13_smoke_qwen3/update_001: missing position-specific records"
+  ]
+}

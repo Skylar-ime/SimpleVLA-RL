@@ -1,0 +1,150 @@
+{
+  "updates": [
+    {
+      "loss": 0.0464525343850255,
+      "valid": 14,
+      "executed": 16,
+      "gradient_norm": 0.4430420398712158,
+      "optimizer_steps": 1,
+      "seconds": 3.0746351960115135,
+      "mean_teacher_student_total_variation": 0.11982114613056183,
+      "mean_teacher_entropy": 1.5105715990066528,
+      "teacher_argmax_counts": {
+        "0": 9,
+        "1": 0,
+        "2": 5,
+        "3": 0,
+        "4": 0
+      },
+      "update": 1,
+      "group": "result",
+      "rollout_seconds": 8.22451776289381,
+      "contact_count": 3,
+      "motion_count": 2,
+      "progress_counts": {
+        "unchanged": 14,
+        "closer": 2
+      },
+      "feedback_changed_count": 0,
+      "unmatched_donor_count": 0,
+      "gpu_peak_allocated_gib": 14.93223524093628
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 8,
+    "scenes_valid": 8,
+    "invalid_resets": 0,
+    "successes": 3,
+    "success_rate": 0.375,
+    "conservative_success_rate_all_scenes": 0.375,
+    "mean_progress_m": 0.023062890855431447,
+    "safety_failures": 0,
+    "interactions": 71,
+    "seconds": 24.31441869912669,
+    "action_counts": {
+      "A": 64,
+      "C": 7
+    }
+  },
+  "total_train_interactions": 16,
+  "elapsed_seconds": 38.87272533681244,
+  "training_episodes": [
+    {
+      "episode_id": "train_s701_00000000",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000001",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000002",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000003",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000004",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000005",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000006",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000007",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000008",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000009",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000010",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000011",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000012",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000013",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000014",
+      "success": true,
+      "length": 1,
+      "safety_failure": null
+    },
+    {
+      "episode_id": "train_s701_00000015",
+      "success": false,
+      "length": 1,
+      "safety_failure": null
+    }
+  ],
+  "note": "Development pilot; not final test or a causal effectiveness claim."
+}

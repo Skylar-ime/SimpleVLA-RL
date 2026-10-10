@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12b_qwen3_multiseed/seed_16/sdpo_result",
+  "backbone": "qwen3",
+  "condition": "sdpo_result",
+  "seed": 16,
+  "updates": 12,
+  "transitions": 1536,
+  "evaluation": {
+    "scenes_requested": 64,
+    "scenes_valid": 64,
+    "invalid_resets": 0,
+    "successes": 9,
+    "success_rate": 0.140625,
+    "conservative_success_rate_all_scenes": 0.140625,
+    "mean_progress_m": 0.03926972086736488,
+    "safety_failures": 0,
+    "interactions": 711,
+    "seconds": 1447.0586653021164,
+    "action_counts": {
+      "C": 322,
+      "D": 211,
+      "B": 117,
+      "A": 61
+    }
+  },
+  "protocol": "protocol_v12b.json",
+  "protocol_sha256": "8ffc5593bb1c329e1f8f566de83c3ae99d674915f611499813a3d8acc00dec4e",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

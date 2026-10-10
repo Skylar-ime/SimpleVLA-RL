@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLA-OPD: Bridging Offline SFT and Online RL for VLA Models via On-Policy Distillation</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-card: #ffffff;
+            --text: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text); background: var(--bg); line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- Hero ---- */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            color: #fff; padding: 80px 0 60px; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-content {
+            position: relative; z-index: 1; max-width: 900px; margin: 0 auto;
+            padding: 0 24px; text-align: center;
+        }
+        .hero-badge {
+            display: inline-block; background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2); padding: 6px 18px;
+            border-radius: 50px; font-size: 0.85rem; font-weight: 500;
+            letter-spacing: 0.5px; margin-bottom: 28px;
+        }
+        .hero h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .hero h1 .hl {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width: 720px; margin: 0 auto 32px; font-weight: 300; line-height: 1.6; }
+        .authors { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 8px; font-size: 1.05rem; }
+        .authors span { color: rgba(255,255,255,0.9); }
+        .affiliation { color: rgba(255,255,255,0.55); font-size: 0.92rem; margin-bottom: 30px; }
+        .btn-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px;
+            border-radius: 50px; font-size: 0.92rem; font-weight: 500; text-decoration: none;
+            transition: all 0.2s; border: 1px solid rgba(255,255,255,0.25); color: #fff;
+        }
+        .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+        .btn-primary { background: var(--primary); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-outline { background: rgba(255,255,255,0.08); }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+        /* ---- Layout ---- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 64px 0; }
+        section:nth-child(even) { background: var(--bg-alt); }
+        .section-title {
+            font-size: 1.75rem; font-weight: 700; margin-bottom: 28px;
+            display: flex; align-items: center; gap: 12px; letter-spacing: -0.3px;
+        }
+        .section-title .icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 10px; font-size: 1.2rem;
+        }
+        .icon.blue { background: var(--primary-light); color: var(--primary); }
+        .icon.purple { background: var(--accent-light); color: var(--accent); }
+        .icon.green { background: #dcfce7; color: #16a34a; }
+        .icon.orange { background: #ffedd5; color: #ea580c; }
+        .icon.red { background: #fee2e2; color: #dc2626; }
+
+        /* ---- Nav ---- */
+        .sticky-nav {
+            position: sticky; top: 0; background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100;
+        }
+        .sticky-nav .container { display: flex; align-items: center; justify-content: center; gap: 4px; overflow-x: auto; }
+        .sticky-nav a {
+            color: var(--text-secondary); text-decoration: none; padding: 14px 14px;
+            font-size: 0.85rem; font-weight: 500; white-space: nowrap;
+            border-bottom: 2px solid transparent; transition: color 0.2s;
+        }
+        .sticky-nav a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+        /* ---- Abstract ---- */
+        .abstract-text { font-size: 1.02rem; line-height: 1.85; color: var(--text-secondary); text-align: justify; }
+        .keywords { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .keywords span { display: inline-block; padding: 4px 14px; background: var(--primary-light); color: var(--primary); border-radius: 50px; font-size: 0.82rem; font-weight: 500; }
+
+        /* ---- Figure ---- */
+        .figure-block { margin: 32px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .figure-block img { width: 100%; display: block; }
+        .figure-caption { padding: 16px 24px; font-size: 0.9rem; color: var(--text-secondary); border-top: 1px solid var(--border); line-height: 1.6; }
+        .figure-caption strong { color: var(--text); }
+
+        /* ---- Cards ---- */
+        .highlights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .highlight-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 24px; box-shadow: var(--shadow); transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .highlight-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+        .highlight-card .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px; }
+        .highlight-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+        .highlight-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+
+        /* ---- Table ---- */
+        .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--bg-card); }
+        thead th { background: #f1f5f9; padding: 14px 16px; font-weight: 600; text-align: center; border-bottom: 2px solid var(--border); white-space: nowrap; }
+        tbody td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: #f8fafc; }
+        td:first-child, th:first-child { text-align: left; }
+        .row-hl { background: linear-gradient(90deg, #eff6ff, #f0f0ff) !important; font-weight: 600; }
+        .row-hl td { color: var(--primary-dark); }
+        .best { font-weight: 700; color: var(--primary-dark); }
+        .chk { color: #16a34a; font-weight: 700; }
+        .crs { color: #dc2626; font-weight: 700; }
+
+        /* ---- Pipeline ---- */
+        .pipeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 28px 0; position: relative; }
+        .pipeline::before { content: ''; position: absolute; top: 28px; left: 15%; right: 15%; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 0; }
+        .pipeline-step { text-align: center; position: relative; z-index: 1; }
+        .step-num { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 14px; box-shadow: var(--shadow-md); }
+        .pipeline-step:nth-child(1) .step-num { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .pipeline-step:nth-child(2) .step-num { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .pipeline-step:nth-child(3) .step-num { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+        .pipeline-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+        .pipeline-step p { font-size: 0.82rem; color: var(--text-secondary); padding: 0 8px; line-height: 1.55; }
+
+        /* ---- Results grid ---- */
+        .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 28px 0; }
+        .r-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: box-shadow 0.2s; }
+        .r-card:hover { box-shadow: var(--shadow-lg); }
+        .r-card img { width: 100%; display: block; }
+        .r-card .img-label { padding: 12px 16px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border); font-weight: 500; }
+
+        /* ---- KL cards ---- */
+        .kl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .kl-card { background: var(--bg-card); border-radius: var(--radius); padding: 22px; border: 1px solid var(--border); box-shadow: var(--shadow); text-align: center; }
+        .kl-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+        .kl-tag { font-size: 0.82rem; padding: 4px 12px; border-radius: 50px; display: inline-block; margin-bottom: 8px; font-weight: 500; }
+        .kl-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
+        .kl-bad .kl-tag { background: #fee2e2; color: #dc2626; }
+        .kl-warn .kl-tag { background: #ffedd5; color: #ea580c; }
+        .kl-good .kl-tag { background: #dcfce7; color: #16a34a; }
+        .kl-good { border-color: #86efac; }
+
+        /* ---- BibTeX ---- */
+        .bib-block { position: relative; background: #1e293b; border-radius: var(--radius); padding: 24px; margin-top: 20px; overflow-x: auto; }
+        .bib-block pre { color: #e2e8f0; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.82rem; line-height: 1.7; margin: 0; white-space: pre; }
+        .bib-copy { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #e2e8f0; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.78rem; transition: background 0.2s; }
+        .bib-copy:hover { background: rgba(255,255,255,0.2); }
+
+        /* ---- Math ---- */
+        .math-block { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 16px 24px; margin: 16px 0; text-align: center; }
+        .math-block img { max-width: 520px; width: 100%; height: auto; display: inline-block; }
+
+        /* ---- Footer ---- */
+        footer { text-align: center; padding: 40px 24px; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--border); }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        .method-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+        .note { font-size: 0.88rem; color: var(--text-secondary); margin-top: 10px; }
+        .note strong { color: var(--text); }
+        h3.sub { font-size: 1.15rem; font-weight: 600; margin: 36px 0 16px; }
+        h3.sub:first-of-type { margin-top: 0; }
+
+        html { scroll-behavior: smooth; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.7rem; }
+            .highlights-grid, .results-grid { grid-template-columns: 1fr; }
+            .kl-grid { grid-template-columns: 1fr; }
+            .pipeline { grid-template-columns: 1fr; gap: 24px; }
+            .pipeline::before { display: none; }
+            .authors { font-size: 0.95rem; }
+            section { padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Robotics &middot; VLA &middot; Post-Training</div>
+        <h1><span class="hl">VLA-OPD</span>: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation</h1>
+        <p class="subtitle">A unified post-training framework that combines the sample efficiency of supervised fine-tuning with the robustness of reinforcement learning through on-policy distillation with Reverse-KL optimization.</p>
+        <div class="authors">
+            <span>Zhide Zhong<sup>1</sup></span>
+            <span>Haodong Yan<sup>1</sup></span>
+            <span>Junfeng Li<sup>1</sup></span>
+            <span>Junjie He<sup>1</sup></span>
+            <span>Tianran Zhang<sup>1</sup></span>
+            <span>Haoang Li<sup>1</sup></span>
+        </div>
+        <p class="affiliation"><sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)</p>
+        <div class="btn-row">
+            <a class="btn btn-primary" href="#">&#128196; Paper</a>
+            <a class="btn btn-outline" href="#">&#128187; Code (Coming Soon)</a>
+            <a class="btn btn-outline" href="#abstract">&#128221; Abstract</a>
+            <a class="btn btn-outline" href="#results">&#128200; Results</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="sticky-nav">
+    <div class="container">
+        <a href="#abstract">Abstract</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#paradigm">Paradigm</a>
+        <a href="#method">Method</a>
+        <a href="#kl-analysis">KL Analysis</a>
+        <a href="#results">Results</a>
+        <a href="#forgetting">Anti-Forgetting</a>
+        <a href="#ablation">Ablation</a>
+        <a href="#citation">Citation</a>
+    </div>
+</nav>
+
+<!-- ===== ABSTRACT ===== -->
+<section id="abstract">
+    <div class="container">
+        <h2 class="section-title"><span class="icon blue">&#128220;</span> Abstract</h2>
+        <p class="abstract-text">
+            Although pre-trained Vision-Language-Action (VLA) models exhibit impressive generalization in robotic manipulation, post-training remains crucial to ensure reliable performance during deployment. However, standard offline Supervised Fine-Tuning (SFT) suffers from distribution shifts and catastrophic forgetting of pre-trained capabilities, while online Reinforcement Learning (RL) struggles with sparse rewards and poor sample efficiency. In this paper, we propose <strong>On-Policy VLA Distillation (VLA-OPD)</strong>, a framework bridging the efficiency of SFT with the robustness of RL. Instead of relying on sparse environmental rewards, VLA-OPD leverages an expert teacher to provide dense, token-level supervision on the student's self-generated trajectories. This enables active error correction on policy-induced states while preserving pre-trained general capabilities through gentle alignment. Crucially, we formulate VLA-OPD via a <strong>Reverse-KL objective</strong>. Unlike standard Forward-KL that induces mode-covering entropy explosion, or Hard-CE that causes premature entropy collapse, our bounded mode-seeking objective ensures stable policy learning by filtering out the teacher's epistemic uncertainty while maintaining action diversity. Experiments on <strong>LIBERO</strong> and <strong>RoboTwin2.0</strong> benchmarks demonstrate that VLA-OPD significantly improves sample efficiency over RL and robustness over SFT, while effectively mitigating catastrophic forgetting during post-training.
+        </p>
+        <div class="keywords">
+            <span>Vision-Language-Action Models</span>
+            <span>Post-Training</span>
+            <span>On-Policy Distillation</span>
+            <span>Reverse-KL Divergence</span>
+            <span>Robotic Manipulation</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTRIBUTIONS ===== -->
+<section id="contributions">
+    <div class="container">
+        <h2 class="section-title"><span class="icon purple">&#11088;</span> Key Contributions</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="card-icon" style="background:#dbeafe;color:#2563eb;">&#128279;</div>
+                <h3>Unified Post-Training Framework</h3>
+                <p>VLA-OPD bridges SFT and RL by leveraging dense, token-level supervision on self-generated trajectories, resolving the exposure bias of SFT and the sample inefficiency of sparse-reward RL.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="card-icon" style="background:#ede9fe;color:#7c3aed;">&#128260;</div>
+                <h3>Reverse-KL Distillation Objective</h3>
+                <p>A bounded mode-seeking objective that filters out the teacher's epistemic uncertainty while maintaining action diversity, preventing both entropy explosion (Forward-KL) and premature entropy collapse (Hard-CE).</p>
+            </div>
+            <div class="highlight-card">
+                <div class="card-icon" style="background:#dcfce7;color:#16a34a;">&#128737;</div>
+                <h3>Catastrophic Forgetting Mitigation</h3>
+                <p>Gradient updates remain grounded in the student's active policy manifold, achieving gentle alignment that preserves pre-trained generalist capabilities during task-specific post-training.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="card-icon" style="background:#ffedd5;color:#ea580c;">&#128300;</div>
+                <h3>Extensive Empirical Validation</h3>
+                <p>Demonstrates superior robustness and success rates compared to SFT, requiring substantially fewer training steps than on-policy RL baselines across LIBERO and RoboTwin2.0 benchmarks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PARADIGM ===== -->
+<section id="paradigm">
+    <div class="container">
+        <h2 class="section-title"><span class="icon orange">&#128203;</span> Training Paradigm Comparison</h2>
+        <p class="method-text">VLA-OPD uniquely combines the advantages of both SFT and RL while avoiding their respective drawbacks:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Paradigm</th><th>Sampling</th><th>Signal</th><th>Few-Demo</th><th>Convergence</th><th>Anti-Forgetting</th><th>Robustness</th></tr></thead>
+                <tbody>
+                    <tr><td>Offline SFT</td><td>Off-policy</td><td>Dense</td><td class="crs">&times;</td><td>Fast</td><td class="crs">&times;</td><td class="crs">&times;</td></tr>
+                    <tr><td>Online RL</td><td>On-policy</td><td>Sparse</td><td class="chk">&check;</td><td>Slow</td><td class="chk">&check;</td><td class="chk">&check;</td></tr>
+                    <tr class="row-hl"><td><strong>VLA-OPD (Ours)</strong></td><td><strong>On-policy</strong></td><td><strong>Dense</strong></td><td class="chk">&check;</td><td><strong>Fast</strong></td><td class="chk">&check;</td><td class="chk">&check;</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="note">VLA-OPD achieves the best of both worlds: on-policy sampling with dense supervision for fast convergence and robust learning.</p>
+    </div>
+</section>
+
+<!-- ===== METHOD ===== -->
+<section id="method">
+    <div class="container">
+        <h2 class="section-title"><span class="icon blue">&#9881;</span> Method</h2>
+        <div class="figure-block">
+            <img src="figures/opd/figure1-1.png" alt="VLA-OPD Framework Overview">
+            <div class="figure-caption">
+                <strong>Figure 1.</strong> Overview of VLA-OPD. The framework consists of three phases: (1) on-policy trajectory sampling by the student, (2) dense token-level labeling by the expert teacher, and (3) mode-seeking optimization via Reverse-KL policy gradient.
+            </div>
+        </div>
+        <p class="method-text">VLA-OPD operates through a three-phase iterative training process that bridges supervised learning and reinforcement learning:</p>
+        <div class="pipeline">
+            <div class="pipeline-step">
+                <div class="step-num">1</div>
+                <h4>On-Policy Sampling</h4>
+                <p>The student VLA policy interacts with the environment to collect trajectory rollouts, explicitly exposing distribution shift at out-of-distribution states.</p>
+            </div>
+            <div class="pipeline-step">
+                <div class="step-num">2</div>
+                <h4>Dense Teacher Labeling</h4>
+                <p>A frozen expert teacher provides dense, token-level action labels for each state visited by the student &mdash; no environmental execution required.</p>
+            </div>
+            <div class="pipeline-step">
+                <div class="step-num">3</div>
+                <h4>Mode-Seeking Optimization</h4>
+                <p>The student is updated via on-policy policy gradient using token-level Reverse-KL reward with group-based variance reduction.</p>
+            </div>
+        </div>
+        <p class="method-text" style="margin-top:24px;">The optimization objective is defined as:</p>
+        <div class="math-block">
+            <img src="data:image/png;base64,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" alt="reward formula">
+        </div>
+        <p class="method-text">where the expectation over actions sampled from the student policy implicitly provides the probability weighting of the Reverse-KL divergence, and the per-sample reward is the negative log-ratio computed entirely from model log-probabilities.</p>
+    </div>
+</section>
+
+<!-- ===== KL ANALYSIS ===== -->
+<section id="kl-analysis">
+    <div class="container">
+        <h2 class="section-title"><span class="icon purple">&#9878;</span> Why Reverse-KL?</h2>
+        <p class="method-text">The choice of divergence direction critically affects training stability. VLA-OPD's Reverse-KL objective achieves stable, bounded entropy &mdash; avoiding the failure modes of alternative objectives:</p>
+        <div class="kl-grid">
+            <div class="kl-card kl-bad">
+                <h4>Forward-KL</h4>
+                <span class="kl-tag">Entropy Explosion</span>
+                <p>Mode-covering behavior forces the student to spread over the entire teacher distribution, inducing catastrophic entropy explosion at OOD states.</p>
+            </div>
+            <div class="kl-card kl-warn">
+                <h4>Hard-CE (Argmax)</h4>
+                <span class="kl-tag">Entropy Collapse</span>
+                <p>Rigid top-1 matching causes premature entropy collapse, eliminating action diversity needed for exploration and robust behavior.</p>
+            </div>
+            <div class="kl-card kl-good">
+                <h4>Reverse-KL (Ours)</h4>
+                <span class="kl-tag">Stable &amp; Bounded</span>
+                <p>Zero-forcing property captures the teacher's primary intent while maintaining sufficient stochasticity. Elegantly avoids both extremes.</p>
+            </div>
+        </div>
+        <div class="results-grid" style="margin-top:24px;">
+            <div class="r-card">
+                <img src="figures/opd/kl_direction_ablation_train_reward_verifier_vs_step.png" alt="KL Ablation - Success Rate">
+                <div class="img-label">Success rate comparison across KL objectives</div>
+            </div>
+            <div class="r-card">
+                <img src="figures/opd/kl_direction_ablation_entropy_vs_step.png" alt="KL Ablation - Entropy">
+                <div class="img-label">Actor entropy dynamics across KL objectives</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section id="results">
+    <div class="container">
+        <h2 class="section-title"><span class="icon green">&#128200;</span> Experimental Results</h2>
+
+        <h3 class="sub">LIBERO Benchmark (Single-Arm Manipulation)</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Method</th><th># Demos</th><th>Spatial</th><th>Object</th><th>Goal</th><th>Long</th><th>Avg.</th></tr></thead>
+                <tbody>
+                    <tr><td>Teacher (SimpleVLA-RL)</td><td>&mdash;</td><td>94.2</td><td>96.1</td><td>94.6</td><td>90.7</td><td>93.9</td></tr>
+                    <tr style="border-top:2px solid var(--border);"><td>Octo</td><td>50</td><td>78.9</td><td>85.7</td><td>84.6</td><td>51.1</td><td>75.1</td></tr>
+                    <tr><td>OpenVLA</td><td>50</td><td>84.7</td><td>88.4</td><td>79.2</td><td>53.7</td><td>76.5</td></tr>
+                    <tr><td>Nora</td><td>50</td><td>92.2</td><td>95.4</td><td>89.4</td><td>74.6</td><td>87.9</td></tr>
+                    <tr><td>&pi;<sub>0</sub> + FAST</td><td>50</td><td>96.4</td><td>96.8</td><td>88.6</td><td>60.2</td><td>85.5</td></tr>
+                    <tr style="border-top:2px solid var(--border);"><td>OpenVLA-OFT (Student Init.)</td><td>1</td><td>63.6</td><td>54.9</td><td>59.6</td><td>17.3</td><td>48.9</td></tr>
+                    <tr class="row-hl"><td>VLA-OPD (Distill)</td><td>1</td><td>84.3</td><td>93.8</td><td>92.5</td><td>78.9</td><td class="best">87.4</td></tr>
+                    <tr class="row-hl"><td>VLA-OPD (Distill + GRPO)</td><td>1</td><td class="best">93.4</td><td class="best">95.3</td><td class="best">94.5</td><td class="best">90.2</td><td class="best">93.4</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="note">With only <strong>1 demonstration</strong> per task, VLA-OPD matches or surpasses full-dataset (50-demo) baselines, achieving a <strong>+38.5%</strong> improvement over the SFT initialization.</p>
+
+        <h3 class="sub">Training Efficiency</h3>
+        <div class="results-grid">
+            <div class="r-card">
+                <img src="figures/opd/training_efficiency_object_testing_1.png" alt="Training Efficiency - LIBERO Object">
+                <div class="img-label">LIBERO-Object: Rapid convergence within 10 steps</div>
+            </div>
+            <div class="r-card">
+                <img src="figures/opd/training_efficiency_libero10_testing_1.png" alt="Training Efficiency - LIBERO Long">
+                <div class="img-label">LIBERO-Long: 3x faster convergence than GRPO</div>
+            </div>
+        </div>
+
+        <h3 class="sub">RoboTwin2.0 Benchmark (Dual-Arm Manipulation)</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Method</th><th>Pick Dual Bottles</th><th>Place Empty Cup</th><th>Handover Block</th><th>Stack Bowls</th><th>Avg.</th></tr></thead>
+                <tbody>
+                    <tr><td>Teacher (SimpleVLA-RL)</td><td>68.3</td><td>94.2</td><td>57.8</td><td>75.8</td><td>74.0</td></tr>
+                    <tr><td>&pi;<sub>0</sub></td><td>50.0</td><td>60.0</td><td>39.0</td><td>53.0</td><td>50.5</td></tr>
+                    <tr><td>RDT</td><td>18.0</td><td>42.0</td><td>26.0</td><td>42.0</td><td>32.0</td></tr>
+                    <tr><td>OpenVLA-OFT (Student Init.)</td><td>29.7</td><td>77.3</td><td>33.1</td><td>40.6</td><td>45.2</td></tr>
+                    <tr class="row-hl"><td>VLA-OPD (Distill)</td><td class="best">66.4</td><td class="best">90.6</td><td class="best">52.3</td><td class="best">75.0</td><td class="best">71.1</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="note">VLA-OPD generalizes to complex dual-arm manipulation, improving by <strong>+25.9%</strong> over initialization and nearly matching the expert teacher (71.1% vs 74.0%).</p>
+    </div>
+</section>
+
+<!-- ===== FORGETTING ===== -->
+<section id="forgetting">
+    <div class="container">
+        <h2 class="section-title"><span class="icon red">&#129504;</span> Catastrophic Forgetting Analysis</h2>
+        <p class="method-text">Offline SFT exhibits severe catastrophic forgetting: as seen-task success improves, unseen-task performance collapses. VLA-OPD's on-policy approach anchors gradient updates to the student's current behavioral manifold, preserving generalist capabilities.</p>
+        <div class="results-grid">
+            <div class="r-card"><img src="figures/opd/final_object_unseen_task_1.png" alt="Forgetting - Object 1"><div class="img-label">Object Unseen Task (Setting 1)</div></div>
+            <div class="r-card"><img src="figures/opd/final_object_unseen_task_2.png" alt="Forgetting - Object 2"><div class="img-label">Object Unseen Task (Setting 2)</div></div>
+            <div class="r-card"><img src="figures/opd/final_spatial_unseen_task_1.png" alt="Forgetting - Spatial 1"><div class="img-label">Spatial Unseen Task (Setting 1)</div></div>
+            <div class="r-card"><img src="figures/opd/final_spatial_unseen_task_2.png" alt="Forgetting - Spatial 2"><div class="img-label">Spatial Unseen Task (Setting 2)</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABLATION ===== -->
+<section id="ablation">
+    <div class="container">
+        <h2 class="section-title"><span class="icon orange">&#9881;</span> Ablation Studies</h2>
+        <p class="method-text">We investigate the impact of group sampling size on training performance. Larger groups (G=8) provide the smoothest optimization, while even small groups (G=2) maintain competitive performance with reduced computational overhead.</p>
+        <div class="results-grid">
+            <div class="r-card"><img src="figures/opd/train_reward_verifier_vs_step_new.png" alt="Group Size - Success Rate"><div class="img-label">Group sampling size vs. success rate</div></div>
+            <div class="r-card"><img src="figures/opd/critic_kl_vs_step_new.png" alt="Group Size - KL"><div class="img-label">Group sampling size vs. KL divergence</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CITATION ===== -->
+<section id="citation">
+    <div class="container">
+        <h2 class="section-title"><span class="icon blue">&#128218;</span> Citation</h2>
+        <p class="method-text">If you find this work useful, please consider citing our paper:</p>
+        <div class="bib-block">
+            <button class="bib-copy" onclick="navigator.clipboard.writeText(document.getElementById('bib').innerText).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy'},1500);})">Copy</button>
+<pre id="bib">@article{zhong2025vlaopd,
+  title     = {VLA-OPD: Bridging Offline SFT and Online RL for
+               Vision-Language-Action Models via On-Policy Distillation},
+  author    = {Zhong, Zhide and Yan, Haodong and Li, Junfeng and
+               He, Junjie and Zhang, Tianran and Li, Haoang},
+  year      = {2025},
+  institution = {HKUST (Guangzhou)}
+}</pre>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>VLA-OPD &copy; 2025 &middot; The Hong Kong University of Science and Technology (Guangzhou)</p>
+</footer>
+
+</body>
+</html>

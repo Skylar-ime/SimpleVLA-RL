@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "run": "/home/skylar/@lab/sdpo_result_feedback_pilot_v11/artifacts/v12_smoke_qwen3_afterfix2",
+  "backbone": "qwen3",
+  "condition": "sdpo_advantage",
+  "seed": 12,
+  "updates": 1,
+  "transitions": 8,
+  "evaluation": {
+    "scenes_requested": 4,
+    "scenes_valid": 4,
+    "invalid_resets": 0,
+    "successes": 1,
+    "success_rate": 0.25,
+    "conservative_success_rate_all_scenes": 0.25,
+    "mean_progress_m": 0.03479824959054235,
+    "safety_failures": 0,
+    "interactions": 41,
+    "seconds": 88.41214111202862,
+    "action_counts": {
+      "C": 39,
+      "D": 2
+    }
+  },
+  "protocol_sha256": "889d384c740d4ced1e1c201b061d747da7d458467b328d20373ec01c128370dd",
+  "scene_sha256": "af0d0acbb155a8f05828ca1e08c977afb315263d45c6b86bc8c7f8215aea492e"
+}

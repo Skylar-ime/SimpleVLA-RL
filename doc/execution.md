@@ -1,0 +1,190 @@
+# 执行记录
+
+## 2026-09-16
+
+- 记录策略改为统一追加到当前文件；保留现有独立文档，不再为单次操作创建新的 Markdown 文件。
+- `zhongxin`登录节点可达。L40 节点名为`l40s-1` 至 `l40s-8`。
+- `l40s-6`可以访问，配置为 2×NVIDIA L40（49140/46068 MiB），驱动器`570.195.03`；`l40s-7/8` 可作为备选。
+- L40 用于 OpenVLA-OFT 评估器的隔离环境和 2/16 条测试调试；H800 留给正式`val_only`、RL的滚动和训练。
+- 当前没有活跃的 Slurm 任务，PAM 拒绝进入；登录节点的共享路径`/public/home/s2250018/wsy/VLA/SimpleVLA-RL/docs/` 可写。
+- 调试启动：`l40s-6`可以访问，实际可看到 4×NVIDIA L40（每卡约 46-49 GiB），驱动程序`570.195.03`；`/public`剩余大约 4.8 TB。
+- 可见共享目录：`VLA/SimpleVLA-RL`、`VLA/RoboTwin-20250810`、`VLA/openvla-oft`将使用历史的 RoboTwin 和共享的 checkpoint 作为评估器进行调试，不复制模型文件。
+- 已创建隔离的 conda 环境`openvla-oft-eval`，由 `simplevla` 克隆；原 `simplevla` 未修改。
+- 隔离环境保留：Python 3.10、PyTorch`2.4.1+cu124`、4 张可視化 GPU、TensorFlow、SAPIEN、mplib、FlashAttention。缺失：`dlimp`、`tensorflow_datasets`、`tensorflow_graphics`。
+- 固定调试代码：OpenVLA-OFT`e4287e94541f459edc4feabc4e181f537cd569a8`；历史 RoboTwin`6be6922d74f9b729837d6bcaa703721ec4553779`只读 SFT 工作副本`checkpoints/lift_pot_sft_official_work`。
+- 首次安装未开始网络下载即失败：克隆环境内 `python -m pip` 报 `ImportError: cannot import name 'get_runnable_pip'`，属于 pip 内部版本错配。仅修复隔离环境的 pip 后重试。
+- `ensurepip`无法修复此错误。发现 conda clone 与源环境共享损坏文件的硬链接；删除隔离环境中的`pip`在 `package/dist-info` 之后，从正常`simplevla` 副本复制。两环境随后均通过 `python -m pip --version`；源环境未改。
+- OpenVLA-OFT 已经以可编辑的方式注册到隔离环境中，源代码位于共享目录`VLA/openvla-oft`。下载 `dlimp_openvla`首次失败：GitHub TLS 连接未正确终止；未生成可用的 dlimp 克隆/安装。
+- 第二次使用 Git HTTP/1.1 从 L40 下载仍然超时（大约 130 秒）；停止重复重试，改为`zhongxin`登录节点下载归档到共享盘。
+- `zhongxin` 登录节点通过 `codeload.github.com`成功下载 dlimp 归档文件并解压到`VLA/dlimp_openvla`；归档无 Git 元数据，版本按下载时的 main 记录。
+- dlimp 可编辑安装成功；首次导入失败于`ModuleNotFoundError: No module named 'tensorflow_datasets'`。这是 OpenVLA-OFT 缺少依赖项，不是 dlimp 源码错误。
+- 依赖安装时未显式锁定 TensorFlow，resolver 尝试下载 TensorFlow。`2.21.0`(572 MB)；已中断下载。检查 TensorFlow 仍为`2.15.0`，`tensorflow_datasets`/`tensorflow_graphics` 均未安装。下一次将显式固定 `tensorflow==2.15.0`。
+- 改用 `--no-deps` 安装 `tensorflow-datasets==4.9.3`，避免重复下载 TensorFlow；导入继续暴露其运行依赖`etils`缺失。当前评估器代码未导入`tensorflow_graphics`，暂不安装该包。
+- TFDS 运行依赖已补齐：`etils`、`array-record`、`dm-tree`、`promise`、`tensorflow-metadata`；没有下载第二份 TensorFlow。
+- 导入失败于依赖版本冲突：自动安装的 `tensorflow-metadata 1.21`依赖 Protobuf 6，而 TensorFlow`2.15.0`要求 Protobuf <5。仅将 metadata 降级到与 TF 2.15 兼容的版本；TensorFlow/Protobuf 保持不变。
+- 已将 `tensorflow-metadata` 固定为 `1.14.0`（不修改 Protobuf），验证通过：TensorFlow`2.15.0`、TFDS`4.9.3`、dlimp 都可以导入。
+- OpenVLA-OFT评估器导入失败于`tensorflow_graphics.geometry.transformation` 缺失；该包被 `prismatic` 初始化链间接需要。安装时将使用 `--no-deps`，避免 resolver 拉取不兼容 TensorFlow 2.21。
+- 已用 `--no-deps` 安装 `tensorflow-graphics==2021.12.3`、`tensorflow-addons==0.23.0`、`typeguard==2.13.3`、`OpenEXR`；`tensorflow_graphics` 单独导入通过。
+- OpenVLA-OFT 与 RoboTwin 评估器导入已通过；未设置平台时会打印 LIBERO`8/7/8`。更正：历史 OpenVLA-OFT 不读取`ROBOT_PLATFORM`而通过Python进程参数判断平台；后续包装器将在导入前加入`aloha`，以选择 ALOHA`25/14/14`公开提升_没有检查点`action_head`评估员必须使用离散`predict_action`：`use_l1_regression=False`、`num_images_in_input=1`。
+- 第一次 checkpoint load 命令因为将连字符目录写成了 Python 包名`policy.openvla_oft` 失败；更正为将 `policy/openvla-oft` 加入 `PYTHONPATH`，直接导入 `deploy_policy`。
+- 第二次加载仍报 `ModuleNotFoundError: deploy_policy`；需要先检查 L40 壳的实际`sys.path`与 policy 文件路径。尚未加载模型权重。
+- 路径检查后直接导入 `deploy_policy`已通过；模型加载确认采用 ALOHA 常量`25/14/14`。原来的检查点是只读的，而OpenVLA-OFT加载器会在原地进行更新`config.json`，也可能同步两份模型逻辑文件；首次加载因此在写 `config.json` 时失败，原权重未改。
+- 已经创建了评估器专用目录`checkpoints/lift_pot_sft_eval_l40`：`config.json`、`modeling_prismatic.py`、`configuration_prismatic.py`为了可写副本，其余检查点文件都作为符号链接指向原始只读工作副本；不复制或修改模型分片。
+- 评估器副本已完成配置更新，并可加载全部 4 个模型 shard。随后 projector checkpoint 报“CUDA 不可用”；原因是命令只登录到`zhongxin`，实际运行在没有 GPU 的登录节点，而不是 L40。后续统一通过`zhongxin -> l40s-6`二次跳跃 SSH 执行；此错误并不表示权重损坏。
+- 二跳 `zhongxin -> l40s-6`已确认显卡为`NVIDIA L40`，CUDA 可用；检查点完整加载成功。
+- 合成观测烟雾测试通过：离散OpenVLA-OFT输出`25` 个动作，每个 `14` 维，形状 `(25, 14)`，所有值有限。
+- RoboTwin 短评估已启动并通过`Render Well`加载模型 shard；环境的初始碰撞将按原逻辑重新采样。然后，由于 L40 节点无`ffmpeg`在视频编码分支退出；不是模型或 SAPIEN 失败。
+- 已经在历史 RoboTwin 中创建`task_config/demo_randomized_eval_aloha.yml`，内容与 `demo_randomized_aloha.yml` 相同，仅关闭 `eval_video_log`用于无 ffmpeg 的短评估。
+- 首次真实首帧评估因 `encode_obs()` 无条件读取不存在的腕部相机而退出：任务配置 `collect_wrist_camera: false`只有观察`head_camera`。已经在历史 RoboTwin`policy/openvla-oft/deploy_policy.py`进行最小兼容性修复：在手腕相机存在时保留，不存在时跳过；头部图像、14D状态、语言指令路径保持不变。
+- 重跑参数解析曾因额外孤立 `aloha` 参数报 `IndexError`；已改为合法成对的 `platform_hint aloha`平台常量仍然稳定地选择了ALOHA。
+- 第二次真实评估已通过环境创建、初始状态重采样和模型首帧推理；随后发现 `take_action()` 要求 `(T,14)`二维切片，而适配器逐个遍历列表后传入一维动作，报`IndexError: too many indices`。已修复 `eval()`：将动作列表转为 `np.asarray` 后一次性传入 `TASK_ENV.take_action`保留完整的25步块。
+- 修复后 2 回合短评估完整结束并写出 `_result.txt`：`lift_pot` / `demo_randomized_eval_aloha` / `lift_pot_sft_eval_l40`，结果 `0/2 = 0.0%`。渲染、环境创建、模型加载、首帧推理和二维动作接口均已越过；原脚本吞掉了部分 `play_once()` 异常，只打印 `error occurs!`因此需要进行一次与原规模相同的诊断，并且不能直接将 0% 解释为模型的能力。
+- `0/2` 的两次计数均在 `Fail!` 后完成，说明不是仅启动失败；`error occurs!`出现在专家检查的随机起始状态尝试中。该结果作为烟雾基准保存，后续用16个有效episode做回归基准。
+- 扩展评估已启动，但原始`demo_randomized_aloha`在 L40 上持续约 17 分钟仍反复进行初始碰撞重采样，未进入有效 episode；GPU 进程约占 18 GiB。为了释放 L40，已终止该未完成进程；没有生成 16 episode 结果，不能将其当作 16 回合基线。
+- 同目录只有 `demo_clean.yml`（Piper体现），没有官方 ALOHA 清洁配置。保持原始 ALOHA 随机配置的`0/2`结果作为当前可复现的 baseline；后续若要扩大统计，应单独制作并标注“非原始随机化”的 clean ALOHA 诊断配置，不能与原文结果混报。
+- 对齐作者依赖：OpenVLA-OFT`pyproject.toml` 要求 `moojink/transformers-openvla-oft`fork 和`tokenizers==0.19.1`，而隔离环境此前被用户级 `.local` 的标准 `transformers 4.47.1/tokenizers 0.21.4`覆盖。已从 codeload 下载 fork archive 到共享盘，并仅在`openvla-oft-eval`安装可编辑的 fork`transformers 4.40.1` 与 `tokenizers 0.19.1`；后续评估者统一设置`PYTHONNOUSERSITE=1`。原 `simplevla` 未改。
+- 作者栈 GPU 加载验证通过：`transformers==4.40.1`、`tokenizers==0.19.1`、阿拉暖`25/14/14`，四个模型分片与 proprio 投影器均加载成功。
+- 作者在栈下重新完成了原始的随机ALOHA`lift_pot` 2 回合短评估（无视频配置、其余参数不变）：结果文件 `eval_result/lift_pot/openvla-oft/demo_randomized_eval_aloha/lift_pot_sft_eval_l40_author_stack/2026-09-16 14:22:15/_result.txt`，成功率 `0/2 = 0.0%`。因此先前 0% 不能归因于 `transformers 4.47.1`当前结果仍然属于短样本烟雾基线，不等于论文中200/1000条件的正式成功率。
+- 当前的 L40 评估进程已经结束，没有残留的 GPU 进程。原始的 ALOHA 随机化导致了高碰撞重采样，使得 16 回合扩展在大约 17 分钟内未能完成，因此被停止并记录下来；我们决定不将未完成的运行作为正式统计的一部分。
+- 收尾核验：`l40s-6` 无残留 `eval_policy_short`/Python 评估进程；`aloha-agilex`路径存在于 RoboTwin`task_config/_embodiment_config.yml`，环境资产解析正常。当前可复用基线是作者依赖栈下 `0/2`，后续正式 val-only/RL 前仍需解决 ALOHA 随机初始碰撞重采样耗时，或明确采用单独的非原始 clean 诊断配置并单独标注。
+- 校准口径：检查点`dataset_statistics` 只有 `lift_pot_1k`动作/本体感受均为14D，各维度的最小值和最大值完全相同；RoboTwin`get_obs()`ALOHA 的双臂向量每个臂有 6 个关节和 1 个夹爪，总共是 14D，因此维度接口已经对齐。
+- 语义核验仍未闭合：`aloha-agilex`使用 ARX/Aloha 资产，机械臂 URDF 关节范围主要为`-10..10`，夹爪约 `0..0.04765`；Piper 的资产则有明确的`[-2.618,2.618]`、`[0,3.14]`、`[-1.832,1.832]`等关节限制。仅凭检查点统计范围不能证明其训练体现是 Piper 或 ALOHA。
+- 诊断结论：当前 `0/2`可以确认这不是旧版transformers导致的，也不是14D形状/接口错误；主要未决风险是checkpoint的动作语义与`aloha-agilex`初始状态/随机化是否匹配。正式 val-only 或 RL 前暂停长跑，先从 checkpoint 来源配置、训练数据 embodiment 和 RoboTwin 初始状态生成链路完成证据闭环。
+- 来源闭环：`lift_pot_rl_reference_original/config.json` 的 `_name_or_path` 为 `robotwin2_lift_pot_jiale_seed1k_image1_try2_proprio_aloha_25chunks--20000_chkpt`。SFT、合并、RL 参考四份检查点的`dataset_statistics.json`SHA-256 相同，均为`lift_pot_1k`、1000轨迹、14D动作/本体。检查点训练体现因此可以确认是ALOHA，先前“可能是Piper语义错配”的假设被排除。
+- 后续诊断方向缩小为评估者与作者环境/参数差异，以及 ALOHA 随机初始碰撞重采样；不再将 0% 归因于 checkpoint embodiment 错配。
+- 更正前项判断：SimpleVLA-RL 正式`examples/run_openvla_oft_rl_twin2.sh` 设 `ROBOT_PLATFORM=ALOHA`（控制 OpenVLA 14D/25-chunk 常量），但`actor_rollout_ref.rollout.twin2_task_config=demo_randomized`；这个 RoboTwin 配置实际上`[piper, piper, 0.6]`，不是 `demo_randomized_aloha.yml` 的 `[aloha-agilex]`。历史 RoboTwin 与仓库覆盖代码在`_base_task.py`、`lift_pot.py`和两份配置上无差异。
+- 因此 checkpoint 路径名含`aloha`只能证明作者使用了 ALOHA 平台常量，不能独立证明仿真环境的实现。此前将其视为 ALOHA 训练环境的结论被撤回；需以作者在公开脚本/model card/commit 中的训练期为准。当前评估器的 ALOHA`0/2`与正式仓库的默认 Piper 路径不同，这个实验使用的是不同的路径。
+- 用户决策：暂停使用SimpleVLA-RL wrapper或历史RoboTwin策略得出的分数作为重现依据。先按`openvla-oft`官方仓库 README、依赖锁定与实验配置重建 SFT checkpoint 的推理/评估链路；SimpleVLA-RL 仅在该基准可验证后用于 RL。此前`0/2`、`0/16`、`0/256`均保留为混合链路诊断，不再称为 OpenVLA-OFT 官方复现结果。
+- 责任边界澄清：当前问题不是“SimpleVLA 全部脚本损坏”。(1) `openvla-oft`官方仓库本身提供LIBERO仿真与真实ALOHA评估器，不提供RoboTwin/lift_评估者(2)RoboTwin`lift_pot`评估器、动作适配和环境配置来自SimpleVLA/历史RoboTwin接入层，属于额外集成链路。(3) `0%`还受 RoboTwin 版本、Piper/ALOHA 配置、checkpoint 训练契约影响。因此之前分数不能归因于单一仓库。后续先验证官方 OpenVLA-OFT + 官方支持的 LIBERO，再单独验证 SimpleVLA 的 RoboTwin 接入。
+- 用户改回 SimpleVLA 路线：取消官方 LIBERO 复现，继续排查 RoboTwin`lift_pot`。
+- 受控环境探针：历史RoboTwin`6be6922`、作者依赖栈、L40 单卡；Piper 与 ALOHA 配置在 seed`100000`均可初始化，均输出 14D qpos 和`240x320x3`头RGB`step_lim=400`因此形状/初始化接口表面一致，不能据此证明动作语义一致。
+- 同种子专家调查：皮珀`100000` 可初始化但 `play_once()` 返回 `plan_success=False`你好`100000`在碰撞重采样阶段持续约 8 分钟无终止，已停止。说明 RoboTwin 初始状态/规划器层存在显著耗时风险，不能把这些失败计入模型成功率。
+- 脚本中的一次错误将 Piper embodiment 的第三项`0.6` 当成机器人名，产生 `KeyError 0.6`；这个错误属于诊断脚本，已经停止无效的A/B测试，没有更改环境代码。
+- 模型契约probe已完成：使用现有可写评估器副本`checkpoints/lift_pot_sft_eval_l40`（此前误用不存在的 `..._author_stack`路径，已修正），作者transformers fork、ALOHA常量`NUM_ACTIONS_CHUNK=25`、`ACTION_DIM=14`、`PROPRIO_DIM=14`。四个权重 shard 全部加载成功。
+- 将同一模型分别输入 RoboTwin`demo_randomized`（皮普）与`demo_randomized_aloha`（阿罗哈-敏捷X）初始观察：两者均获得状态`(14,)`、头RGB`(240,320,3)`动作`(25,14)`，所有值都是有限的；输出 min/max 分别约为`[-1.863,2.490]`、`[-1.792,2.458]`。这证明 checkpoint/evaluator 的形状与数值接口可以工作，但不能证明动作的绝对关节语义、夹爪编码或实现是正确的。
+- 后台任务最初因登录节点与L40的`/tmp` 不共享而找不到脚本；改为 `zhongxin` 与 `l40s-6` 两跳 `scp`完成后，L40 无残留探针进程。
+- 当前应继续比对：`rob_rollout.py`离散动作反归一化路径、RoboTwin`take_action()`绝对 qpos/夹爪转换、两种 embodiment 的 URDF 限制，再做单步安全动作执行；暂不把`0/2` 扩展成正式成功率。
+- 行动合同身份调查：对`demo_randomized` 与 `demo_randomized_aloha`，读取初始 14D`joint_action.vector`，重复为 25 步块后直接调用`take_action()`两者均执行 25 步、数值有限，执行前后 qpos 最大绝对漂移分别为`5.16e-4`、`3.62e-4`因此，RoboTwin 接口接受“绝对 14D qpos + 归一化夹爪”的 25 步动作块；目前没有双倍反归一化或动作形状错误的证据。
+- 种子口徑發現：`lift_pot`在项目内的专家成功地使用了种子，而这个种子不包含之前探针使用的。`100000`。训练集起始为 `100006, 100022, ...`；评测集起始为 `100100004, 100100007, ...`。`RobDataset`正常 val-only 会从这些 JSON 读取 seed。此前使用`100000` 的 `plan_success=False`/长期碰撞重采样只能说明无效随机种子，不能计入模型失败，也不能用于基准。
+- 版本/配置发现：历史 RoboTwin git commit`6be6922` 中的原始 `task_config/demo_randomized.yml` 为 `embodiment: [aloha-agilex]`、`episode_num: 50`、收集手腕相机/端点姿势；当前服务器历史 RoboTwin 工作树已修改为 Piper 配置，并与`SimpleVLA-RL/verl/utils/envs/robotwin2/task_config/demo_randomized.yml`SHA-256 相同（`fe3b...`）。当前工作树还修改了 `_base_task.py`、`lift_pot.py`与其他环境文件。因此，Piper 默认路径与 ALOHA`0/2`都不是干净作者 RoboTwin 环境；不得用于原文复现结论。
+- 下一步：不要覆盖用户现有的 RoboTwin 工作树。基于`6be6922`新建隔离工作树，配置其已存在的资产后，使用项目JSON中的第一个训练/评估成功的种子运行专家与检查点单回合；首先证明环境可以生成有效的专家episode，然后获得可解释模型分数。
+- 已创建 `/public/home/s2250018/wsy/VLA/RoboTwin-20250810-pristine`分离的工作树，HEAD 固定`6be6922d74f9b729837d6bcaa703721ec4553779`；仅将原始 assets 数据目录中的`embodiments`、`objects`、`background_texture`将链接到这个隔离的工作树，不改变用户的原始工作树。
+- 干净工作树在L40对官方ALOHA`lift_pot`首个成功的种子`100006`初始化前失败：作者 CuRobo`kinematics_fused_cu` 报 `RuntimeError: CUDA error: no kernel image is available for execution on the device`。检查二进制含 `sm_90`而 L40 的能力为`(8, 9)`；这个失败是因为 CuRobo 的 CUDA 架构不匹配，而不是种子、模型或 RoboTwin 任务的结果。历史修改的工作树在 L40 上运行并不能证明它与作者的环境等价。
+- H800 路径：`h800-1`可解析但 PAM 需要先有 Slurm 作业；Slurm 位于`/opt/gridview/slurm/bin`。默认 `h800` 分区不允许账户 `duxin01`，`h800e`允许且为 H800 节点。首次 job`10087` 因计算节点与登录节点 `/tmp`不共享，找不到探针脚本后退出；未进入环境。脚本已改放共享`/public/.../SimpleVLA-RL/`，重新提出单卡、30分钟专家探针任务`10088` 到 `h800e`，日志为 `/public/home/s2250018/wsy/VLA/robo_pristine_expert_10088.log`。
+- H800工作`10088`进入官方工作树的SAPIEN、ALOHA设置与CuRobo热身，证明L40的`no kernel image`已绕过；随后在`curobo.curobolib.line_search_cu.update_best` 报 `CUDA error: an illegal instruction was encountered`并伴随 Warp 卸载警告。官方环境尚未生成专家片段。当前环境层已将限制进一步缩小至 CuRobo/torch/Warp 预编译二进制兼容性；不能将该失败归因于 checkpoint、评估器或任务成功率。
+- 在用户明确要求的情况下，停止 H800 路径。核实`squeue`：账户 `s2250018`当前只有既有L40工作`10048`；`h800`/`h800e`无活动工作。之前 H800`10087`/`10088`是单卡、30分钟官方RoboTwin专家探针。`10089`/`10092`/`10095`/`10097`这是单卡CuRobo构建的尝试，均已退出，未触及用户正式训练、模型或检查点。后续只允许操作L40。
+- OpenVLA-OFT 官方 README/LIBERO 口径核对：官方仿真复现任务为`libero_spatial`、`libero_object`、`libero_goal`、`libero_10`另外有四套合并检查点；ALOHA 文档是实体机器人流程。官方仓库不提供 RoboTwin`lift_pot`评估器。README 明确论文结果使用 Python 3.10.14、PyTorch 2.2.0、作者 transformers 4.40.1 fork、A100；这只能约束官方 OpenVLA-OFT 链路，不能把 RoboTwin checkpoint 当作官方 LIBERO checkpoint。
+- 对用户提出的 checkpoint 名称`aloha` 风险完成分层核查：`_name_or_path`只证明作者训练运行采用 ALOHA 平台常量/命名；SimpleVLA 当前 checkpoint 的 14D action/proprio shape、bounds 及`take_action()`绝对 qpos + 归一化夹爪契约已通过 identity probe，未发现 double unnormalize 或 shape 错误。真正未闭环项不是 evaluator 维度，而是 checkpoint 训练时 RoboTwin 身体模型、相机/随机化、种子生成与当前环境是否同源。
+- RoboTwin 环境责任边界：官方提交`6be6922` 的 `demo_randomized.yml`是 ALOHA；服务器工作树及 SimpleVLA 内嵌副本被改成 Piper。故 Piper 评测、ALOHA 混合配置、无效 seed 的`0%`不能作为同一复现实验。官方worktree在H800仍被CuRobobinary/warp兼容性阻塞，需先修复独立RoboTwin环境，再谈模型分数。
+- 检查点/评估器契约解决方案：固定出处（检查点提交、`config.json`、数据集统计 SHA、训练实现、相机/配置、RoboTwin提交、CuRobo/torch/warp版本）；启动前 assert`NUM_ACTIONS_CHUNK=25`、`ACTION_DIM=14`、`PROPRIO_DIM=14`、Obs 相机按键、动作有限/范围；使用官方成功种子 JSON，不用`100000`；先跑专家`play_once()`成功，再跑模型；每回合记录 setup/plan/action-execution/eval-success/error 分类。只有上述合同测试全部通过，才记录成功率或开始 RL。
+- L40 只有 CuRobo 修复：在`robotwin-pristine`环境使用 CUDA Toolkit 12.4，`TORCH_CUDA_ARCH_LIST=8.9`编译 curobo 0.7.5；补全环境内部`include/{thrust,cuda,cub}` 头文件链接，并修复断开的 `libcudart.so`链接。编译成功，旧的预编译 curobo 0.7.8（含`sm_90`已替换为可用的 L40`nvidia_curobo 0.7.5`。全过程只在 `l40s-6`，未操作 H800。
+- 重新验证 pristine 官方 RoboTwin`6be6922`：`lift_pot`种子`100006`（训练种子表首项）和`100100004`（评估种子表首项）都可以完成环境设置，但`play_once()` 为 `plan_success=False`。此前探针把 `now_ep_num`错误地传成了种子，已经更正为作者evaluator的`now_ep_num=0, seed=...`；修正后结论不变。
+- 口径更正：SimpleVLA 的`robotwin2_train_seeds.json`/`robotwin2_eval_seeds.json`不是 RoboTwin 官方独立真值发布；它们对应仓库收集脚本和当前改动环境。当前服务器工作树有 36 个 RoboTwin 文件改动（含 Piper 配置、planner、task/base task），因此这些 seed 在 pristine ALOHA 官方 commit 上失败并不矛盾。不能把该 seed 表称为“官方 RoboTwin 成功 seed”，也不能用它证明 checkpoint 或模型失败。
+- 当前可解释结论：环境二进制兼容性已在L40解决；剩余阻塞是“SimpleVLA seed/环境生成口径”与官方 pristine RoboTwin commit不同。下一步应从与checkpoint同源的RoboTwin配置/seed生成链路重新收集一个成功expert episode，再对同一seed运行模型；在此之前不报告正式成功率。
+- 2026-09-16 仅通过 `zhongxin`查询 Slurm 队列确认状态；未登录、未提交、未取消 H800 任务。当前账户仅有 L40 任务`10048`（`l40s-6`）运行。
+
+## 2026-09-17
+
+- 用户再次确认：后续仅操作 L40；本日未连接、查询、提交、停止或修改 H800。已有 L40 任务`10048` 未触碰。
+- 建立用于诊断的隔离组合：SimpleVLA 固定作者公开 commit`462f23d`，RoboTwin 固定`6be6922`在添加这个提交之后`modified_codes/robotwin2`；资产仅以符号链接复用。作者的 `examples/twin2_lift_pot_sft1000_rl1000.sh` 与对应 `demo_randomized.yml`明确为 Piper 双臂；路径名`aloha`仅选择 25 个 chunk / 14D 平台常量。
+- 纠正种子口令：作者`RobotwinEnvWrapper` 传入 `setup_demo(now_ep_num=trial_id, seed=trial_seed)`；本次两者均设置为相同的种子。先前的探针使用`now_ep_num=0` 的结果只保留为诊断，不能作正式结论。
+- 作者依赖在 L40 已生效：`PYTHONNOUSERSITE=1` 下 `transformers==4.40.1`（作者 fork）`tokenizers==0.19.1`；此前用户目录的 `transformers 4.47.1/tokenizers 0.21.4` 会遮蔽该组合。修正后重跑。
+- 环境层闭环：Piper/作者配置中`100063` 的专家 `play_once()` 稳定 `plan_success=True, check_success=True`（可能与`0.8775`）；`100006`在第三阶段 IK 失败，因此不可用于模型成功率分母。RoboTwin 环境、资产、种子和专家规划器均可执行。
+- 契约闭环/评估器：加载 SFT 的 4 个 shard 和独立的 proprio projector，通过 projector state 对比（BF16 最大误差）`0.003692`）；RL 参考 7 碎片内置投影仪也会加载。两者均使用`lift_pot_1k`14D动作/本体感觉统计`generate_action_verl` 输出 `(25,14)`、有限值；贪婪时与 `predict_action`完全一致，因此不存在采样/解码器API的混用。
+- 同一个有效的种子`100063`、作者依赖、作者 Piper 配置、单头图像、proprio、25-step/200-step 限制下：SFT 的作者采样与贪婪均`0/1`公开的SimpleVLA RL参考也`0/1`轨迹均先到达锅旁并闭夹爪，后续把锅落下；这不是初始化、形状、双反归一化、 proprio projector 或 RoboTwin 执行失败。当前未将单个种子结果误报为总体成功率。
+- 下一步：检查 SFT/RL checkpoint 的训练导出来源与权重差异，并使用作者完整的 wrapper 进行小样本验证。如果 checkpoint 本身无法在已闭环的有效环境中获得非零基线，则停止将其作为 RL 起点，而不再继续调整无证据的评估器参数。
+- 完整的包装等效性已经验证。`RobHFRollout.process_input()`与单回合探针对`input_ids`、注意力掩码、FP32像素值、 proprio 均逐元素一致；此前 probe 提前转 BF16 且 autocast 外推理的实现已更正为 wrapper 的 FP32 + BF16 autocast。修正后 SFT 贪婪仍`0/1`并要在100步左右掉头。
+- 作者正式采样参数（`do_sample=True, temperature=1.6`在同一个有效的种子下`0/1`策略在第50步到达双侧抓取点，在第75步闭合夹爪，在第100步后锅已经掉落。因此，该回合失败不是由图像精度、prompt/token、 proprio、decoder 选择或环境执行接口造成的。
+- 只读口徑閉環：作者評估種子表的`100100007`在相同的 Piper 环境中，由专家`plan_success=True, check_success=True`；SFT 作者采样为`0/1`（掉落后再抓取），不能将训练种子结果冒充为验证结果。
+- 关键对照通过：相同的评估种子、相同的作者依赖/完整的包装器输入/`do_sample=True, temperature=1.6` 下，公开 `lift_pot_rl_reference_original`在步骤`100/200` 得到 `eval=True, check=True`，锅里有水吗？`0.8209`。SFT 和 RL 名称权重确实存在非零差异，RL checkpoint 的 proprio projector 内置于 safetensors。因此，环境、评估器和二进制成功判定与模型输入契约已被证实可用；SFT 的单例失败属于策略能力，RL 更新可以恢复该任务的成功。
+- 当前复现状态：L40 已完成可解释的 val-only 正确性 oracle（RL 参考成功）及 SFT 基线单例（失败）。后续正式“从公开 SFT 跑原始 binary-reward 基线”需要 H800 资源；用户当前禁止动 H800，故不提交、修改或查询 H800 任务，等待其明确空闲授权后再执行训练。
+- 仅评估的小样本稳定性：作者评估种子表前8个中，`100100007/013/017/018/022` 均为专家 `plan_success=True, check_success=True`；`100100004` 规划标志异常、`100100008/016`不可解，所以不混入可解释策略的分母。公开的RL参考已在前三个有效的种子`100100007/013/017`全部成功（均 step`100`，即已被验证的有效种子子集为`3/3`。这是L40的正确性检查，不代替原文中规定的完整的val-only统计。
+- 总结：L40 没有本次诊断残留进程，4 张卡都空闲。作者`twin2_lift_pot_sft1000_rl1000.sh` 已静态核对：`NUM_GPUS=8`、`num_trials=1000`、`n_samples=8`、`batch=64`、`action=14×25`、派珀`demo_randomized`、看到指令、本体感觉、温度`1.6`、GRPO + 二进制验证器；正式训练仅在用户解除 H800 禁止后，通过独立作者的 commit/worktree 启动。
+- 新增教学复盘 `doc/simplevla_lift_pot_reproduction_playbook.md`：记录全链路、已排除问题、失败尝试、证据标准、可复用诊断顺序及正式训练前提；与本文件的时间账本配套使用。
+- H800 交接规则已经补充到教学复盘中：训练代理以第 3、6、7 节为标准，以本文件的历史为参考；H800 必须新建隔离环境/worktree，并重新构建与 H800 架构匹配的 CuRobo/Warp，禁止复制 L40 的`sm_89` 二进制环境。
+
+## 2026年9月18日 L40 4卡训练
+
+- 修复 `examples/overwrite_vla_ckpt_utils.sh`仓库根目录解析；将作者提交`462f23d`将 OpenVLA 工具/建模文件同步到可写的 SFT 工作副本，独立的 proprio 投影机加载。
+- 4 卡 L40 初始化时首次遇到本地 NCCL IB 供应商错误；训练脚本固定`NCCL_IB_DISABLE=1`，不改变 H800。
+- Ray运行时环境补全`SIMPLEVLA_ROBOTWIN2_PATH`、`PYTHONPATH`在 NCCL 环境中；`rob_rollout.py`改为从该隔离的 RoboTwin 根部推导`description/utils`不再读取不存在的 SimpleVLA 内置相对路径。
+- RoboTwin 官方资产路径模板包含常量`${ASSETS_PATH}`；在 `/public/home/s2250018/wsy/VLA/RoboTwin-462f23d` 执行官方 `script/update_embodiment_config_path.py`，将 `_embodiment_config.yml`将和 CuRobo 配置固定为该隔离 root 的绝对路径。
+- 最小 4-worker smoke 已通过模型加载、 proprio projector、Piper 环境初始化、二进制验证；成功与失败的 MP4 日志生成，证明环境和视频编码链路可用。随后的临时 smoke 停止，不计入正式训练。
+- 正式L40训练已启动：远程PID`2562951`，日志 `/public/home/s2250018/wsy/VLA/outputs/lift_pot_l40_4gpu/logs/train_formal.log`；实验目录 `/public/home/s2250018/wsy/VLA/outputs/lift_pot_l40_4gpu/twin2_lift_pot_l40_4gpu_sft_start_binary`。默认 10 个周期，4 卡批次适应；仅针对 L40 操作。
+- 正式进程已完成 7.56B 模型/4 shard 初始化，projector 加载、Piper 环境启动和第一批验证 rollout 通过；数据集为 train`1000`、值`256`数据加载器`250/64`，总优化步 `2500`目前仍处于第0步验证阶段，尚未生成训练检查点。
+## 2026年9月18日L40正式运行：初始验证和诊断过滤
+
+- 只在`l40s-6`H800 没有被访问。
+- 配置遵循升力_剧本库：作者SimpleVLA提交`462f23d`, 独立的RoboTwin基座`6be6922`加`modified_codes/robotwin2`，派珀`demo_randomized`，公开SFT检查点，二进制奖励。
+- 预训练验证已完成：训练IID`0.046875`，评估OOD`0.046875`, 总体上`0.046875` (256个验证样本；由于Ray日志记录，12/256个MP4文件被复制，因此指标是权威计数。).
+- 第一批RL集合批次生产了`Accuracy distribution: 0.00:4`和`Filtered batch size: 0`; 与`filter_accuracy=True`，无法从所有零组生成演员更新/检查点。运行被停止以避免浪费L40时间；这是一个诊断失败，而不是训练结果。
+- 更新`examples/twin2_lift_pot_l40_4gpu.sh`从`n_samples=4`给作者`n_samples=8`分组，保留二进制奖励过滤器。一个4样本组太可能全是零，对于这种低成功率的SFT开始来说。
+- 滚动视频仍然在远程`SimpleVLA-RL-462f23d/rollouts/twin2_lift_pot_l40_4gpu_sft_start_binary`成功的例子包括`step=0--task=lift_pot_trial_100105028_seed_100105028--success=True--ran=710.mp4`.
+
+## 2026-09-18 L40 n=8 重试
+
+- 第8轮的运行完成了相同的初始验证：训练IID/评估OOD/总体`0.047`.
+- 它收集了有效的二进制奖励组(`0.12:1`然后`0.12:2`)并达到了`rollout batch size: 32`这证实了n=8提供了可学习的相对优势。
+- 演员向后移动，然后在L40 GPU0上CUDA OOM`ppo_micro_batch_size=4` (44.34 GB 已使用，41 MB 空闲)没有写入检查点；进程正常退出，所有四个GPU都被释放。
+- 更新了仅针对L40内存预算的训练脚本：`actor.ppo_micro_batch_size=1`, `model.enable_gradient_checkpointing=True`有效的PPO小批量，n=8，奖励/过滤器，优化器和环境合同不变。
+- 重新启动为独立实验`twin2_lift_pot_l40_4gpu_sft_start_binary_n8_gc`, 对数`outputs/lift_pot_l40_4gpu/logs/train_n8_gc.log`只有`l40s-6`被触动。
+- 第n行_在新添加的注释中，gc启动暴露了一个shell继续错误；这不是一个训练启动。(海德拉保持了默认的8个GPU/仅验证配置)评论被移动到继续命令的上方。`bash -n`通过，错误的进程被停止，并且修正后的启动再次提交。L40 SSH 在接受公钥后停滞不前，因此其修正后的进程状态仍然处于待审核的只读状态。
+- 之后的只读访问通过`l40s-7`确认了共享`train_n8_gc.log`仍然存在格式错误的默认8 GPU Ray等待(`n_gpus_per_node=8`，检查点/梯度默认值)，不是训练结果。修正后的脚本已安装在共享的L40工作树中；`l40s-6`在公钥接受后无法到达，因此没有进一步的控制尝试。
+- 2026年9月18日 14:40 直接IP`10.80.98.22`/`node12`恢复了L40-6访问权限，因为主机名别名停滞。旧的8个GPU的Ray等待被移除。现在修复后的运行作为PID`2900160`，带有验证`n_gpus_per_node=4`, `ppo_micro_batch_size=1`并且`enable_gradient_checkpointing=True`所有四个GPU仅在本次运行中分配。
+- 纠正后的n=8次运行完成了64/64个初始验证代数，并生成了800个滚动MP4，包括成功的step=0示例。它进入演员更新阶段，然后在未保存检查点之前退出。`ZeroDivisionError`FSDP将配置的全局`ppo_micro_batch_size=1`通过四级设备网格，得到零。这是一个配置规范性错误，而不是模型/环境失败。
+- 准备了下一次L40仅跑的修复：设置全局`actor.ppo_micro_batch_size=4`所以每个等级在FSDP归一化后都得到1；保留`ppo_mini_batch_size=16`，梯度检查点，n=8，二进制滤波器，所有环境/检查点合同不变。使用新的实验/日志目录来保存失败运行的证据。
+- 重新启动了修正后的运行，作为PID`3143014`, 对数`outputs/lift_pot_l40_4gpu/logs/train_n8_gc_v2.log`，输出`twin2_lift_pot_l40_4gpu_sft_start_binary_n8_gc_v2`在验证阶段，Hydra 显示全局微批次为 4，梯度检查点启用，4 张 GPU；过程已进入验证且无错误。H800 未被访问。
+- V2 初始验证完成：训练IID`0.046875`，评估OOD`0.046875`, 总体上`0.046875`初始收集产生了两个全零组(正确地丢弃)，然后是有效的`0.12`/`0.38`群组；它累积了`32/32`二进制奖励的滚动和四级FSDP演员更新。在最新的检查中，所有工人都是活跃的。(`~99%`GPU SM,`~40.2 GiB`每张卡)在`update_actor/compute_entropy`，没有OOM。`ZeroDivisionError`，Ray或环境错误。这证实了每秩的微批次归一化已正确执行；检查点/最终指标仍待处理。
+- 第一个演员更新成功完成`389.4s`它记录了验证者。`0.037`奖励意味着`0.938`，策略梯度损失`0.002`，剪切分数`0.019`，梯度范数`3.269`然后开始了下一个迭代。这是在四张L40卡上完成的第一个真实二进制奖励强化学习更新。还没有保存检查点：当前的计划每20次更新保存一次，并且每4次评估一次。
+- 估计从第一步开始的运行时间：大约`20.3 min/update` (`831s`发布收集加`389s`演员更新)配置的`2500`优化步骤因此意味着大约`35 days`在四个L40卡上；分离的进程仍然活跃，但必须在声称完整的最终运行前将其视为用户决定。
+- 在19:38 CST时，第二轮收集活动已启动，并积累了`16/32`有效的发布；主要PID保持不变`3143014`没有错误签名。还没有出现检查点。(保存频率为20次更新).
+- 截至19:41 CST，第二轮收集达到了`32/32` (`0.12:2`加零奖励组)并进行了第二次演员更新；PID`3143014`仍然存活，没有错误签名，也没有检查点。
+- 在19:47 CST，第二名演员更新成功完成。(`step:1`, `382.3s`); 不用OOM，`ZeroDivisionError`，Ray，或者运行时失败。训练继续到下一个轮次。
+- 在19:50 CST PID`3143014`仍然存活`10.80.98.22`四张L40卡已激活，尚未出现检查点或错误签名。
+- 在CST时间19:52恢复监控，使用远程监视器PID`3336172`在同一个L40节点上。它每1800秒记录一次快照。`outputs/lift_pot_l40_4gpu/logs/monitor_30m.log`并自动退出当训练PID时`3143014`出口；它不会改变训练或访问H800。
+- 19:56 CST 检查：看护和训练的 PID 是活跃的；`step:1`已经完成，下一个部署即将开始。`32/32`，进入下一个演员更新。四张L40卡在大约34GB/卡时全部激活；尚未出现错误或检查点。
+- 19:57 CST 重新检查：`step:1`仍然是最新完成的更新；下一个部署达到了`32/32`演员更新在所有四个L40卡上大约每卡40GB时处于活跃状态。没有出现错误或检查点。
+- 19:58 CST 检查：观察者`3336172`和训练PID`3143014`仍然存活。第三次演员更新在四张L40卡上活跃，大约每卡38GB；最新完成步骤仍然是`1`，没有任何错误或检查点。
+- 北京时间20:00检查：训练PID和观察者保持活跃；同一行为更新继续在所有四张L40卡上进行，大约每张卡40 GB。最新完成的步骤仍然是`1`; 没有错误或检查点。
+- 北京时间20:03检查：训练PID`3143014`和观察者`3336172`仍然在L40-6存活。第三位演员更新成功，`step:2` (`train_verify_score/all=0.052`奖励意味着`0.781`, `pg_loss=0.008`, `ppo_kl=0.008`梯度范数`3.600`, 更新时间`375.1s`)流程继续进入下一个周期；尚未设置检查点。(保存频率 20)并且没有OOM。`ZeroDivisionError`，Ray或环境错误。H800未处理。
+- 北京时间20:05检查：PID`3143014`和观察者`3336172`仍然在运行。下一个发布版本达到`16/32`当前组准确率`0.00:2 0.12:2`所以有效的过滤样本继续。最新完成的仍然是`step:2`; 没有检查点或错误。L40 未更改；H800 未更改。
+- 北京时间20:06：两个PID仍然存活。第四次采集在模拟批次之间。(`16/32`最新；GPU 短暂闲置，大约每卡 19 GB)与之前的160代间隔一致。没有新的完成更新、检查点或错误。
+- 北京时间20:07检查：训练PID`3143014`和观察者`3336172`保持在线；当前收藏已更新到`24/32`以准确分布`0.00:3 0.12:1`在最新的组中。四张L40卡全激活，每张大约23GiB。最新完成的剩余量是`step:2`; 没有检查点或错误。H800 未更改。
+- 北京时间20:09检查：训练PID`3143014`和观察者`3336172`保持在线。当前的部署仍在收集中。`24/32`四张L40卡激活，每张大约19GB。最新完成的仍然是`step:2`; 没有检查点，OOM`ZeroDivisionError`，Ray或环境错误。H800未处理。
+- 北京时间20:10检查：训练PID`3143014`和观察者`3336172`保持活跃。第四轮仍在收集数据后`24/32`GPU在模拟器生成间隔中大约为每卡19 GB。最新完成的仍然是`step:2`; 没有检查点或错误。H800 未更改。
+- 北京时间20:11检查：第四次收集达到原始`48/32`在最后一个接受的提示组之后，形成了预期的演员。`rollout batch size: 32`; 更新的演员活动正在进行中。大约有四张L40卡被充分利用，每张卡使用了约40.1 GB。最新完成的项目是`step:2`; 没有检查点或错误。H800 未更改。
+- 北京时间20:14检查：训练PID`3143014`，任务完成`3146750`和30分钟的观看者`3336172`正在运行。四张L40卡报告利用率在94%-100%，每张卡大约有40.3 GB的使用量。最新的日志在第四次发布后进入演员更新；最新完成的是`step:2`，没有检查点或错误签名。H800未更改。
+- 北京时间20:16检查：所有三个进程均存活。四个L40卡利用率在94%-100%，每张卡约15.8-16.4GiB，而演员更新正在进行中。最新完成的剩余部分是`step:2`没有检查点或错误签名。H800未更改。
+- 北京时间20:18检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。下一个演员更新已完成`373.7s`验证部署`step=4`现在正在运行。日志尚未生成相应的汇总步骤指标，因此最新的确认指标仍然存在`step:2` (验证`0.052`奖励`0.781`PPO KL`0.008`梯度范数`3.600`). 四张L40卡仍然活跃；没有检查点或错误。H800未被触动。
+- 北京时间20:22检查：验证`step=4`仍在生成滚动MP4；一个记录的试验成功，但这不是汇总验证分数。进程仍然运行中。GPU利用率参差不齐(`0–47%`)在验证过程中，内存大约是`8.8–12.0 GiB/card`. 没有检查点或错误；最新的汇总指标保持不变`step:2`. H800 未修改。
+- 北京时间20:26检查：`step=4`验证仍在进行中；额外成功的单个MP4发布，但未发出任何汇总验证指标。训练、Ray任务和监视器仍处于运行状态。L40利用率混合(`0–35%`)大约`14.4–14.8 GiB/card`. 没有检查点或错误；最新的汇总指标保持不变`step:2`. H800 未修改。
+- 北京时间20:28检查：`step=4`验证尚未发出其汇总得分；MP4生成仍在继续。所有过程均处于活跃状态，所有四个L40卡均已恢复至100%利用率，大约每卡使用14.4–14.6 GB。无检查点或错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:31检查：`step=4`验证继续生成滚动MP4(最新的样本包括失败；早期也记录了个人的成功。)但是，聚合验证指标尚未完成。训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持活跃。L40卡的使用率在0-1%，每个卡大约有8.7GB在验证期间。没有检查点或错误；最新的汇总指标仍然`step:2`. H800 未修改。
+- 北京时间20:33检查：远程L40-6访问状态正常。训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持活跃；验证仍然发出`step=4`发布MP4文件，包括成功和失败的试验，但没有汇总`step:4`尚未完成。GPU使用率为100%，大约每卡14.1–14.5GB，表明正在进行验证和部署工作。没有检查点或错误。H800未受影响。
+- 20:36 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证继续写入MP4文件；聚合验证指标尚未生成。L40利用率在当前推广阶段约为0-11%，每卡约14.5GB。无检查点或错误；最新聚合指标保持不变。`step:2`. H800 未修改。
+- 20:37 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成MP4文件；汇总`step=4`指标仍待处理。L40卡使用率为100%，每张卡约有14.4GB。无检查点或错误；最新汇总指标仍为`step:2`. H800 未修改。
+- 20:38 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；无汇总`step=4`尚未得分或检查点。L40利用率在55%-100%之间，大约每卡14.4-14.7GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:39 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40卡显示利用率在0%-100%之间，滚动期间每个卡大约使用9.1-12.1GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:40 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证尚未获得总分；MP4生成仍在继续。L40卡暂时闲置，利用率仅为0%，每张卡约8.3GB，与验证过渡一致。无检查点或错误；最新总分指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:41检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总验证分数和检查点仍然缺失。四张L40卡处于100%利用率，每张大约14.4-14.6GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:42 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍然没有汇总得分或检查点；MP4生成仍在继续。四张L40卡暂时闲置，利用率仅为0%，每张卡大约占用8.3-8.7GB，正在等待批次之间的间隔。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:43 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证继续写入MP4文件；汇总得分和检查点仍然缺失。四张L40卡使用率为100%，每张卡约14.4-14.8GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:44检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。在滚动过渡期间，L40利用率仅为0%，每卡约消耗8.9–11.9GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:45 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。四张L40卡使用率为100%，每张大约14.4-14.8GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:45 CST 复查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40卡处于滚动过渡阶段，利用率约为0%，每张卡约有8.8-9.1GB。无错误；最新汇总指标仍保持不变。`step:2`. H800 未修改。
+- 20:46 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。四张L40卡使用率高达100%，每张卡约13.9-14.1GB。无错误；最新汇总指标仍为`step:2`. H800 未修改。
+- 北京时间20:47检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。四张L40卡使用率高达100%，每张卡约13.8-14.2GB。无错误；最新汇总指标仍为`step:2`. H800 未修改。
+- 20:49 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证继续写入MP4文件；汇总得分和检查点仍然缺失。L40利用率参差不齐(0–30%)大约每卡有8.3–9.8GB的存储空间在推出过程中。没有错误；最新的汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:50检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率参差不齐(0–51%)大约每卡有8.3–10.9GB的存储空间在推出过程中。没有错误；最新的汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:51检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率在0%-100%之间，滚动过渡期间每卡大约消耗10.6-14.6GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:52 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。四张L40卡使用率为100%，每张大约14.1-14.7GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:53 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率不均匀(0–100%)大约每卡有8.3–10.7GB的存储空间在推出过程中。没有错误；最新的汇总指标保持不变。`step:2`. H800 未修改。
+- 20:54 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率在0%-2%，每卡约8.3-9.9GB，而滚动工人在批次之间等待。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:55 CST 检查：训练 PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证继续生成滚动MP4；汇总得分和检查点仍然缺失。四张L40卡暂时闲置，利用率约为0%，每张卡约有14.4-14.6GB的存储空间，而验证工人正在同步数据。没有错误；最新的汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间20:56检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率在0%-20%，在滚动过渡期间，每卡大约消耗13.4-14.1GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 20:57 CST 检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持在线。`step=4`验证仍在生成滚动MP4；汇总得分和检查点仍然缺失。L40利用率在0%-4%之间，滚动生成期间每卡消耗约8.3-9.8GB。无错误；最新汇总指标保持不变。`step:2`. H800 未修改。
+- 北京时间21:17检查：训练PID`3143014`，任务完成`3146750`和观察者`3336172`保持活跃。长时间`step=4`验证完成，生成了汇总日志`step:3`评估 OOD`0.070`，训练IID`0.086`, 所有`0.078`训练验证`0.083`奖励`0.625`，PPO KL`0.007`梯度范数`5.867`验证时间`3619.824s`尚未设置检查点(每隔20步保存一次)错误或H800访问。
+- 2026年9月19日重新检查：L40训练进展到`step=22`验证聚合达到`step=15` (OOD`0.305`，ID`0.234`, 所有`0.270`)和`step=19` (OOD`0.281`，IID`0.258`，所有`0.270`). `actor/global_step_19`存在；训练PID`3143014`仍然在线。H800未改动。
+- 2026年9月20日检查：L40运行达到验证`step=43` (OOD`0.422`，IID`0.352`, 所有`0.387`)最新的训练更新是`step=42` (验证`0.281`奖励`2.500`, PPO KL`0.002`梯度范数`2.667`)然后，运行以一个Ray终止。`RayActorError`/工作连接失败和致命的Python工作错误。已设置检查点：`actor/global_step_19`, `actor/global_step_39`所有四个L40 GPU都处于空闲状态。没有H800访问。
+- `global_step_39`审计：日志行`step:39`报告IID`0.375`，无监督学习`0.422`，所有`0.398`对应的验证MP4文件使用`step=40`文件名因为验证接收`global_steps+1`远程分发目录包含256个这样的MP4文件：102个成功和154个失败，匹配`102/256=0.398`检查点仅包含模型/分词器碎片；指标保持不变。`logs/train_n8_gc_v2.log`.
+- 2026年9月20日视频修复：成功重包装`step=40`样本`...100105098...success=True...ran=969.mp4`作为兄弟姐妹`...ran=969--2fps.mp4`在`2 fps`已验证`5`帧和`2.50s`原始视频未改变；无训练或环境重跑。

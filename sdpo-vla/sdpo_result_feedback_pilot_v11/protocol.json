@@ -1,0 +1,17 @@
+{
+  "version": "v7-source-audited-feedback-only",
+  "scope": "Qwen2.5-VL-3B constrained five-action PandaPush mechanism pilot",
+  "source": "/home/skylar/@lab/SDPO/verl/trainer/config/actor/actor.yaml",
+  "student_input": ["pre_action_RGB", "instruction", "proprioception"],
+  "teacher": {"initialization": "same base and initial LoRA", "regularization": "EMA", "update_rate": 0.05, "stop_gradient": true},
+  "loss": {"name": "JSD", "alpha": 0.5, "support": "entire constrained five-action policy", "temperature": 1.0, "grpo_weight": 0, "bc_weight": 0, "optimizer_steps_per_rollout": 1},
+  "rollout": {"temperature": 1.0, "candidates_per_state": 8, "transitions_per_update": 128, "updates": 24},
+  "demonstration": {"criterion": "actual task success only", "same_state": true, "exclude_self_donor": true, "feedback_only_without_solution": true, "positive_progress_is_not_task_success": true},
+  "conditions": ["sdpo_result", "sdpo_binary", "sdpo_shuffled", "sdpo_neutral", "sdpo_causal"],
+  "shuffle": "Within action and task-success stratum, cross-group donors; unmatched rows keep real outcome and are counted",
+  "primary_comparisons": ["sdpo_result minus sdpo_binary", "sdpo_result minus sdpo_shuffled", "sdpo_result minus sdpo_neutral"],
+  "causal_condition": "Separate interpretation-assisted ablation; explicit preserve/revise rules are not raw feedback evidence",
+  "evaluation": {"split": "dev", "scenes": 64, "greedy": true, "feedback": false, "horizon": 12},
+  "fixed_scene_profile": "directional_local",
+  "limitations": ["One-token action training differs from language sequence training", "Single seed and dev tuning cannot establish final effectiveness", "LoRA EMA approximates full-parameter EMA", "No GRPO or behavior-cloning action loss"]
+}

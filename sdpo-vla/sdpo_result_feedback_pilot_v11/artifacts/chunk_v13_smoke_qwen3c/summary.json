@@ -1,0 +1,46 @@
+{
+  "updates": [
+    {
+      "loss": 0.1945682056248188,
+      "valid": 8,
+      "valid_actions": 16,
+      "executed_chunks": 8,
+      "chunk_length": 2,
+      "gradient_norm": 2.6411678791046143,
+      "optimizer_steps": 1,
+      "seconds": 11.479767226963304,
+      "subtract_noop_baseline": true,
+      "mean_abs_teacher_residual": 5.096920013427734,
+      "mean_teacher_student_total_variation": 0.40356895327568054,
+      "mean_teacher_entropy": 0.1774509996175766,
+      "update": 1,
+      "group": "chunk_suffix_directional_residual",
+      "rollout_seconds": 41.42827836901415,
+      "grouped_rollout_count": 1,
+      "chunk_progress_counts": {
+        "unchanged": 8
+      },
+      "safety_failures": 0,
+      "successes": 0,
+      "feedback_record_unique_count": 3,
+      "gpu_peak_allocated_gib": 28.720253944396973
+    }
+  ],
+  "evaluation": {
+    "scenes_requested": 1,
+    "scenes_valid": 1,
+    "invalid_resets": 0,
+    "successes": 0,
+    "success_rate": 0.0,
+    "mean_progress_m": 1.2496880436863034e-06,
+    "safety_failures": 0,
+    "interactions": 12,
+    "action_counts": {
+      "C": 6,
+      "A": 6
+    }
+  },
+  "total_train_chunks": 8,
+  "total_train_primitive_actions": 16,
+  "elapsed_seconds": 90.64237755595241
+}
